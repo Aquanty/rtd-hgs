@@ -40,7 +40,8 @@ present in the installation directory. To obtain a valid HGS license
 file, please email the `hostid.txt` file located in the installation
 directory to `info@aquanty.com`.
 
-### Windows
+Windows
+^^^^^^^
 
 By default, HGS is installed in the directory:
 
@@ -61,7 +62,8 @@ not have write access, then you will need to update your system path
 manually. We recommend that you always run the installer with
 administrator privileges if possible.
 
-### Linux
+Linux
+^^^^^
 
 In Linux, HGS is installed under the current folder in the directory:
 
@@ -113,7 +115,8 @@ of a simulation.
     using **HSPLOT**, to convert the data into a Tecplot compatible
     format for visualization and analysis.
 
-### Grok (`grok.exe`)
+Grok (`grok.exe`)
+^^^^^^^^^^^^^^^^^
 
 The **grok** input file contains all of the information and instructions
 required for the HGS simulation. This file name consists of a meaningful
@@ -151,7 +154,8 @@ files in the *illustration* and *verification* folders are an excellent
 resource for reviewing **grok** structure and the use of
 **grok** commands.
 
-### HGS (`phgs.exe`)
+HGS (`phgs.exe`)
+^^^^^^^^^^^^^^^^
 
 After the execution of `grok.exe`, which writes all the HGS-compatible
 data files, `phgs.exe` is executed to perform the model simulation.
@@ -210,7 +214,8 @@ file from a previous simulation to your current model folder. Changing
 number of processors being used. To change the level of parallelization
 it is necessary to stop and restart the simulation.
 
-### HSPLOT (`hsplot.exe`)
+HSPLOT (`hsplot.exe`)
+^^^^^^^^^^^^^^^^^^^^^
 
 The executable `hsplot.exe` is used the post-process the simulation
 results for viewing in Tecplot. **HSPLOT** can be executed during an HGS
