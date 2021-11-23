@@ -1959,5 +1959,5 @@ the header is used to determine when a new row begins. The number of
 cell values must be equal to the number of rows times the number of
 columns.
 
-.. |image| image:: ./front_matter/aquanty_logo
+.. |image| image:: front_matter/aquanty_logo.png
    :width: 30.0%
