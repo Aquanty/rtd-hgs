@@ -18,7 +18,7 @@ Email: info\@aquanty.com\
 
 ![image](./front_matter/aquanty_logo){width="30%"}
 
-Quick Start Guide {#chap:quick_start}
+Quick Start Guide
 =================
 
 The goal of this guide is to get you up to speed quickly on the basic
@@ -252,7 +252,7 @@ possible to run a model from any folder without copying any HGS
 executable files or DLL files to that folder and is the preferred method
 of operation.
 
-Output Files {#app:output_files}
+Output Files
 ============
 
 Unless otherwise stated, the files described in this section are ASCII
@@ -1008,7 +1008,7 @@ Surface flow velocity.\
 *prefix*`o.v_pm.0001`\
 Porous media velocity.
 
-Run-Time Debug Utility {#app:runtime_debug}
+Run-Time Debug Utility
 ======================
 
 When using **HydroGeoSphere** to solve complex problems, especially
@@ -1064,7 +1064,7 @@ reference="tab:debug_control"}.
         ! maximum timestep multiplier
         !             2.00000
 
-[\[tab:debug\_control\]]{#tab:debug_control label="tab:debug_control"}
+[\[tab:debug\_control\]]
 
 Lines beginning with the comment character (!) are ignored. When first
 generated, the only uncommented line is the first one, `debug off`,
@@ -1089,8 +1089,7 @@ reference="tab:debug_control_2"}
          pause timestep
         ...etc...
 
-[\[tab:debug\_control\_2\]]{#tab:debug_control_2
-label="tab:debug_control_2"}
+[\[tab:debug\_control\_2\]]
 
 then **HydroGeoSphere** would pause at the end of the next timestep.
 
@@ -1375,7 +1374,7 @@ targets used in the adaptive timestepping procedure.
 \
 \
 
-Run-Time Timestep Output {#app:runtime_output}
+Run-Time Timestep Output
 ========================
 
 In this section we discuss the run-time output produced by HGS at each
@@ -1410,7 +1409,7 @@ update. We will discuss each of these sections in detail.
 ![Run-time timestep output for the Abdul verification
 problem.](runtime_output){width="\textwidth"}
 
-[\[fig:runtime\_out\]]{#fig:runtime_out label="fig:runtime_out"}
+[\[fig:runtime\_out\]]
 
 Simulation Progress
 -------------------
@@ -1525,7 +1524,7 @@ The minimum and maximum timesteps can be set by the commands [Minimum
 timestep]{.sans-serif} and [Maximum timestep]{.sans-serif},
 respectively.
 
-**HSBATCH**: Batch Run Utility {#app:win_batch_run}
+**HSBATCH**: Batch Run Utility
 ==============================
 
 A common requirement of a computer program is that it be able to run
@@ -1675,7 +1674,7 @@ list]{.sans-serif} instructions. In this case, the location of the
 `.hsbatch` file is not critical, since absolute paths to the problem
 data are supplied.
 
-**HSPLOT**: Visualization Post-Processor {#app:hsplot}
+**HSPLOT**: Visualization Post-Processor
 ========================================
 
 The utility program **HSPLOT** can be used to convert raw
@@ -2181,7 +2180,7 @@ Paraview VTK formatted output file *prefix*`o.Bc.`*bcname*`.vtk`.
 
 \
 
-Raster File Formats {#app:raster_files}
+Raster File Formats
 ===================
 
 Raster data consists of a set of values that are laid out on a
