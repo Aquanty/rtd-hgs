@@ -1430,7 +1430,7 @@ Manipulating the 3-D Grid
 --------------
 
 | 
-| \*-.3in
+
 
 #. **angle** Angle [deg] to rotate grid.
 
@@ -1444,7 +1444,7 @@ a positive angle produces a counterclockwise rotation.
 --------------
 
 | 
-| \*-.3in
+
 
 #. **angle** Angle [deg] to rotate grid.
 
@@ -2757,7 +2757,7 @@ The following command can be used to truncate the range of output times.
 --------------
 
 | 
-| \*-.3in
+
 
 #. **t1, t2** Time range [T] of the domain.
 
@@ -2784,7 +2784,7 @@ included. Note that the first output time is always included.
 --------------
 
 | 
-| \*-.3in
+
 
 #. **suffix_len** Number of digits in the output file suffix, an integer
    between 4 and 10, inclusive.
@@ -2878,7 +2878,7 @@ additional inputs as described below.
 --------------
 
 | 
-| \*-.3in
+
 
 #. **x1, x2** :math:`x`-range [L] of the domain.
 
@@ -2910,7 +2910,7 @@ its full extent.
 --------------
 
 | 
-| \*-.3in
+
 
 #. **x1, x2** :math:`x`-range [L] of the domain.
 
@@ -2982,7 +2982,7 @@ should be issued at most once within the plot control file.
 --------------
 
 | 
-| \*-.3in
+
 
 #. **x1, x2** :math:`x`-range [L] of the domain.
 
@@ -3074,7 +3074,7 @@ followed by one line for each point that contains the
 --------------
 
 | 
-| \*-.3in
+
 
 #. **x1, x2** :math:`x`-range [L] of the domain.
 
@@ -3099,7 +3099,7 @@ Note that this command requires a surface flow domain to be present.
 --------------
 
 | 
-| \*-.3in
+
 
 #. **node_num** Number of node to be isolated.
 
@@ -3119,7 +3119,7 @@ include elements that share a node with an element that contains
 --------------
 
 | 
-| \*-.3in
+
 
 #. **time_offset, time_unit_factor** Time offset [T:math:`_o`] and
    scaling factor [T:math:`_o` T:math:`^{-1}`].
