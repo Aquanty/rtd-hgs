@@ -44,6 +44,10 @@ Windows
 
 By default, HGS is installed in the directory:
 
+| C:
+| Program_Files
+| HydroGeoSphere
+
 The installation folder contains the key executable files (``grok.exe``,
 ``phgs.exe``, ``hsplot.exe``, ``hsbatch.exe``) required for simulation
 and results post-processing, the ``hostid.txt`` file, and a number of
