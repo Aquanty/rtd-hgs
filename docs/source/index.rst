@@ -2,10 +2,6 @@
    :format: latex
 ..
 
-— header-includes: -
-
-—
-
 | HGS Simulations is a product of Aquanty Inc.
 | 564 Weber Street North, Unit 2
 | Waterloo, Ontario N2L 5C6
