@@ -1087,7 +1087,7 @@ Figure \ `[fig:element_types] <#fig:element_types>`__ shows the local
 node numbering conventions for each of these elements and also the
 positive directions of the :math:`x`-, :math:`y`-, and :math:`z`-axes.
 
-.. figure:: conv
+.. figure:: conv.png
    :alt: Element types and local node numbering conventions.
 
    Element types and local node numbering conventions.
@@ -1325,7 +1325,7 @@ Figure \ `[fig:gen_blocks_mesh] <#fig:gen_blocks_mesh>`__ are:
         11.0    12.0   0.25   1.0  0.25
        end generate blocks interactive
 
-.. figure:: gen_blocks
+.. figure:: gen_blocks.png
    :alt: Example grid that was created using Generate blocks interactive
    instructions.
    :width: 80.0%
@@ -14646,7 +14646,7 @@ resulting constitutive relationships. Note that the ``.mprops`` file and
 material names are used to form the Tecplot title and appear on the
 plot.
 
-.. figure:: tab_from_func_new
+.. figure:: tab_from_func_new.png
    :alt: Example of using functional parameters to generate tabular
    constitutive relationships.
 
@@ -15575,7 +15575,7 @@ maximum depth values in the table are assigned a density value of zero.
 
 :math:`\bullet \bullet \bullet`
 
-.. figure:: rdf_funcs
+.. figure:: rdf_funcs.png
    :alt: Normalized root depth functions.
    :width: 90.0%
 
@@ -20705,7 +20705,7 @@ verification problem. The output consists of three sections: simulation
 progress, summary of the nonlinear iteration, and the adaptive
 timestepping update. We will discuss each of these sections in detail.
 
-.. figure:: runtime_output
+.. figure:: runtime_output.png
    :alt: Run-time timestep output for the Abdul verification problem.
 
    Run-time timestep output for the Abdul verification problem.
@@ -21876,5 +21876,5 @@ columns. Raster file format|)
    sufficient understanding. “Almost all C compilers grok the void type
    these days.”
 
-.. |image| image:: ./front_matter/aquanty_logo
+.. |image| image:: ./front_matter/aquanty_logo.png
    :width: 30.0%
