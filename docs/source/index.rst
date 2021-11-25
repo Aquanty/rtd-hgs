@@ -19483,6 +19483,96 @@ porous media domain that fall outside of the layer range are reported as
 Output ! mass flux entering a volume|) Mass flux entering a volume
 output|)
 
+.. _travel-time-probability-1:
+
+Travel Time Probability
+^^^^^^^^^^^^^^^^^^^^^^^
+
+--------------
+
+| Output travel time statistics
+
+**HydroGeoSphere** will perform descriptive statistics, following
+Eqs. (\ `[eq:statistics1] <#eq:statistics1>`__)
+and (\ `[eq:statistics2] <#eq:statistics2>`__). Mean travel time, mode,
+and standard deviation will be calculated at each node/element.
+
+--------------
+
+| 
+
+:math:`\bullet \bullet \bullet`
+
+Input instructions ! Output travel time statistics
+
+--------------
+
+| Integrate production zone
+
+
+
+#. **filename** Name of the file that contains the list of elements that
+   contain a mass source function and the tabulated functions. It is
+   formatted as follows:
+
+   #. **nprodel** Number of production elements. Read the following
+      **nprodel** times:
+
+      #. **nel**, **ifunc** The element number and the ID (number) of
+         the associated tabulated function.
+
+   #. **maxdatprod, delta_conv** Size of the largest set of tabulated
+      data which follows and the timestep size [T] for evaluating the
+      convolution integral in
+      Equation \ `[eq:convolution] <#eq:convolution>`__. Read the
+      following for each of the **ifunc** time-series:
+
+      #. **ndata** Number of data to read for the current time-series.
+
+      #. **time**, **val** Time [T] and corresponding source value
+         [M L:math:`^{-3}` T:math:`^{-1}`].
+
+If :math:`\textrm{\textbf{ifunc}} = 0`, then :math:`m^*` corresponds to
+a unit and instantaneous mass input function, and thus no time-series
+are required in the input file.
+
+The element **nel** with the maximum value of **ifunc** determines how
+many sets of time-series data must be supplied.
+
+This option is meant to simulate a forward transport solution by means
+of a backward solution. It requires the problem to be backward-in-time.
+Integration of the backward travel time PDFs will be performed over a
+series of element numbers, which are input in the ``.np`` file. In a
+forward transport run, these elements would contain a mass source
+:math:`m^*`. The following equation is solved at each time-step in order
+to simulate the output mass flux :math:`J_O(t)` resulting from a forward
+transport (see :raw-latex:`\citep{cornaton}`):
+
+.. math::
+
+   J_O(t) = \int_\Delta \int_{0}^{t} g_t(t-u,\textit{\textbf{x}})
+       m^*(\emph{\textbf{x}},u)\,du\,d\Omega \label{eq:convolution}
+
+if :math:`m^*` is an arbitrary mass source function
+[M L:math:`^{-3}` T:math:`^{-1}`], or
+
+.. math::
+
+   J_O(t) = \int_\Delta g_t(t,\textit{\textbf{x}})
+       \delta(\emph{\textbf{x}}-\emph{\textbf{x}}_i)\,d\Omega
+
+if :math:`m^*` is a unit and instantaneous mass input function
+[L:math:`^{-3}` T:math:`^{-1}`]. :math:`\Delta` denotes the domain of
+elements where :math:`m^*(\emph{\textbf{x}},t) \neq 0`.
+
+--------------
+
+| 
+
+:math:`\bullet \bullet \bullet`
+
+Input instructions ! Integrate production zone
+
 Post Simulation Output
 ~~~~~~~~~~~~~~~~~~~~~~
 
