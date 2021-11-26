@@ -156,9 +156,9 @@ task in the following order:
 Once the *prefix*\ ``.grok`` file has been built by the user it is
 compiled by running ``grok.exe``. A more detailed description of
 **grok** and its associated commands are contained in Chapter
-`2 <#chap:io_instructions>`__ of this document. We note that ``.grok``
-files in the *illustration* and *verification* folders are an excellent
-resource for reviewing **grok** structure and the use of
+:ref:`chap:io_instructions`  of this document. We note that
+``.grok`` files in the *illustration* and *verification* folders are an
+excellent resource for reviewing **grok** structure and the use of
 **grok** commands.
 
 HGS (``phgs.exe``)
@@ -336,11 +336,11 @@ Briefly, the pre-processor performs its tasks in the following order:
 
 #. Write the **HydroGeoSphere**-compatible data files
 
-Tasks \ `[task:ggrid] <#task:ggrid>`__ and
-`[task:moddef] <#task:moddef>`__ are guided by instructions issued by
-the user in the *prefix*\ ``.grok`` file. The generation of a complete
-set of default data by Task \ `[task:defdata] <#task:defdata>`__ tends
-to minimize the amount of data which must be supplied by the user.
+Tasks :ref:`task:ggrid`  and :ref:`task:moddef`  are
+guided by instructions issued by the user in the
+*prefix*\ ``.grok`` file. The generation of a complete set of default
+data by Task :ref:`task:defdata`  tends to minimize the amount
+of data which must be supplied by the user.
 
 Pre-processor instructions !11–Usage@ Usage Here is an example
 instruction and some input data which illustrates some common
@@ -350,7 +350,7 @@ conventions that will be used throughout the manual:
 
 | Example instruction text
 
-Example instruction text
+
 
 #. **xlen, nbx** Domain length [L] and number of blocks in the
    :math:`x`-direction.
@@ -482,13 +482,12 @@ instruction.
 
 Before **grok** processes instructions contained in a
 *prefix*\ ``.grok`` or a material properties file (see
-Section \ `[sec:modify_named_material] <#sec:modify_named_material>`__)
-it first makes a working copy of the file in which any line which is
-completely blank or which begins with an Comments ! in input files
-exclamation point (!) is removed and in which the contents of any
-included file are copied. This allows you to include blank lines and
-comments when and where required to improve the readability and clarity
-of the input.
+Section :ref:`sec:modify_named_material` ) it first makes a
+working copy of the file in which any line which is completely blank or
+which begins with an Comments ! in input files exclamation point (!) is
+removed and in which the contents of any included file are copied. This
+allows you to include blank lines and comments when and where required
+to improve the readability and clarity of the input.
 
 Included files can be used to avoid having to cut and paste or comment
 and uncomment large sections of input instructions. Long lists (e.g. of
@@ -655,10 +654,10 @@ User Defined Variables
 Pre-processor instructions ! Variables|( This section describes
 pre-processor commands that can be used to define/undefine variables in
 your **grok** file and material properties files (see
-Section \ `2.8 <#sec:mat_props>`__), similar to how variables are used
-in a batch script or shell script, albeit, on a much simpler level. The
-syntax of these commands is different from other **grok** commands you
-will encounter in this manual for two reasons:
+Section :ref:`sec:mat_props` ), similar to how variables are
+used in a batch script or shell script, albeit, on a much simpler level.
+The syntax of these commands is different from other **grok** commands
+you will encounter in this manual for two reasons:
 
 #. To mimic the syntax for defining variables used by batch or shell
    scripts.
@@ -810,19 +809,19 @@ The following default values will be used for the physical constants and
 correspond to typical values in the kilogram-metre-second system:
 
 -  Gravitational acceleration :math:`g = 9.80665` m s\ :math:`^{-2}`,
-   Equation \ `[eq:1a] <#eq:1a>`__.
+   Equation :ref:`eq:1a` .
 
 -  Fluid density :math:`\rho = 1000.0` kg m\ :math:`^{-3}`,
-   Equation \ `[eq:3] <#eq:3>`__.
+   Equation :ref:`eq:3` .
 
 -  Fluid viscosity :math:`\mu = 1.124 \times 10^{-3}` kg
-   m\ :math:`^{-1}` s\ :math:`^{-1}`, Equation \ `[eq:3] <#eq:3>`__.
+   m\ :math:`^{-1}` s\ :math:`^{-1}`, Equation :ref:`eq:3` .
 
 -  Fluid compressibility :math:`\alpha_w = 4.4 \times 10^{-10}`
-   kg\ :math:`^{-1}` m s\ :math:`^2`, Equation \ `[eq:7b] <#eq:7b>`__.
+   kg\ :math:`^{-1}` m s\ :math:`^2`, Equation :ref:`eq:7b` .
 
 -  Fluid surface tension :math:`\chi = 0.07183` kg s\ :math:`^{-2}`,
-   Equation \ `[V-eq:a5] <#V-eq:a5>`__.
+   Equation :ref:`V-eq:a5` .
 
 If you are using different units or you want to change the default
 values you can do so using the following instructions.
@@ -875,7 +874,7 @@ Input instructions ! Units: kilogram-metre-minute
 
 
 #. **grav** Gravitational acceleration constant [L T:math:`^{-2}`],
-   :math:`g` in Equation \ `[eq:1a] <#eq:1a>`__.
+   :math:`g` in Equation :ref:`eq:1a` .
 
 
 
@@ -894,7 +893,7 @@ Input instructions ! Gravitational acceleration
 
 
 #. **rho** Fluid density [M L:math:`^{-3}`], :math:`\rho` in
-   Equation \ `[eq:3] <#eq:3>`__.
+   Equation :ref:`eq:3` .
 
 
 
@@ -913,7 +912,7 @@ Input instructions ! Reference fluid density
 
 
 #. **visc** Fluid viscosity [M L:math:`^{-1}` T:math:`^{-1}`],
-   :math:`\mu` in Equation \ `[eq:3] <#eq:3>`__.
+   :math:`\mu` in Equation :ref:`eq:3` .
 
 
 
@@ -932,7 +931,7 @@ Input instructions ! Reference fluid viscosity
 
 
 #. **wcomp** Fluid compressibility [M:math:`^{-1}` L T\ :math:`^2`],
-   :math:`\alpha_w` in Equation \ `[eq:7b] <#eq:7b>`__.
+   :math:`\alpha_w` in Equation :ref:`eq:7b` .
 
 
 
@@ -966,7 +965,7 @@ Input instructions ! Zero fluid compressibility
 
 
 #. **tensn** Fluid surface tension [M T:math:`^{-2}`], :math:`\chi` in
-   Equation \ `[V-eq:a5] <#V-eq:a5>`__.
+   Equation :ref:`V-eq:a5` .
 
 
 
@@ -985,9 +984,9 @@ Array Dimensioning
 ^^^^^^^^^^^^^^^^^^
 
 [sec:array_defaults] When performing
-Task \ `[task:def_array] <#task:def_array>`__, **grok** first checks for
-the existence of a file ``array_sizes.default`` in the directory where
-the *prefix*\ ``.grok`` file is located. If it is not found, the file is
+Task :ref:`task:def_array` , **grok** first checks for the
+existence of a file ``array_sizes.default`` in the directory where the
+*prefix*\ ``.grok`` file is located. If it is not found, the file is
 automatically created and default array sizes are written which are then
 used by the pre-processor. Associated with each default are a descriptor
 and a default value. A portion of the file is shown here:
@@ -1083,9 +1082,9 @@ generation followed by an End instruction.
 
 Currently, **grok** is capable of generating grids which are composed of
 either hexahedral blocks or triangular prisms.
-Figure \ `[fig:element_types] <#fig:element_types>`__ shows the local
-node numbering conventions for each of these elements and also the
-positive directions of the :math:`x`-, :math:`y`-, and :math:`z`-axes.
+Figure :ref:`fig:element_types`  shows the local node numbering
+conventions for each of these elements and also the positive directions
+of the :math:`x`-, :math:`y`-, and :math:`z`-axes.
 
 .. figure:: conv.png
    :alt: Element types and local node numbering conventions.
@@ -1110,7 +1109,7 @@ number of 1.
 
 | Generate uniform blocks
 
-Grid generation ! blocks ! uniform
+
 
 #. **xlen, nbx, (x0)** Domain length [L] and number of blocks in the
    :math:`x`-direction, the optional origin in the :math:`x`-direction
@@ -1160,7 +1159,7 @@ Input instructions ! Generate uniform prisms
 
 | Generate variable blocks
 
-Grid generation ! blocks ! variable
+
 
 #. **nx** Number of nodes in the :math:`x`-direction.
 
@@ -1298,7 +1297,7 @@ As above but for the :math:`z`-axis.
 Input instructions ! Grade z
 
 The instructions used to generate the mesh shown in
-Figure \ `[fig:gen_blocks_mesh] <#fig:gen_blocks_mesh>`__ are:
+Figure :ref:`fig:gen_blocks_mesh`  are:
 
 ::
 
@@ -1507,31 +1506,31 @@ The following instructions use the same input data structure as Fracture
 location distribution x-axis except they are applied to the :math:`y`-
 and :math:`z`-directions:
 
-| Fracture location distribution y-axis Input instructions !
+Fracture location distribution y-axis Input instructions !
   Fracture location distribution y-axis
-| Fracture location distribution z-axis Input instructions !
+Fracture location distribution z-axis Input instructions !
   Fracture location distribution z-axis
 
 The following instructions use the same input data structure as Fracture
 location distribution x-axis to generate fracture lengths in the three
 principal directions:
 
-| Fracture length distribution x-axis Input instructions ! Fracture
+Fracture length distribution x-axis Input instructions ! Fracture
   length distribution x-axis
-| Fracture length distribution y-axis Input instructions ! Fracture
+Fracture length distribution y-axis Input instructions ! Fracture
   length distribution y-axis
-| Fracture length distribution z-axis Input instructions ! Fracture
+Fracture length distribution z-axis Input instructions ! Fracture
   length distribution z-axis
 
 The following instructions use the same input data structure as Fracture
 location distribution x-axis to generate fracture apertures in the three
 principal orientations:
 
-| XY fracture aperture distribution Input instructions ! XY fracture
+XY fracture aperture distribution Input instructions ! XY fracture
   aperture distribution
-| XZ fracture aperture distribution Input instructions ! XZ fracture
+XZ fracture aperture distribution Input instructions ! XZ fracture
   aperture distribution
-| YZ fracture aperture distribution Input instructions ! YZ fracture
+YZ fracture aperture distribution Input instructions ! YZ fracture
   aperture distribution
 
 Note that when generating fracture apertures from the normal
@@ -1603,7 +1602,7 @@ Input instructions ! End
 Once the 3-D grid is generated, it is possible to change the random
 fracture apertures to zoned fracture apertures by following the
 procedures outlined in
-Section \ `[sec:modify_named_material] <#sec:modify_named_material>`__.
+Section :ref:`sec:modify_named_material` .
 
 Interactive 3-D Mesh Generator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1624,7 +1623,7 @@ The following instructions can be used to obtain 2-D slice data.
 
 | Generate uniform rectangles
 
-Grid generation ! rectangles ! uniform
+
 
 #. **xlen, nbx, (x0)** Domain length [L] and number of rectangles in the
    :math:`x`-direction, the optional origin in the :math:`x`-direction
@@ -1647,12 +1646,12 @@ except that we drop the :math:`z`-axis parameters.
 
 Input instructions ! Generate uniform rectangles
 
-Input instructions ! Input instructions ! Generate variable
-rectangles ! 
+Input instructions ! Generate variable
+
 
 --------------
 
-| 
+
 
 #. **nx** Number of nodes in the :math:`x`-direction.
 
@@ -1686,7 +1685,7 @@ interactive ! T
 | T
 | his instruction works in exactly the same way as the Generate blocks
   interactive instruction described in
-  Section \ `2.3.2 <#sec:gen_blocks_interactive>`__, except that input
+  Section :ref:`sec:gen_blocks_interactive` , except that input
   is limited to the :math:`x`- and :math:`y`-directions and a 2-D mesh
   of 4-node rectangular elements is generated.
 
@@ -1725,17 +1724,17 @@ except that we drop the :math:`z`-dependence.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Read gms 2d grid ! 
+
 
 --------------
 
-| 
+
 
 #. **gmsfile** Filename of the 2-D GMS formatted mesh.
 
 Generates a 2-D grid from the mesh defined in the input file. The format
 of this file is described in detail in
-Appendix \ `[app:2dmesh] <#app:2dmesh>`__ and is compatible with that
+Appendix :ref:`app:2dmesh`  and is compatible with that
 produced by the Groundwater Modeling System (GMS) software.
 
 --------------
@@ -1746,12 +1745,12 @@ produced by the Groundwater Modeling System (GMS) software.
 
 Grid generation ! importing ! GMS 2-D meshes
 
-Input instructions ! Input instructions ! Read algomesh 2d grid !
+Input instructions ! Read algomesh 2d grid !
 
 
 --------------
 
-| 
+
 
 #. **ah2_mesh** Filename of the 2-D ``.ah2`` mesh exported from
    AlgoMesh.
@@ -1814,7 +1813,7 @@ Input instructions ! Reduce 2d grid, boundary file
 | Read fractran 2d grid
 
 Grid generation ! importing ! FRACTRAN 2-D meshes
-[sec:fractran_slice]
+
 
 #. **prefix** Prefix of the FRACTRAN files which contain the node
    coordinates, element incidences and element zone numbers for the 2-D
@@ -1845,13 +1844,13 @@ instructions can be used to remove elements:
 
 #. **unproject_file** Logical value (T/F), which if true, causes
    **grok** to read grid unprojection data as described in
-   Section \ `[sec:grid_projection] <#sec:grid_projection>`__ and to
-   apply it to the data read from the ArcView shapefile.
+   Section :ref:`sec:grid_projection`  and to apply it to the
+   data read from the ArcView shapefile.
 
 #. **project_file** Logical value (T/F), which if true, causes
    **grok** to read grid projection data as described in
-   Section \ `[sec:grid_projection] <#sec:grid_projection>`__ and to
-   apply it to the data read from the ArcView shapefile.
+   Section :ref:`sec:grid_projection`  and to apply it to the
+   data read from the ArcView shapefile.
 
 #. **outside** Logical value (T/F), which if true, causes elements
    located outside the area defined in the ArcView shapefile to be
@@ -2022,12 +2021,12 @@ Input instructions ! CInput instructions ! Zone by layer ! C
 
 Grid generation ! 3-D layered, interactive! Zone numbering
 
-Input instructions ! Input instructions ! Minimum layer thickness
-with fixed top elevation ! 
+Input instructions ! Minimum layer thickness
+
 
 --------------
 
-| 
+
 
 #. **min_thick** Minimum thickness [L].
 
@@ -2060,8 +2059,7 @@ Input instructions ! CInput instructions ! Base elevation...End ! C
 | C
 | auses **grok** to begin reading a group of base elevation instructions
   until it encounters an End instruction. Available instructions are
-  described in
-  Section \ `[sec:irregular_elev_instructions] <#sec:irregular_elev_instructions>`__.
+  described in Section :ref:`sec:irregular_elev_instructions` .
   By default, the base elevation of the domain will be set to zero.
 
 --------------
@@ -2104,7 +2102,7 @@ Input instructions ! Elevation constant
 
 #. **rasterfile** Name of the raster file containing the base elevation
    values. This is a string variable. The file should be formatted as
-   outlined in Appendix \ `9 <#app:raster_files>`__.
+   outlined in Appendix :ref:`app:raster_files` .
 
 
 
@@ -2121,7 +2119,7 @@ Input instructions !Input instructions ! Elevation from tsurf file !
 --------------
 
 | 
-| .grok 
+
 
 #. **filename** Filename of GoCAD tsurf file, up to 120 characters. Note
    that the length units in this file must match the model’s length
@@ -2299,11 +2297,11 @@ Manipulating the 3-D Grid
 
 [sec:manipulate]
 
-Input instructions ! Input instructions ! Tilt grid x ! 
+
 
 --------------
 
-| 
+
 
 #. **angle** Angle [deg] to rotate grid.
 
@@ -2318,11 +2316,11 @@ a positive angle produces a counterclockwise rotation.
 
 Grid generation ! flip grid around :math:`x` or :math:`y`
 
-Input instructions ! Input instructions ! Tilt grid y ! 
+
 
 --------------
 
-| 
+
 
 #. **angle** Angle [deg] to rotate grid.
 
@@ -2339,7 +2337,7 @@ a positive angle produces a counterclockwise rotation.
 
 | Adapt grid to fractures
 
-Grid generation ! adapt grid to fractures
+
 
 #. **adapt_g2f_mode** An integer value indicating how the grid is
    adapted to inclined fractures.
@@ -2573,12 +2571,12 @@ nodes.
 
 Input instructions ! Choose segments polyline
 
-Input instructions ! Input instructions ! Choose segments polyline
-by sheet ! 
+Input instructions ! Choose segments polyline
+
 
 --------------
 
-| 
+
 
 #. **nsheet** The sheet number.
 
@@ -2755,7 +2753,7 @@ Input instructions !Input instructions ! Choose faces 3pt disk !
 --------------
 
 | 
-| .grok 
+
 
 #. **x1, y1, z1** :math:`xyz`-coordinates [L] of a point on the disk.
 
@@ -3196,12 +3194,12 @@ nodes are chosen.
 
 Input instructions ! Choose faces vertical from am nodes
 
-Input instructions ! Input instructions ! Choose faces vertical
-from polyline ! 
+Input instructions ! Choose faces vertical
+
 
 --------------
 
-| 
+
 
 #. **isheet1, isheet2** Bottom and top sheet numbers (inclusive),
    respectively.
@@ -3303,12 +3301,12 @@ respectively.
 
 Input instructions ! Choose fracture faces block
 
-Input instructions ! Input instructions ! Choose face by nodes !
+Input instructions ! Choose face by nodes !
 
 
 --------------
 
-| 
+
 
 #. **n1, n2, n3, n4** Node numbers of the face to be chosen.
 
@@ -3322,12 +3320,12 @@ Note that in order to select a triangular face simply set
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Choose faces by nodes
-list ! 
+Input instructions ! Choose faces by nodes
+
 
 --------------
 
-| 
+
 
 #. **n1(i), n2(i), n3(i), n4(i)...end** Node numbers for each face to be
    chosen.
@@ -3562,14 +3560,13 @@ Once the grid generation step is completed, the pre-processor generates
 a set of data for a default problem by assuming saturated, steady-state
 flow in a non-fractured, homogeneous porous medium. The porous medium
 properties for the default problem, which are hardwired in the code, are
-listed in
-Table \ `[tab:saturated_porous_media_defaults] <#tab:saturated_porous_media_defaults>`__.
-By default, the finite-element approach is used and a transport
-simulation is not done. If the default problem setup and material
-properties are acceptable, it is likely that the only additional data
-required to complete the definition of the problem are some flow
-boundary conditions, which can be assigned as described in
-Section \ `[sec:bndy_cond] <#sec:bndy_cond>`__.
+listed in Table :ref:`tab:saturated_porous_media_defaults` . By
+default, the finite-element approach is used and a transport simulation
+is not done. If the default problem setup and material properties are
+acceptable, it is likely that the only additional data required to
+complete the definition of the problem are some flow boundary
+conditions, which can be assigned as described in
+Section :ref:`sec:bndy_cond` .
 
 --------------
 
@@ -3636,7 +3633,7 @@ Input instructions ! Surface loading
 
 The following instructions are used to define the behaviour of the
 Travel Time Probability Package described in
-Section \ `[sec:travel_time_theory] <#sec:travel_time_theory>`__.
+Section :ref:`sec:travel_time_theory` .
 
 Input instructions ! CInput instructions ! Travel time PDF ! C
 
@@ -3837,7 +3834,7 @@ Input instructions ! TInput instructions ! Defined flow ! T
 
 :math:`\bullet \bullet \bullet`
 
-Defined transient flow 
+
 
 #. **filename** File path to a porous media domain head input file, for
    example, *prefix*\ ``o.head_pm.``\ ``0001``, at most 256 characters.
@@ -4100,9 +4097,9 @@ following sources:
 
 This target time array is passed to **HydroGeoSphere**, which uses it to
 produce timestep values. As discussed in
-Section \ `[sec:adaptive_timestep] <#sec:adaptive_timestep>`__, adaptive
-timestepping can be used to adjust the timestep values based on changes
-in head, saturation, and/or concentration as the solution progresses.
+Section :ref:`sec:adaptive_timestep` , adaptive timestepping
+can be used to adjust the timestep values based on changes in head,
+saturation, and/or concentration as the solution progresses.
 
 The following instructions can be used to modify the timestepping
 behaviour of a transient solution within the adaptive timestepping
@@ -4166,12 +4163,12 @@ Assigns a new value for the maximum timestep size, which defaults to
 
 Input instructions ! Maximum timestep
 
-Input instructions ! Input instructions ! Time varying maximum
-timestep ! 
+Input instructions ! Time varying maximum
+
 
 --------------
 
-| 
+
 
 #. **time(i), max_timestep(i)...end** Simulation time [T] and maximum
    timestep size [T] list.
@@ -4314,7 +4311,7 @@ Adaptive Timesteps
 Time stepping ! adaptive ! input Adaptive timestepping\|
 [sec:adaptive_timestep] If required, **HydroGeoSphere** can modify
 timestep values as the solution proceeds, based on the transient
-behaviour of the system (see Equation \ `[eq:33h] <#eq:33h>`__). The
+behaviour of the system (see Equation :ref:`eq:33h` ). The
 following instructions can be used to activate this feature and to set
 targets for specific variables (e.g., pressure head, saturation, etc.).
 These targets are used to modify timestep size as the solution proceeds.
@@ -4493,7 +4490,7 @@ Input instructions ! Mass change control
 Input instructions ! Mass error control
 
 The following instructions are used to generate a timestep multiplier
-according to Equation \ `[eq:33h] <#eq:33h>`__. The multiplier is
+according to Equation :ref:`eq:33h` . The multiplier is
 constrained to lie between a lower and upper bound (inclusive), which by
 default is the interval :math:`[0.5,2]`. If you would like to modify
 these limits, you may do so via the following instructions:
@@ -4589,7 +4586,7 @@ C
 | C
 | auses **HydroGeoSphere** to use the primary variable substitution
   technique outlined in
-  Section \ `[sec:primary_variable_switching] <#sec:primary_variable_switching>`__.
+  Section :ref:`sec:primary_variable_switching` .
 
 --------------
 
@@ -4601,7 +4598,7 @@ Primary variable substitution ! input
 
 If desired, the default values of :math:`tol_f` and :math:`tol_b`, the
 upper and lower limits for variable substitution (see
-Equation \ `[eq:pvar] <#eq:pvar>`__) can be changed with the following
+Equation :ref:`eq:pvar` ) can be changed with the following
 commands:
 
 --------------
@@ -4611,8 +4608,8 @@ commands:
 
 
 #. **switch_t** Upper limit [-] of the variable substitution approach,
-   :math:`tol_f` in Equation \ `[eq:pvar] <#eq:pvar>`__. The default
-   value is :math:`0.99`.
+   :math:`tol_f` in Equation :ref:`eq:pvar` . The default value
+   is :math:`0.99`.
 
 
 
@@ -4631,8 +4628,8 @@ Input instructions ! Upper limit
 
 
 #. **switch_f** Lower limit [-] of the variable substitution approach,
-   :math:`tol_b` in Equation \ `[eq:pvar] <#eq:pvar>`__. The default
-   value is :math:`0.89`.
+   :math:`tol_b` in Equation :ref:`eq:pvar` . The default value
+   is :math:`0.89`.
 
 
 
@@ -4650,7 +4647,7 @@ Newton Iteration Parameters
 Newton-Raphson method ! input The following parameters can be used to
 control the NewtonRaphson iteration scheme for solution of the
 variably-saturated flow problem as described in
-Section \ `[sec:newton_raphson_method] <#sec:newton_raphson_method>`__.
+Section :ref:`sec:newton_raphson_method` .
 
 --------------
 
@@ -4835,12 +4832,12 @@ depth.
 
 Input instructions ! Newton maximum update for depth
 
-Input instructions ! Input instructions ! Newton absolute maximum
-residual ! 
+Input instructions ! Newton absolute maximum
+
 
 --------------
 
-| 
+
 
 #. **NR_max_resnorm** Newton absolute maximum residual value
    [L:math:`^3` T:math:`^{-1}`].
@@ -4913,12 +4910,12 @@ Input instructions ! TInput instructions ! No nodal flow check ! T
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Nodal flow check
-tolerance ! 
+Input instructions ! Nodal flow check
+
 
 --------------
 
-| 
+
 
 #. **n_flow_check_tol** Nodal flow check tolerance [-].
 
@@ -5061,7 +5058,7 @@ Discrete Fracture Flow
 
 By default, **HydroGeoSphere** does not simulate discrete fracture flow
 unless a discrete fracture flow zone is created using the methods and
-instructions outlined in Section \ `2.8.2 <#sec:zoned_props>`__.
+instructions outlined in Section :ref:`sec:zoned_props` .
 
 Also by default, **HydroGeoSphere** uses the common node approach to
 define the discrete fracture flow domain. If the dual-node approach is
@@ -5075,7 +5072,7 @@ Surface Flow
 
 By default, **HydroGeoSphere** does not simulate surface flow unless a
 surface flow zone is created using the methods and instructions outlined
-in Section \ `2.8.2 <#sec:zoned_props>`__.
+in Section :ref:`sec:zoned_props` .
 
 --------------
 
@@ -5194,12 +5191,12 @@ generation of warning messages.
 
 Input instructions ! Courant number
 
-Input instructions ! Input instructions ! Transport solver
-convergence criteria ! 
+Input instructions ! Transport solver
+
 
 --------------
 
-| 
+
 
 #. **restolc** Transport solver convergence tolerance
    [M L:math:`^{-3}` T:math:`^{-1}`].
@@ -5294,7 +5291,7 @@ Input instructions ! Upstream weighting of velocities
 
 This instruction causes **HydroGeoSphere** to use the van Leer flux
 limiter as described in
-Section \ `[sec:subsurface_trans_disc_equations_pm] <#sec:subsurface_trans_disc_equations_pm>`__.
+Section :ref:`sec:subsurface_trans_disc_equations_pm` .
 
 --------------
 
@@ -5304,7 +5301,7 @@ Section \ `[sec:subsurface_trans_disc_equations_pm] <#sec:subsurface_trans_disc
 
 Input instructions ! Flux limiter for transport
 
-Iteration parameters flux limiter 
+
 
 #. **maxiter_flim, resmax_flim, delmax_flim** Maximum number of
    iterations, absolute maximum residual convergence tolerance
@@ -5399,12 +5396,12 @@ Picard iteration ! input The following command can be used to control
 the Picard iteration for the solution of the weakly nonlinear
 density-dependent flow problem.
 
-Input instructions ! Input instructions ! Picard convergence
-criteria ! 
+Input instructions ! Picard convergence
+
 
 --------------
 
-| 
+
 
 #. **head_tol** Convergence tolerance [L] for the maximum absolute
    difference in head for the Picard iteration. Default value of
@@ -5524,10 +5521,9 @@ Heat Transfer
 
 Heat transfer To enable heat transfer, you must define the temperature
 species in the solute definition block as described in Chapter
-`[sec:solute-definition] <#sec:solute-definition>`__. The thermal
-properties of the solids are specified in the material property file.
-The following instructions can be used to control the heat transfer
-solution:
+:ref:`sec:solute-definition` . The thermal properties of the
+solids are specified in the material property file. The following
+instructions can be used to control the heat transfer solution:
 
 --------------
 
@@ -5688,11 +5684,11 @@ Input instructions ! Initial temperature profile
 The following instructions can be used to define the heat source
 boundary condition:
 
-Input instructions ! Input instructions ! Zero order source ! 
+
 
 --------------
 
-| 
+
 
 #. **npanel** Number of panels in the time-variable, zero-order source
    function.
@@ -5806,13 +5802,13 @@ instruction can be used to make elements inactive:
 
 #. **unproject_file** Logical value (T/F), which if true, causes
    **grok** to read grid unprojection data as described in
-   Section \ `[sec:grid_projection] <#sec:grid_projection>`__ and to
-   apply it to the data read from the ArcView shapefile.
+   Section :ref:`sec:grid_projection`  and to apply it to the
+   data read from the ArcView shapefile.
 
 #. **project_file** Logical value (T/F), which if true, causes
    **grok** to read grid projection data as described in
-   Section \ `[sec:grid_projection] <#sec:grid_projection>`__ and to
-   apply it to the data read from the ArcView shapefile.
+   Section :ref:`sec:grid_projection`  and to apply it to the
+   data read from the ArcView shapefile.
 
 #. **outside** Logical value (T/F), which if true, causes elements
    located outside the area defined in the ArcView shapefile to become
@@ -5912,7 +5908,7 @@ to ``F`` for false.
 You can control the frequency at which restart data is generated via the
 following **grok** command.
 
-Restart file save interval 
+
 
 #. **restart_interval** Time interval in seconds for saving restart
    information.
@@ -5966,12 +5962,12 @@ Surface Flow
 Surface domain ! input ! flow initial conditions Initial conditions !
 surface flow [sec:init_cond_surface_flow]
 
-Input instructions ! Input instructions ! Initial water depth !
+Input instructions ! Initial water depth !
 
 
 --------------
 
-| 
+
 
 #. **depth** Initial water depth [L].
 
@@ -5984,12 +5980,12 @@ value.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Initial water depth from
-file ! 
+Input instructions ! Initial water depth from
+
 
 --------------
 
-| 
+
 
 #. **filename** Name of the ASCII-formatted nodal properties file
    *prefix*\ ``.ascii_nprop.``\ *description* that contains the initial
@@ -5998,9 +5994,9 @@ file !
 This command assumes that the surface flow domain covers the entire top
 of the 3-D domain and contains :math:`N` nodes, where :math:`N` is the
 number of nodes in the 2-D slice. All surface flow domain nodes (see
-Section \ `[sec:modify_material] <#sec:modify_material>`__) are assigned
-an initial water depth value that is read from a free-format ASCII file.
-The depth values must be listed in the file in order from node 1 to node
+Section :ref:`sec:modify_material` ) are assigned an initial
+water depth value that is read from a free-format ASCII file. The depth
+values must be listed in the file in order from node 1 to node
 :math:`N`.
 
 --------------
@@ -6018,26 +6014,26 @@ Transport ! input ! initial conditions Initial conditions ! transport It
 should be noted that the instructions given here affect the behaviour of
 one or more solutes, which should already have been defined according to
 the instructions given in
-Section \ `[sec:solute-definition] <#sec:solute-definition>`__.
+Section :ref:`sec:solute-definition` .
 
 Currently the initial condition (for both mobile and immobile zones if
 dual porosity) defaults to zero unless one of the following instructions
 are included.
 
-Input instructions ! Input instructions ! Initial concentration !
+Input instructions ! Initial concentration !
 
 
 --------------
 
-| 
+
 
 #. **conc(i), i=1,nspeciesmob** Initial concentration [M L:math:`^{-3}`]
    for each solute.
 
 For each solute, chosen nodes in the currently active domain (porous
 media, dual continua, surface flow, or fracture; see
-Section \ `[sec:modify_material] <#sec:modify_material>`__) are assigned
-the specified initial concentration value.
+Section :ref:`sec:modify_material` ) are assigned the specified
+initial concentration value.
 
 --------------
 
@@ -6045,25 +6041,24 @@ the specified initial concentration value.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Initial concentration
-from file ! 
+Input instructions ! Initial concentration
+
 
 --------------
 
-| 
+
 
 #. **filename** Name of the file that contains the initial concentration
    [M L:math:`^{-3}`] data.
 
 For each solute, all nodes in the currently active domain (porous media
-or dual continua; see
-Section \ `[sec:modify_material] <#sec:modify_material>`__) are assigned
-an initial concentration, which is read from a free-format ASCII file.
-For each solute, the concentrations must be listed in the file in order
-from node 1 to node :math:`N`, where :math:`N` is the number of nodes in
-the active domain. Each line may contain one or more values. For
-example, if there are two solutes and three nodes in the domain, then a
-valid file format would be
+or dual continua; see Section :ref:`sec:modify_material` ) are
+assigned an initial concentration, which is read from a free-format
+ASCII file. For each solute, the concentrations must be listed in the
+file in order from node 1 to node :math:`N`, where :math:`N` is the
+number of nodes in the active domain. Each line may contain one or more
+values. For example, if there are two solutes and three nodes in the
+domain, then a valid file format would be
 
 ::
 
@@ -6082,21 +6077,20 @@ valid file format would be
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Initial concentration
-from output file ! 
+Input instructions ! Initial concentration
+
 
 --------------
 
-| 
+
 
 #. **filename(i), i=1,nspeciesmob** Name of the file that contains the
    initial concentration [M L:math:`^{-3}`] data for each solute.
 
 For each solute, all nodes in the currently active domain (porous media,
 dual continua, surface flow, or fracture; see
-Section \ `[sec:modify_material] <#sec:modify_material>`__) are assigned
-initial concentration values from a previously generated output file
-named
+Section :ref:`sec:modify_material` ) are assigned initial
+concentration values from a previously generated output file named
 *prefix*\ ``o.conc_``\ *domain*\ ``.``\ *species*\ ``.``\ *suffix*.
 Here, *domain* specifies the active domain (*pm*, *dual*, *olf*, or
 *frac*), *species* is the name of the solute, and *suffix* is a
@@ -6108,12 +6102,12 @@ zero-padded integer identifying the output file.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Initial concentration
-from xyc file ! 
+Input instructions ! Initial concentration
+
 
 --------------
 
-| 
+
 
 #. **max_dist** Maximum search distance [L].
 
@@ -6122,9 +6116,9 @@ from xyc file !
 
 Chosen nodes in the currently active domain (porous media, dual
 continua, or surface flow; see
-Section \ `[sec:modify_material] <#sec:modify_material>`__) are assigned
-an initial concentration, for the first solute only, which is read from
-a free-format ASCII file. The first line of the ASCII text file contains
+Section :ref:`sec:modify_material` ) are assigned an initial
+concentration, for the first solute only, which is read from a
+free-format ASCII file. The first line of the ASCII text file contains
 the number of data points. Each subsequent line contains three floating
 point values separated by spaces for the :math:`xy`-coordinates [L] and
 concentration [M L:math:`^{-3}`] value, i.e., :math:`x~y~C(x,y)`. For
@@ -6138,12 +6132,12 @@ assigned if the distance between the node and that point is less than
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Z function initial
-concentration ! 
+Input instructions ! Z function initial
+
 
 --------------
 
-| 
+
 
 #. **z1, conc1(i), i=1,nspeciesmob** First elevation [L] and
    concentration [M L:math:`^{-3}`] for each solute.
@@ -6153,8 +6147,8 @@ concentration !
 
 For each solute, chosen nodes in the currently active domain (porous
 media, dual continua, or surface flow; see
-Section \ `[sec:modify_material] <#sec:modify_material>`__) are assigned
-an initial concentration as a linear function of elevation.
+Section :ref:`sec:modify_material` ) are assigned an initial
+concentration as a linear function of elevation.
 
 --------------
 
@@ -6171,9 +6165,9 @@ initial concentration ! F
 | or each solute, a specified concentration boundary condition is
   applied to all chosen nodes in the currently active domain (porous
   media, dual continua, surface flow, or fracture; see
-  Section \ `[sec:modify_material] <#sec:modify_material>`__). The
-  specified concentration values are set equal to the initial
-  concentration values.
+  Section :ref:`sec:modify_material` ). The specified
+  concentration values are set equal to the initial concentration
+  values.
 
 --------------
 
@@ -6181,12 +6175,12 @@ initial concentration ! F
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Initial concentration for
-zones ! 
+Input instructions ! Initial concentration for
+
 
 --------------
 
-| 
+
 
 #. **izone(i), czone(i)...end** Zone number and initial concentration
    [M L:math:`^{-3}`].
@@ -6204,12 +6198,12 @@ concentration value is assigned.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Initial immobile
-concentration from output file ! 
+Input instructions ! Initial immobile
+
 
 --------------
 
-| 
+
 
 #. **filename** Name of the file that contains the initial immobile zone
    concentration [M L:math:`^{-3}`] data.
@@ -6229,12 +6223,12 @@ initial conditions.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Initial immobile zone
-concentration ! 
+Input instructions ! Initial immobile zone
+
 
 --------------
 
-| 
+
 
 #. **conc** Initial concentration [M L:math:`^{-3}`].
 
@@ -6247,12 +6241,12 @@ Porous media nodes are assigned the immobile zone initial concentration
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Initial immobile zone
-concentration from file ! 
+Input instructions ! Initial immobile zone
+
 
 --------------
 
-| 
+
 
 #. **filename** Name of the file that contains the initial immobile zone
    concentration [M L:math:`^{-3}`] data.
@@ -6269,12 +6263,12 @@ active domain. Each line may contain one or more values.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Restart file for
-concentrations ! 
+Input instructions ! Restart file for
+
 
 --------------
 
-| 
+
 
 #. **filename** Name of the file that contains the concentration
    [M L:math:`^{-3}`] results computed in a previous transport solution.
@@ -6318,10 +6312,9 @@ Input instructions ! WInput instructions ! Use Pitzer model ! W
 
 The following commands define time and depth dependent 1-D temperature
 profiles for the bulk porous medium and bulk dual continuum domains
-(Equation
-`[eq:1d_temperature_solution] <#eq:1d_temperature_solution>`__). They
-are intended to be used in conjunction with the commands Nonlinear decay
-with temperature, Zoned nonlinear decay with temperature, Dual nonlinear
+(Equation :ref:`eq:1d_temperature_solution` ). They are intended
+to be used in conjunction with the commands Nonlinear decay with
+temperature, Zoned nonlinear decay with temperature, Dual nonlinear
 decay with temperature, and Zoned dual nonlinear decay with temperature
 that form part of the solute definition.
 
@@ -6407,12 +6400,12 @@ profile ! D
 The commands Solute 1d temperature profile and Solute dual 1d
 temperature profile are composed of the following subcommands:
 
-Input instructions ! Input instructions ! Surface temperature !
+Input instructions ! Surface temperature !
 
 
 --------------
 
-| 
+
 
 #. **time(i), temp(i)...end** Time [T] and surface temperature [ °C]
    value list.
@@ -6427,12 +6420,12 @@ applied until the end of the simulation.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Thermal diffusivity !
+Input instructions ! Thermal diffusivity !
 
 
 --------------
 
-| 
+
 
 #. **thermal_diff** Thermal diffusivity [L:math:`^2` T:math:`^{-1}`].
    Default value of :math:`2\times 10^{-7}` [m:math:`^2`
@@ -6446,12 +6439,12 @@ Input instructions ! Input instructions ! Thermal diffusivity !
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Background temperature !
+Input instructions ! Background temperature !
 
 
 --------------
 
-| 
+
 
 #. **background_temp** Background temperature [ °C].
 
@@ -6463,11 +6456,11 @@ Input instructions ! Input instructions ! Background temperature !
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Maximum depth ! 
+
 
 --------------
 
-| 
+
 
 #. **max_depth** Maximum depth [L] for which the temperature profile is
    defined.
@@ -6481,12 +6474,12 @@ equal to the temperature at the maximum depth.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Integration convergence
-tolerance ! 
+Input instructions ! Integration convergence
+
 
 --------------
 
-| 
+
 
 #. **tol** Convergence tolerance [T:math:`^{-1/2}`  °C]. Default value
    of 0.01 [s:math:`^{-1/2}`  °C].
@@ -6507,12 +6500,12 @@ where :math:`n = 2^k n_0` for :math:`k = 0,1,2,\ldots`.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Integration maximum
-iterations ! 
+Input instructions ! Integration maximum
+
 
 --------------
 
-| 
+
 
 #. **maxits** Maximum number of iterations for integration convergence.
    Default value of 20.
@@ -6527,12 +6520,12 @@ message to the screen and the *prefix*\ ``o.lst`` file.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Integration memory length
-! 
+Input instructions ! Integration memory length
+
 
 --------------
 
-| 
+
 
 #. | **memory_length** Memory length for convolution integral [T].
      Default value of
@@ -6554,11 +6547,11 @@ being simulated, then an appropriate memory length would be 12 hours.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Number of points ! 
+
 
 --------------
 
-| 
+
 
 #. **num** Number of values in depth-dependent temperature profile.
    Default value of 500.
@@ -6597,9 +6590,9 @@ which indicates that the decay of the radioactive isotope
 Uranium\ :math:`^{234}` produces the daughter product
 Thorium\ :math:`^{230}`, which in turn decays to form
 Radium\ :math:`^{226}`. For an example of a straight decay chain see
-Section \ `[V-sec:verif_pm_cd] <#V-sec:verif_pm_cd>`__. Branching decay
-chains can have a single isotope which decays into one or more daughter
-products, or daughter products which have one or more parents.
+Section :ref:`V-sec:verif_pm_cd` . Branching decay chains can
+have a single isotope which decays into one or more daughter products,
+or daughter products which have one or more parents.
 
 Note that a solute can have different values for the decay constant and
 distribution coefficient (retardation factor for fractured media) in
@@ -6623,11 +6616,11 @@ Input instructions ! Solute Definition ! Solute
 
 The available instructions are:
 
-Input instructions ! Input instructions ! Name ! 
+
 
 --------------
 
-| 
+
 
 #. **spname** Solute name.
 
@@ -6652,8 +6645,7 @@ Input instructions ! Solute Definition ! Name
    [L:math:`^2` T:math:`^{-1}`].
 
 Assigns a new value for the free-solution diffusion coefficient,
-:math:`D_{free}`
-(Equation `[eq:pm_dispersion_tensor] <#eq:pm_dispersion_tensor>`__). The
+:math:`D_{free}` (Equation :ref:`eq:pm_dispersion_tensor` ). The
 default value is :math:`1.0 \times 10^{-9}` m\ :math:`^2`
 s\ :math:`^{-1}`.
 
@@ -6702,7 +6694,7 @@ The following parameters affect porous media solute properties:
 #. **clambda** First-order decay constant [T:math:`^{-1}`].
 
 Assigns a uniform value for the solute first-order decay constant,
-:math:`\lambda` (Equation `[eq:6] <#eq:6>`__), for all porous media
+:math:`\lambda` (Equation :ref:`eq:6` ), for all porous media
 zones in the domain. The default value is 0.0 (no decay).
 
 --------------
@@ -6724,8 +6716,8 @@ Definition ! Decay constant
    [T:math:`^{-1}`] for each porous media zone **j**.
 
 Assigns a unique value for the solute first-order decay constant,
-:math:`\lambda` (Equation `[eq:6] <#eq:6>`__), to each porous media zone
-in the domain. The default value is 0.0 (no decay).
+:math:`\lambda` (Equation :ref:`eq:6` ), to each porous media
+zone in the domain. The default value is 0.0 (no decay).
 
 --------------
 
@@ -6736,12 +6728,12 @@ in the domain. The default value is 0.0 (no decay).
 Input instructions ! Zoned decay constantInput instructions ! Solute
 Definition ! Zoned decay constant
 
-Input instructions ! Input instructions ! Nonlinear decay with
-saturation ! 
+Input instructions ! Nonlinear decay with
+
 
 --------------
 
-| 
+
 
 #. **coeff** Nonlinear decay coefficient :math:`\alpha`
    [T:math:`^{-1}`].
@@ -6751,7 +6743,7 @@ saturation !
 #. **shape** Nonlinear decay shape parameter :math:`\beta` [-].
 
 Causes the first-order decay constant, :math:`\lambda`
-(Equation `[eq:6] <#eq:6>`__), across all porous medium zones in the
+(Equation :ref:`eq:6` ), across all porous medium zones in the
 domain to be computed according to the nonlinear decay equation
 
 .. math:: \lambda = \alpha\cdot\min\left[1,\, \left(\frac{S_w}{S_r}\right)^\beta\right],
@@ -6771,12 +6763,12 @@ same species.
 
 Input instructions ! Solute Definition ! Nonlinear decay with saturation
 
-Input instructions ! Input instructions ! Zoned nonlinear decay
-with saturation ! 
+Input instructions ! Zoned nonlinear decay
+
 
 --------------
 
-| 
+
 
 #. **coeff(j), rsat(j), shape(j), j=1,nzones** Nonlinear decay
    coefficient :math:`\alpha_j` [T:math:`^{-1}`], reference saturation
@@ -6784,8 +6776,8 @@ with saturation !
    respectively, for each porous medium zone **j**.
 
 Causes the first-order decay constant, :math:`\lambda`
-(Equation `[eq:6] <#eq:6>`__), for each porous medium zone in the domain
-to be computed according to the nonlinear decay equation
+(Equation :ref:`eq:6` ), for each porous medium zone in the
+domain to be computed according to the nonlinear decay equation
 
 .. math:: \lambda = \alpha_j\cdot\min\left[1,\, \left(\frac{S_w}{S_{r,j}}\right)^{\beta_j}\right],
 
@@ -6805,12 +6797,12 @@ commands Decay constant and Zoned decay constant for the same species.
 Input instructions ! Solute Definition ! Zoned nonlinear decay with
 saturation
 
-Input instructions ! Input instructions ! Nonlinear decay with
-temperature ! 
+Input instructions ! Nonlinear decay with
+
 
 --------------
 
-| 
+
 
 #. **ref_coeff** Decay coefficient at reference temperature
    :math:`\alpha` [T:math:`^{-1}`].
@@ -6821,8 +6813,8 @@ temperature !
    mol\ :math:`^{-1}`].
 
 Computes a temperature dependent first-order decay coefficient,
-:math:`\lambda` (Equation `[eq:6] <#eq:6>`__), according to the modified
-Arrhenius equation
+:math:`\lambda` (Equation :ref:`eq:6` ), according to the
+modified Arrhenius equation
 
 .. math:: \lambda = \alpha\cdot\exp\left[\frac{E_a(T_b - (T_r + 273.15))}{R \cdot T_b (T_r + 273.15)}\right],
 
@@ -6847,12 +6839,12 @@ species.
 Input instructions ! Solute Definition ! Nonlinear decay with
 temperature
 
-Input instructions ! Input instructions ! Zoned nonlinear decay
-with temperature ! 
+Input instructions ! Zoned nonlinear decay
+
 
 --------------
 
-| 
+
 
 #. **ref_coeff(j), j=1,nzones** Decay coefficient at reference
    temperature :math:`\alpha_j` [T:math:`^{-1}`] for each porous medium
@@ -6864,8 +6856,8 @@ with temperature !
    mol\ :math:`^{-1}`].
 
 Computes a temperature dependent first-order decay coefficient,
-:math:`\lambda` (Equation `[eq:6] <#eq:6>`__), according to the modified
-Arrhenius equation
+:math:`\lambda` (Equation :ref:`eq:6` ), according to the
+modified Arrhenius equation
 
 .. math:: \lambda = \alpha_j\cdot\exp\left[\frac{E_a(T_b - (T_r + 273.15))}{R \cdot T_b (T_r + 273.15)}\right],
 
@@ -6899,7 +6891,7 @@ temperature
 #. **dkd** Distribution coefficient [M:math:`^{-1}` L:math:`^3`].
 
 Assigns a uniform value for the solute distribution coefficient,
-:math:`K'` (Equation `[eq:7] <#eq:7>`__), for all porous media zones in
+:math:`K'` (Equation :ref:`eq:7` ), for all porous media zones in
 the domain. The default value is 0.0 (no attenuation).
 
 --------------
@@ -6921,7 +6913,7 @@ Definition ! Distribution coefficient
    [M:math:`^{-1}` L:math:`^3`] for each porous media zone **j**.
 
 Assigns a unique value for the distribution coefficient, :math:`K'`
-(Equation `[eq:7] <#eq:7>`__), to each porous media zone in the domain.
+(Equation :ref:`eq:7` ), to each porous media zone in the domain.
 The default value is 0.0 (no attenuation).
 
 --------------
@@ -6933,12 +6925,12 @@ The default value is 0.0 (no attenuation).
 Input instructions ! Zoned distribution coefficientInput instructions !
 Solute Definition ! Zoned distribution coefficient
 
-Input instructions ! Input instructions ! Freundlich isotherm !
+Input instructions ! Freundlich isotherm !
 
 
 --------------
 
-| 
+
 
 #. **coeff** Freundlich adsorption capacity :math:`K_F`
    [M:math:`^{-1}` L:math:`^3`].
@@ -6956,7 +6948,7 @@ empirical relationship
 
 Note that for :math:`n = 1`, we recover the linear Freundlich isotherm.
 The solution distribution coefficient, :math:`K'`
-(Equation `[eq:7] <#eq:7>`__), across all porous medium zones in the
+(Equation :ref:`eq:7` ), across all porous medium zones in the
 domain is defined as the slope of the nonlinear Freundlich isotherm
 
 .. math:: K' = \frac{dX}{dC} = n\cdot K_F\left(\frac{C}{C_0}\right)^{n - 1}
@@ -6972,12 +6964,12 @@ and Zoned distribution coefficient for the same species.
 
 Input instructions ! Solute Definition ! Freundlich isotherm
 
-Input instructions ! Input instructions ! Zoned freundlich isotherm
-! 
+Input instructions ! Zoned freundlich isotherm
+
 
 --------------
 
-| 
+
 
 #. **coeff(j), rconc(j), expon(j), j=1,nzones** Freundlich adsorption
    capacity :math:`K_{F\!,j}` [M:math:`^{-1}` L:math:`^3`], reference
@@ -6993,8 +6985,8 @@ empirical relationship
 
 Note that for :math:`n_j = 1`, we recover the linear Freundlich
 isotherm. The solution distribution coefficient, :math:`K'`
-(Equation `[eq:7] <#eq:7>`__), for each porous medium zone in the domain
-is defined as the slope of the nonlinear Freundlich isotherm
+(Equation :ref:`eq:7` ), for each porous medium zone in the
+domain is defined as the slope of the nonlinear Freundlich isotherm
 
 .. math:: K' = \frac{dX}{dC} = n_j\cdot K_{F\!,j}\left(\frac{C}{C_{0,j}}\right)^{n_j - 1}
 
@@ -7010,12 +7002,12 @@ distribution coefficient for the same species.
 
 Input instructions ! Solute Definition ! Zoned freundlich isotherm
 
-Input instructions ! Input instructions ! Solute uptake by plant
-roots ! 
+Input instructions ! Solute uptake by plant
+
 
 --------------
 
-| 
+
 
 #. **partition_constant** The fraction of solute in the transpiration
    stream relative to the full stream (value between 0 and 1) in the
@@ -7044,7 +7036,7 @@ The following parameters affect the dual media solute properties:
 #. **clambda** First-order decay constant [T:math:`^{-1}`].
 
 Assigns a uniform value for the solute first-order decay constant,
-:math:`\lambda_d` (Equation `[eq:dual6] <#eq:dual6>`__), for all dual
+:math:`\lambda_d` (Equation :ref:`eq:dual6` ), for all dual
 continua zones in the domain. The default value is 0.0 (no decay).
 
 --------------
@@ -7066,7 +7058,7 @@ Definition ! Dual decay constant
    [T:math:`^{-1}`] for each dual continua zone **j**.
 
 Assigns a unique value for the solute first-order decay constant,
-:math:`\lambda_d` (Equation `[eq:dual6] <#eq:dual6>`__), to each zone in
+:math:`\lambda_d` (Equation :ref:`eq:dual6` ), to each zone in
 the domain. The default value is 0.0 (no decay).
 
 --------------
@@ -7078,12 +7070,12 @@ the domain. The default value is 0.0 (no decay).
 Input instructions ! Zoned dual decay constantInput instructions !
 Solute Definition ! Zoned dual decay constant
 
-Input instructions ! Input instructions ! Dual nonlinear decay with
-saturation ! 
+Input instructions ! Dual nonlinear decay with
+
 
 --------------
 
-| 
+
 
 #. **coeff** Nonlinear decay coefficient :math:`\alpha`
    [T:math:`^{-1}`].
@@ -7093,7 +7085,7 @@ saturation !
 #. **shape** Nonlinear decay shape parameter :math:`\beta` [-].
 
 Causes the first-order decay constant, :math:`\lambda_d`
-(Equation `[eq:dual6] <#eq:dual6>`__), across all dual continua zones in
+(Equation :ref:`eq:dual6` ), across all dual continua zones in
 the domain to be computed according to the nonlinear decay equation
 
 .. math:: \lambda_d = \alpha\cdot\min\left[1,\, \left(\frac{S_w}{S_r}\right)^\beta\right],
@@ -7113,12 +7105,12 @@ constant for the same species.
 
 Input instructions ! Solute Definition ! Dual decay with saturation
 
-Input instructions ! Input instructions ! Zoned dual nonlinear
-decay with saturation ! 
+Input instructions ! Zoned dual nonlinear
+
 
 --------------
 
-| 
+
 
 #. **coeff(j), shape(j), j=1,nzones** Nonlinear decay coefficient
    :math:`\alpha_j` [T:math:`^{-1}`], reference saturation
@@ -7126,8 +7118,8 @@ decay with saturation !
    respectively, for each dual continua zone **j**.
 
 Causes the first-order decay constant, :math:`\lambda_d`
-(Equation `[eq:dual6] <#eq:dual6>`__), for each dual continua zone in
-the domain to be computed according to the nonlinear decay equation
+(Equation :ref:`eq:dual6` ), for each dual continua zone in the
+domain to be computed according to the nonlinear decay equation
 
 .. math:: \lambda_d = \alpha_j\cdot\min\left[1,\, \left(\frac{S_w}{S_{r,j}}\right)^{\beta_j}\right],
 
@@ -7148,12 +7140,12 @@ for the same species.
 Input instructions ! Solute Definition ! Zoned dual decay with
 saturation
 
-Input instructions ! Input instructions ! Dual nonlinear decay with
-temperature ! 
+Input instructions ! Dual nonlinear decay with
+
 
 --------------
 
-| 
+
 
 #. **ref_coeff** Decay coefficient at reference temperature
    :math:`\alpha` [T:math:`^{-1}`].
@@ -7164,8 +7156,8 @@ temperature !
    mol\ :math:`^{-1}`].
 
 Computes a temperature dependent first-order decay coefficient,
-:math:`\lambda_d` (Equation `[eq:dual6] <#eq:dual6>`__), according to
-the modified Arrhenius equation
+:math:`\lambda_d` (Equation :ref:`eq:dual6` ), according to the
+modified Arrhenius equation
 
 .. math:: \lambda_d = \alpha\cdot\exp\left[\frac{E_a(T_b - (T_r + 273.15))}{R \cdot T_b (T_r + 273.15)}\right],
 
@@ -7190,12 +7182,12 @@ dual decay constant for the same species.
 Input instructions ! Solute Definition ! Dual nonlinear decay with
 temperature
 
-Input instructions ! Input instructions ! Zoned dual nonlinear
-decay with temperature ! 
+Input instructions ! Zoned dual nonlinear
+
 
 --------------
 
-| 
+
 
 #. **ref_coeff(j), j=1,nzones** Decay coefficient at reference
    temperature :math:`\alpha_j` [T:math:`^{-1}`] for each dual continua
@@ -7207,8 +7199,8 @@ decay with temperature !
    mol\ :math:`^{-1}`].
 
 Computes a temperature dependent first-order decay coefficient,
-:math:`\lambda_d` (Equation `[eq:dual6] <#eq:dual6>`__), according to
-the modified Arrhenius equation
+:math:`\lambda_d` (Equation :ref:`eq:dual6` ), according to the
+modified Arrhenius equation
 
 .. math:: \lambda_d = \alpha_j\cdot\exp\left[\frac{E_a(T_b - (T_r + 273.15))}{R \cdot T_b (T_r + 273.15)}\right],
 
@@ -7242,8 +7234,8 @@ temperature
 #. **dkd** Distribution coefficient [M:math:`^{-1}` L:math:`^3`].
 
 Assigns a uniform value for the solute distribution coefficient,
-:math:`K_d'` (Equation `[eq:dual7] <#eq:dual7>`__), for all dual
-continua zones in the domain. The default value is 0.0 (no attenuation).
+:math:`K_d'` (Equation :ref:`eq:dual7` ), for all dual continua
+zones in the domain. The default value is 0.0 (no attenuation).
 
 --------------
 
@@ -7264,7 +7256,7 @@ Solute Definition ! Dual distribution coefficient
    [M:math:`^{-1}` L:math:`^3`] for each dual continua zone **j**.
 
 Assigns a unique value for the distribution coefficient, :math:`K_d'`
-(Equation `[eq:dual7] <#eq:dual7>`__), to each dual continua zone in the
+(Equation :ref:`eq:dual7` ), to each dual continua zone in the
 domain. The default value is 0.0 (no attenuation).
 
 --------------
@@ -7276,12 +7268,12 @@ domain. The default value is 0.0 (no attenuation).
 Input instructions ! Zoned dual distribution coefficientInput
 instructions ! Solute Definition ! Zoned dual distribution coefficient
 
-Input instructions ! Input instructions ! Dual freundlich isotherm
-! 
+Input instructions ! Dual freundlich isotherm
+
 
 --------------
 
-| 
+
 
 #. **coeff** Freundlich adsorption capacity :math:`K_F`
    [M:math:`^{-1}` L:math:`^3`].
@@ -7299,7 +7291,7 @@ empirical relationship
 
 Note that for :math:`n = 1`, we recover the linear Freundlich isotherm.
 The solution distribution coefficient, :math:`K_d'`
-(Equation `[eq:dual7] <#eq:dual7>`__), across all dual continua zones in
+(Equation :ref:`eq:dual7` ), across all dual continua zones in
 the domain is defined as the slope of the nonlinear Freundlich isotherm
 
 .. math:: K_d' = \frac{dX}{dC} = n\cdot K_F\left(\frac{C}{C_0}\right)^{n - 1}
@@ -7316,12 +7308,12 @@ species.
 
 Input instructions ! Solute Definition ! Dual freundlich isotherm
 
-Input instructions ! Input instructions ! Zoned dual freundlich
-isotherm ! 
+Input instructions ! Zoned dual freundlich
+
 
 --------------
 
-| 
+
 
 #. **coeff(j), rconc(j), expon(j), j=1,nzones** Freundlich adsorption
    capacity :math:`K_{F\!,j}` [M:math:`^{-1}` L:math:`^3`], reference
@@ -7337,8 +7329,8 @@ empirical relationship
 
 Note that for :math:`n_j = 1`, we recover the linear Freundlich
 isotherm. The solution distribution coefficient, :math:`K_d'`
-(Equation `[eq:dual7] <#eq:dual7>`__), for each dual continua zone in
-the domain is defined as the slope of the nonlinear Freundlich isotherm
+(Equation :ref:`eq:dual7` ), for each dual continua zone in the
+domain is defined as the slope of the nonlinear Freundlich isotherm
 
 .. math:: K_d' = \frac{dX}{dC} = n_j\cdot K_{F\!,j}\left(\frac{C}{C_{0,j}}\right)^{n_j - 1}
 
@@ -7365,7 +7357,7 @@ The following parameters affect the fracture domain solute properties:
 #. **clambda_f** First-order decay constant [T:math:`^{-1}`].
 
 Assigns a uniform value for the solute first-order decay constant,
-:math:`\lambda_f` (Equation `[eq:9] <#eq:9>`__), for all discrete
+:math:`\lambda_f` (Equation :ref:`eq:9` ), for all discrete
 fracture zones in the domain. The default value is 0.0 (no decay).
 
 --------------
@@ -7387,7 +7379,7 @@ Definition ! Fracture decay constant
    [T:math:`^{-1}`] for each discrete fracture zone **j**.
 
 Assigns a unique value for the solute first-order decay constant,
-:math:`\lambda_f` (Equation `[eq:9] <#eq:9>`__), to each discrete
+:math:`\lambda_f` (Equation :ref:`eq:9` ), to each discrete
 fracture zone in the domain. The default value is 0.0 (no decay).
 
 --------------
@@ -7407,9 +7399,8 @@ Input instructions ! Zoned fracture decay constant
 #. **rfrac** Fracture retardation factor [-].
 
 Assigns a uniform value for the fracture retardation factor, :math:`R_f`
-(Equation `[eq:fracture_retardation] <#eq:fracture_retardation>`__), for
-all discrete fracture zones in the domain. The default value is 1.0 (no
-attenuation).
+(Equation :ref:`eq:fracture_retardation` ), for all discrete
+fracture zones in the domain. The default value is 1.0 (no attenuation).
 
 --------------
 
@@ -7430,9 +7421,8 @@ Solute Definition ! Fracture retardation factor
    fracture zone **j**.
 
 Assigns a unique value for the fracture retardation factor, :math:`R_f`
-(Equation `[eq:fracture_retardation] <#eq:fracture_retardation>`__), to
-each discrete fracture zone in the domain. The default value is 1.0 (no
-attenuation).
+(Equation :ref:`eq:fracture_retardation` ), to each discrete
+fracture zone in the domain. The default value is 1.0 (no attenuation).
 
 --------------
 
@@ -7454,8 +7444,7 @@ The following parameters affect the overland domain solute properties:
 #. **clambda_o** First-order decay constant [T:math:`^{-1}`].
 
 Assigns a uniform value for the solute first-order decay constant,
-:math:`\lambda`
-(Equation `[eq:overland_transport_1] <#eq:overland_transport_1>`__), for
+:math:`\lambda` (Equation :ref:`eq:overland_transport_1` ), for
 all overland flow zones in the domain. The default value is 0.0 (no
 decay).
 
@@ -7478,8 +7467,7 @@ Definition ! Overland decay constant
    [T:math:`^{-1}`] for each overland flow zone **j**.
 
 Assigns a unique value for the solute first-order decay constant,
-:math:`\lambda`
-(Equation `[eq:overland_transport_1] <#eq:overland_transport_1>`__), to
+:math:`\lambda` (Equation :ref:`eq:overland_transport_1` ), to
 each overland flow zone in the domain. The default value is 0.0 (no
 decay).
 
@@ -7501,9 +7489,8 @@ Solute Definition ! Zoned overland decay constant
 #. **rolf** Overland flow retardation factor [-].
 
 Assigns a uniform value for the overland retardation factor, :math:`R_o`
-(Equation `[eq:fracture_retardation] <#eq:fracture_retardation>`__), for
-all overland zones in the domain. The default value is 1.0 (no
-attenuation).
+(Equation :ref:`eq:fracture_retardation` ), for all overland
+zones in the domain. The default value is 1.0 (no attenuation).
 
 --------------
 
@@ -7524,10 +7511,8 @@ Solute Definition ! Overland retardation factor
    flow zone **j**.
 
 Assigns a unique value for the overland flow retardation factor,
-:math:`R_o`
-(Equation `[eq:fracture_retardation] <#eq:fracture_retardation>`__), to
-each overland zone in the domain. The default value is 1.0 (no
-attenuation).
+:math:`R_o` (Equation :ref:`eq:fracture_retardation` ), to each
+overland zone in the domain. The default value is 1.0 (no attenuation).
 
 --------------
 
@@ -7562,16 +7547,16 @@ Input instructions ! Solute Definition ! Sodium species
 The following instructions can be used likewise to identify other
 species:
 
-| Potassium species Input instructions ! Potassium species
-| Calcium species Input instructions ! Calcium species
-| Magnesium species Input instructions ! Magnesium species
-| Chloride species Input instructions ! Chloride species
-| Sulphate species Input instructions ! Sulphate species
-| Hydrogencarbonate species Input instructions ! Hydrogencarbonate
+Potassium species Input instructions ! Potassium species
+Calcium species Input instructions ! Calcium species
+Magnesium species Input instructions ! Magnesium species
+Chloride species Input instructions ! Chloride species
+Sulphate species Input instructions ! Sulphate species
+Hydrogencarbonate species Input instructions ! Hydrogencarbonate
   species
-| Carbonate species Input instructions ! Carbonate species
-| Salt mass fraction Input instructions ! Salt mass fraction
-| Temperature species Input instructions ! Temperature species
+Carbonate species Input instructions ! Carbonate species
+Salt mass fraction Input instructions ! Salt mass fraction
+Temperature species Input instructions ! Temperature species
 
 By default, no species impacts fluid density or viscosity. This default
 can be changed with the following instruction:
@@ -7592,12 +7577,12 @@ Input instructions ! WInput instructions ! Affects fluid properties ! W
 
 Input instructions ! Solute Definition ! Affects fluid properties
 
-Input instructions ! Input instructions ! Relative concentration !
+Input instructions ! Relative concentration !
 
 
 --------------
 
-| 
+
 
 #. **cmax** The maximum relative concentration, corresponding to the
    fluid with maximum density. This instruction proved to be especially
@@ -7641,9 +7626,9 @@ coefficient of (0.0) zero:
        End solute
 
 An example of a more complex system with two solutes and seven material
-zones is shown in Figure \ `[fig:solute1] <#fig:solute1>`__ for the
-first solute, called DCB, which only decays in zone 1, and has
-distribution coefficients which vary from zone to zone.
+zones is shown in Figure :ref:`fig:solute1`  for the first
+solute, called DCB, which only decays in zone 1, and has distribution
+coefficients which vary from zone to zone.
 
 ::
 
@@ -7673,7 +7658,7 @@ distribution coefficients which vary from zone to zone.
            0.020               ! 7
        end solute
 
-Figure \ `[fig:solute2] <#fig:solute2>`__ shows how to define the second
+Figure :ref:`fig:solute2`  shows how to define the second
 solute, called BAM, which is a daughter product of DCB, and does not
 decay. This solute has the same zoned distribution coefficients as the
 first solute.
@@ -7751,11 +7736,10 @@ Heat Transfer
 
 Transport ! input ! heat transfer Heat transfer To enable heat transfer,
 you must define the temperature species in the solute definition block
-as described in Chapter
-`[sec:solute-definition] <#sec:solute-definition>`__. The thermal
-properties of the solids are specified in the material property file.
-The following instructions can be used to control the heat transfer
-solution:
+as described in Chapter :ref:`sec:solute-definition` . The
+thermal properties of the solids are specified in the material property
+file. The following instructions can be used to control the heat
+transfer solution:
 
 --------------
 
@@ -7916,11 +7900,11 @@ Input instructions ! Initial temperature profile
 The following instructions can be used to define the heat source
 boundary condition:
 
-Input instructions ! Input instructions ! Zero order source ! 
+
 
 --------------
 
-| 
+
 
 #. **npanel** Number of panels in the time-variable, zero-order source
    function.
@@ -7994,19 +7978,18 @@ by species !
 --------------
 
 | 
-| .grok 
+
 
 #. **nzones, nspecies** Number of zones and species, respectively.
 
 This command assigns an effective diffusion coefficient,
 :math:`\tau D_{free}` in
-Equation \ `[eq:pm_dispersion_tensor] <#eq:pm_dispersion_tensor>`__ and
-:math:`D^*` in
-Equation \ `[eq:thermal_dispersion] <#eq:thermal_dispersion>`__, for
-each species within a given geological unit. The effective diffusion
-coefficient values by zones and species should be assigned in a material
-property file (e.g., ``.mprop``) and thus, the command Effective
-diffusion coefficient list is required to assign the values.
+Equation :ref:`eq:pm_dispersion_tensor`  and :math:`D^*` in
+Equation :ref:`eq:thermal_dispersion` , for each species within
+a given geological unit. The effective diffusion coefficient values by
+zones and species should be assigned in a material property file (e.g.,
+``.mprop``) and thus, the command Effective diffusion coefficient list
+is required to assign the values.
 
 --------------
 
@@ -8020,17 +8003,15 @@ list !
 --------------
 
 | 
-| .grok[.mprops] 
+
 
 #. **diff_coeff(i), i=1,nspecies** Effective diffusion coefficient
    [L:math:`^2` T:math:`^{-1}`] for each species.
 
 Within a material property file (e.g., ``.mprop``), assigns the
 effective diffusion coefficient, :math:`\tau D_{free}` in
-Equation \ `[eq:pm_dispersion_tensor] <#eq:pm_dispersion_tensor>`__ and
-:math:`D^*` in
-Equation \ `[eq:thermal_dispersion] <#eq:thermal_dispersion>`__, for
-each species.
+Equation :ref:`eq:pm_dispersion_tensor`  and :math:`D^*` in
+Equation :ref:`eq:thermal_dispersion` , for each species.
 
 --------------
 
@@ -8076,8 +8057,8 @@ general, yet flexible.
 
 All flow boundary conditions require inputs for the boundary condition
 type, node and face set, and the time-varying inputs described in
-Sections \ `2.7.3 <#sec:io_type>`__, \ `2.7.4 <#sec:io_node_and_face_sets>`__,
-and \ `2.7.5 <#sec:io_time-varying_inputs>`__. The constraints and
+Sections :ref:`sec:io_type` , :ref:`sec:io_node_and_face_sets` ,
+and :ref:`sec:io_time-varying_inputs` . The constraints and
 Tecplot options are optional values. A general boundary condition layout
 is shown as the following instruction:
 
@@ -8119,11 +8100,11 @@ Boundary conditions ! Boundary condition...End
 A boundary condition may be assigned a user specified name via the
 following instruction.
 
-Input instructions ! Input instructions ! Name ! 
+
 
 --------------
 
-| 
+
 
 #. **bc_name** Name of boundary condition, at most 40 characters.
 
@@ -8222,7 +8203,7 @@ be applied use:
 
 | Type
 
-Boundary conditions ! type
+
 
 #. **bc_type** The type of boundary condition to be applied.
 
@@ -8292,7 +8273,7 @@ of the simulation for all of the nodes contained in the node set
 ``inflow``.
 
 These heads can be interpolated or turned on and off as discussed in
-Section \ `[sec:bndy_cond] <#sec:bndy_cond>`__.
+Section :ref:`sec:bndy_cond` .
 
 --------------
 
@@ -8500,7 +8481,7 @@ entries in the file must be the same as the number of nodes in the set.
 These fluxes can be interpolated (see Interpolate) or turned on and off
 (see Nodata value). In cases where flux boundary inputs overlap, fluid
 fluxes will be accumulated. Note that the definition of wells or tile
-drains (see Section \ `[sec:wells] <#sec:wells>`__) in the problem may
+drains (see Section :ref:`sec:wells` ) in the problem may
 create a non-zero specified flux boundary condition.
 
 The following two instructions can be used to constrain the Flux nodal
@@ -8549,12 +8530,12 @@ covered by the boundary condition type Flux nodal. If you want to force
 the nodal flux to operate within a specified hydraulic head range, you
 can do so with the following instruction.
 
-Input instructions ! Input instructions ! Nodal flux head
-constraints ! 
+Input instructions ! Nodal flux head
+
 
 --------------
 
-| 
+
 
 #. **inflow_min, inflow_max** Minimum and maximum constraining head
    values [L] for positive nodal flux.
@@ -8629,12 +8610,12 @@ via linear interpolation and is applied to all nodes in the node set
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Pressure-discharge power
-rating ! 
+Input instructions ! Pressure-discharge power
+
 
 --------------
 
-| 
+
 
 #. **coeff** Power rating curve coefficient
    [L:math:`^{3-\alpha}` T:math:`^{-1}`] :math:`C`, where :math:`\alpha`
@@ -8667,12 +8648,12 @@ where :math:`\psi` is the pressure head.
 
 Boundary conditions ! pressure-discharge power rating
 
-Input instructions ! Input instructions ! Pressure-discharge table
-! 
+Input instructions ! Pressure-discharge table
+
 
 --------------
 
-| 
+
 
 #. **depth(i), flux(i),...end** Depth [L] and specified volumetric flux
    [L:math:`^3` T:math:`^{-1}`] table.
@@ -8692,12 +8673,12 @@ will be used.
 
 Boundary conditions ! pressure-discharge table
 
-Input instructions ! Input instructions ! Elevation-discharge table
-! 
+Input instructions ! Elevation-discharge table
+
 
 --------------
 
-| 
+
 
 #. **elevation(i), flux(i),...end** Elevation [L] and specified
    volumetric flux [L:math:`^3` T:math:`^{-1}`] table.
@@ -8795,7 +8776,7 @@ boundary condition to a set of surface nodes.
 
 :math:`\bullet \bullet \bullet`
 
-Flux nodal outlet rate threshold 
+
 
 #. **threshold** Injection rate threshold [L:math:`^3` T:math:`^{-1}`]
    that limits the water flux at the inlet nodes.
@@ -8869,12 +8850,12 @@ table described below.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Irrigation parameters !
+Input instructions ! Irrigation parameters !
 
 
 --------------
 
-| 
+
 
 #. **obs_pt_name** Name of the observation point at which pressure head
    is evaluated to trigger an irrigation event.
@@ -8910,12 +8891,12 @@ type Irrigation on demand.
 
 Boundary conditions ! irrigation parameters
 
-Input instructions ! Input instructions ! Pressure irrigation table
-! 
+Input instructions ! Pressure irrigation table
+
 
 --------------
 
-| 
+
 
 #. **pressure(i), height(i),...end** Pressure head [L] and irrigation
    water height [L] table.
@@ -8978,9 +8959,9 @@ Free drainage Boundary conditions ! flow ! free drainage
 [sec:io_free_drain]
 
 Assigns a free drainage boundary condition, as described in
-Section \ `[sec:bc_subsurface_flow_nf] <#sec:bc_subsurface_flow_nf>`__
-to nodes on all faces in the specified set. These faces should be on the
-surface of the domain.
+Section :ref:`sec:bc_subsurface_flow_nf`  to nodes on all faces
+in the specified set. These faces should be on the surface of the
+domain.
 
 The following instructions can be used as input to the Type instruction
 inside the Boundary condition...End instruction group to assign free
@@ -9042,17 +9023,16 @@ Boundary conditions ! flow ! specified evaporation Potential
 evapotranspiration is a specified flux [L  T:math:`^{-1}`] applied as a
 second-type boundary condition and is used in conjunction with
 evapotranspiration properties, which can be defined as described in
-Section \ `[sec:et_materials] <#sec:et_materials>`__. It is an areal
-property and so you should first choose the subset of faces for which
-you want to apply the condition. These faces should be part of the top
-boundary of the grid and, in this case, the top boundary must be
-coincident with the 2-D slice that was used to define the 3-D mesh. The
-boundary condition therefore cannot be used if the Y vertical
-instruction has been used. This restriction arises because of grid
-numbering assumptions that are made when applying evapotranspiration as
-a function of depth. Note also that if ET domains are not defined and
-this boundary condition is applied, then **grok** will stop and issue a
-warning message.
+Section :ref:`sec:et_materials` . It is an areal property and
+so you should first choose the subset of faces for which you want to
+apply the condition. These faces should be part of the top boundary of
+the grid and, in this case, the top boundary must be coincident with the
+2-D slice that was used to define the 3-D mesh. The boundary condition
+therefore cannot be used if the Y vertical instruction has been used.
+This restriction arises because of grid numbering assumptions that are
+made when applying evapotranspiration as a function of depth. Note also
+that if ET domains are not defined and this boundary condition is
+applied, then **grok** will stop and issue a warning message.
 
 The following instructions can be used as input to the Type instruction
 inside the Boundary condition...End instruction group to assign
@@ -9109,11 +9089,11 @@ River flux Boundary conditions ! flow ! river flux
 [sec:io_simple_river]
 
 Assigns a river flux boundary condition, as described in
-Section \ `[sec:bc_subsurface_flow_nf] <#sec:bc_subsurface_flow_nf>`__
-to nodes in the specified set. These nodes are normally located on the
-surface of the domain. For river flux nodes, water may flow in or out of
-the domain depending on the difference in head between the river node
-and the specified river head value.
+Section :ref:`sec:bc_subsurface_flow_nf`  to nodes in the
+specified set. These nodes are normally located on the surface of the
+domain. For river flux nodes, water may flow in or out of the domain
+depending on the difference in head between the river node and the
+specified river head value.
 
 The following instructions can be used as input to the Type instruction
 inside the Boundary condition...End instruction group to assign a river
@@ -9181,12 +9161,12 @@ Drain Flux
 Drain flux Boundary conditions ! flow ! drain flux [sec:io_simple_drain]
 
 Assigns a drain flux boundary condition, as described in
-Section \ `[sec:bc_subsurface_flow_nf] <#sec:bc_subsurface_flow_nf>`__
-to nodes in the specified set. These nodes are normally located on the
-surface of the domain. The fundamental difference between river and
-drain flux nodes is that drain nodes only allow water to flow out of the
-system, depending on the difference in head between the drain node and
-the specified pressure head value.
+Section :ref:`sec:bc_subsurface_flow_nf`  to nodes in the
+specified set. These nodes are normally located on the surface of the
+domain. The fundamental difference between river and drain flux nodes is
+that drain nodes only allow water to flow out of the system, depending
+on the difference in head between the drain node and the specified
+pressure head value.
 
 The following instruction can be used as input to the Type instruction
 inside the Boundary condition...End instruction group to assign a drain
@@ -9331,8 +9311,8 @@ chosen.
    stress variation [L T:math:`^{-1}`] list.
 
 Chosen nodes in the currently active domain (see
-Section \ `[sec:modify_material] <#sec:modify_material>`__) are assigned
-a time-variable specified stress variation value. The specified stress
+Section :ref:`sec:modify_material` ) are assigned a
+time-variable specified stress variation value. The specified stress
 variation value is given by the term
 
 .. math:: \frac{\partial \left(  \sigma_{zz}/ \rho g \right) }{\partial t}
@@ -9347,12 +9327,12 @@ and corresponds to an equivalent freshwater head change per unit time.
 
 Input instructions ! Specified stress variation
 
-Input instructions ! Input instructions ! Specified stress
-variation from file ! 
+Input instructions ! Specified stress
+
 
 --------------
 
-| 
+
 
 #. **filename** Name of the file that contains the list of nodes to
    which specified stress variation will be assigned.
@@ -9379,8 +9359,8 @@ example:
    		
 
 Nodes listed in the file and in the currently active domain (see
-Section \ `[sec:modify_material] <#sec:modify_material>`__) are assigned
-a unique stress variation value. The specified stress variation value is
+Section :ref:`sec:modify_material` ) are assigned a unique
+stress variation value. The specified stress variation value is
 described in the command Specified stress variation.
 
 --------------
@@ -9562,7 +9542,7 @@ use:
 
 | Node set
 
-Boundary conditions ! node set
+
 
 #. **bc_set_name** Name of the node set to apply the boundary condition
    to.
@@ -9583,7 +9563,7 @@ To define the group of faces use:
 
 | Face set
 
-Boundary conditions ! face set
+
 
 #. **bc_set_name** Name of the face set to apply the boundary condition
    to.
@@ -9610,7 +9590,7 @@ condition use:
 
 | Time value table
 
-Boundary conditions ! time value table
+
 
 #. **bc_time(i), bc_val(i)...end** Time [T] and boundary condition value
    list.
@@ -9631,7 +9611,7 @@ Input instructions ! Time value table
 
 | Time raster table
 
-Boundary conditions ! time raster table
+
 
 #. **bc_time(i), bc_raster(i)...end** Time [T] and raster filename list.
 
@@ -9653,14 +9633,14 @@ Input instructions ! Time raster table
 The following instructions use the same input data structure except they
 are applied to :math:`xz`- or :math:`yz`-coordinates:
 
-| Time raster xz table Input instructions ! Time raster xz table
-| Time raster yz table Input instructions ! Time raster yz table
+Time raster xz table Input instructions ! Time raster xz table
+Time raster yz table Input instructions ! Time raster yz table
 
 --------------
 
 | Time file table
 
-Boundary conditions ! time file table
+
 
 #. **bc_time(i), bc_file(i)...end** Time [T] and filename list.
 
@@ -9735,7 +9715,7 @@ regional ! B
 --------------
 
 | B
-| oundary conditions ! time-field data table from regional 
+
 
 #. **filename** Name of the local to regional sheet mapping file.
 
@@ -9805,11 +9785,11 @@ can be done by using the Scaling factor command which scales the entire
 time series. The scaling factor can be used with any of the Time value
 table, Time file table, and Time raster table inputs.
 
-Input instructions ! Input instructions ! Scaling factor ! 
+
 
 --------------
 
-| 
+
 
 #. **factor** Scaling factor [-].
 
@@ -9891,7 +9871,7 @@ the command Nodata value.
 
 | Nodata value
 
-Boundary conditions ! NODATA value
+
 
 #. **nodata_value** The value that indicates there is no data.
 
@@ -9908,8 +9888,8 @@ Input instructions ! Nodata value
 The following instructions may be used to change the NODATA values for
 rasters and files:
 
-| Nodata raster Input instructions ! Nodata raster
-| Nodata file Input instructions ! Nodata file
+Nodata raster Input instructions ! Nodata raster
+Nodata file Input instructions ! Nodata file
 
 Tecplot Output
 ~~~~~~~~~~~~~~
@@ -9982,12 +9962,12 @@ If the node was assigned a specified concentration, mass flux or
 third-type value by a previous instruction then it will not be modified
 by subsequent specified concentration instructions.
 
-Input instructions ! Input instructions ! Specified concentration !
+Input instructions ! Specified concentration !
 
 
 --------------
 
-| 
+
 
 #. **npanel** Number of panels in the time-variable concentration
    function.
@@ -9997,8 +9977,8 @@ Input instructions ! Input instructions ! Specified concentration !
    [M L:math:`^{-3}`] of each species.
 
 Chosen nodes in the currently active domain (see
-Section \ `[sec:modify_material] <#sec:modify_material>`__) are assigned
-a time-variable concentration value. If a node was previously assigned a
+Section :ref:`sec:modify_material` ) are assigned a
+time-variable concentration value. If a node was previously assigned a
 specified concentration, it will remain in effect.
 
 A panel is a point in time at which the specified concentration is set
@@ -10028,12 +10008,12 @@ species the input format is
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Specified concentration
-from file ! 
+Input instructions ! Specified concentration
+
 
 --------------
 
-| 
+
 
 #. **filename** Name of the file that contains the time-varying
    concentration information.
@@ -10106,12 +10086,12 @@ instructions will be cumulative. This is because mass fluxes are applied
 to faces, and any node common to two such faces requires a contribution
 from each face
 
-Input instructions ! Input instructions ! Specified mass flux !
+Input instructions ! Specified mass flux !
 
 
 --------------
 
-| 
+
 
 #. **npanel** Number of panels in the time-variable mass flux function.
 
@@ -10120,8 +10100,8 @@ Input instructions ! Input instructions ! Specified mass flux !
    T\ :math:`^{-1}`] of each species.
 
 Chosen nodes in the currently active domain (see
-Section \ `[sec:modify_material] <#sec:modify_material>`__) are assigned
-a time-variable mass flux value. This is a passive injection of solute
+Section :ref:`sec:modify_material` ) are assigned a
+time-variable mass flux value. This is a passive injection of solute
 mass which has no effect on the flow solution. If a node was previously
 assigned a first or third-type concentration, it will remain in effect.
 
@@ -10193,12 +10173,12 @@ instructions will be cumulative. This is because third-type
 concentrations are applied to faces, and any node common to two such
 faces requires a contribution from each face.
 
-Input instructions ! Input instructions ! Specified third-type
-concentration ! 
+Input instructions ! Specified third-type
+
 
 --------------
 
-| 
+
 
 #. **calcflux** Logical value (T/F) that determines how fluid fluxes are
    handled for this third-type boundary condition. If false, then read
@@ -10214,9 +10194,9 @@ concentration !
    [M L:math:`^{-3}`] of each species.
 
 Chosen nodes in the currently active domain (see
-Section \ `[sec:modify_material] <#sec:modify_material>`__) are assigned
-a time-variable third-type concentration value unless they were
-previously assigned a first-type concentration.
+Section :ref:`sec:modify_material` ) are assigned a
+time-variable third-type concentration value unless they were previously
+assigned a first-type concentration.
 
 If the variable **calcflux** is true, nodal fluxes are calculated by
 **HydroGeoSphere** from the flow solution and used to calculate the
@@ -10254,12 +10234,12 @@ the input format is
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Specified third-type
-concentration from file ! 
+Input instructions ! Specified third-type
+
 
 --------------
 
-| 
+
 
 #. **filename** Name of the file that contains the time-varying
    third-type concentration information.
@@ -10310,9 +10290,8 @@ input format is
    	
 
 Faces defined by the four nodes in the listed elements in the currently
-active domain (see
-Section \ `[sec:modify_material] <#sec:modify_material>`__) are assigned
-a time-variable third-type concentration value unless they were
+active domain (see Section :ref:`sec:modify_material` ) are
+assigned a time-variable third-type concentration value unless they were
 previously assigned a first-type concentration. It is the responsibility
 of the user to ensure that the nodes define a face that is on the
 exterior of the domain.
@@ -10338,12 +10317,12 @@ to element.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Specified third-type
-concentration from face file ! 
+Input instructions ! Specified third-type
+
 
 --------------
 
-| 
+
 
 #. **filename** Name of the file that contains the time-varying
    third-type concentration information.
@@ -10393,11 +10372,10 @@ input format is
    	
 
 Listed faces in the currently active domain (see
-Section \ `[sec:modify_material] <#sec:modify_material>`__) are assigned
-a time-variable third-type concentration value unless they were
-previously assigned a first-type concentration. It is the responsibility
-of the user to ensure that the faces belong to the exterior of the
-domain.
+Section :ref:`sec:modify_material` ) are assigned a
+time-variable third-type concentration value unless they were previously
+assigned a first-type concentration. It is the responsibility of the
+user to ensure that the faces belong to the exterior of the domain.
 
 If the variable **calcflux** is true, nodal fluxes are calculated by
 **HydroGeoSphere** from the flow solution and used to calculate the
@@ -10418,12 +10396,12 @@ face.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Specified third-type
-flushing ! 
+Input instructions ! Specified third-type
+
 
 --------------
 
-| 
+
 
 #. **npanel** Number of panels in the time-variable fluid flux function.
 
@@ -10461,8 +10439,8 @@ thermal energy
    the boundary medium, and temperature of water entering [K] list.
 
 Nodes in both the chosen faces and the currently active domain (see
-Section \ `[sec:modify_material] <#sec:modify_material>`__) are assigned
-a time-variable temperature flux value.
+Section :ref:`sec:modify_material` ) are assigned a
+time-variable temperature flux value.
 
 Although a fluid volume flux **bc_val** is specified, this does not
 influence the flow solution in any way. It is merely intended to give
@@ -10478,9 +10456,8 @@ system, as a function of fluid volume and temperature.
 Input instructions ! Specified temperature flux
 
 To define the atmospheric inputs discussed in
-Section \ `[sec:atmospheric_inputs] <#sec:atmospheric_inputs>`__, and
-summarized in
-Equation \ `[eq:atmoshpheric_inputs] <#eq:atmoshpheric_inputs>`__,
+Section :ref:`sec:atmospheric_inputs` , and summarized in
+Equation :ref:`eq:atmoshpheric_inputs` ,
 **HydroGeoSphere** requires the following set of instructions:
 
 --------------
@@ -10509,9 +10486,8 @@ Input instructions ! Atmosphere...End
 
 #. **ton_val(i), value(i), i=1,npanel** Time on [T] and incoming
    shortwave radiation [M T:math:`^{-3}`] (:math:`K^\downarrow` in
-   Equation \ `[eq:shortwave_radiation] <#eq:shortwave_radiation>`__).
-   Default value is :math:`1.10 \times 10^2` J m\ :math:`^{-2}`
-   s\ :math:`^{-1}`.
+   Equation :ref:`eq:shortwave_radiation` ). Default value is
+   :math:`1.10 \times 10^2` J m\ :math:`^{-2}` s\ :math:`^{-1}`.
 
 
 
@@ -10535,8 +10511,8 @@ Input instructions ! Incoming shortwave radiation
 #. **ton_val(i), value(i), amp(i), phase(i), period(i), i=1,npanel**
    Time on [T], vertical shift [M T:math:`^{-3}`] (mid-point incoming
    shortwave radiation, :math:`K^\downarrow` in
-   Equation \ `[eq:shortwave_radiation] <#eq:shortwave_radiation>`__),
-   amplitude [M T:math:`^{-3}`], phase, and period [T].
+   Equation :ref:`eq:shortwave_radiation` ), amplitude
+   [M T:math:`^{-3}`], phase, and period [T].
 
 
 
@@ -10558,8 +10534,7 @@ Input instructions ! Sinusoidal incoming shortwave radiation
    function.
 
 #. **ton_val(i), value(i), i=1,npanel** Time on [T] and cloud cover [-]
-   (:math:`C_c` in
-   Equation \ `[eq:thermal_cloud_cover] <#eq:thermal_cloud_cover>`__).
+   (:math:`C_c` in Equation :ref:`eq:thermal_cloud_cover` ).
    Default value is 0.5.
 
 
@@ -10583,9 +10558,8 @@ Input instructions ! Cloud cover
 
 #. **ton_val(i), value(i), i=1,npanel** Time on [T] and incoming
    longwave radiation [M T:math:`^{-3}`] (:math:`L^\downarrow` in
-   Equation \ `[eq:longwave_radiation] <#eq:longwave_radiation>`__).
-   Default value is :math:`3.0 \times 10^2` J m\ :math:`^{-2}`
-   s\ :math:`^{-1}`.
+   Equation :ref:`eq:longwave_radiation` ). Default value is
+   :math:`3.0 \times 10^2` J m\ :math:`^{-2}` s\ :math:`^{-1}`.
 
 
 
@@ -10608,8 +10582,8 @@ Input instructions ! Incoming longwave radiation
 
 #. **ton_val(i), value(i), i=1,npanel** Time on [T] and air temperature
    [ °C] (:math:`T_a` in
-   Equation \ `[eq:longwave_radiation2] <#eq:longwave_radiation2>`__).
-   Default value is 15  °C.
+   Equation :ref:`eq:longwave_radiation2` ). Default value is
+   15  °C.
 
 
 
@@ -10632,9 +10606,8 @@ Input instructions ! Temperature of air
 
 #. **ton_val(i), value(i), amp(i), phase(i), period(i), i=1,npanel**
    Time on [T], vertical shift [ °C] (mid-point temperature, :math:`T_a`
-   in
-   Equation \ `[eq:longwave_radiation2] <#eq:longwave_radiation2>`__),
-   amplitude [ °C], phase [-], and period [T].
+   in Equation :ref:`eq:longwave_radiation2` ), amplitude
+   [ °C], phase [-], and period [T].
 
 
 
@@ -10647,9 +10620,8 @@ Input instructions ! Temperature of air
 Input instructions ! Sinusoidal temperature of air
 
 These instructions are used to define the sensible heat flux :math:`Q_h`
-in Equation \ `[eq:sensible_heat_flux] <#eq:sensible_heat_flux>`__ and
-latent heat flux :math:`Q_E` in
-Equation \ `[eq:latent_heat_flux] <#eq:latent_heat_flux>`__.
+in Equation :ref:`eq:sensible_heat_flux`  and latent heat flux
+:math:`Q_E` in Equation :ref:`eq:latent_heat_flux` .
 
 --------------
 
@@ -10662,8 +10634,8 @@ Equation \ `[eq:latent_heat_flux] <#eq:latent_heat_flux>`__.
 
 #. **ton_val(i), value(i), i=1,npanel** Time on [T] and density of air
    [M L:math:`^{-3}`] (:math:`\rho_a` in
-   Equation \ `[eq:sensible_heat_flux] <#eq:sensible_heat_flux>`__).
-   Default value is 1.225 kg m\ :math:`^{-3}`.
+   Equation :ref:`eq:sensible_heat_flux` ). Default value is
+   1.225 kg m\ :math:`^{-3}`.
 
 
 
@@ -10686,9 +10658,8 @@ Input instructions ! Density of air
 
 #. **ton_val(i), value(i), i=1,npanel** Time on [T] and specific heat of
    air [L:math:`^2` T:math:`^{-2}` K:math:`^{-1}`] (:math:`c_a` in
-   Equation \ `[eq:sensible_heat_flux] <#eq:sensible_heat_flux>`__).
-   Default value is :math:`7.17 \times 10^2` J kg\ :math:`^{-1}`
-   K\ :math:`^{-1}`.
+   Equation :ref:`eq:sensible_heat_flux` ). Default value is
+   :math:`7.17 \times 10^2` J kg\ :math:`^{-1}` K\ :math:`^{-1}`.
 
 
 
@@ -10711,8 +10682,8 @@ Input instructions ! Specific heat of air
 
 #. **ton_val(i), value(i), i=1,npanel** Time on [T] and wind speed
    [L T:math:`^{-1}`] (:math:`V_a` in
-   Equation \ `[eq:sensible_heat_flux] <#eq:sensible_heat_flux>`__).
-   Default value is 1.0 m s\ :math:`^{-1}`.
+   Equation :ref:`eq:sensible_heat_flux` ). Default value is
+   1.0 m s\ :math:`^{-1}`.
 
 
 
@@ -10735,8 +10706,7 @@ Input instructions ! Wind speed
 
 #. **ton_val(i), value(i), amp(i), phase(i), period(i), i=1,npanel**
    Time on [T], vertical shift [L T:math:`^{-1}`] (mid-point wind speed,
-   :math:`V_a` in
-   Equation \ `[eq:sensible_heat_flux] <#eq:sensible_heat_flux>`__),
+   :math:`V_a` in Equation :ref:`eq:sensible_heat_flux` ),
    amplitude [L T:math:`^{-1}`], phase, and period [T].
 
 
@@ -10759,8 +10729,7 @@ Input instructions ! Sinusoidal wind speed
    function.
 
 #. **ton_val(i), value(i), i=1,npanel** Time on [T] and drag coefficient
-   [-] (:math:`c_D` in
-   Equation \ `[eq:sensible_heat_flux] <#eq:sensible_heat_flux>`__).
+   [-] (:math:`c_D` in Equation :ref:`eq:sensible_heat_flux` ).
    Default value is :math:`2.0 \times 10^{-3}`.
 
 
@@ -10784,8 +10753,8 @@ Input instructions ! Drag coefficient
 
 #. **ton_val(i), value(i), i=1,npanel** Time on [T] and latent heat of
    vapourization [L:math:`^2` T:math:`^{-2}`] (:math:`L_V` in
-   Equation \ `[eq:latent_heat_flux] <#eq:latent_heat_flux>`__). Default
-   value is :math:`2.258 \times 10^6` J kg\ :math:`^{-1}`.
+   Equation :ref:`eq:latent_heat_flux` ). Default value is
+   :math:`2.258 \times 10^6` J kg\ :math:`^{-1}`.
 
 
 
@@ -10808,8 +10777,8 @@ Input instructions ! Latent heat of vapourization
 
 #. **ton_val(i), value(i), i=1,npanel** Time on [T] and specific
    humidity of air [M M:math:`^{-1}`] (:math:`SH_a` in
-   Equation \ `[eq:latent_heat_flux] <#eq:latent_heat_flux>`__). Default
-   value is 0.01062.
+   Equation :ref:`eq:latent_heat_flux` ). Default value is
+   0.01062.
 
 
 
@@ -10832,8 +10801,7 @@ Input instructions ! Specific humidity of air
 
 #. **ton_val(i), value(i), i=1,npanel** Time on [T] and soil-water
    suction at surface [L] (:math:`\psi_g` in
-   Equation \ `[eq:thermal_21] <#eq:thermal_21>`__). Default value is
-   0.138 m.
+   Equation :ref:`eq:thermal_21` ). Default value is 0.138 m.
 
 
 
@@ -10856,9 +10824,8 @@ Input instructions ! Soil-Water suction at surface
 
 #. **ton_val(i), value(i), i=1,npanel** Time on [T] and saturation
    vapour pressure [M L:math:`^{-1}` T:math:`^{-2}`]
-   (:math:`e_{sat}[T_g]` in
-   Equation \ `[eq:thermal_22] <#eq:thermal_22>`__). Default value is
-   :math:`1.704 \times 10^3` Pa.
+   (:math:`e_{sat}[T_g]` in Equation :ref:`eq:thermal_22` ).
+   Default value is :math:`1.704 \times 10^3` Pa.
 
 
 
@@ -10903,7 +10870,7 @@ Input instructions ! Relative humidity
 
 #. **ton_val(i), value(i), i=1,npanel** Time on [T] and air pressure
    [M L:math:`^{-1}` T:math:`^{-2}`] (:math:`p_a` in
-   Equation \ `[eq:thermal_22] <#eq:thermal_22>`__). Default value is
+   Equation :ref:`eq:thermal_22` ). Default value is
    :math:`1.013 \times 10^5` Pa.
 
 
@@ -10926,12 +10893,12 @@ assumed that there is dissolution of an immobile liquid or solid phase
 into the subsurface water until all dissolvable material is exhausted.
 The following instruction can be used to define the source:
 
-Input instructions ! Input instructions ! Immiscible phase
-dissolution data ! 
+Input instructions ! Immiscible phase
+
 
 --------------
 
-| 
+
 
 #. **diss_mass(i), i=1,nspeciesmob** Mass of dissolvable immiscible
    phase per unit volume of porous medium [M L:math:`^{-3}`] for each
@@ -10978,11 +10945,11 @@ conditions ! transport ! zero-order source A zero-order source is one in
 which the medium itself produces a solute. For example, some soils
 produce radon gas as a result of radioactive decay.
 
-Input instructions ! Input instructions ! Zero order source ! 
+
 
 --------------
 
-| 
+
 
 #. **npanel** Number of panels in the time-variable, zero-order source
    function.
@@ -11020,12 +10987,12 @@ species the input format is
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Zero order source with
-partitioning ! 
+Input instructions ! Zero order source with
+
 
 --------------
 
-| 
+
 
 #. **npanel** Number of time panels.
 
@@ -11080,12 +11047,12 @@ panels and two species the input format is
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Zero order source
-saturation threshold ! 
+Input instructions ! Zero order source
+
 
 --------------
 
-| 
+
 
 #. **threshold(i), i=1,nspeciesmob** Water saturation threshold [-].
 
@@ -11181,11 +11148,10 @@ number of 1).
 
 By default, all zones, and therefore all elements in the domain, are
 assigned the same default porous media properties, which are listed in
-Table \ `[tab:saturated_porous_media_defaults] <#tab:saturated_porous_media_defaults>`__.
-These values are fixed **HydroGeoSphere** and cannot be modified by the
-user unless the code is changed and recompiled. However, there are other
-ways of changing the porous media zone properties as we will discuss
-below.
+Table :ref:`tab:saturated_porous_media_defaults` . These values
+are fixed **HydroGeoSphere** and cannot be modified by the user unless
+the code is changed and recompiled. However, there are other ways of
+changing the porous media zone properties as we will discuss below.
 
 The first step in modifying zoned properties for a given problem is to
 indicate which type of medium is to be manipulated. The following
@@ -11216,11 +11182,11 @@ Models with many zones may write a large amount of output to the
 **grok** execution due to excessive I/O operations. The following
 command is designed to address this problem.
 
-Input instructions ! Input instructions ! Limit zone output ! 
+
 
 --------------
 
-| 
+
 
 #. **max_zone** The maximum zone number to output.
 
@@ -11241,9 +11207,9 @@ Defining a New Zone
 
 Zones ! creating In order to define a new zone, elements of the proper
 type must first be chosen using the instructions given in
-Section \ `2.4 <#sec:selecting_components>`__. For example, 3-D block
-elements must first be selected before a new porous media or dual zone
-can be defined, 2-D rectangular faces are selected for fracture or
+Section :ref:`sec:selecting_components` . For example, 3-D
+block elements must first be selected before a new porous media or dual
+zone can be defined, 2-D rectangular faces are selected for fracture or
 surface zones, and 1-D segments are selected for channel, well, and tile
 zones.
 
@@ -11321,12 +11287,12 @@ numbers [sec:el_zone_number_io] The following commands can be used to
 store or retrieve porous media or surface flow domain element zone
 numbers.
 
-Input instructions ! Input instructions ! Write zones to file !
+Input instructions ! Write zones to file !
 
 
 --------------
 
-| 
+
 
 #. **zone_file** Name of the file to which element zone numbers will be
    written.
@@ -11341,12 +11307,12 @@ element number followed by the assigned zone number.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Read zones from file !
+Input instructions ! Read zones from file !
 
 
 --------------
 
-| 
+
 
 #. **zone_file** Name of the file from which zone information will be
    read.
@@ -11374,12 +11340,12 @@ the zone number 3, then the file would contain:
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Read zones from raster
-for chosen elements ! 
+Input instructions ! Read zones from raster
+
 
 --------------
 
-| 
+
 
 #. **zone_raster** Name of raster file containing integers representing
    zones. Note: zone numbers should be sequential starting from 1.
@@ -11394,12 +11360,12 @@ the raster cell that contains the centroid of that element.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Read pm zones from voxet
-file ! 
+Input instructions ! Read pm zones from voxet
+
 
 --------------
 
-| 
+
 
 #. **filename** Filename of voxet file (exported to ASCII format), up to
    256 characters. Note that the length units in this file must match
@@ -11449,12 +11415,12 @@ triangular prism or hexahedral block meshes.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Read overland zones from
-raster ! 
+Input instructions ! Read overland zones from
+
 
 --------------
 
-| 
+
 
 #. **zone_raster** Name of raster file containing integers representing
    zones. Note: zone numbers should be sequential starting from 1.
@@ -11469,12 +11435,12 @@ the raster cell that contains the 2-D centroid of that element.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Read overland zones from
-raster, dominant class ! 
+Input instructions ! Read overland zones from
+
 
 --------------
 
-| 
+
 
 #. **zone_raster** Name of raster file containing integers representing
    zones. Note: zone numbers should be sequential starting from 1.
@@ -11544,12 +11510,12 @@ ArcView file will be numbered from 8 to 11.
 
 Input instructions ! Zones from arcview ascii grid
 
-Input instructions ! Input instructions ! Zones from arcview for
-chosen elements ! 
+Input instructions ! Zones from arcview for
+
 
 --------------
 
-| 
+
 
 #. **filename** Name of the ArcView shapefile without the file
    extension.
@@ -11596,8 +11562,7 @@ Since ArcView shapefiles created on a Windows platform may not be binary
 compatible with a UNIX platform, the zone numbers can be written to an
 ASCII file using the Write zones to file instruction and then read on
 the UNIX platform using the Read zones from file instruction (as
-described in
-Section \ `[sec:el_zone_number_io] <#sec:el_zone_number_io>`__. This
+described in Section :ref:`sec:el_zone_number_io` . This
 process can also be useful in cases where the Zones from arcview for
 chosen elements instruction takes a long time to execute, since the
 results can be stored initially and then read much more quickly in
@@ -11694,7 +11659,7 @@ screen and *prefix*\ ``o.eco`` file and execution will halt.
 The instructions which are valid in specific situations are discussed in
 the relevant sections of the manual. For example, instructions which can
 be used for defining saturated flow properties are described in
-Section \ `2.8.2 <#sec:zoned_props>`__.
+Section :ref:`sec:zoned_props` .
 
 Another way to define zone properties is through the use of a material
 properties file, which should be located in the same directory as the
@@ -11705,11 +11670,11 @@ set of chosen zones. To assign new properties through the use of a
 material properties file, we first need to issue the following
 instruction:
 
-Input instructions ! Input instructions ! Properties file ! 
+
 
 --------------
 
-| 
+
 
 #. **props_filename** Name of the material properties file, at most 256
    characters.
@@ -11737,10 +11702,10 @@ Each distinct material in the file is identified by a unique label and
 may contain instructions which are to be applied to the current zone
 type. For example, instructions which can be used for defining porous
 media properties when simulating saturated flow (as described in
-Section \ `[sec:sat_mprops] <#sec:sat_mprops>`__) may be included.
-Figure \ `[fig:mprop_pm_cd] <#fig:mprop_pm_cd>`__ shows an example of a
-material defined for the verification problem discussed in
-Section \ `[V-sec:verif_pm_cd] <#V-sec:verif_pm_cd>`__.
+Section :ref:`sec:sat_mprops` ) may be included.
+Figure :ref:`fig:mprop_pm_cd`  shows an example of a material
+defined for the verification problem discussed in
+Section :ref:`V-sec:verif_pm_cd` .
 
 ::
 
@@ -11821,7 +11786,7 @@ zones.
 
 A summary of the final data which has been defined for each zone is
 listed in the *prefix*\ ``o.eco`` file, and an example is shown in
-Figure \ `[fig:pm_cd_sample_output] <#fig:pm_cd_sample_output>`__.
+Figure :ref:`fig:pm_cd_sample_output` .
 
 ::
 
@@ -11869,18 +11834,17 @@ Porous medium ! input ! saturated flow properties [sec:sat_mprops]
 saturated mode unless instructed otherwise, and unless you modify the
 default values, all zones (and elements) in the domain will be assigned
 the default porous media properties which are listed in
-Table \ `[tab:saturated_porous_media_defaults] <#tab:saturated_porous_media_defaults>`__.
-These values are representative of a sand.
+Table :ref:`tab:saturated_porous_media_defaults` . These values
+are representative of a sand.
 
 Note that the default state of the hydraulic conductivity tensor
-(:math:`\mathbf{K}` in
-Equation \ `[eq:gw_continuityc] <#eq:gw_continuityc>`__) is that it is
-isotropic and that all off-diagonal terms are zero.
+(:math:`\mathbf{K}` in Equation :ref:`eq:gw_continuityc` ) is
+that it is isotropic and that all off-diagonal terms are zero.
 
 You can use the general methods and instructions outlined in
-Section \ `[sec:modify_material] <#sec:modify_material>`__ to modify the
-default distribution of saturated porous media properties. A general
-porous medium layout is shown as the following instruction:
+Section :ref:`sec:modify_material`  to modify the default
+distribution of saturated porous media properties. A general porous
+medium layout is shown as the following instruction:
 
 ::
 
@@ -11947,7 +11911,7 @@ introduced and discussed below.
 
 | K isotropic
 
-[.mprops]
+
 
 #. **Kval** Hydraulic conductivity [L T:math:`^{-1}`].
 
@@ -11966,7 +11930,7 @@ Input instructions ! K isotropic
 
 | K anisotropic
 
-[.mprops]
+
 
 #. **Kxx, Kyy, Kzz** Hydraulic conductivities [L T:math:`^{-1}`] in the
    :math:`x`-, :math:`y`-, and :math:`z`-directions, respectively.
@@ -11986,7 +11950,7 @@ Input instructions !Input instructions ! K anisotropic by ratio !
 --------------
 
 | 
-| .grok[.mprops] 
+
 
 #. **Kval, Kratio** Hydraulic conductivity [L T:math:`^{-1}`] in the
    :math:`x`- and :math:`y`-directions and a ratio to compute the
@@ -12006,7 +11970,7 @@ Assigns anisotropic hydraulic conductivities such that
 
 | K tensor
 
-[.mprops]
+
 
 #. **Kxx, Kyy, Kzz** Main-diagonal terms of the hydraulic conductivity
    tensor: :math:`K_{xx}, K_{yy}, K_{zz}` [L T:math:`^{-1}`].
@@ -12030,10 +11994,10 @@ Input instructions ! K tensor
 
 | Specific storage
 
-[.mprops]
+
 
 #. **val** Specific storage [L:math:`^{-1}`], :math:`S_s` in
-   Equation \ `[eq:4] <#eq:4>`__.
+   Equation :ref:`eq:4` .
 
 
 
@@ -12049,10 +12013,10 @@ Input instructions ! Specific storage
 
 | Porosity
 
-[.mprops]
+
 
 #. **val** Porosity [L:math:`^3` L:math:`^{-3}`], :math:`\theta_s` in
-   Equation \ `[eq:gw_continuity] <#eq:gw_continuity>`__.
+   Equation :ref:`eq:gw_continuity` .
 
 
 
@@ -12068,10 +12032,10 @@ Input instructions ! Porosity
 
 | Poisson ratio
 
-[.mprops]
+
 
 #. **val** Poisson’s Ratio [-], :math:`\nu^*` in
-   Equation \ `[eq:loading_efficiency] <#eq:loading_efficiency>`__.
+   Equation :ref:`eq:loading_efficiency` .
 
 
 
@@ -12087,10 +12051,10 @@ Input instructions ! Poisson ratio
 
 | Loading efficiency
 
-[.mprops]
+
 
 #. **val** Loading efficiency [-], :math:`\zeta^*` in
-   Equation \ `[eq:loading_efficiency] <#eq:loading_efficiency>`__.
+   Equation :ref:`eq:loading_efficiency` .
 
 
 
@@ -12108,12 +12072,11 @@ Input instructions ! Loading efficiency
 
 [.mprops] This command should be included in the input file if you want
 the pre-processor to compute the loading efficiency [-] based on
-Equation \ `[eq:loading_efficiency] <#eq:loading_efficiency>`__. In this
-case, values of Poisson’s ratio and compressibility of solids and water
-for the current media will be used. Porous media compressibility will be
-computed from the specific storage value. If this command is not
-included, the default or user-defined loading efficiency value is used
-instead.
+Equation :ref:`eq:loading_efficiency` . In this case, values of
+Poisson’s ratio and compressibility of solids and water for the current
+media will be used. Porous media compressibility will be computed from
+the specific storage value. If this command is not included, the default
+or user-defined loading efficiency value is used instead.
 
 --------------
 
@@ -12127,11 +12090,10 @@ Input instructions ! Compute loading efficiency
 
 | Solids compressibility
 
-[.mprops]
+
 
 #. **val** Solids compressibility [L T:math:`^2` M:math:`^{-1}`],
-   :math:`K_s` in
-   Equation \ `[eq:skempton.coefficient] <#eq:skempton.coefficient>`__.
+   :math:`K_s` in Equation :ref:`eq:skempton.coefficient` .
 
 
 
@@ -12182,7 +12144,7 @@ Input instructions !Input instructions ! Read elemental K from file !
 --------------
 
 | 
-| .grok 
+
 
 #. **input_k_filename** Name of the file which contains the variable K
    [L T:math:`^{-1}`] data.
@@ -12230,7 +12192,7 @@ file !
 --------------
 
 | 
-| .grok 
+
 
 #. **filename** Name of the binary file that contains the hydraulic
    conductivity values.
@@ -12284,7 +12246,7 @@ file.
 #. **rasterfile** Name of the raster file containing the hydraulic
    conductivity [L T:math:`^{-1}`] values. This is a string variable.
    The file should be formatted as outlined in
-   Appendix \ `9 <#app:raster_files>`__.
+   Appendix :ref:`app:raster_files` .
 
 For each element in the set of currently chosen zones, a value for the
 isotropic hydraulic conductivity (i.e. :math:`K_{xx}=K_{yy}=K_{zz}`)
@@ -12305,7 +12267,7 @@ Input instructions ! Map isotropic K from raster
 #. **rasterfile_x** Name of the raster file containing the
    :math:`x`-component (i.e., :math:`K_{xx}`) hydraulic conductivities
    [L T:math:`^{-1}`]. This is a string variable. The file should be
-   formatted as outlined in Appendix \ `9 <#app:raster_files>`__.
+   formatted as outlined in Appendix :ref:`app:raster_files` .
 
 #. **rasterfile_y** As above but for the :math:`y`-component (i.e.,
    :math:`K_{yy}`) hydraulic conductivities [L T:math:`^{-1}`].
@@ -12331,7 +12293,7 @@ Input instructions ! Map anisotropic K from raster
 
 #. **rasterfile** Name of the raster file containing the porosity [-]
    values. This is a string variable. The file should be formatted as
-   outlined in Appendix \ `9 <#app:raster_files>`__.
+   outlined in Appendix :ref:`app:raster_files` .
 
 For each element in the set of currently chosen zones a value for the
 porosity will be interpolated from the raster file data.
@@ -12376,7 +12338,7 @@ binary file !
 --------------
 
 | 
-| .grok 
+
 
 #. **filename** Name of the binary file that contains the porosity [-]
    values.
@@ -12416,7 +12378,7 @@ endianness is handled automatically when reading the file.
 The input file should contain the following data:
 
 #. **element_number, stor** Element number, specific storage
-   [L:math:`^{-1}`], :math:`S_s` in Equation \ `[eq:4] <#eq:4>`__.
+   [L:math:`^{-1}`], :math:`S_s` in Equation :ref:`eq:4` .
 
 Data is read from the file until end-of-file is reached. The user can
 supply variable specific storage values for any number of elements in
@@ -12439,7 +12401,7 @@ from binary file !
 --------------
 
 | 
-| .grok 
+
 
 #. **filename** Name of the binary file that contains the specific
    storage values.
@@ -12476,7 +12438,7 @@ endianness is handled automatically when reading the file.
 
 #. **rasterfile** Name of the raster file containing the tortuosity [-]
    values. The file should be formatted as outlined in
-   Appendix \ `9 <#app:raster_files>`__.
+   Appendix :ref:`app:raster_files` .
 
 For each element in the set of currently chosen zones, a value for the
 tortuosity will be interpolated from the raster file data.
@@ -12521,7 +12483,7 @@ binary file !
 --------------
 
 | 
-| .grok 
+
 
 #. **filename** Name of the binary file that contains the tortuosity
    values.
@@ -12556,7 +12518,7 @@ Input instructions !Input instructions ! Write element K !
 --------------
 
 | 
-| .grok 
+
 
 #. **filename** Name of the file in which to write the hydraulic
    conductivity [L T:math:`^{-1}`] information, at most 80 characters.
@@ -12590,7 +12552,7 @@ Output ! element hydraulic conductivity
 
 | Write element K at z
 
-Output !element hydraulic conductivity
+
 
 #. **zfix** :math:`z`-coordinate [L] for choosing which element to
    write.
@@ -12660,7 +12622,7 @@ Input instructions ! AECL properties
 
 | Random K field from FGEN
 
-Random hydraulic conductivity fields
+
 
 #. **fgenfile** Name of file which contains the random hydraulic
    conductivity information generated by FGEN.
@@ -12719,7 +12681,7 @@ Input instructions ! Random K field from FGEN
 
 | Random KD field from FGEN
 
-Random distribution coefficient fields
+
 
 #. **fgenfile** Name of file which contains the random distribution
    coefficient information generated by FGEN.
@@ -12880,7 +12842,7 @@ for chosen elements !
 --------------
 
 | 
-| .grok 
+
 
 #. **imp_fac** The impedance factor [-].
 
@@ -12936,7 +12898,7 @@ factor via temperature raster !
 --------------
 
 | 
-| .grok 
+
 
 #. **impedance** The impedance factor :math:`(> 0)` [-].
 
@@ -12992,12 +12954,12 @@ factor will have a multiplicative effect.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Permafrost formation from
-file ! 
+Input instructions ! Permafrost formation from
+
 
 --------------
 
-| 
+
 
 #. **filename** Filename of the ASCII file containing permafrost
    formation locations and times.
@@ -13035,11 +12997,11 @@ Input instructions ! CInput instructions ! Interpolate permafrost ! C
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Permafrost k ! 
+
 
 --------------
 
-| 
+
 
 #. **Kxx, Kyy, Kzz** Permafrost hydraulic conductivities
    [L T:math:`^{-1}`] in the :math:`x`-, :math:`y`-, and
@@ -13055,12 +13017,12 @@ Permafrost formation from file.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Permafrost porosity !
+Input instructions ! Permafrost porosity !
 
 
 --------------
 
-| 
+
 
 #. **porosity** Permafrost porosity [-].
 
@@ -13076,12 +13038,12 @@ Otherwise, **grok** will terminate with an error message.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Permafrost effective
-diffusion coefficient ! 
+Input instructions ! Permafrost effective
+
 
 --------------
 
-| 
+
 
 #. **diff_coeff** Permafrost effective diffusion coefficient
    [L:math:`^2` T:math:`^{-1}`].
@@ -13114,15 +13076,15 @@ Wells
 
 [sec:wells] Well domains, can be set up using the following
 instructions, as outlined in
-Section \ `[sec:flow_subsurface_wells] <#sec:flow_subsurface_wells>`__
-and in Equation \ `[part_sat_1d_well] <#part_sat_1d_well>`__. The
-variable **radius** corresponds to :math:`r_s`, while the pumping rates
-:math:`Q_w`, use the new boundary condition format as described in
-Section \ `[sec:bndy_cond] <#sec:bndy_cond>`__. Unless the user modifies
-the default values, all well zones in the domain will be assigned the
+Section :ref:`sec:flow_subsurface_wells`  and in
+Equation :ref:`part_sat_1d_well` . The variable **radius**
+corresponds to :math:`r_s`, while the pumping rates :math:`Q_w`, use the
+new boundary condition format as described in
+Section :ref:`sec:bndy_cond` . Unless the user modifies the
+default values, all well zones in the domain will be assigned the
 default properties. The default values,
-Table \ `[tab:saturated_well_defaults] <#tab:saturated_well_defaults>`__,
-can be and are recommend to be modified to fit the model application.
+Table :ref:`tab:saturated_well_defaults` , can be and are
+recommend to be modified to fit the model application.
 
 [tab:saturated_well_defaults]
 
@@ -13144,9 +13106,8 @@ can be and are recommend to be modified to fit the model application.
 
 For example, the following set of instructions, with
 *prefix*\ ``.wprops`` file
-Figure \ `[tab:saturated_well_wprops_example] <#tab:saturated_well_wprops_example>`__,
-could be inserted into the *prefix*\ ``.grok`` file to produce a pumping
-well:
+Figure :ref:`tab:saturated_well_wprops_example` , could be
+inserted into the *prefix*\ ``.grok`` file to produce a pumping well:
 
 ::
 
@@ -13195,9 +13156,8 @@ well:
        end
 
 The well domain example opens the property file *prefix*\ ``.wprops``,
-shown in
-Figure \ `[tab:saturated_well_wprops_example] <#tab:saturated_well_wprops_example>`__,
-and creates a 20 m long screen located at :math:`x = 100` m and
+shown in Figure :ref:`tab:saturated_well_wprops_example` , and
+creates a 20 m long screen located at :math:`x = 100` m and
 :math:`y = 100` m with a pump intake located at :math:`z = 0` m. The
 well one properties are read into **grok** and a steady pumping rate is
 set at :math:`-80 \times 10^{-3}` m\ :math:`^3` s\ :math:`^{-1}`. If the
@@ -13227,7 +13187,7 @@ water vertically through its screen.
 | Radius
 
 | ``Scope:`` ``.grok`` ``.wprops``
-| 
+
 
 #. **WellScreenRadius** Well Screen Radius [L].
 
@@ -13246,14 +13206,14 @@ Input instructions ! Radius
 | Infilled
 
 | ``Scope:`` ``.grok`` ``.wprops``
-| 
+
 
 #. **WellPropsInfilled** Infilled well material name from porous medium
    ``.mprops`` file.
 
 This command should be included in the input file for an infilled well.
 The default values are a sand as described in
-Table \ `[tab:saturated_dual_continuua_defaults] <#tab:saturated_dual_continuua_defaults>`__.
+Table :ref:`tab:saturated_dual_continuua_defaults` .
 
 --------------
 
@@ -13316,7 +13276,7 @@ Input instructions ! Manning
 | Friction
 
 | ``Scope:`` ``.grok`` ``.wprops``
-| 
+
 
 #. **well_friction** Manning’s friction [L:math:`^{-1/3}` T] for wells.
 
@@ -13335,7 +13295,7 @@ Input instructions ! Friction
 | Hazen Williams coefficient
 
 | ``Scope:`` ``.grok`` ``.wprops``
-| 
+
 
 #. **well_hw_coeffient** HazenWilliams coefficient
    [L:math:`^{0.37}` T:math:`^{-1}`] for wells.
@@ -13385,7 +13345,7 @@ Input instructions ! Dual nodes for wells
 | Coupling conductivity
 
 | ``Scope:`` ``.grok`` ``.wprops``
-| 
+
 
 #. **WellPropsCplCond** Coupling conductivity [L T:math:`^{-1}`] for
    wells.
@@ -13406,7 +13366,7 @@ Input instructions ! Coupling conductivity
 | Coupling length
 
 | ``Scope:`` ``.grok`` ``.wprops``
-| 
+
 
 #. **WellPropsCplLngth** Coupling length [L] for wells.
 
@@ -13432,13 +13392,12 @@ Channel Flow
 Channel flow ! input [sec:channels]
 
 Channel domains, can be set up using the following instructions, as
-outlined in
-Section \ `[sec:flow_open_channel] <#sec:flow_open_channel>`__ and in
-Equation \ `[1d_open_channel_flow] <#1d_open_channel_flow>`__. Unless
-the user modifies the default values, all channel zones in the domain
-will be assigned the default properties. The default values,
-Table \ `[tab:channel_property_defaults] <#tab:channel_property_defaults>`__,
-can be and are recommend to be modified to fit the model application.
+outlined in Section :ref:`sec:flow_open_channel`  and in
+Equation :ref:`1d_open_channel_flow` . Unless the user modifies
+the default values, all channel zones in the domain will be assigned the
+default properties. The default values,
+Table :ref:`tab:channel_property_defaults` , can be and are
+recommend to be modified to fit the model application.
 
 [tab:channel_property_defaults]
 
@@ -13459,9 +13418,9 @@ can be and are recommend to be modified to fit the model application.
    ====================
 
 For example, the following set of instructions, with
-*prefix*\ ``.cprops`` file
-Figure \ `[tab:cprops_example] <#tab:cprops_example>`__, could be
-inserted into the *prefix*\ ``.grok`` file to produce a channel:
+*prefix*\ ``.cprops`` file Figure :ref:`tab:cprops_example` ,
+could be inserted into the *prefix*\ ``.grok`` file to produce a
+channel:
 
 ::
 
@@ -13556,8 +13515,8 @@ inserted into the *prefix*\ ``.grok`` file to produce a channel:
 
 The channel domain example opens the property file
 *prefix*\ ``.cprops``, shown in
-Figure \ `[tab:cprops_example] <#tab:cprops_example>`__, and creates a 1
-m wide channel. The channel one properties are read into **grok**.
+Figure :ref:`tab:cprops_example` , and creates a 1 m wide
+channel. The channel one properties are read into **grok**.
 
 ::
 
@@ -13610,7 +13569,7 @@ Input instructions ! Dual nodes for channel flow
 | Type rectangle
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| 
+
 
 #. **ChanWidth** Channel width [L].
 
@@ -13629,7 +13588,7 @@ Input instructions ! Type rectangle
 | Type trapezoid
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| 
+
 
 #. **ChanWidth** Channel width [L].
 
@@ -13651,7 +13610,7 @@ Input instructions ! Type trapezoid
 | Type circle
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| 
+
 
 #. **ChanRadius** Channel radius [L].
 
@@ -13670,7 +13629,7 @@ Input instructions ! Type circle
 | Type general
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| 
+
 
 #. **ntab** Number of water depth values in the table.
 
@@ -13694,7 +13653,7 @@ Input instructions ! Type general
 | Friction
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| 
+
 
 #. **ChanFrictn** Manning friction [L:math:`^{-1/3}` T] for the channel.
 
@@ -13713,7 +13672,7 @@ Input instructions ! Friction
 | Rill storage height
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| 
+
 
 #. **ChanRillStor** Channel rill storage height [L].
 
@@ -13732,7 +13691,7 @@ Input instructions ! Rill storage height
 | Obstruction storage height
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| 
+
 
 #. **ChanOnstructStor** Channel obstruction storage height [L].
 
@@ -13751,7 +13710,7 @@ Input instructions ! Obstruction storage height
 | Streambed thickness
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| 
+
 
 #. **ChanStrmBedThick** Thickness of streambed [L].
 
@@ -13771,7 +13730,7 @@ Input instructions ! Streambed thickness
 | Streambed conductivity
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| 
+
 
 #. **ChanStrmBedK** Hydraulic conductivity [L T:math:`^{-1}`] of
    streambed.
@@ -13792,7 +13751,7 @@ Input instructions ! Streambed conductivity
 | Bank height
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| 
+
 
 #. **ChanBankHeight** Height of river bank [L].
 
@@ -13813,11 +13772,11 @@ Cutoff Walls
 Cutoff walls Cutoff walls can be used to represent internal impermeable
 boundaries which could occur, for example, in a funnel-and-gate system.
 
-Input instructions ! Input instructions ! Cutoff Walls ! 
+
 
 --------------
 
-| 
+
 
 #. **nwalls** Number of impermeable cutoff walls to be defined.
 
@@ -13872,8 +13831,8 @@ Discrete fractures ! input ! Import from FRACTRAN
 
 This instruction is to be used after a mesh has been loaded using the
 Read fractran 2d grid described in
-Section \ `[sec:fractran_slice] <#sec:fractran_slice>`__. It uses the
-FRACTRAN prefix defined there to read the associated properties.
+Section :ref:`sec:fractran_slice` . It uses the FRACTRAN prefix
+defined there to read the associated properties.
 
 --------------
 
@@ -13889,11 +13848,10 @@ Variably-Saturated Subsurface Flow
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Subsurface domain ! input ! variably-saturated flow properties As
-discussed in
-Section \ `[sec:subsurface_flow_theory] <#sec:subsurface_flow_theory>`__,
-one of the requirements for simulating variably-saturated flow is that
-we define the constitutive relationships that govern the relation
-between the pressure head, saturation and relative permeability. These
+discussed in Section :ref:`sec:subsurface_flow_theory` , one of
+the requirements for simulating variably-saturated flow is that we
+define the constitutive relationships that govern the relation between
+the pressure head, saturation and relative permeability. These
 relationships must be defined for the porous medium, discrete fractures
 and the dual continuum and, for each of these types of media, the choice
 is to use either pseudo-soil, functional or tabular relationships. Wells
@@ -13901,14 +13859,14 @@ are a special case and are handled automatically by **HydroGeoSphere**.
 
 Media specific instructions and default values for porous media,
 discrete fractures and dual continua are given in
-Sections \ `[sec:vsat_pm_props] <#sec:vsat_pm_props>`__,
-`[sec:vsat_frac_props] <#sec:vsat_frac_props>`__ and
-`[sec:vsat_dual_props] <#sec:vsat_dual_props>`__ respectively.
+Sections :ref:`sec:vsat_pm_props` ,
+:ref:`sec:vsat_frac_props`  and
+:ref:`sec:vsat_dual_props`  respectively.
 
 General instructions for modifying the default functional and tabular
 relationships are given in
-Sections \ `[sec:vsat_functions_props] <#sec:vsat_functions_props>`__
-and `[sec:vsat_tables_props] <#sec:vsat_tables_props>`__ respectively.
+Sections :ref:`sec:vsat_functions_props`  and
+:ref:`sec:vsat_tables_props`  respectively.
 
 .. _porous-medium-1:
 
@@ -13926,10 +13884,10 @@ vertically under saturated hydraulic conductivity conditions.
 
 If you wish to use Van Genuchten or BrooksCorey functions to describe
 the constitutive relationship you can do so using the instructions given
-in Section \ `[sec:vsat_functions_props] <#sec:vsat_functions_props>`__.
-Unless you modify them, the default values given in
-Table \ `[tab:pm_unsat_function_default] <#tab:pm_unsat_function_default>`__
-will be used to define the functional relationships.
+in Section :ref:`sec:vsat_functions_props` . Unless you modify
+them, the default values given in
+Table :ref:`tab:pm_unsat_function_default`  will be used to
+define the functional relationships.
 
 [tab:pm_unsat_function_default]
 
@@ -13958,11 +13916,11 @@ models.
 
 If you wish to use tables to describe the constitutive relationships you
 can do so using the instructions given in
-Section \ `[sec:vsat_tables_props] <#sec:vsat_tables_props>`__. Unless
-you modify them, the default values of water saturation versus pressure
-head and saturation versus relative permeability listed in
-Table \ `[tab:pm_unsat_table_default] <#tab:pm_unsat_table_default>`__
-will be used to define the tabular relationships.
+Section :ref:`sec:vsat_tables_props` . Unless you modify them,
+the default values of water saturation versus pressure head and
+saturation versus relative permeability listed in
+Table :ref:`tab:pm_unsat_table_default`  will be used to define
+the tabular relationships.
 
 --------------
 
@@ -13975,7 +13933,7 @@ will be used to define the tabular relationships.
   under saturated hydraulic conductivity conditions, similar to the
   behaviour of the pseudo-soil relation. This instruction should be
   applied to porous media, as discussed in
-  Section \ `[sec:modify_material] <#sec:modify_material>`__.
+  Section :ref:`sec:modify_material` .
 
 --------------
 
@@ -14014,11 +13972,10 @@ its maximum value, regardless of the state of fracture saturation.
 
 If you wish to use Van Genuchten or BrooksCorey functions to describe
 the constitutive relationships you can do so using the instructions
-given in
-Section \ `[sec:vsat_functions_props] <#sec:vsat_functions_props>`__.
-Unless you modify them, the default values given in
-Table \ `[tab:frac_unsat_function_default] <#tab:frac_unsat_function_default>`__
-will be used to define the functional relationships.
+given in Section :ref:`sec:vsat_functions_props` . Unless you
+modify them, the default values given in
+Table :ref:`tab:frac_unsat_function_default`  will be used to
+define the functional relationships.
 
 [tab:frac_unsat_function_default]
 
@@ -14042,11 +13999,11 @@ models.
 
 If you wish to use tables to describe the constitutive relationships you
 can do so using the instructions given in
-Section \ `[sec:vsat_tables_props] <#sec:vsat_tables_props>`__. Unless
-you modify them, the default values of water saturation versus pressure
-head and saturation versus relative permeability listed in
-Table \ `[tab:frac_unsat_table_default] <#tab:frac_unsat_table_default>`__
-will be used to define the tabular relationships.
+Section :ref:`sec:vsat_tables_props` . Unless you modify them,
+the default values of water saturation versus pressure head and
+saturation versus relative permeability listed in
+Table :ref:`tab:frac_unsat_table_default`  will be used to
+define the tabular relationships.
 
 [tab:frac_unsat_table_default]
 
@@ -14069,7 +14026,7 @@ while tabular relationships can vary from fracture zone to fracture zone
 if so desired.
 
 The following instructions should be applied to discrete fractures, as
-discussed in Section \ `[sec:modify_material] <#sec:modify_material>`__.
+discussed in Section :ref:`sec:modify_material` .
 
 --------------
 
@@ -14082,8 +14039,7 @@ discussed in Section \ `[sec:modify_material] <#sec:modify_material>`__.
   instruction.
 
 By default values of contact area versus pressure head listed in
-Table \ `[tab:unsat_pca_table_default] <#tab:unsat_pca_table_default>`__
-will be used.
+Table :ref:`tab:unsat_pca_table_default`  will be used.
 
 .. table:: Default pressure-effective area table for variably-saturated
 discrete fractured media.
@@ -14112,7 +14068,7 @@ pressure-effective area relationship:
 | Pressure-effective area
 
 | ``Scope:`` ``.grok`` ``.fprops``
-| 
+
 
 #. **pressure(i), effective_area(i)...end** Pressure [L] and effective
    area [L:math:`^2`].
@@ -14141,7 +14097,7 @@ Input instructions ! Pressure-effective area
 | ``Scope:``\ ``.grok`` 
 | Causes **HydroGeoSphere** to use the approach of
   :raw-latex:`\citet{wang}`, as discussed in
-  Section \ `[V-verif:wang] <#V-verif:wang>`__, for computing the
+  Section :ref:`V-verif:wang` , for computing the
   pressure-effective area relationship for the fractures. These
   functions will automatically be applied to all fracture zones.
 
@@ -14169,19 +14125,18 @@ saturated hydraulic conductivity conditions.
 
 If you wish to use Van Genuchten or BrooksCorey functions to describe
 the constitutive relationships you can do so using the instructions
-given in
-Section \ `[sec:vsat_functions_props] <#sec:vsat_functions_props>`__.
-Unless you modify them, the default values given in
-Table \ `[tab:dual_unsat_function_default] <#tab:dual_unsat_function_default>`__
-will be used to define the functional relationships.
+given in Section :ref:`sec:vsat_functions_props` . Unless you
+modify them, the default values given in
+Table :ref:`tab:dual_unsat_function_default`  will be used to
+define the functional relationships.
 
 If you wish to use tables to describe the constitutive relationships you
 can do so using the instructions given in
-Section \ `[sec:vsat_tables_props] <#sec:vsat_tables_props>`__. Unless
-you modify them, the default values of water saturation versus pressure
-head and saturation versus relative permeability listed in
-Table \ `[tab:dual_unsat_table_default] <#tab:dual_unsat_table_default>`__
-will be used to define the tabular relationships.
+Section :ref:`sec:vsat_tables_props` . Unless you modify them,
+the default values of water saturation versus pressure head and
+saturation versus relative permeability listed in
+Table :ref:`tab:dual_unsat_table_default`  will be used to
+define the tabular relationships.
 
 --------------
 
@@ -14194,7 +14149,7 @@ will be used to define the tabular relationships.
   vertically under saturated hydraulic conductivity conditions, similar
   to the behaviour of the pseudo-soil relation. This instruction should
   be applied to dual continua, as discussed in
-  Section \ `[sec:modify_material] <#sec:modify_material>`__.
+  Section :ref:`sec:modify_material` .
 
 --------------
 
@@ -14240,13 +14195,13 @@ When simulating a system with porous and dual continua, the constitutive
 relationships of the interface between the two continua must also be
 defined. The following instructions provide this functionality:
 
-| Interface unsaturated tables Input instructions ! Interface
+Interface unsaturated tables Input instructions ! Interface
   unsaturated tables
-| Interface unsaturated van genuchten functions Input instructions !
+Interface unsaturated van genuchten functions Input instructions !
   Interface unsaturated van genuchten functions
-| Interface unsaturated brooks-corey functions Input instructions !
+Interface unsaturated brooks-corey functions Input instructions !
   Interface unsaturated brooks-corey functions
-| Interface relative permeability xy Input instructions ! Interface
+Interface relative permeability xy Input instructions ! Interface
   relative permeability xy
 
 Input is identical to the generic forms of the commands discussed in the
@@ -14264,7 +14219,7 @@ Variably-saturated flow ! defining functional constitutive relationships
 to modify the default variably-saturated properties for a porous medium,
 discrete fracture or dual continuum. Before issuing them it is necessary
 to choose which type of medium they should be applied to, as discussed
-in Section \ `[sec:modify_material] <#sec:modify_material>`__.
+in Section :ref:`sec:modify_material` .
 
 For each instruction we will again indicate its scope (i.e. ``.grok``, 
 ``.mprops, .dprops, .fprops``). Recall that if an instruction is used in
@@ -14278,7 +14233,7 @@ affect the named material of which it is a part.
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
 | Causes **grok** to use BrooksCorey functions
-  (Equation `[eq:1aa1] <#eq:1aa1>`__) to describe the constitutive
+  (Equation :ref:`eq:1aa1` ) to describe the constitutive
   relationships for the medium and to begin reading a group of
   instructions that define the function until it encounters an End
   instruction.
@@ -14297,7 +14252,7 @@ Input instructions ! Unsaturated brooks-corey functions...End
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
 | Causes **grok** to use Van Genuchten functions
-  (Equation `[eq:1a1] <#eq:1a1>`__) to describe the constitutive
+  (Equation :ref:`eq:1a1` ) to describe the constitutive
   relationships for the medium and to begin reading a group of
   instructions that define the function until it encounters an End
   instruction.
@@ -14313,13 +14268,10 @@ Input instructions ! Unsaturated van genuchten functions...End
 The previous two instructions are used to choose between the BrooksCorey
 of Van Genuchten approaches for defining the functions. In either case,
 if no further instructions are issued, the default function parameter
-values given in
-Tables \ `[tab:pm_unsat_function_default] <#tab:pm_unsat_function_default>`__,
-`[tab:frac_unsat_function_default] <#tab:frac_unsat_function_default>`__
-and
-`[tab:dual_unsat_function_default] <#tab:dual_unsat_function_default>`__
-will be used for porous media, discrete fractures and dual continua
-respectively.
+values given in Tables :ref:`tab:pm_unsat_function_default` ,
+:ref:`tab:frac_unsat_function_default`  and
+:ref:`tab:dual_unsat_function_default`  will be used for porous
+media, discrete fractures and dual continua respectively.
 
 In the case of porous and dual media, these instructions override the
 pseudo-soil default so that relative permeability factors are applied to
@@ -14333,7 +14285,7 @@ define the constitutive relationships:
 | Residual saturation
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-| 
+
 
 #. **val** Residual water saturation :math:`S_{wr}` [-].
 
@@ -14352,7 +14304,7 @@ Input instructions ! Residual saturation
 | Alpha
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-| 
+
 
 #. **val** Power index alpha :math:`\alpha` [L:math:`^{-1}`].
 
@@ -14373,17 +14325,17 @@ Input instructions ! Alpha
 | Beta
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-| 
+
 
 #. **val** Power index beta :math:`\beta` [-].
 
 For the Van Genuchten function, this parameter must be greater than 1.0.
 If you enter a value less than 1.0 you will be warned and **grok** will
 stop. This value is used to compute :math:`\nu` according to
-Equation \ `[eq:1a3] <#eq:1a3>`__.
+Equation :ref:`eq:1a3` .
 
 For the BrooksCorey formulation, this value is used to recalculate the
-exponent in Equation \ `[eq:1aa2] <#eq:1aa2>`__ unless the instruction
+exponent in Equation :ref:`eq:1aa2`  unless the instruction
 Exponent has been used previously for this material.
 
 --------------
@@ -14399,7 +14351,7 @@ Input instructions ! Beta
 | Pore connectivity
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-| 
+
 
 #. **val** Pore connectivity :math:`l_p` [-].
 
@@ -14409,7 +14361,7 @@ want to redefine it for the BrooksCorey formulation. The value
 recommended in this case is 2.0.
 
 For the BrooksCorey formulation, this value is used to recalculate the
-exponent in Equation \ `[eq:1aa2] <#eq:1aa2>`__ unless the instruction
+exponent in Equation :ref:`eq:1aa2`  unless the instruction
 Exponent has been used previously for this material.
 
 --------------
@@ -14425,15 +14377,15 @@ Input instructions ! Pore connectivity
 | Air entry pressure
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-| 
+
 
 #. **val** Air entry pressure [L].
 
 For the BrooksCorey function, this value is used to compute
 :math:`\alpha` [L:math:`^{-1}`] according to
-Equation \ `[eq:1aa1] <#eq:1aa1>`__. For the Van Genuchten function,
-this parameter is not used. If you use this instruction you will be
-prompted to remove it and **grok** will stop.
+Equation :ref:`eq:1aa1` . For the Van Genuchten function, this
+parameter is not used. If you use this instruction you will be prompted
+to remove it and **grok** will stop.
 
 --------------
 
@@ -14448,9 +14400,9 @@ Input instructions ! Air entry pressure
 | Exponent
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-| 
 
-#. **val** Exponent [-] in Equation \ `[eq:1aa2] <#eq:1aa2>`__, which is
+
+#. **val** Exponent [-] in Equation :ref:`eq:1aa2` , which is
    used to compute :math:`k_r` in the BrooksCorey function. By default,
    the exponent is computed automatically from :math:`\beta` and
    :math:`l_p`. This instruction allows you to enter a different value.
@@ -14472,7 +14424,7 @@ Input instructions ! Exponent
 | Minimum relative permeability
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-| 
+
 
 #. **val** Minimum relative permeability [-].
 
@@ -14501,7 +14453,7 @@ instructions affect the properties of the tabular data.
 | Table smoothness factor
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| 
+
 
 #. **val** Smoothness factor [-]. Smaller values cause more points to be
    generated for a smoother, more accurate table. The default value is
@@ -14522,7 +14474,7 @@ Input instructions ! Table smoothness factor
 | Table minimum pressure
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| 
+
 
 #. **val** Minimum pressure [L] value in the pressure-saturation table.
    The default value is :math:`-1000` m.
@@ -14542,7 +14494,7 @@ Input instructions ! Table minimum pressure
 | Table maximum s-k slope
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| 
+
 
 #. **val** Maximum slope [-] of the saturation-relative permeability
    curve when nearing full saturation. The default value is 100.
@@ -14570,7 +14522,7 @@ Input instructions ! Table maximum s-k slope
   written in Tecplot compatible format so they can be easily plotted.
   The tabular values in the files can be copied into the ``.mprops``
   file for use with the unsaturated table instructions described in
-  Section \ `[sec:vsat_tables_props] <#sec:vsat_tables_props>`__
+  Section :ref:`sec:vsat_tables_props` 
 
 --------------
 
@@ -14641,10 +14593,9 @@ The values used to define the table are included as comments, as are the
 instructions needed for incorporating the tabular data in the
 ``.mprops`` file.
 
-Figure \ `[fig:tab_from_func] <#fig:tab_from_func>`__ is a plot of the
-resulting constitutive relationships. Note that the ``.mprops`` file and
-material names are used to form the Tecplot title and appear on the
-plot.
+Figure :ref:`fig:tab_from_func`  is a plot of the resulting
+constitutive relationships. Note that the ``.mprops`` file and material
+names are used to form the Tecplot title and appear on the plot.
 
 .. figure:: tab_from_func_new.png
    :alt: Example of using functional parameters to generate tabular
@@ -14704,7 +14655,7 @@ Variably-saturated flow ! defining tabular constitutive relationships
 modify the default variably-saturated properties for a porous medium,
 discrete fracture or dual continuum. Before issuing them it is necessary
 to choose which type of medium they should be applied to, as discussed
-in Section \ `[sec:modify_material] <#sec:modify_material>`__.
+in Section :ref:`sec:modify_material` .
 
 For each instruction we will again indicate its scope (i.e. ``.grok``, 
 ``.mprops, .fprops, .dprops``). Recall that if an instruction is used in
@@ -14723,12 +14674,10 @@ affect the named material of which it is a part.
   instruction.
 
 If no further instructions are issued, the default tabular parameter
-values given in
-Tables \ `[tab:pm_unsat_table_default] <#tab:pm_unsat_table_default>`__,
-`[tab:frac_unsat_table_default] <#tab:frac_unsat_table_default>`__ and
-`[tab:dual_unsat_table_default] <#tab:dual_unsat_table_default>`__ will
-be used for porous media, discrete fractures and dual continua
-respectively.
+values given in Tables :ref:`tab:pm_unsat_table_default` ,
+:ref:`tab:frac_unsat_table_default`  and
+:ref:`tab:dual_unsat_table_default`  will be used for porous
+media, discrete fractures and dual continua respectively.
 
 In the case of porous and dual media, this instruction overrides the
 pseudo-soil default so that relative permeability factors are applied to
@@ -14750,7 +14699,7 @@ which define the constitutive relationships:
 | Pressure-saturation
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-| 
+
 
 #. **pressure(i), saturation(i)...end** Pressure :math:`\psi` [L] and
    saturation :math:`S` [-].
@@ -14774,7 +14723,7 @@ Input instructions ! Pressure-saturation
 | Saturation-relative k
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-| 
+
 
 #. **saturation(i), rel_perm(i)...end** Saturation :math:`S` [-] and
    relative permeability :math:`k_{rw}` [-].
@@ -14801,7 +14750,7 @@ Surface Flow
 Surface domain ! input ! properties [sec:overland_mprops] Unless you
 modify the default values, all zones (and elements) in the surface flow
 domain will be assigned the default properties listed in
-Table \ `[tab:overland_default] <#tab:overland_default>`__.
+Table :ref:`tab:overland_default` .
 
 [tab:overland_default]
 
@@ -14833,11 +14782,11 @@ affect the named material of which it is a part.
 | X friction
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| 
+
 
 #. **val** Friction factor [L:math:`^{-1/3}` T] in the
    :math:`x`-direction, :math:`n_x` in
-   Equation \ `[eq:man_x] <#eq:man_x>`__.
+   Equation :ref:`eq:man_x` .
 
 
 
@@ -14854,11 +14803,11 @@ Input instructions ! X friction
 | Y friction
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| 
+
 
 #. **val** Friction factor [L:math:`^{-1/3}` T] in the
    :math:`y`-direction, :math:`n_y` in
-   Equation \ `[eq:man_y] <#eq:man_y>`__.
+   Equation :ref:`eq:man_y` .
 
 
 
@@ -14875,7 +14824,7 @@ Input instructions ! Y friction
 | Time varying friction...End
 
 | ``Scope:`` ``.oprops``
-| 
+
 
 #. **time(i), nmann(i)...end** Time [T] and Manning roughness
    coefficient [L:math:`^{-1/3}` T].
@@ -14898,7 +14847,7 @@ friction !
 
 | 
 | .grok[.oprops]
-| 
+
 
 #. **interpolate** Logical value (T/F), which if true, causes scale
    factors to be interpolated from the time-value table.
@@ -14925,7 +14874,7 @@ by temperature raster !
 
 | 
 | .grok
-| 
+
 
 #. **scale** Friction scale factor [-]. Must be a strictly positive real
    value.
@@ -14971,10 +14920,10 @@ Time varying friction.
 | Rill storage height
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| 
+
 
 #. **val** Rill storage height [L], :math:`H_d` in
-   Section \ `[sec:surface_flow_rill_storage] <#sec:surface_flow_rill_storage>`__.
+   Section :ref:`sec:surface_flow_rill_storage` .
 
 
 
@@ -14991,10 +14940,10 @@ Input instructions ! Rill storage height
 | Obstruction storage height
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| 
+
 
 #. **val** Obstruction storage height [L], :math:`H_o` in
-   Section \ `[sec:surface_flow_rill_storage] <#sec:surface_flow_rill_storage>`__.
+   Section :ref:`sec:surface_flow_rill_storage` .
 
 
 
@@ -15011,10 +14960,10 @@ Input instructions ! Obstruction storage height
 | Coupling length
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| 
+
 
 #. **val** Coupling length [L], :math:`l_{exch}` in
-   Equation \ `[eq:sw_gw_interaction] <#eq:sw_gw_interaction>`__.
+   Equation :ref:`eq:sw_gw_interaction` .
 
 
 
@@ -15031,11 +14980,11 @@ Input instructions ! Coupling length
 | Maximum flow depth
 
 | ``Scope:`` ``.grok``
-| 
+
 
 #. **val** Maximum flow depth [L], in
-   Equations \ `[eq:manningx] <#eq:manningx>`__ and
-   `[eq:manningy] <#eq:manningy>`__, the maximum of :math:`d_o`.
+   Equations :ref:`eq:manningx`  and
+   :ref:`eq:manningy` , the maximum of :math:`d_o`.
 
 
 
@@ -15052,11 +15001,11 @@ Input instructions ! Maximum flow depth
 | Minimum elemental energy slope
 
 | ``Scope:`` ``.grok``
-| 
+
 
 #. **val** Minimum elemental energy slope [-], in
-   Equations \ `[eq:manningx] <#eq:manningx>`__ and
-   `[eq:manningy] <#eq:manningy>`__, the minimum of
+   Equations :ref:`eq:manningx`  and
+   :ref:`eq:manningy` , the minimum of
    :math:`\partial h_o/\partial s`.
 
 
@@ -15074,7 +15023,7 @@ Input instructions !Input instructions ! Read rill storage from raster !
 --------------
 
 | 
-| .grok 
+
 
 #. **raster_filename** Filename of raster file containing the surface
    elevation [L] values.
@@ -15117,7 +15066,7 @@ Evapotranspiration
 
 Evapotranspiration ! input ! properties [sec:et_materials] **NOTE:**
 Equations describing evapotranspiration in
-Section \ `[sec:et] <#sec:et>`__ of the Theory Manual are based on water
+Section :ref:`sec:et`  of the Theory Manual are based on water
 content. However, **grok** uses saturation as input. The input required
 in this section is therefore saturation and not water content. The water
 content can be converted to saturation by dividing it by the saturated
@@ -15125,8 +15074,8 @@ water content :math:`\theta_s`, which is equivalent to the porosity.
 
 Unless you modify the default values, all zones (and elements) in the ET
 domain will be assigned the default properties listed in
-Table \ `[tab:et_default] <#tab:et_default>`__, which are representative
-of a grass cover.
+Table :ref:`tab:et_default` , which are representative of a
+grass cover.
 
 [tab:et_default]
 
@@ -15174,7 +15123,7 @@ raster !
 --------------
 
 | 
-| .grok 
+
 
 #. **time(i), filename(i)...end** Time [T] and raster filename list.
 
@@ -15224,10 +15173,10 @@ zone numbers.
 | Canopy storage parameter
 
 | ``Scope:`` ``.etprops``
-| 
+
 
 #. **cint_et** Canopy storage parameter [L], :math:`c_{int}` in
-   Equation \ `[eq:et_intstor] <#eq:et_intstor>`__.
+   Equation :ref:`eq:et_intstor` .
 
 
 
@@ -15247,7 +15196,7 @@ Input instructions !Input instructions ! Canopy evaporation interval !
 --------------
 
 | 
-| .grok 
+
 
 #. **time_interval** The canopy evaporation time interval [T]
    (non-negative real value). The default value is zero.
@@ -15282,11 +15231,10 @@ interception storage computed at the previous simulation time.
 | Initial interception storage
 
 | ``Scope:`` ``.etprops``
-| 
+
 
 #. **init_sint_et** Initial canopy interception storage value [L],
-   :math:`S^0_{int}` in
-   Equation \ `[eq:et_nf_intstor] <#eq:et_nf_intstor>`__.
+   :math:`S^0_{int}` in Equation :ref:`eq:et_nf_intstor` .
 
 
 
@@ -15306,7 +15254,7 @@ for all time) of the leaf area index (LAI):
 | LAI tables...End
 
 | ``Scope:`` ``.etprops``
-| 
+
 
 #. **time(i), lai(i)...end** Time [T] and leaf area index [-].
 
@@ -15317,8 +15265,7 @@ list are counted automatically to determine the table size.
 
 Observed values of leaf area index :raw-latex:`\citep{scurlock}` and
 maximum rooting depth :raw-latex:`\citep{canadell}` for various
-terrestrial biomes are shown in
-Table \ `[tab:lai_table] <#tab:lai_table>`__.
+terrestrial biomes are shown in Table :ref:`tab:lai_table` .
 
 --------------
 
@@ -15333,7 +15280,7 @@ Input instructions !Input instructions ! Time varying lai from raster !
 --------------
 
 | 
-| .grok 
+
 
 #. **time(i), filename(i)...end** Time [T] and raster filename list.
 
@@ -15359,18 +15306,18 @@ any ET properties file (``.etprops``).
 | Transpiration fitting parameters
 
 | ``Scope:`` ``.etprops``
-| 
+
 
 #. **C_1** Coefficient :math:`C_1` [-] in
-   Equation \ `[eq:et_func1] <#eq:et_func1>`__.
+   Equation :ref:`eq:et_func1` .
 
 #. **C_2** Coefficient :math:`C_2` [-] in
-   Equation \ `[eq:et_func1] <#eq:et_func1>`__.
+   Equation :ref:`eq:et_func1` .
 
 #. **C_3** Coefficient :math:`C_3` [-] in
-   Equation \ `[eq:et_func2] <#eq:et_func2>`__. By default, this
-   coefficient is set to one, which gives a linear ramping function
-   whereas higher values would give higher order ramping functions.
+   Equation :ref:`eq:et_func2` . By default, this coefficient
+   is set to one, which gives a linear ramping function whereas higher
+   values would give higher order ramping functions.
 
 
 
@@ -15387,23 +15334,23 @@ Input instructions ! Transpiration fitting parameters
 | Transpiration limiting saturations
 
 | ``Scope:`` ``.etprops``
-| 
+
 
 #. **thwp_et** Saturation [-] at wilting point, equal to
    :math:`\theta_{wp}/\theta_s`, with :math:`\theta_{wp}` used in
-   Equation \ `[eq:et_func2] <#eq:et_func2>`__.
+   Equation :ref:`eq:et_func2` .
 
 #. **thfc_et** Saturation [-] at field capacity, equal to
    :math:`\theta_{fc}/\theta_s`, with :math:`\theta_{fc}` used in
-   Equation \ `[eq:et_func2] <#eq:et_func2>`__.
+   Equation :ref:`eq:et_func2` .
 
 #. **tho_et** Saturation [-] at oxic limit, equal to
    :math:`\theta_{o}/\theta_s`, with :math:`\theta_{o}` used in
-   Equation \ `[eq:et_func2] <#eq:et_func2>`__.
+   Equation :ref:`eq:et_func2` .
 
 #. **than_et** Saturation [-] at anoxic limit, equal to
    :math:`\theta_{an}/\theta_s`, with :math:`\theta_{anp}` used in
-   Equation \ `[eq:et_func2] <#eq:et_func2>`__.
+   Equation :ref:`eq:et_func2` .
 
 
 
@@ -15420,7 +15367,7 @@ Input instructions ! Transpiration limiting saturations
 | Transpiration limiting pressure head
 
 | ``Scope:`` ``.etprops``
-| 
+
 
 #. **Hwp_et** Pressure head [L] at wilting point,
    :math:`\psi_{wp}=\psi(\theta_{wp})`.
@@ -15450,15 +15397,15 @@ Input instructions ! Transpiration limiting pressure head
 | Evaporation limiting saturations
 
 | ``Scope:`` ``.etprops``
-| 
+
 
 #. **the2_et** Saturation [-] below which evaporation is zero, equal to
    :math:`\theta_{e2}/\theta_s`, with :math:`\theta_{e2}` used in
-   Equation \ `[eq:wet] <#eq:wet>`__.
+   Equation :ref:`eq:wet` .
 
 #. **the1_et** Saturation [-] above which full evaporation can occur,
    equal to :math:`\theta_{e1}/\theta_s`, with :math:`\theta_{e1}` used
-   in Equation \ `[eq:wet] <#eq:wet>`__.
+   in Equation :ref:`eq:wet` .
 
 
 
@@ -15475,7 +15422,7 @@ Input instructions ! Evaporation limiting saturations
 | Evaporation limiting pressure head
 
 | ``Scope:`` ``.etprops``
-| 
+
 
 #. **He2_et** Pressure head [L] below which evaporation is zero,
    :math:`\psi_{e2}=\psi(\theta_{e2})`.
@@ -15521,7 +15468,7 @@ Input instructions !Input instructions ! Root depth !
 --------------
 
 | 
-| .etprops 
+
 
 #. **max_root_depth** Maximum root depth :math:`(L_r)` [L].
 
@@ -15538,16 +15485,16 @@ depth :math:`(z_r = z/L_r)` that are mapped onto porous media elements
 above the maximum root depth :math:`(L_r)`. These functions are defined
 so that the area under their graph is one. Four options are available:
 constant, linear, quadratic, and cubic; see
-Figure \ `[fig:depth_function] <#fig:depth_function>`__. Root length
-density may also be defined by a piecewise linear function of relative
-depth that is represented by a table. By default, root length density is
-defined by the linear polynomial function. The following commands may be
-used to select one of the other functions:
+Figure :ref:`fig:depth_function` . Root length density may also
+be defined by a piecewise linear function of relative depth that is
+represented by a table. By default, root length density is defined by
+the linear polynomial function. The following commands may be used to
+select one of the other functions:
 
-| Rdf constant function Input instructions ! Rdf constant function
-| Rdf quadratic decay function Input instructions ! Rdf quadratic
+Rdf constant function Input instructions ! Rdf constant function
+Rdf quadratic decay function Input instructions ! Rdf quadratic
   decay function
-| Rdf cubic decay function Input instructions ! Rdf cubic decay
+Rdf cubic decay function Input instructions ! Rdf cubic decay
   function
 
 The following command may be used to specify the root length density via
@@ -15558,7 +15505,7 @@ Input instructions !Input instructions ! Rdf table !
 --------------
 
 | 
-| .etprops 
+
 
 #. **depth(i), density(i)...end** Relative depth [-] and root length
    density [L L:math:`^{-3}`] table.
@@ -15590,7 +15537,7 @@ Input instructions !Input instructions ! Time-root depth table...End !
 --------------
 
 | 
-| .etprops 
+
 
 #. **time(i), root_depth(i)...end** Time [T] and root depth [L] table.
 
@@ -15779,7 +15726,7 @@ growth function.
 | Evaporation depth
 
 | ``Scope:`` ``.etprops``
-| 
+
 
 #. **evap_depth** Evaporation depth [L].
 
@@ -15797,10 +15744,10 @@ Input instructions ! Evaporation depth
 By default, the linear form of the evaporation function is used. The
 following instructions are available for using the other forms:
 
-| Edf constant function Input instructions ! Edf constant function
-| Edf quadratic decay function Input instructions ! Edf quadratic
+Edf constant function Input instructions ! Edf constant function
+Edf quadratic decay function Input instructions ! Edf quadratic
   decay function
-| Edf cubic decay function Input instructions ! Edf cubic decay
+Edf cubic decay function Input instructions ! Edf cubic decay
   function
 
 --------------
@@ -15809,8 +15756,8 @@ following instructions are available for using the other forms:
 
 Potential evaporation using transpiration With this instruction
 potential evaporation is calculated using
-Equation \ `[eq:evap1] <#eq:evap1>`__. By default potential evaporation
-is calculated from Equation \ `[eq:evap2] <#eq:evap2>`__.
+Equation :ref:`eq:evap1` . By default potential evaporation is
+calculated from Equation :ref:`eq:evap2` .
 
 --------------
 
@@ -15825,7 +15772,7 @@ Input instructions !Input instructions ! Echo et at point !
 --------------
 
 | 
-| .grok 
+
 
 #. **x1, y1** :math:`xy`-coordinates [L] of the point.
 
@@ -15957,7 +15904,7 @@ Porous medium ! input ! transport properties Transport ! input ! porous
 medium properties [sec:transport_mprops] By default, all porous media
 zones (and elements) in the domain will be assigned default porous media
 transport properties which are listed in
-Table \ `[tab:transport_porous_media_defaults] <#tab:transport_porous_media_defaults>`__.
+Table :ref:`tab:transport_porous_media_defaults` .
 
 [tab:transport_porous_media_defaults]
 
@@ -15984,28 +15931,27 @@ Table \ `[tab:transport_porous_media_defaults] <#tab:transport_porous_media_def
 
 Included here are parameters for modifying the porous medium so that it
 acts as a double-porosity medium for simulating transport, as described
-in
-Section \ `[sec:double_porosity_transport] <#sec:double_porosity_transport>`__
-and also for isotopic fractionation, as described in
-Section \ `[sec:isotopic_fractionation] <#sec:isotopic_fractionation>`__.
+in Section :ref:`sec:double_porosity_transport`  and also for
+isotopic fractionation, as described in
+Section :ref:`sec:isotopic_fractionation` .
 
 The following instructions can be applied to porous media, as discussed
-in Section \ `[sec:modify_material] <#sec:modify_material>`__, to modify
-the default transport parameters. For each instruction we will indicate
-its scope (i.e. ``.grok`` ``.mprops``). Recall that if an instruction is
-used in the *prefix*\ ``.grok`` file, it will affect the current set of
-chosen zones, while in a properties (e.g. ``.mprops``) file, it will
-only affect the named material of which it is a part.
+in Section :ref:`sec:modify_material` , to modify the default
+transport parameters. For each instruction we will indicate its scope
+(i.e. ``.grok`` ``.mprops``). Recall that if an instruction is used in
+the *prefix*\ ``.grok`` file, it will affect the current set of chosen
+zones, while in a properties (e.g. ``.mprops``) file, it will only
+affect the named material of which it is a part.
 
 --------------
 
 | Longitudinal dispersivity
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| 
+
 
 #. **val** Longitudinal dispersivity [L], :math:`\alpha_l` in
-   Equation \ `[eq:pm_dispersion_tensor] <#eq:pm_dispersion_tensor>`__.
+   Equation :ref:`eq:pm_dispersion_tensor` .
 
 
 
@@ -16022,11 +15968,11 @@ Input instructions ! Longitudinal dispersivity
 | Transverse dispersivity
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| 
+
 
 #. **val** Horizontal component of the transverse dispersivity [L],
    :math:`\alpha_t` in
-   Equation \ `[eq:pm_dispersion_tensor] <#eq:pm_dispersion_tensor>`__.
+   Equation :ref:`eq:pm_dispersion_tensor` .
 
 
 
@@ -16043,11 +15989,11 @@ Input instructions ! Transverse dispersivity
 | Vertical transverse dispersivity
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| 
+
 
 #. **val** Vertical component of the transverse dispersivity [L],
    :math:`\alpha_t` in
-   Equation \ `[eq:pm_dispersion_tensor] <#eq:pm_dispersion_tensor>`__.
+   Equation :ref:`eq:pm_dispersion_tensor` .
 
 
 
@@ -16064,10 +16010,10 @@ Input instructions ! Vertical transverse dispersivity
 | Tortuosity
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| 
+
 
 #. **val** Tortuosity [-], :math:`\tau` in
-   Equation \ `[eq:pm_dispersion_tensor] <#eq:pm_dispersion_tensor>`__.
+   Equation :ref:`eq:pm_dispersion_tensor` .
 
 
 
@@ -16085,7 +16031,7 @@ list !
 --------------
 
 | 
-| .grok[.mprops] 
+
 
 #. **diff_coeff(i), i=1,nspecies** Effective diffusion coefficient
    [L:math:`^2` T:math:`^{-1}`] for each species.
@@ -16103,7 +16049,7 @@ Assigns an effective diffusion coefficient for each species.
 | Anisotropic tortuosity ratio
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| 
+
 
 #. **y_tortratio** Tortuosity ratio [-] in the :math:`y`-direction.
    Default value is 1.
@@ -16131,7 +16077,7 @@ Input instructions ! Anisotropic tortuosity ratio
 | Bulk density
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| 
+
 
 #. **val** Bulk density of dry soil [M L:math:`^{-3}`]. If necessary,
    the bulk density of a solid is calculated as
@@ -16158,12 +16104,12 @@ following two instructions:
 | Immobile zone porosity
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| 
+
 
 #. **val** Immobile zone porosity [-],
    :math:`\theta_\textrm{\scriptsize{Imm}}` in
-   Equations \ `[eq:dp2] <#eq:dp2>`__, `[eq:dp3] <#eq:dp3>`__ and
-   `[eq:dp4] <#eq:dp4>`__.
+   Equations :ref:`eq:dp2` , :ref:`eq:dp3`  and
+   :ref:`eq:dp4` .
 
 
 
@@ -16180,11 +16126,11 @@ Input instructions ! Immobile zone porosity
 | Immobile zone mass transfer coefficient
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| 
+
 
 #. **val** Immobile zone mass transfer coefficient [T:math:`^{-1}`],
    :math:`\alpha_\textrm{\scriptsize{Imm}}` in
-   Equation \ `[eq:coupling_double] <#eq:coupling_double>`__.
+   Equation :ref:`eq:coupling_double` .
 
 
 
@@ -16206,8 +16152,7 @@ Input instructions ! Immobile zone mass transfer coefficient
 
 If no further instructions are issued, the default isotopic
 fractionation parameter values listed in
-Table \ `[tab:transport_porous_media_defaults] <#tab:transport_porous_media_defaults>`__
-will be used.
+Table :ref:`tab:transport_porous_media_defaults`  will be used.
 
 --------------
 
@@ -16224,10 +16169,10 @@ The following three instructions can be used to change these values:
 | Reverse rate
 
 | ``Scope: .mprops``
-| 
+
 
 #. **val** Reverse fractionation rate [L:math:`^{-1}`], :math:`k_r` in
-   Equation \ `[eq:coupling_isotope] <#eq:coupling_isotope>`__.
+   Equation :ref:`eq:coupling_isotope` .
 
 
 
@@ -16244,10 +16189,10 @@ Input instructions ! Reverse rate
 | Fractionation factor
 
 | ``Scope: .mprops``
-| 
+
 
 #. **val** Fractionation factor [-], :math:`\alpha_r` in
-   Equation \ `[eq:coupling_isotope] <#eq:coupling_isotope>`__.
+   Equation :ref:`eq:coupling_isotope` .
 
 
 
@@ -16264,10 +16209,10 @@ Input instructions ! Fractionation factor
 | Rock-water mass ratio
 
 | ``Scope: .mprops``
-| 
+
 
 #. **val** Isotopic rock-water mass ratio [-], :math:`x_r` in
-   Equation \ `[eq:isotope1] <#eq:isotope1>`__.
+   Equation :ref:`eq:isotope1` .
 
 
 
@@ -16287,7 +16232,7 @@ the porous medium:
 | Thermal conductivity of solid
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| 
+
 
 #. **val** Temperature invariant thermal conductivity of the solids
    [M L T:math:`^{-3}` K:math:`^{-1}`]. The bulk thermal conductivity is
@@ -16309,7 +16254,7 @@ Input instructions ! Thermal conductivity of solid
 | Temperature-dependent thermal conductivity of solid
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| 
+
 
 #. **k_s1** Thermal conductivity [M L T:math:`^{-3}` K:math:`^{-1}`] at
    temperature **t_s1**.
@@ -16340,10 +16285,9 @@ Input instructions ! Temperature-dependent thermal conductivity of solid
 
 | ``Scope: .mprops``
 | The default equation used to compute the bulk thermal conductivity is
-  Equation `[eq:thermalk_arithmetic] <#eq:thermalk_arithmetic>`__. If
-  that instruction is specified, the thermal conductivity of the porous
-  medium is instead computed with Equation
-  `[eq:thermalk_geom] <#eq:thermalk_geom>`__.
+  Equation :ref:`eq:thermalk_arithmetic` . If that instruction is
+  specified, the thermal conductivity of the porous medium is instead
+  computed with Equation :ref:`eq:thermalk_geom` .
 
 --------------
 
@@ -16358,7 +16302,7 @@ Input instructions ! Geometric bulk thermal conductivity relation
 | Nonlinear bulk thermal conductivity relation
 
 | ``Scope: .mprops``
-| 
+
 
 #. **k\_sat** Thermal conductivity of the saturated porous medium
    [M L T:math:`^{-3}` K:math:`^{-1}`].
@@ -16369,10 +16313,9 @@ Input instructions ! Geometric bulk thermal conductivity relation
 #. **k_C** Fitting parameter [-].
 
 The default equation used to compute the bulk thermal conductivity is
-Equation `[eq:thermalk_arithmetic] <#eq:thermalk_arithmetic>`__. If that
-instruction is specified, the thermal conductivity of the porous medium
-is instead computed with Equation
-`[eq:thermalk_nonlin] <#eq:thermalk_nonlin>`__.
+Equation :ref:`eq:thermalk_arithmetic` . If that instruction is
+specified, the thermal conductivity of the porous medium is instead
+computed with Equation :ref:`eq:thermalk_nonlin` .
 
 --------------
 
@@ -16387,7 +16330,7 @@ Input instructions ! Nonlinear bulk thermal conductivity relation
 | Specific heat capacity of solid
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| 
+
 
 #. **val** Specific heat capacity of the solid phase
    [L:math:`^2` T:math:`^{-2}` K:math:`^{-1}`].
@@ -16414,7 +16357,7 @@ Discrete fractures ! input ! transport properties Transport ! input !
 discrete fracture properties [sec:transport_fprops] By default, all
 fracture zones (and elements) in the domain will be assigned default
 transport properties which are listed in
-Table \ `[tab:transport_fracture_defaults] <#tab:transport_fracture_defaults>`__.
+Table :ref:`tab:transport_fracture_defaults` .
 
 [tab:transport_fracture_defaults]
 
@@ -16428,22 +16371,22 @@ Table \ `[tab:transport_fracture_defaults] <#tab:transport_fracture_defaults>`_
    ========================================== ===== ====
 
 The following instructions can be applied to discrete fractures, as
-discussed in Section \ `[sec:modify_material] <#sec:modify_material>`__,
-to modify the default transport parameters. For each instruction we will
-indicate its scope (i.e., ``.grok`` ``.fprops``). Recall that if an
-instruction is used in the *prefix*\ ``.grok`` file, it will affect the
-current set of chosen zones, while in a properties (e.g., ``.fprops``)
-file, it will only affect the named material of which it is a part.
+discussed in Section :ref:`sec:modify_material` , to modify the
+default transport parameters. For each instruction we will indicate its
+scope (i.e., ``.grok`` ``.fprops``). Recall that if an instruction is
+used in the *prefix*\ ``.grok`` file, it will affect the current set of
+chosen zones, while in a properties (e.g., ``.fprops``) file, it will
+only affect the named material of which it is a part.
 
 --------------
 
 | Longitudinal dispersivity
 
 | ``Scope:`` ``.grok`` ``.fprops``
-| 
+
 
 #. **val** Longitudinal dispersivity [L], similar to :math:`\alpha_l` in
-   Equation \ `[eq:pm_dispersion_tensor] <#eq:pm_dispersion_tensor>`__.
+   Equation :ref:`eq:pm_dispersion_tensor` .
 
 
 
@@ -16460,10 +16403,10 @@ Input instructions ! Longitudinal dispersivity
 | Transverse dispersivity
 
 | ``Scope:`` ``.grok`` ``.fprops``
-| 
+
 
 #. **val** Transverse dispersivity [L], similar to :math:`\alpha_t` in
-   Equation \ `[eq:pm_dispersion_tensor] <#eq:pm_dispersion_tensor>`__.
+   Equation :ref:`eq:pm_dispersion_tensor` .
 
 
 
@@ -16480,7 +16423,7 @@ Input instructions ! Transverse dispersivity
 | Coupling dispersivity
 
 | ``Scope:`` ``.grok`` ``.fprops``
-| 
+
 
 #. **val** Dispersivity value [L] to be applied during exchange between
    the discrete fracture and subsurface domains. Default value is 0.0.
@@ -16504,7 +16447,7 @@ Dual continuum ! input ! transport properties Transport ! input ! dual
 continuum properties [sec:transport_dprops] By default, all dual
 continua zones (and elements) in the domain will be assigned default
 transport properties which are listed in
-Table \ `[tab:transport_dual_continuua_defaults] <#tab:transport_dual_continuua_defaults>`__.
+Table :ref:`tab:transport_dual_continuua_defaults` .
 
 [tab:transport_dual_continuua_defaults]
 
@@ -16520,22 +16463,22 @@ Table \ `[tab:transport_dual_continuua_defaults] <#tab:transport_dual_continuua
   s\ :math:`^{-1}`
 
 The following instructions can be applied to dual continua, as discussed
-in Section \ `[sec:modify_material] <#sec:modify_material>`__, to modify
-the default transport parameters. For each instruction we will indicate
-its scope (i.e. ``.grok`` ``.dprops``). Recall that if an instruction is
-used in the *prefix*\ ``.grok`` file, it will affect the current set of
-chosen zones, while in a properties (e.g. ``.dprops``) file, it will
-only affect the named material of which it is a part.
+in Section :ref:`sec:modify_material` , to modify the default
+transport parameters. For each instruction we will indicate its scope
+(i.e. ``.grok`` ``.dprops``). Recall that if an instruction is used in
+the *prefix*\ ``.grok`` file, it will affect the current set of chosen
+zones, while in a properties (e.g. ``.dprops``) file, it will only
+affect the named material of which it is a part.
 
 --------------
 
 | Longitudinal dispersivity
 
 | ``Scope:`` ``.grok`` ``.dprops``
-| 
+
 
 #. **val** Longitudinal dispersivity [L], :math:`\alpha_{ld}` in
-   Equation \ `[eq:dual8] <#eq:dual8>`__.
+   Equation :ref:`eq:dual8` .
 
 
 
@@ -16552,10 +16495,10 @@ Input instructions ! Longitudinal dispersivity
 | Transverse dispersivity
 
 | ``Scope:`` ``.grok`` ``.dprops``
-| 
+
 
 #. **val** Horizontal component of the transverse dispersivity [L],
-   :math:`\alpha_{td}` in Equation \ `[eq:dual8] <#eq:dual8>`__.
+   :math:`\alpha_{td}` in Equation :ref:`eq:dual8` .
 
 
 
@@ -16572,10 +16515,10 @@ Input instructions ! Transverse dispersivity
 | Vertical transverse dispersivity
 
 | ``Scope:`` ``.grok`` ``.dprops``
-| 
+
 
 #. **val** Vertical component of the transverse dispersivity [L],
-   :math:`\alpha_{td}` in Equation \ `[eq:dual8] <#eq:dual8>`__.
+   :math:`\alpha_{td}` in Equation :ref:`eq:dual8` .
 
 
 
@@ -16592,10 +16535,10 @@ Input instructions ! Vertical transverse dispersivity
 | Tortuosity
 
 | ``Scope:`` ``.grok`` ``.dprops``
-| 
+
 
 #. **val** Tortuosity [-], :math:`\tau_d` in
-   Equation \ `[eq:dual8] <#eq:dual8>`__.
+   Equation :ref:`eq:dual8` .
 
 
 
@@ -16612,7 +16555,7 @@ Input instructions ! Tortuosity
 | Anisotropic tortuosity ratio
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| 
+
 
 #. **y_tortratio** Tortuosity ratio [-] in the :math:`y`-direction.
    Default value is 1.
@@ -16640,10 +16583,10 @@ Input instructions ! Anisotropic tortuosity ratio
 | Bulk density
 
 | ``Scope:`` ``.grok`` ``.dprops``
-| 
+
 
 #. **val** Bulk density [M L:math:`^{-3}`], :math:`\rho_{bd}` in
-   Equation \ `[eq:dual7] <#eq:dual7>`__.
+   Equation :ref:`eq:dual7` .
 
 
 
@@ -16660,12 +16603,11 @@ Input instructions ! Bulk density
 | First-order mass exchange
 
 | ``Scope: .dprops``
-| 
+
 
 #. **val** First-order mass transfer coefficient [L:math:`^{-1}`],
-   :math:`\alpha_s` in
-   Equations \ `[eq:coupling_dualt2] <#eq:coupling_dualt2>`__ and
-   `[eq:coupling_dualt3] <#eq:coupling_dualt3>`__.
+   :math:`\alpha_s` in Equations :ref:`eq:coupling_dualt2`  and
+   :ref:`eq:coupling_dualt3` .
 
 
 
@@ -16684,7 +16626,7 @@ Runoff ! input ! transport properties Transport ! input ! surface runoff
 properties [sec:transport_oprops] By default, all surface flow zones
 (and elements) in the domain will be assigned default transport
 properties which are listed in
-Table \ `[tab:transport_surface_defaults] <#tab:transport_surface_defaults>`__.
+Table :ref:`tab:transport_surface_defaults` .
 
 [tab:transport_surface_defaults]
 
@@ -16699,23 +16641,23 @@ Table \ `[tab:transport_surface_defaults] <#tab:transport_surface_defaults>`__.
    ============================================= ===== ====
 
 The following instructions can be applied to the surface flow domain, as
-discussed in Section \ `[sec:modify_material] <#sec:modify_material>`__,
-to modify the default transport parameters. For each instruction we will
-indicate its scope (i.e. ``.grok``, ``.oprops``). Recall that if an
-instruction is used in the *prefix*\ ``.grok`` file, it will affect the
-current set of chosen zones, while in a properties (e.g. ``.oprops``)
-file, it will only affect the named material of which it is a part.
+discussed in Section :ref:`sec:modify_material` , to modify the
+default transport parameters. For each instruction we will indicate its
+scope (i.e. ``.grok``, ``.oprops``). Recall that if an instruction is
+used in the *prefix*\ ``.grok`` file, it will affect the current set of
+chosen zones, while in a properties (e.g. ``.oprops``) file, it will
+only affect the named material of which it is a part.
 
 --------------
 
 | Longitudinal dispersivity
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| 
+
 
 #. **val** Longitudinal dispersivity [L], :math:`\alpha_{lo}`. Analogous
    to :math:`\alpha_{l}` in
-   Equation \ `[eq:pm_dispersion_tensor] <#eq:pm_dispersion_tensor>`__.
+   Equation :ref:`eq:pm_dispersion_tensor` .
 
 
 
@@ -16732,11 +16674,11 @@ Input instructions ! Longitudinal dispersivity
 | Transverse dispersivity
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| 
+
 
 #. **val** Horizontal component of the transverse dispersivity [L],
    :math:`\alpha_t`. Analogous to :math:`\alpha_t` in
-   Equation \ `[eq:pm_dispersion_tensor] <#eq:pm_dispersion_tensor>`__.
+   Equation :ref:`eq:pm_dispersion_tensor` .
 
 
 
@@ -16753,7 +16695,7 @@ Input instructions ! Transverse dispersivity
 | Coupling dispersivity
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| 
+
 
 #. **val** Dispersivity value [L] to be applied during exchange between
    the overland flow and subsurface domains. Default value is 0.0.
@@ -16773,11 +16715,11 @@ Input instructions ! Coupling dispersivity
 | Dry albedo
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| 
+
 
 #. **Value** Dry albedo [-] for soil type, :math:`\alpha_{dry}` in
-   Equation \ `[eq:thermal_gs_albedo] <#eq:thermal_gs_albedo>`__.
-   Default value is 0.35.
+   Equation :ref:`eq:thermal_gs_albedo` . Default value is
+   0.35.
 
 
 
@@ -16794,11 +16736,11 @@ Input instructions ! Dry albedo
 | Saturated albedo
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| 
+
 
 #. **Value** Saturated albedo [-] for soil type, :math:`\alpha_{sat}` in
-   Equation \ `[eq:thermal_gs_albedo] <#eq:thermal_gs_albedo>`__.
-   Default value is 0.18.
+   Equation :ref:`eq:thermal_gs_albedo` . Default value is
+   0.18.
 
 
 
@@ -16815,12 +16757,12 @@ Input instructions ! Saturated albedo
 | Heat coupling length
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| 
+
 
 #. **Value** Heat coupling length [L]. The depth of the
    surface/subsurface exchange zone used to compute :math:`\alpha_o` in
-   Equation \ `[eq:thermal_coupling] <#eq:thermal_coupling>`__. Default
-   value is :math:`10^{-4}` m.
+   Equation :ref:`eq:thermal_coupling` . Default value is
+   :math:`10^{-4}` m.
 
 
 
@@ -16840,7 +16782,7 @@ Groundwater Flow with Freezing and Thawing of Pore Water
 
 The following commands can be used to control the freezing and thawing
 of pore water in the porous medium and dual continuum domains (see
-Sections \ `[sec:pore_water_freeze_thaw] <#sec:pore_water_freeze_thaw>`__\ `[sec:dual_domain_freeze_thaw] <#sec:dual_domain_freeze_thaw>`__).
+Sections :ref:`sec:pore_water_freeze_thaw` :ref:`sec:dual_domain_freeze_thaw` ).
 
 Input instructions ! DInput instructions ! Pore water
 freezing-thawing...End ! D
@@ -16908,12 +16850,12 @@ freezing-thawing...End ! D
 The Pore water freezing-thawing...end command is composed of the
 following subcommands:
 
-Input instructions ! Input instructions ! Surface temperature !
+Input instructions ! Surface temperature !
 
 
 --------------
 
-| 
+
 
 #. **time(i), val(i)...end** Time [T] and surface temperature [ °C]
    value list.
@@ -16929,12 +16871,12 @@ in conjunction with the command Surface temperature from raster.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Surface temperature from
-raster ! 
+Input instructions ! Surface temperature from
+
 
 --------------
 
-| 
+
 
 #. **time(i), filename(i)...end** Time [T] and raster filename list.
 
@@ -16952,12 +16894,12 @@ temperature.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Thermal diffusivity !
+Input instructions ! Thermal diffusivity !
 
 
 --------------
 
-| 
+
 
 #. **thermal_diff** Thermal diffusivity [L:math:`^2` T:math:`^{-1}`].
    Default value of :math:`2\times 10^{-7}`
@@ -16971,12 +16913,12 @@ Input instructions ! Input instructions ! Thermal diffusivity !
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Background temperature !
+Input instructions ! Background temperature !
 
 
 --------------
 
-| 
+
 
 #. **background_temp** Background temperature [ °C].
 
@@ -16988,12 +16930,12 @@ Input instructions ! Input instructions ! Background temperature !
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Melting temperature !
+Input instructions ! Melting temperature !
 
 
 --------------
 
-| 
+
 
 #. **melting_temp** Melting temperature [ °C].
 
@@ -17005,12 +16947,12 @@ Input instructions ! Input instructions ! Melting temperature !
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Freezing temperature !
+Input instructions ! Freezing temperature !
 
 
 --------------
 
-| 
+
 
 #. **freezing_temp** Freezing temperature [ °C].
 
@@ -17022,12 +16964,12 @@ Input instructions ! Input instructions ! Freezing temperature !
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Maximum freezing depth !
+Input instructions ! Maximum freezing depth !
 
 
 --------------
 
-| 
+
 
 #. **freezing_depth** Maximum freezing depth [L].
 
@@ -17039,12 +16981,12 @@ Input instructions ! Input instructions ! Maximum freezing depth !
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Integration convergence
-criteria ! 
+Input instructions ! Integration convergence
+
 
 --------------
 
-| 
+
 
 #. **tol** Integration convergence criteria [T:math:`^{-1/2}`  °C].
    Default value of 0.01 [s:math:`^{-1/2}`  °C].
@@ -17065,12 +17007,12 @@ where :math:`n = 2^k n_0` for :math:`k = 0,1,2,\ldots`.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Integration maximum
-iterations ! 
+Input instructions ! Integration maximum
+
 
 --------------
 
-| 
+
 
 #. **maxits** Maximum number of iterations for integration convergence.
    Default value of 20.
@@ -17085,12 +17027,12 @@ to the screen and the *prefix*\ ``o.lst`` file.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Memory length for
-convolution integral ! 
+Input instructions ! Memory length for
+
 
 --------------
 
-| 
+
 
 #. | **memory_length** Memory length for convolution integral [T].
      Default value of
@@ -17147,12 +17089,12 @@ T
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Dual freezing by pm
-temperature ! 
+Input instructions ! Dual freezing by pm
+
 
 --------------
 
-| 
+
 
 #. **transfer_coeff** Thermal transfer coefficient
    [T :math:`\SI{}{\celsius}^{-1}`].
@@ -17278,7 +17220,7 @@ detailed information for each particle to the ASCII file
 for debugging purposes and should be used with a small number of
 particles to keep the log file from ballooning in size.
 
-Initial particle location from file 
+
 
 #. **filename** Filename of the initial particle location file, at most
    300 characters.
@@ -17304,7 +17246,7 @@ follows:
 Note that if a particle’s initial location is outside the model domain,
 then its initial location is set to the centroid of the nearest element.
 
-Initial particle location by layer from file 
+
 
 #. **filename** Filename of the initial particle location file, at most
    300 characters.
@@ -17336,7 +17278,7 @@ follows:
 Note that if a particle’s initial location is outside the model domain,
 then its initial location is set to the centroid of the nearest element.
 
-Output times for particle locations 
+
 
 #. **time(i)...end** Output time [T] list.
 
@@ -17344,7 +17286,7 @@ Specifies the output times at which particle locations are recorded. A
 particle trace path consists of the particle locations at each of the
 output times.
 
-Maximum trace time 
+
 
 #. **max_time** Maximum trace time [T].
 
@@ -17352,7 +17294,7 @@ Specifies the maximum time at which particle traces are updated. For
 each particle, tracing effectively stops after this time. By default the
 maximum trace time is effectively unlimited.
 
-Maximum trace count 
+
 
 #. **max_count** Maximum trace count.
 
@@ -17361,7 +17303,7 @@ value can be used to control the amount of memory consumed by particle
 tracing. For each particle, tracing effectively stops once this count is
 reached. By default the maximum trace count is set to 10 000.
 
-Maximum trace output 
+
 
 #. **max_output** Maximum number of particles to output.
 
@@ -17374,7 +17316,7 @@ determined by the line number of its initial location within the initial
 location input file. By default the maximum trace output is set to
 10 000.
 
-Maximum particle reflection count 
+
 
 #. **max_reflect** Maximum number of particle relfections per trace
    step.
@@ -17397,15 +17339,15 @@ Output
 [sec:output_general] During execution, **grok** and
 **HydroGeoSphere** create many output files, for which a complete list
 with brief descriptions can be found in
-Appendix \ `3 <#app:output_files>`__. Here, we will discuss in more
-detail the output which is of most interest to the user.
+Appendix :ref:`app:output_files` . Here, we will discuss in
+more detail the output which is of most interest to the user.
 
 The main mechanism for generating output from **HydroGeoSphere** is
 through the use of the Output times instruction. For each output time
 defined by the user, there will be a problem dependent set of output
 files which will be generated automatically. Here is a partial list of
 the files which were created by the verification problem described in
-Section \ `[V-sec:verif_f_cd] <#V-sec:verif_f_cd>`__:
+Section :ref:`V-sec:verif_f_cd` :
 
 ::
 
@@ -17439,9 +17381,9 @@ In order to conserve disk space and increase the efficiency of file I/O,
 these files are all stored in binary format, so they can not be viewed
 with a standard text editor. However, through the use of the
 post-processing tool **HSPLOT**, which is described in
-Appendix \ `7 <#app:hsplot>`__, it is possible to create ASCII versions
-of the data contained in these files which are also compatible with the
-third-party visualization tools Tecplot or Paraview.
+Appendix :ref:`app:hsplot` , it is possible to create ASCII
+versions of the data contained in these files which are also compatible
+with the third-party visualization tools Tecplot or Paraview.
 
 By default, simulation time is written in listing and output files in a
 fixed format using the Fortran F format descriptor f17.5, which is not
@@ -17461,19 +17403,19 @@ Time output general format Input instructions ! Time output general
 format
 
 Since these instructions can be used in the ``debug.control`` file (see
-Appendix \ `4 <#app:runtime_debug>`__), it might sometimes be useful to
-switch back to fixed format. To do so, use the instruction:
+Appendix :ref:`app:runtime_debug` ), it might sometimes be
+useful to switch back to fixed format. To do so, use the instruction:
 
 Time output fixed format Input instructions ! Time output fixed
 format
 
 Similarly, mass balance output can be controlled by the instructions:
 
-| Mass balance output scientific format Input instructions ! Mass
+Mass balance output scientific format Input instructions ! Mass
   balance output scientific format
-| Mass balance output general format Input instructions ! Mass
+Mass balance output general format Input instructions ! Mass
   balance output general format
-| Mass balance output fixed format Input instructions ! Mass balance
+Mass balance output fixed format Input instructions ! Mass balance
   output fixed format
 
 For simulations with a large number of output times, the default 4-digit
@@ -17481,12 +17423,12 @@ output time number may not be able to index all output times. In that
 case, you can use the following command to increase the number of digits
 in the output time number.
 
-Input instructions ! Input instructions ! Number of digits for
-output file suffix ! 
+Input instructions ! Number of digits for
+
 
 --------------
 
-| 
+
 
 #. **suffix_len** Number of digits in the output file suffix, an integer
    between 4 and 10, inclusive.
@@ -17581,7 +17523,7 @@ used by certain instructions which choose faces or segments. You can use
 this instruction to write the information to a file which will receive
 the name *prefix*\ ``o.fac``. These files can become quite large, so the
 default is not to save them. See also
-Section \ `[read_3d_grid] <#read_3d_grid>`__.
+Section :ref:`read_3d_grid` .
 
 --------------
 
@@ -17601,7 +17543,7 @@ The following instructions can be used to export data generated by
 
 | Mesh to gms
 
-Export ! GMS format ! 3-D mesh
+
 
 #. **gmsfile** Name of the file to which the 3-D mesh information
    (blocks or prisms) will be written in GMS-readable format.
@@ -17620,7 +17562,7 @@ Input instructions ! Mesh to gms
 
 | 2D mesh to gms
 
-Export ! GMS format ! 2-D mesh
+
 
 #. **gmsfile** Name of the file to which the 2-D mesh information
    (quadrilaterals or triangles) will be written in GMS-readable format.
@@ -17639,7 +17581,7 @@ Input instructions ! 2D mesh to gms
 
 | Rectangles to triangles
 
-Export ! GMS format ! 2-D rectangles as triangles
+
 
 #. **gmsfile** Name of the file to which the 2-D triangular mesh
    information will be written in GMS-readable 2-D mesh file format.
@@ -17664,7 +17606,7 @@ generate wells or fractures.
 
 | Wells to gms
 
-Export ! GMS format ! well elements
+
 
 #. **gmsfile** Name of the file to which the 1-D line information (wells
    and/or tile drains) will be written in GMS-readable borehole file
@@ -17684,7 +17626,7 @@ Input instructions ! Wells to gms
 
 | Fractures to gms
 
-Export ! GMS format ! fracture elements
+
 
 #. **gmsfile** Name of the file to which the 2-D fracture element
    information which will be written in GMS-readable 2-D mesh file
@@ -17710,7 +17652,7 @@ The following instructions can be used to export data generated by
 
 | Mesh to tecplot
 
-Export ! Tecplot format ! 3-D mesh
+
 
 #. **tecfile** The name of the file to which the 3-D mesh information
    (blocks or prisms) will be written in Tecplot readable format.
@@ -17729,7 +17671,7 @@ Input instructions ! Mesh to tecplot
 
 | Wells to tecplot
 
-Export ! Tecplot format ! well elements
+
 
 #. **tec_wells_file** Name of the file to which the 1-D well element
    information will be written in Tecplot LINE3D geometry format.
@@ -17748,7 +17690,7 @@ Input instructions ! Wells to tecplot
 
 | Tiles to tecplot
 
-Export ! Tecplot format ! tile drain elements
+
 
 #. **tec_tiles_file** Name of the file to which the 1-D tile drain
    element information will be written in Tecplot LINE3D geometry
@@ -17768,7 +17710,7 @@ Input instructions ! Tiles to tecplot
 
 | K to tecplot
 
-Export ! Tecplot format ! Hydraulic conductivities
+
 
 #. **tecfile** Name of the file to which the elemental hydraulic
    conductivity information will be written in Tecplot readable format.
@@ -17791,7 +17733,7 @@ Input instructions ! K to tecplot
 
 | Porosity to tecplot
 
-Export ! Tecplot format ! porosity
+
 
 #. **tecfile** The name of the file to which the porosity information
    (blocks or prisms) will be written in Tecplot readable format.
@@ -17810,7 +17752,7 @@ Input instructions ! Porosity to tecplot
 
 | Tortuosity to tecplot
 
-Export ! Tecplot format ! tortuosity
+
 
 #. **tecfile** The name of the file to which the tortuosity information
    (blocks or prisms) will be written in Tecplot readable format.
@@ -17830,7 +17772,7 @@ Input instructions !Input instructions ! ET zones to tecplot !
 --------------
 
 | 
-| .grok .etprops 
+
 
 #. **tecfile** The name of the file to which the ET zones information
    (blocks or prisms) will be written in Tecplot readable format.
@@ -17903,7 +17845,7 @@ Total_time      Simulation wall time (s)
 
 | Flux output nodes
 
-Fluid flux output Output ! fluid flux
+
 
 #. **new_noutfc** Number of new output nodes desired.
 
@@ -17920,7 +17862,7 @@ facilitate, for example, the creation of a plot of fluid flux versus
 time at a node.
 
 For an example which uses flux output nodes, see verification problem in
-Section \ `[V-sec:verif_pm_cd] <#V-sec:verif_pm_cd>`__.
+Section :ref:`V-sec:verif_pm_cd` .
 
 --------------
 
@@ -18060,12 +18002,12 @@ with units [L:math:`^3` T:math:`^{-1}`].
 
 Input instructions ! Report exchange for olf zones
 
-Input instructions ! Input instructions ! Report exchange flux for
-chosen nodes ! 
+Input instructions ! Report exchange flux for
+
 
 --------------
 
-| 
+
 
 #. **label** Descriptive name for the exchange flux, up to 80
    characters.
@@ -18118,12 +18060,12 @@ evapotranspiration boundary condition and writes it to the file named
 
 Input instructions ! Output ET detailsOutput ! ET details
 
-Input instructions ! Input instructions ! Report water table at xy
-! 
+Input instructions ! Report water table at xy
+
 
 --------------
 
-| 
+
 
 #. **name** Descriptive name, up to 40 characters.
 
@@ -18148,12 +18090,12 @@ or when using the command Y vertical.
 
 Output ! water table
 
-Input instructions ! Input instructions ! Report water table at
-node ! 
+Input instructions ! Report water table at
+
 
 --------------
 
-| 
+
 
 #. **name** Descriptive name, up to 40 characters.
 
@@ -18226,12 +18168,12 @@ flux, node coordinates and node number.
 
 Input instructions ! Make observation point
 
-Input instructions ! Input instructions ! Make interpolated
-observation point ! 
+Input instructions ! Make interpolated
+
 
 --------------
 
-| 
+
 
 #. **well_name** Descriptive name for the well, up to 40 characters.
 
@@ -18337,8 +18279,8 @@ Fluid Mass Balance
 
 Output ! fluid mass balance By default, fluid mass balance information
 is computed at each time step and written to the *prefix*\ ``o.lst``
-file. Figure \ `[fig:fluid_balance_pm_cd] <#fig:fluid_balance_pm_cd>`__
-illustrates some sample output as it appears in that file.
+file. Figure :ref:`fig:fluid_balance_pm_cd`  illustrates some
+sample output as it appears in that file.
 
 ::
 
@@ -18391,12 +18333,12 @@ Name). We note that by default the maximum number of boundary conditions
 listed in the water balance output file is capped at 100. This number
 can be changed via the following command.
 
-Input instructions ! Input instructions ! Maximum number of
-boundary conditions to report ! 
+Input instructions ! Maximum number of
+
 
 --------------
 
-| 
+
 
 #. **number** Maximum number of boundary conditions to report in the
    water balance output file *prefix*\ ``o.water_balance``\ ``.dat``.
@@ -18416,7 +18358,7 @@ headings:
 
 -  **River+ River-** The rate at which water is entering or leaving the
    entire model domain via river nodes, as defined in
-   Section \ `[sec:flow_open_channel] <#sec:flow_open_channel>`__.
+   Section :ref:`sec:flow_open_channel` .
 
 -  **Hydrostatic+ Hydrostatic-** The rate at which water is entering or
    leaving the entire model domain via hydrostatic head nodes.
@@ -18564,12 +18506,12 @@ The following commands can be used to output information about the
 volume of water stored within a region of the surface and subsurface
 flow domains.
 
-Input instructions ! Input instructions ! Fluid volume for chosen
-elements ! 
+Input instructions ! Fluid volume for chosen
+
 
 --------------
 
-| 
+
 
 #. **name** Descriptive name for the volume, up to 40 characters.
 
@@ -18598,12 +18540,12 @@ Variable         Units         Description
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Fluid volume for chosen
-elements by layer ! 
+Input instructions ! Fluid volume for chosen
+
 
 --------------
 
-| 
+
 
 #. **name** Descriptive name for the volume, up to 40 characters.
 
@@ -18665,15 +18607,15 @@ fluid flux entering a volume|(
 These commands can be used to compute the fluid flux between a set of
 contributing nodes and a set of active nodes. Output fluxes are reported
 for each individual domain (see
-Section \ `[sec:modify_material] <#sec:modify_material>`__) that is
-present in the model.
+Section :ref:`sec:modify_material` ) that is present in the
+model.
 
-Input instructions ! Input instructions ! Flux volume output nodes
-! 
+Input instructions ! Flux volume output nodes
+
 
 --------------
 
-| 
+
 
 #. **vol_name** Descriptive name for the volume, up to 40 characters.
 
@@ -18718,12 +18660,12 @@ In some cases, it may be necessary to restrict the computation of fluid
 flux to a slice of nodes. The following instructions can be used to do
 this:
 
-Input instructions ! Input instructions ! Slice flux output nodes
-from chosen ! 
+Input instructions ! Slice flux output nodes
+
 
 --------------
 
-| 
+
 
 #. **vol_name** Descriptive name for the volume, up to 40 characters.
 
@@ -18757,12 +18699,12 @@ from chosen ! T
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Vertical slice flux by
-layer ! 
+Input instructions ! Vertical slice flux by
+
 
 --------------
 
-| 
+
 
 #. **vol_name** Descriptive name for the volume, up to 40 characters.
 
@@ -18804,12 +18746,12 @@ Surface Flow Hydrographs
 The following command can be used to define a hydrograph over a set of
 nodes in the surface domain.
 
-Input instructions ! Input instructions ! Set hydrograph nodes !
+Input instructions ! Set hydrograph nodes !
 
 
 --------------
 
-| 
+
 
 #. **label_hyd** Descriptive name for the hydrograph, up to 80
    characters.
@@ -18855,12 +18797,12 @@ tracking|(
 The following commands can be used to output water balance information
 over a region in the surface flow domain contained within a polygon.
 
-Input instructions ! Input instructions ! Fluid mass balance for
-olf areas using shp file ! 
+Input instructions ! Fluid mass balance for
+
 
 --------------
 
-| 
+
 
 #. **filename** Name of the ArcView shapefile without the file
    extension.
@@ -18917,12 +18859,12 @@ important to keep in mind that polygons must not overlap.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Fluid mass balance for
-olf areas using shp file by layer ! 
+Input instructions ! Fluid mass balance for
+
 
 --------------
 
-| 
+
 
 #. **filename** Name of the ArcView shapefile without the file
    extension.
@@ -18954,7 +18896,7 @@ elements within each element layer of the porous media and surface flow
 domains, here, fluxes are computed over nodal control volumes within
 each node sheet of the respective domains.
 
-Nodal fluid mass balance from shp file 
+
 
 #. **filename** Name of the ArcView shapefile without the file
    extension.
@@ -18990,10 +18932,10 @@ following table describes the variables reported within each block of
 columns.
 
 ========== ============================
-====================================================================================================
+===========================================================================================
 Variable   Units                        Description
 ========== ============================
-====================================================================================================
+===========================================================================================
 ``ET``     [L:math:`^3` T:math:`^{-1}`] Rate of evapotranspiration from polygon.
 ``S``      [L:math:`^3` T:math:`^{-1}`] Rate of storage change within the polygon.
 ``QH+``    [L:math:`^3` T:math:`^{-1}`] Horizontal flux into the polygon.
@@ -19003,10 +18945,10 @@ Variable   Units                        Description
 ``QVD+``   [L:math:`^3` T:math:`^{-1}`] Vertical flux over the polygon from the sheet above.
 ``QVD-``   [L:math:`^3` T:math:`^{-1}`] Vertical flux over the polygon into the sheet below.
 ``Resid``  [L:math:`^3` T:math:`^{-1}`] Nonlinear Newton residual over the polygon.
-``Error``  [L:math:`^3` T:math:`^{-1}`] Mass balance error over the polygon (see Equation \ `[eq:mbal_error] <#eq:mbal_error>`__).
-``%Error`` [-]                          Percent mass balance error over the polygon (see Equation \ `[eq:mbal_perror] <#eq:mbal_perror>`__).
+``Error``  [L:math:`^3` T:math:`^{-1}`] Mass balance error over the polygon (see Equation :ref:`eq:mbal_error` ).
+``%Error`` [-]                          Percent mass balance error over the polygon (see Equation :ref:`eq:mbal_perror` ).
 ========== ============================
-====================================================================================================
+===========================================================================================
 
 Note that vertical fluxes into and out of the polygon in the surface
 flow domain are reported by the variables ``QV+`` and ``QV-``,
@@ -19016,7 +18958,7 @@ This command may be issued multiple times to track water balance
 information for any number of polygons. When used more than once it is
 important to keep in mind that polygons must not share any elements.
 
-Nodal fluid mass balance from xy list 
+
 
 #. **x(i), y(i)...end** :math:`xy`-coordinates [L] of polygon vertices.
 
@@ -19058,7 +19000,7 @@ by column to facilitate, for example, the creation of a plot of
 concentration or flux versus time for a given species at a node.
 
 For an example which uses flux output nodes, see
-Section \ `[V-sec:verif_pm_cd] <#V-sec:verif_pm_cd>`__.
+Section :ref:`V-sec:verif_pm_cd` .
 
 --------------
 
@@ -19140,12 +19082,12 @@ fourth order moments). Output is written to the file
 
 Input instructions ! Compute statistical properties of plume
 
-Input instructions ! Input instructions ! Report nodal mass storage
-for chosen nodes ! 
+Input instructions ! Report nodal mass storage
+
 
 --------------
 
-| 
+
 
 #. **label** Unique identifier, up to 40 characters.
 
@@ -19251,8 +19193,7 @@ Solute Mass Balance
 
 Output ! solute mass balance By default, solute mass balance information
 for each species is computed at each time step and written to the
-*prefix*\ ``o.lst`` file.
-Figure \ `[fig:mass_balance_pm_cd] <#fig:mass_balance_pm_cd>`__
+*prefix*\ ``o.lst`` file. Figure :ref:`fig:mass_balance_pm_cd` 
 illustrates some sample output as it appears in that file.
 
 ::
@@ -19364,15 +19305,15 @@ mass flux entering a volume|(
 These commands can be used to compute the mass flux between a set of
 contributing nodes and a set of active nodes. Output fluxes are reported
 for each individual domain (see
-Section \ `[sec:modify_material] <#sec:modify_material>`__) that is
-present in the model.
+Section :ref:`sec:modify_material` ) that is present in the
+model.
 
-Input instructions ! Input instructions ! Flux volume output nodes
-! 
+Input instructions ! Flux volume output nodes
+
 
 --------------
 
-| 
+
 
 #. **vol_name** Descriptive name for the volume, up to 40 characters.
 
@@ -19383,9 +19324,9 @@ where *species* is the species (i.e., solute) name. Each line of the
 file reports the simulation time [T], average concentration
 [M L:math:`^{-3}`] (variable ``C Matrix Avg``), instantaneous advective
 and dispersive mass fluxes [M T:math:`^{-1}`] for all media (see
-Section \ `[sec:modify_material] <#sec:modify_material>`__), the
-instantaneous total mass flux [M T:math:`^{-1}`], and the cumulative
-total mass flux [M T:math:`^{-1}`] for the volume.
+Section :ref:`sec:modify_material` ), the instantaneous total
+mass flux [M T:math:`^{-1}`], and the cumulative total mass flux
+[M T:math:`^{-1}`] for the volume.
 
 Active nodes (the surface of the volume) and contributing nodes (just
 outside the surface of the volume) are defined automatically by
@@ -19406,12 +19347,12 @@ In some cases, it may be necessary to restrict the computation of mass
 flux to a slice of nodes. The following instructions can be used to do
 this:
 
-Input instructions ! Input instructions ! Slice flux output nodes
-from chosen ! 
+Input instructions ! Slice flux output nodes
+
 
 --------------
 
-| 
+
 
 #. **vol_name** Descriptive name for the volume, up to 40 characters.
 
@@ -19445,12 +19386,12 @@ from chosen ! T
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Input instructions ! Vertical slice flux by
-layer ! 
+Input instructions ! Vertical slice flux by
+
 
 --------------
 
-| 
+
 
 #. **vol_name** Descriptive name for the volume, up to 40 characters.
 
@@ -19493,9 +19434,9 @@ Travel Time Probability
 | Output travel time statistics
 
 **HydroGeoSphere** will perform descriptive statistics, following
-Eqs. (\ `[eq:statistics1] <#eq:statistics1>`__)
-and (\ `[eq:statistics2] <#eq:statistics2>`__). Mean travel time, mode,
-and standard deviation will be calculated at each node/element.
+Eqs. (:ref:`eq:statistics1` )
+and (:ref:`eq:statistics2` ). Mean travel time, mode, and
+standard deviation will be calculated at each node/element.
 
 --------------
 
@@ -19523,9 +19464,8 @@ Input instructions ! Output travel time statistics
 
    #. **maxdatprod, delta_conv** Size of the largest set of tabulated
       data which follows and the timestep size [T] for evaluating the
-      convolution integral in
-      Equation \ `[eq:convolution] <#eq:convolution>`__. Read the
-      following for each of the **ifunc** time-series:
+      convolution integral in Equation :ref:`eq:convolution` .
+      Read the following for each of the **ifunc** time-series:
 
       #. **ndata** Number of data to read for the current time-series.
 
@@ -19583,12 +19523,12 @@ example, the command Compute post simulation average instructs
 **HydroGeoSphere** to calculate the average value of a specified
 variable over a specified time interval.
 
-Input instructions ! Input instructions ! Compute post simulation
-average ! 
+Input instructions ! Compute post simulation
+
 
 --------------
 
-| 
+
 
 #. **id_name** Unique identifier, up to 40 characters.
 
@@ -19656,7 +19596,7 @@ Grok
 These files are created during regular execution:
 
 | 123̄ ``array_sizes.default``
-| See Section \ `[sec:array_defaults] <#sec:array_defaults>`__.
+| See Section :ref:`sec:array_defaults` .
 | ``grok.dbg``
 | General purpose output file for debugging information.
 
@@ -19784,7 +19724,7 @@ Most are binary files that are read later by **HydroGeoSphere**:
 | Cutoff wall elements (binary).
 
 These files are created if the 2-D Random Fracture Generator
-(Section `[sec:2drfgen] <#sec:2drfgen>`__) is used:
+(Section :ref:`sec:2drfgen` ) is used:
 
 | 123̄ *prefix*\ ``o.rfrac.fractures``
 | Listing file with fracture zone information.
@@ -19812,7 +19752,7 @@ These files are created during regular execution:
 | Restart head and concentration data file (binary).
 
 These files are created for use with the Run-Time Debug Utility
-described in Appendix \ `4 <#app:runtime_debug>`__:
+described in Appendix :ref:`app:runtime_debug` :
 
 | 123̄ ``debug.control``
 | You can edit this file to change the run-time debug behaviour.
@@ -19998,7 +19938,7 @@ output variable control file,
 *prefix*\ ``.output_variable``\ ``.control``, which is generated
 automatically by **HydroGeoSphere** unless an existing file is found.
 These files are processed for visualization by **HSPLOT** as described
-in Appendix `7 <#app:hsplot>`__.
+in Appendix :ref:`app:hsplot` .
 
 | 123̄ *prefix*\ ``o.absolute_ap_change.0001``
 | Changes in fracture aperture.
@@ -20217,7 +20157,7 @@ debugging (including checking the debug control file), you can do so
 using the instruction No runtime debug.
 
 The head and tail of the ``debug.control`` file are shown in
-Table \ `[tab:debug_control] <#tab:debug_control>`__.
+Table :ref:`tab:debug_control` .
 
 ::
 
@@ -20261,7 +20201,7 @@ instruction, and uncomment one or more of the remaining instructions as
 desired.
 
 For example, if you modified and saved ``debug.control`` so it appeared
-as shown in Table \ `[tab:debug_control_2] <#tab:debug_control_2>`__
+as shown in Table :ref:`tab:debug_control_2` 
 
 ::
 
@@ -20404,15 +20344,15 @@ Debug control file instructions ! Watch node list
 For each watch node, the following instructions write detailed output to
 the ``hs.dbg`` file:
 
-| Write flow matrices Debug control file instructions ! Write flow
+Write flow matrices Debug control file instructions ! Write flow
   matrices
-| Write transport matrices Debug control file instructions ! Write
+Write transport matrices Debug control file instructions ! Write
   transport matrices
-| Write overland flow Debug control file instructions ! Write
+Write overland flow Debug control file instructions ! Write
   overland flow
-| Write fracture (dual node) flow Debug control file instructions !
+Write fracture (dual node) flow Debug control file instructions !
   Write fracture (dual node) flow
-| Write evapotranspiration Debug control file instructions ! Write
+Write evapotranspiration Debug control file instructions ! Write
   evapotranspiration
 
 Detailed output usually consists of the coefficient matrix and
@@ -20614,58 +20554,58 @@ value even if you disable run-time debugging (i.e., uncomment
 instruction Debug off) or comment out the instruction that was used to
 change the value.
 
-| Flow solver convergence criteria Debug control file instructions !
+Flow solver convergence criteria Debug control file instructions !
   Flow solver convergence criteria
-| Flow solver detail Debug control file instructions ! Flow solver
+Flow solver detail Debug control file instructions ! Flow solver
   detail
-| Flow maximum iterations Debug control file instructions ! Flow
+Flow maximum iterations Debug control file instructions ! Flow
   maximum iterations
-| Transport solver convergence criteria Debug control file
+Transport solver convergence criteria Debug control file
   instructions ! Transport solver convergence criteria
-| Transport solver detail Debug control file instructions !
+Transport solver detail Debug control file instructions !
   Transport solver detail
-| Transport solver maximum iterations Debug control file
+Transport solver maximum iterations Debug control file
   instructions ! Transport solver maximum iterations
-| Newton maximum iterations Debug control file instructions ! Newton
+Newton maximum iterations Debug control file instructions ! Newton
   maximum iterations
-| Newton absolute convergence criteria Debug control file
+Newton absolute convergence criteria Debug control file
   instructions ! Newton absolute convergence criteria
-| Newton residual convergence criteria Debug control file
+Newton residual convergence criteria Debug control file
   instructions ! Newton residual convergence criteria
-| Compute underrelaxation factor Debug control file instructions !
+Compute underrelaxation factor Debug control file instructions !
   Compute underrelaxation factor
-| Nodal flow check tolerance Debug control file instructions ! Nodal
+Nodal flow check tolerance Debug control file instructions ! Nodal
   flow check tolerance
-| Newton maximum update for head Debug control file instructions !
+Newton maximum update for head Debug control file instructions !
   Newton maximum update for head
-| Newton maximum update for depth Debug control file instructions !
+Newton maximum update for depth Debug control file instructions !
   Newton maximum update for depth
-| Newton absolute maximum residual Debug control file instructions !
+Newton absolute maximum residual Debug control file instructions !
   Newton absolute maximum residual
-| Newton maximum residual increase Debug control file instructions !
+Newton maximum residual increase Debug control file instructions !
   Newton maximum residual increase
-| Maximum timestep Debug control file instructions ! Maximum
+Maximum timestep Debug control file instructions ! Maximum
   timestep
-| Minimum timestep multiplier Debug control file instructions !
+Minimum timestep multiplier Debug control file instructions !
   Minimum timestep multiplier
-| Maximum timestep multiplier Debug control file instructions !
+Maximum timestep multiplier Debug control file instructions !
   Maximum timestep multiplier
 
 The following commands can be used to set the values of the various
 targets used in the adaptive timestepping procedure.
 
-| Head change target Debug control file instructions ! Head change
+Head change target Debug control file instructions ! Head change
   target
-| Saturation change target Debug control file instructions !
+Saturation change target Debug control file instructions !
   Saturation change target
-| Water depth change target Debug control file instructions ! Water
+Water depth change target Debug control file instructions ! Water
   depth change target
-| Newton target Debug control file instructions ! Newton target
-| Concentration change target Debug control file instructions !
+Newton target Debug control file instructions ! Newton target
+Concentration change target Debug control file instructions !
   Concentration change target
-| Mass change target Debug control file instructions ! Mass change
+Mass change target Debug control file instructions ! Mass change
   target
-| Mass error target Debug control file instructions ! Mass error
+Mass error target Debug control file instructions ! Mass error
   target
 
 .. _app:runtime_output:
@@ -20699,8 +20639,8 @@ Update the relaxation factor :math:`\lambda` (if using), otherwise
 We will use the symbols and steps defined here when discussing the
 run-time output.
 
-Figure `[fig:runtime_out] <#fig:runtime_out>`__ shows a screen capture
-of the run-time timestep output produced by HGS when running the Abdul
+Figure :ref:`fig:runtime_out`  shows a screen capture of the
+run-time timestep output produced by HGS when running the Abdul
 verification problem. The output consists of three sections: simulation
 progress, summary of the nonlinear iteration, and the adaptive
 timestepping update. We will discuss each of these sections in detail.
@@ -20741,12 +20681,12 @@ Summary of the Nonlinear Iteration
    iteration.
 
 -  **Delval:** The maximum absolute error of the current Newton
-   iteration, given by :math:`s_i`, where :math:`i = \argmax_j |s_j|`
+   iteration, given by :math:`s_i`, where :math:`i = arg\,max_j |s_j|`
    and :math:`s` is the Newton step vector
    (:math:`\Delta \psi_{j}^{r+1}` in Equation \ `[eq:32] <#eq:32>`__).
 
 -  **@Node:** The unknown number at which the absolute maximum occurs,
-   i.e., :math:`i = \argmax_j |s_j|`.
+   i.e., :math:`i = arg\,max_j |s_j|`.
 
 -  **@NodePM:** The mesh node number at which the absolute maximum value
    occurs.
@@ -20756,12 +20696,12 @@ Summary of the Nonlinear Iteration
    absolute convergence criteria).
 
 -  **Resval:** The maximum absolute error of the current Newton
-   iteration, given by :math:`r_i`, where :math:`i = \argmax_j |r_j|`
+   iteration, given by :math:`r_i`, where :math:`i = arg\,max_j |r_j|`
    and :math:`r` is the Newton residual vector (:math:`f_i^r` in
    Equation \ `[eq:32] <#eq:32>`__).
 
 -  **@Node:** The unknown number at which the absolute maximum value
-   occurs, i.e., :math:`i = \argmax_j |r_j|`.
+   occurs, i.e., :math:`i = arg\,max_j |r_j|`.
 
 -  **@NodePM:** The mesh node number at which the absolute maximum value
    occurs.
@@ -20797,8 +20737,8 @@ Adaptive Timestep Update
 
 -  **Target change:** The targeted or expected change in the specified
    quantity over a single timestep as specified in the ``debug.control``
-   file (see Appendix `4 <#app:runtime_debug>`__). For example, in the
-   case of head, it would be the command Head change target.
+   file (see Appendix :ref:`app:runtime_debug` ). For example, in
+   the case of head, it would be the command Head change target.
 
 -  **Dt multiplier:** The ratio of **Max. change** to **Target change**
    for the specified quantity.
@@ -20903,9 +20843,9 @@ The file can contain comments, which begin with an exclamation point
 
 The instructions:
 
-| Grok executable path and name
-| Hydrogeosphere executable path and name
-| Hsplot executable path and name
+Grok executable path and name
+Hydrogeosphere executable path and name
+Hsplot executable path and name
 
 point to the locations of the program executable files. If the path to
 an executable is not provided via one of these commands, then the
@@ -21030,12 +20970,12 @@ instructions has the following effect:
 
 The following command can be used to truncate the range of output times.
 
-Plot control file instructions ! Plot control file instructions !
-Truncate time domain ! 
+Plot control file instructions !
+
 
 --------------
 
-| 
+
 
 #. **t1, t2** Time range [T] of the domain.
 
@@ -21066,12 +21006,12 @@ Double xy ! B
 
 :math:`\bullet \bullet \bullet`
 
-Plot control file instructions ! Plot control file instructions !
-Number of digits for output file suffix ! 
+Plot control file instructions !
+
 
 --------------
 
-| 
+
 
 #. **suffix_len** Number of digits in the output file suffix, an integer
    between 4 and 10, inclusive.
@@ -21145,17 +21085,17 @@ pm domain file ! C
 
 Similar commands exist for the other domains:
 
-| Write dual domain file Plot control file instructions ! Write dual
+Write dual domain file Plot control file instructions ! Write dual
   domain file
-| Write frac domain file Plot control file instructions ! Write frac
+Write frac domain file Plot control file instructions ! Write frac
   domain file
-| Write olf domain file Plot control file instructions ! Write olf
+Write olf domain file Plot control file instructions ! Write olf
   domain file
-| Write well domain file Plot control file instructions ! Write well
+Write well domain file Plot control file instructions ! Write well
   domain file
-| Write chan domain file Plot control file instructions ! Write chan
+Write chan domain file Plot control file instructions ! Write chan
   domain file
-| Write tile domain file Plot control file instructions ! Write tile
+Write tile domain file Plot control file instructions ! Write tile
   domain file
 
 In general, each command produces an output file named
@@ -21165,55 +21105,55 @@ commands prevent/allow **HSPLOT** from writing the named variables to
 the output file. For example, in the case of the porous media domain the
 following instructions are available:
 
-| No pm heads Plot control file instructions ! No pm heads
-| No pm environment head Plot control file instructions ! No pm
+No pm heads Plot control file instructions ! No pm heads
+No pm environment head Plot control file instructions ! No pm
   environment head
-| No pm saturations Plot control file instructions ! No pm
+No pm saturations Plot control file instructions ! No pm
   saturations
-| No pm ice saturation Plot control file instructions ! No pm ice
+No pm ice saturation Plot control file instructions ! No pm ice
   saturation
-| No pm freezing-thawing temperature Plot control file instructions
+No pm freezing-thawing temperature Plot control file instructions
   ! No pm freezing-thawing temperature
-| No pm linear velocities (vx, vy, vz) Plot control file
+No pm linear velocities (vx, vy, vz) Plot control file
   instructions ! No pm linear velocities (vx, vy, vz)
-| Yes pm flux (qx, qy, qz) Plot control file instructions ! Yes pm
+Yes pm flux (qx, qy, qz) Plot control file instructions ! Yes pm
   flux (qx, qy, qz)
-| No pm tvk (kx, ky, kz) Plot control file instructions ! No pm tvk
+No pm tvk (kx, ky, kz) Plot control file instructions ! No pm tvk
   (kx, ky, kz)
-| No pm concentrations Plot control file instructions ! No pm
+No pm concentrations Plot control file instructions ! No pm
   concentrations
-| No pm hmc fractions Plot control file instructions ! No pm hmc
+No pm hmc fractions Plot control file instructions ! No pm hmc
   fractions
-| No pm immobile/isotope fractionation concentrations Plot control
+No pm immobile/isotope fractionation concentrations Plot control
   file instructions ! No pm immobile/isotope fractionation
   concentrations
-| No pm peclet number Plot control file instructions ! No pm peclet
+No pm peclet number Plot control file instructions ! No pm peclet
   number
-| No pm diffusion peclet number Plot control file instructions ! No
+No pm diffusion peclet number Plot control file instructions ! No
   pm diffusion peclet number
-| No pm element k Plot control file instructions ! No pm element k
-| No pm element porosity Plot control file instructions ! No pm
+No pm element k Plot control file instructions ! No pm element k
+No pm element porosity Plot control file instructions ! No pm
   element porosity
-| No pm element storativity Plot control file instructions ! No pm
+No pm element storativity Plot control file instructions ! No pm
   element storativity
-| No pm element tortuosity Plot control file instructions ! No pm
+No pm element tortuosity Plot control file instructions ! No pm
   element tortuosity
-| No pm element fraction of compressible interbeds Plot control file
+No pm element fraction of compressible interbeds Plot control file
   instructions ! No pm element fraction of compressible interbeds
-| No pm permafrost Plot control file instructions ! No pm permafrost
-| No pm soil frost Plot control file instructions ! No pm soil frost
-| No pm compaction Plot control file instructions ! No pm compaction
-| No pm delta z Plot control file instructions ! No pm delta z
-| No pm redox capacity Plot control file instructions ! No pm redox
+No pm permafrost Plot control file instructions ! No pm permafrost
+No pm soil frost Plot control file instructions ! No pm soil frost
+No pm compaction Plot control file instructions ! No pm compaction
+No pm delta z Plot control file instructions ! No pm delta z
+No pm redox capacity Plot control file instructions ! No pm redox
   capacity
-| No pm et3d Plot control file instructions ! No pm et3d
-| No pm rain and snowmelt package Plot control file instructions !
+No pm et3d Plot control file instructions ! No pm et3d
+No pm rain and snowmelt package Plot control file instructions !
   No pm rain and snowmelt package
-| No pm depth to water table Plot control file instructions ! No pm
+No pm depth to water table Plot control file instructions ! No pm
   depth to water table
-| Truncate pm domain Plot control file instructions ! Truncate pm
+Truncate pm domain Plot control file instructions ! Truncate pm
   domain
-| Truncate pm domain by layer Plot control file instructions !
+Truncate pm domain by layer Plot control file instructions !
   Truncate pm domain by layer
 
 Some of these instructions are available for other domains by swapping
@@ -21229,12 +21169,12 @@ fracture domain.
 The commands Truncate pm domain and Truncate pm domain by layer require
 additional inputs as described below.
 
-Plot control file instructions ! Plot control file instructions !
-Truncate pm domain ! 
+Plot control file instructions !
+
 
 --------------
 
-| 
+
 
 #. **x1, x2** :math:`x`-range [L] of the domain.
 
@@ -21265,12 +21205,12 @@ its full extent.
 
 :math:`\bullet \bullet \bullet`
 
-Plot control file instructions ! Plot control file instructions !
-Truncate pm domain by layer ! 
+Plot control file instructions !
+
 
 --------------
 
-| 
+
 
 #. **x1, x2** :math:`x`-range [L] of the domain.
 
@@ -21307,135 +21247,135 @@ the following subsections.
 Dual Continua Output
 ~~~~~~~~~~~~~~~~~~~~
 
-| No dual heads Plot control file instructions ! No dual heads
-| No dual saturations Plot control file instructions ! No dual
+No dual heads Plot control file instructions ! No dual heads
+No dual saturations Plot control file instructions ! No dual
   saturations
-| No dual linear velocities (vx, vy, vz) Plot control file
+No dual linear velocities (vx, vy, vz) Plot control file
   instructions ! No dual linear velocities (vx, vy, vz)
-| No dual concentrations Plot control file instructions ! No dual
+No dual concentrations Plot control file instructions ! No dual
   concentrations
-| No dual immobile/isotope fractionation concentrations Plot control
+No dual immobile/isotope fractionation concentrations Plot control
   file instructions ! No dual immobile/isotope fractionation
   concentrations
-| No dual element k Plot control file instructions ! No dual element
+No dual element k Plot control file instructions ! No dual element
   k
-| No dual permafrost Plot control file instructions ! No dual
+No dual permafrost Plot control file instructions ! No dual
   permafrost
-| No dual/pm exchange flux Plot control file instructions ! No
+No dual/pm exchange flux Plot control file instructions ! No
   dual/pm exchange flux
-| No dual/pm solute exchange Plot control file instructions ! No
+No dual/pm solute exchange Plot control file instructions ! No
   dual/pm solute exchange
-| Truncate dual domain Plot control file instructions ! Truncate
+Truncate dual domain Plot control file instructions ! Truncate
   dual domain
-| Truncate dual domain by layer Plot control file instructions !
+Truncate dual domain by layer Plot control file instructions !
   Truncate dual domain by layer
 
 Discrete Fracture Domain Output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| No frac heads Plot control file instructions ! No frac heads
-| No frac saturations Plot control file instructions ! No frac
+No frac heads Plot control file instructions ! No frac heads
+No frac saturations Plot control file instructions ! No frac
   saturations
-| No frac linear velocities (vx, vy, vz) Plot control file
+No frac linear velocities (vx, vy, vz) Plot control file
   instructions ! No frac linear velocities (vx, vy, vz)
-| No frac concentrations Plot control file instructions ! No frac
+No frac concentrations Plot control file instructions ! No frac
   concentrations
-| No frac immobile/isotope fractionation concentrations Plot control
+No frac immobile/isotope fractionation concentrations Plot control
   file instructions ! No frac immobile/isotope fractionation
   concentrations
-| No frac aperture Plot control file instructions ! No frac aperture
-| No frac/pm exchange flux Plot control file instructions ! No
+No frac aperture Plot control file instructions ! No frac aperture
+No frac/pm exchange flux Plot control file instructions ! No
   frac/pm exchange flux
-| No frac/pm solute exchange Plot control file instructions ! No
+No frac/pm solute exchange Plot control file instructions ! No
   frac/pm solute exchange
-| Truncate frac domain Plot control file instructions ! Truncate
+Truncate frac domain Plot control file instructions ! Truncate
   frac domain
-| Truncate frac domain by layer Plot control file instructions !
+Truncate frac domain by layer Plot control file instructions !
   Truncate frac domain by layer
 
 Surface Flow Domain Output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| No olf heads Plot control file instructions ! No olf heads
-| No olf linear velocities (vx, vy, vz) Plot control file
+No olf heads Plot control file instructions ! No olf heads
+No olf linear velocities (vx, vy, vz) Plot control file
   instructions ! No olf linear velocities (vx, vy, vz)
-| No olf friction (nx, ny) Plot control file instructions ! No olf
+No olf friction (nx, ny) Plot control file instructions ! No olf
   friction (nx, ny)
-| No olf concentrations Plot control file instructions ! No olf
+No olf concentrations Plot control file instructions ! No olf
   concentrations
-| No olf immobile/isotope fractionation concentrations Plot control
+No olf immobile/isotope fractionation concentrations Plot control
   file instructions ! No olf immobile/isotope fractionation
   concentrations
-| No olf/pm exchange flux Plot control file instructions ! No olf/pm
+No olf/pm exchange flux Plot control file instructions ! No olf/pm
   exchange flux
-| No olf/pm solute exchange Plot control file instructions ! No
+No olf/pm solute exchange Plot control file instructions ! No
   olf/pm solute exchange
-| No olf et Plot control file instructions ! No olf et
-| Yes olf local probability Plot control file instructions ! Yes olf
+No olf et Plot control file instructions ! No olf et
+Yes olf local probability Plot control file instructions ! Yes olf
   local probability
-| Truncate olf domain Plot control file instructions ! Truncate olf
+Truncate olf domain Plot control file instructions ! Truncate olf
   domain
-| Truncate olf domain by layer Plot control file instructions !
+Truncate olf domain by layer Plot control file instructions !
   Truncate olf domain by layer
 
 Tile Flow Domain Output
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-| No tile heads Plot control file instructions ! No tile heads
-| No tile linear velocities (vx, vy, vz) Plot control file
+No tile heads Plot control file instructions ! No tile heads
+No tile linear velocities (vx, vy, vz) Plot control file
   instructions ! No tile linear velocities (vx, vy, vz)
-| No tile concentrations Plot control file instructions ! No tile
+No tile concentrations Plot control file instructions ! No tile
   concentrations
-| No tile immobile/isotope fractionation concentrations Plot control
+No tile immobile/isotope fractionation concentrations Plot control
   file instructions ! No tile immobile/isotope fractionation
   concentrations
-| No tile/pm exchange flux Plot control file instructions ! No
+No tile/pm exchange flux Plot control file instructions ! No
   tile/pm exchange flux
-| No tile/pm solute exchange Plot control file instructions ! No
+No tile/pm solute exchange Plot control file instructions ! No
   tile/pm solute exchange
-| Truncate tile domain Plot control file instructions ! Truncate
+Truncate tile domain Plot control file instructions ! Truncate
   tile domain
-| Truncate tile domain by layer Plot control file instructions !
+Truncate tile domain by layer Plot control file instructions !
   Truncate tile domain by layer
 
 Channel Flow Domain Output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| No chan heads Plot control file instructions ! No chan heads
-| No chan linear velocities (vx, vy, vz) Plot control file
+No chan heads Plot control file instructions ! No chan heads
+No chan linear velocities (vx, vy, vz) Plot control file
   instructions ! No chan linear velocities (vx, vy, vz)
-| No chan concentrations Plot control file instructions ! No chan
+No chan concentrations Plot control file instructions ! No chan
   concentrations
-| No chan immobile/isotope fractionation concentrations Plot control
+No chan immobile/isotope fractionation concentrations Plot control
   file instructions ! No chan immobile/isotope fractionation
   concentrations
-| No chan/pm exchange flux Plot control file instructions ! No
+No chan/pm exchange flux Plot control file instructions ! No
   chan/pm exchange flux
-| No chan/pm solute exchange Plot control file instructions ! No
+No chan/pm solute exchange Plot control file instructions ! No
   chan/pm solute exchange
-| Truncate chan domain Plot control file instructions ! Truncate
+Truncate chan domain Plot control file instructions ! Truncate
   chan domain
-| Truncate chan domain by layer Plot control file instructions !
+Truncate chan domain by layer Plot control file instructions !
   Truncate chan domain by layer
 
 Well Flow Domain Output
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-| No well heads Plot control file instructions ! No well heads
-| No well linear velocities (vx, vy, vz) Plot control file
+No well heads Plot control file instructions ! No well heads
+No well linear velocities (vx, vy, vz) Plot control file
   instructions ! No well linear velocities (vx, vy, vz)
-| No well concentrations Plot control file instructions ! No well
+No well concentrations Plot control file instructions ! No well
   concentrations
-| No well immobile/isotope fractionation concentrations Plot control
+No well immobile/isotope fractionation concentrations Plot control
   file instructions ! No well immobile/isotope fractionation
   concentrations
-| No well/pm exchange flux Plot control file instructions ! No
+No well/pm exchange flux Plot control file instructions ! No
   well/pm exchange flux
-| No well/pm solute exchange Plot control file instructions ! No
+No well/pm solute exchange Plot control file instructions ! No
   well/pm solute exchange
-| Truncate well domain Plot control file instructions ! Truncate
+Truncate well domain Plot control file instructions ! Truncate
   well domain
-| Truncate well domain by layer Plot control file instructions !
+Truncate well domain by layer Plot control file instructions !
   Truncate well domain by layer
 
 General Output Control
@@ -21445,12 +21385,12 @@ Additional commands are available that allow you to further tailor the
 output files produced by **HSPLOT**. Note that each of these commands
 should be issued at most once within the plot control file.
 
-Plot control file instructions ! Plot control file instructions !
-Compare heads 3d domain ! 
+Plot control file instructions !
+
 
 --------------
 
-| 
+
 
 #. **x1, x2** :math:`x`-range [L] of the domain.
 
@@ -21561,12 +21501,12 @@ pm depth below ground surface ! C
 
 :math:`\bullet \bullet \bullet`
 
-Plot control file instructions ! Plot control file instructions !
-Compare surface water depth ! 
+Plot control file instructions !
+
 
 --------------
 
-| 
+
 
 #. **x1, x2** :math:`x`-range [L] of the domain.
 
@@ -21590,12 +21530,12 @@ Note that this command requires a surface flow domain to be present.
 
 :math:`\bullet \bullet \bullet`
 
-Plot control file instructions ! Plot control file instructions !
-Isolate node ! 
+Plot control file instructions !
+
 
 --------------
 
-| 
+
 
 #. **node_num** Number of node to be isolated.
 
@@ -21614,12 +21554,12 @@ include elements that share a node with an element that contains
 
 :math:`\bullet \bullet \bullet`
 
-Plot control file instructions ! Plot control file instructions !
-Simulation time unit conversion factor ! 
+Plot control file instructions !
+
 
 --------------
 
-| 
+
 
 #. **time_offset, time_unit_factor** Time offset [T:math:`_o`] and
    scaling factor [T:math:`_o` T:math:`^{-1}`].
