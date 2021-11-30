@@ -48,7 +48,7 @@ Windows
 
 By default, HGS is installed in the directory:
 
-`C:\Program_Files\HydroGeoSphere <C:\Program_Files\HydroGeoSphere>`__
+:math:`\mbox{C:\Program_Files\HydroGeoSphere}`
 
 The installation folder contains the key executable files (``grok.exe``,
 ``phgs.exe``, ``hsplot.exe``, ``hsbatch.exe``) required for simulation
@@ -72,7 +72,7 @@ Linux
 
 In Linux, HGS is installed under the current folder in the directory:
 
-`HydroGeoSphere-RevNum-Linux <HydroGeoSphere-RevNum-Linux>`__
+:math:`\mbox{HydroGeoSphere-RevNum-Linux}`
 
 where “RevNum” is the revision number of the installation. The
 installation folder contains the key binary files (``grok``, ``hgs``,
@@ -240,14 +240,14 @@ Running a Model
 We conclude this chapter by describing the steps to run the Abdul model
 problem, the model files for which can be found in
 
-`C:\Program_Files\HydroGeoSphere\verification\abdul <C:\Program_Files\HydroGeoSphere\verification\abdul>`__
+:math:`\mbox{C:\Program_Files\HydroGeoSphere\verification\abdul}`
 
 For additional details on this problem the user is referred to the
 verification manual ``hydrosphere_verif.pdf``. The steps to run this
 model problem are as follows.
 
 #. Copy ``grok.exe``, ``phgs.exe``, and ``hsplot.exe`` to
-   `C:\Program_Files\HydroGeoSphere\verification\abdul <C:\Program_Files\HydroGeoSphere\verification\abdul>`__.
+   :math:`\mbox{C:\Program_Files\HydroGeoSphere\verification\abdul}`.
 
 #. Run ``grok.exe``.
 
@@ -261,11 +261,10 @@ model problem are as follows.
 Note that Windows users who receive a DLL error when running one of the
 executable files should copy the DLL files from the installation folder
 to the current simulation folder. Alternatively, Windows users can add
-the directory
-`C:\Program_Files\HydroGeoSphere <C:\Program_Files\HydroGeoSphere>`__ to
-their system path. Updating the system path makes it possible to run a
-model from any folder without copying any HGS executable files or DLL
-files to that folder and is the preferred method of operation.
+the directory :math:`\mbox{C:\Program_Files\HydroGeoSphere}` to their
+system path. Updating the system path makes it possible to run a model
+from any folder without copying any HGS executable files or DLL files to
+that folder and is the preferred method of operation.
 
 .. _chap:io_instructions:
 
@@ -275,7 +274,8 @@ Input/Output Instructions
 General
 -------
 
-[sec:io_approach] Before presenting in detail the input data needed for
+
+.. _sec:io_approach: Before presenting in detail the input data needed for
 the numerical simulations, some general information about the format and
 nature of the input data is first given.
 
@@ -320,18 +320,22 @@ directory as the *prefix*\ ``.grok`` file.
 
 Briefly, the pre-processor performs its tasks in the following order:
 
-#. Read and allocate default array sizes [task:def_array]
+#. Read and allocate default array sizes 
+.. _task:def_array:
 
 #. Read problem identification information
 
-#. Read instructions for generating grid [task:ggrid]
+#. Read instructions for generating grid 
+.. _task:ggrid:
 
 #. Perform grid modifications if necessary
 
-#. Generate default properties for all parameters [task:defdata]
+#. Generate default properties for all parameters 
+.. _task:defdata:
 
 #. Read optional instructions for modifying the default parameters
-   [task:moddef]
+   
+.. _task:moddef:
 
 #. Write the **HydroGeoSphere**-compatible data files
 
@@ -353,7 +357,7 @@ Example instruction text
 
 | 
 
--.3in
+
 
 #. **xlen, nbx** Domain length [L] and number of blocks in the
    :math:`x`-direction.
@@ -362,16 +366,13 @@ Example instruction text
 
 #. **inode(i)...end** Node numbers.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Example instruction text
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The pre-processor instruction is separated from the preceding text by a
 horizontal line, and is written using the sans serif font. It must be
@@ -478,9 +479,6 @@ Example instruction text...End
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Example instruction text...End
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 where the text ...End indicates that the instruction (e.g. Solute) will
 be followed by optional instructions or input and terminated by an End
 instruction.
@@ -579,9 +577,6 @@ screen. This command turns off this feature.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Echo off
-'''''''''''''''''''''''''''''
-
 --------------
 
 Echo on
@@ -596,9 +591,6 @@ This commands turns on the echoing of instructions to the screen.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Echo on
-''''''''''''''''''''''''''''
 
 --------------
 
@@ -616,9 +608,6 @@ subsequent instructions.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Skip on
-''''''''''''''''''''''''''''
-
 --------------
 
 Skip off
@@ -633,9 +622,6 @@ Turns skip mode off, so **grok** will resume acting on instructions.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Skip off
-'''''''''''''''''''''''''''''
 
 --------------
 
@@ -654,9 +640,6 @@ Skip rest
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Skip rest
-''''''''''''''''''''''''''''''
-
 --------------
 
 Pause
@@ -672,9 +655,6 @@ This instruction causes **grok** to pause at the current location in the
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Pause
-''''''''''''''''''''''''''
 
 User Defined Variables
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -727,19 +707,20 @@ also ignored. For example, the following commands are equivalent:
        set variable   $path  =  C:\my_file_path
 
 Each command defines the variable ``$path`` to have the value
-``C:‘ my_file_path``. If you wish to retain leading whitespace in the
-variable value, then you can do so by enclosing it in double quotes ().
-For example, the command
+``C:\char‘ my_file_path``. If you wish to retain leading whitespace in
+the variable value, then you can do so by enclosing it in double quotes
+(). For example, the command
 
 ::
 
        set variable $path="   C:\my_file_path"
 
-assigns to the variable ``$path`` the value ``   C:\my_file_path``. Note
-that the enclosing double quotes are automatically stripped from the
-variable value by the ``set variable`` command. If you would like to
-assign an empty value to a variable, then you can do so as follows using
-either of the equivalent commands:
+assigns to the variable ``$path`` the value
+``   C:\textbackslash my_file_path``. Note that the enclosing double
+quotes are automatically stripped from the variable value by the
+``set variable`` command. If you would like to assign an empty value to
+a variable, then you can do so as follows using either of the equivalent
+commands:
 
 ::
 
@@ -810,7 +791,8 @@ necessary.
 Units and Physical Constants
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[sec:io_units] The units used in the program are not preset, although a
+
+.. _sec:io_units: The units used in the program are not preset, although a
 default of kilogram-metre-second units is assumed and used to define the
 values of certain physical constants as discussed below. The user should
 decide which units will be used for mass (M), length (L), and time (T)
@@ -899,9 +881,6 @@ new system.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Units: kilogram-metre-minute
-'''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Gravitational acceleration
@@ -909,22 +888,19 @@ Gravitational acceleration
 
 | 
 
--.3in
+
 
 #. | **grav** Gravitational acceleration constant [L T:math:`^{-2}`],
      :math:`g` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Gravitational acceleration
-'''''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -933,22 +909,19 @@ Reference fluid density
 
 | 
 
--.3in
+
 
 #. | **rho** Fluid density [M L:math:`^{-3}`], :math:`\rho` in
      Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Reference fluid density
-''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -957,22 +930,19 @@ Reference fluid viscosity
 
 | 
 
--.3in
+
 
 #. | **visc** Fluid viscosity [M L:math:`^{-1}` T:math:`^{-1}`],
      :math:`\mu` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Reference fluid viscosity
-''''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -981,22 +951,19 @@ Fluid compressibility
 
 | 
 
--.3in
+
 
 #. | **wcomp** Fluid compressibility [M:math:`^{-1}` L T\ :math:`^2`],
      :math:`\alpha_w` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Fluid compressibility
-''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -1014,9 +981,6 @@ incompressible).
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Zero fluid compressibility
-'''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Fluid surface tension
@@ -1024,13 +988,13 @@ Fluid surface tension
 
 | 
 
--.3in
+
 
 #. | **tensn** Fluid surface tension [M T:math:`^{-2}`], :math:`\chi` in
      Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
@@ -1038,16 +1002,14 @@ Fluid surface tension
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Fluid surface tension
-''''''''''''''''''''''''''''''''''''''''''
-
 Pre-Processor Considerations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Array Dimensioning
 ^^^^^^^^^^^^^^^^^^
 
-| [sec:array_defaults] When performing Task :ref:  
+| 
+.. _sec:array_defaults: When performing Task :ref:  
 | , **grok** first checks for the existence of a file
   ``array_sizes.default`` in the directory where the
   *prefix*\ ``.grok`` file is located. If it is not found, the file is
@@ -1138,13 +1100,11 @@ control is passed back to the pre-processor.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! End
-^^^^^^^^^^^^^^^^^^^^^^^^
-
 Grid Generation
 ---------------
 
-[chap:grid] The next section of the *prefix*\ ``.grok`` file should
+
+.. _chap:grid: The next section of the *prefix*\ ``.grok`` file should
 consist of instructions for grid generation followed by an End
 instruction.
 
@@ -1159,7 +1119,8 @@ instruction.
 
    Element types and local node numbering conventions.
 
-[fig:element_types]
+
+.. _fig:element_types:
 
 We will first discuss options for generating simple grids, followed by
 irregular grids.
@@ -1167,7 +1128,8 @@ irregular grids.
 Simple Grids
 ~~~~~~~~~~~~
 
-[sec:simple_blocks] Simple grids can be generated for rectangular
+
+.. _sec:simple_blocks: Simple grids can be generated for rectangular
 domains which are adequate for many problems. They can have uniform or
 variable element sizes and can be made of hexahedral block or triangular
 prismatic elements. Each element in the grid is given a default zone
@@ -1180,7 +1142,7 @@ Generate uniform blocks
 
 | 
 
--.3in
+
 
 #. **xlen, nbx, (x0)** Domain length [L] and number of blocks in the
    :math:`x`-direction, the optional origin in the :math:`x`-direction
@@ -1206,9 +1168,6 @@ The domain is subdivided in a similar fashion in the :math:`y`- and
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Generate uniform blocks
-''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Generate uniform prisms
@@ -1228,9 +1187,6 @@ block into two prism elements.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Generate uniform prisms
-''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Generate variable blocks
@@ -1238,7 +1194,7 @@ Generate variable blocks
 
 | 
 
--.3in
+
 
 #. **nx** Number of nodes in the :math:`x`-direction.
 
@@ -1270,9 +1226,6 @@ for **x(i), y(i), z(i)** should your input exceed this limit.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Generate variable blocks
-'''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Generate variable prisms
@@ -1291,9 +1244,6 @@ block into two prism elements.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Generate variable prisms
-'''''''''''''''''''''''''''''''''''''''''''''
 
 .. _sec:gen_blocks_interactive:
 
@@ -1329,9 +1279,6 @@ directions.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Generate blocks interactive...End
-''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 The available instructions are:
 
 --------------
@@ -1341,7 +1288,7 @@ Grade x
 
 | 
 
--.3in
+
 
 #. **x1, x2, dxstart, xfac, dxmax** Starting :math:`x`-coordinate [L],
    ending :math:`x`-coordinate [L], starting element size, element size
@@ -1356,9 +1303,6 @@ Element sizes are increased steadily by a factor of **xfac**.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Grade x
-''''''''''''''''''''''''''''
 
 --------------
 
@@ -1375,9 +1319,6 @@ As above but for the :math:`y`-axis.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Grade y
-''''''''''''''''''''''''''''
-
 --------------
 
 Grade z
@@ -1392,9 +1333,6 @@ As above but for the :math:`z`-axis.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Grade z
-''''''''''''''''''''''''''''
 
 | The instructions used to generate the mesh shown in Figure :ref:  
 | are:
@@ -1432,7 +1370,8 @@ Input instructions ! Grade z
    Example grid that was created using Generate blocks interactive
    instructions.
 
-[fig:gen_blocks_mesh]
+
+.. _fig:gen_blocks_mesh:
 
 .. _sec:rfgen:
 
@@ -1451,7 +1390,7 @@ Rfgen driver
 
 | 
 
--.3in
+
 
 #. **rfgfile** Name of the file that contains the random fracture grid
    and fracture generation information.
@@ -1464,9 +1403,6 @@ The structure of the input file is described below.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Rfgen driver
-'''''''''''''''''''''''''''''''''
-
 --------------
 
 Grid information
@@ -1474,7 +1410,7 @@ Grid information
 
 | 
 
--.3in
+
 
 #. **x1, x2** :math:`x`-range [L] of the domain.
 
@@ -1539,9 +1475,6 @@ appear more than once.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Grid information
-'''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Fracture information
@@ -1549,7 +1482,7 @@ Fracture information
 
 | 
 
--.3in
+
 
 #. **seed** Seed for the random number generator. If this number is
    changed, a new random number sequence is produced, which in turn
@@ -1581,9 +1514,6 @@ should not appear more than once.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Fracture information
-'''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Fracture location distribution x-axis
@@ -1591,7 +1521,7 @@ Fracture location distribution x-axis
 
 | 
 
--.3in
+
 
 #. **type** An integer value indicating the probability distribution
    used to generate the variable fracture locations in the
@@ -1614,31 +1544,28 @@ and **var2** is the standard deviation.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Fracture location distribution x-axis
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 The following instructions use the same input data structure as Fracture
 location distribution x-axis except they are applied to the :math:`y`-
 and :math:`z`-directions:
 
-| .5inFracture location distribution y-axis
-| .5inFracture location distribution z-axis
+Fracture location distribution y-axis
+Fracture location distribution z-axis
 
 The following instructions use the same input data structure as Fracture
 location distribution x-axis to generate fracture lengths in the three
 principal directions:
 
-| .5inFracture length distribution x-axis
-| .5inFracture length distribution y-axis
-| .5inFracture length distribution z-axis
+Fracture length distribution x-axis
+Fracture length distribution y-axis
+Fracture length distribution z-axis
 
 The following instructions use the same input data structure as Fracture
 location distribution x-axis to generate fracture apertures in the three
 principal orientations:
 
-| .5inXY fracture aperture distribution
-| .5inXZ fracture aperture distribution
-| .5inYZ fracture aperture distribution
+XY fracture aperture distribution
+XZ fracture aperture distribution
+YZ fracture aperture distribution
 
 Note that when generating fracture apertures from the normal
 distribution, random samples are truncated to the interval
@@ -1655,21 +1582,18 @@ Vertical fracture from top
 
 | 
 
--.3in
+
 
 #. **vertical_frac_top** Logical value (T/F), which if true, ensures
    that all vertical fractures start from the top of the domain.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Vertical fracture from top
-'''''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -1678,7 +1602,7 @@ Zone fractures how
 
 | 
 
--.3in
+
 
 #. **zone_rfgen_fracs** Controls how fracture zone numbers are assigned.
    Acceptable values are:
@@ -1695,9 +1619,6 @@ fractures parallel to the :math:`xz`-axis are in zone 3.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Zone fractures how
-'''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -1717,11 +1638,6 @@ input at which point control is passed back to the pre-processor.
 
 :math:`\bullet \bullet \bullet`
 
-.. _input-instructions-end-1:
-
-Input instructions ! End
-''''''''''''''''''''''''
-
 | Once the 3-D grid is generated, it is possible to change the random
   fracture apertures to zoned fracture apertures by following the
   procedures outlined in Section :ref:  
@@ -1730,7 +1646,8 @@ Input instructions ! End
 Interactive 3-D Mesh Generator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[sec:ean] Irregular grids can be generated by supplying nodal
+
+.. _sec:ean: Irregular grids can be generated by supplying nodal
 coordinates, element incidences and element zones for a 2-D slice which
 is composed of triangular or quadrilateral elements. Currently,
 triangles and quadrilaterals can not be mixed in the same slice. These
@@ -1749,7 +1666,7 @@ Generate uniform rectangles
 
 | 
 
--.3in
+
 
 #. **xlen, nbx, (x0)** Domain length [L] and number of rectangles in the
    :math:`x`-direction, the optional origin in the :math:`x`-direction
@@ -1770,12 +1687,9 @@ except that we drop the :math:`z`-axis parameters.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Generate uniform rectangles
-                                                
-
 --------------
 
--.3in 
+ 
 ''''''
 
 | 
@@ -1818,7 +1732,7 @@ T
 
 | 
 | ``Scope .grok``
-| -.3in
+
 
 #. **xlen, nbx, (x0)** Domain length [L] and number of rectangles in the
    :math:`x`-direction, the optional origin in the :math:`x`-direction
@@ -1839,7 +1753,7 @@ except that we drop the :math:`z`-dependence.
 
 .. _in-1:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -1857,7 +1771,7 @@ except that we drop the :math:`z`-dependence.
 
 .. _in-2:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -1887,9 +1801,6 @@ about four times with this command.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Refine 2d grid
-                                   
-
 --------------
 
 Reduce 2d grid, boundary file
@@ -1897,7 +1808,7 @@ Reduce 2d grid, boundary file
 
 | 
 
--.3in
+
 
 #. **polygon_file** Filename of a text file that defines a polygon by
    the :math:`x`- and :math:`y`-coordinates of its vertices, one vertex
@@ -1917,9 +1828,6 @@ grid, this command provides a basis for telescopic mesh refinement.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Reduce 2d grid, boundary file
-                                                  
-
 --------------
 
 Read fractran 2d grid
@@ -1927,7 +1835,7 @@ Read fractran 2d grid
 
 | 
 
-[sec:fractran_slice]-.3in
+
 
 #. **prefix** Prefix of the FRACTRAN files which contain the node
    coordinates, element incidences and element zone numbers for the 2-D
@@ -1943,9 +1851,6 @@ generated by the FRACTRAN program.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Read fractran 2d grid
-                                          
-
 For a 2-D slice made of 4-node rectangular elements, the following
 instructions can be used to remove elements:
 
@@ -1956,7 +1861,7 @@ Remove rectangles with shapefile
 
 | 
 
--.3in
+
 
 #. **arcview_prefix** Prefix of the ArcView shapefile.
 
@@ -1985,9 +1890,6 @@ Currently, this command applies only to rectangular elements.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Remove rectangles with shapefile
-                                                     
-
 --------------
 
 Remove rectangles with blanking file
@@ -2004,9 +1906,6 @@ ArcView shapefile.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Remove rectangles with blanking file
-                                                         
-
 --------------
 
 Raster to scl
@@ -2014,7 +1913,7 @@ Raster to scl
 
 | 
 
--.3in
+
 
 #. **arcview_filename** Name of the ArcView ASCII file.
 
@@ -2030,9 +1929,6 @@ node. The results are written to a GMS formatted scalar file named
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Raster to scl
-                                  
-
 --------------
 
 Raster to nprop
@@ -2040,7 +1936,7 @@ Raster to nprop
 
 | 
 
--.3in
+
 
 #. **arcview_filename** Name of the ArcView ASCII file.
 
@@ -2056,9 +1952,6 @@ node. The results are written to a binary file named
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Raster to nprop
-                                    
-
 --------------
 
 Raster to element
@@ -2066,7 +1959,7 @@ Raster to element
 
 | 
 
--.3in
+
 
 #. **arcview_filename** Name of the ArcView ASCII file.
 
@@ -2089,9 +1982,6 @@ and values to the file named ``output.el``.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Raster to element
-                                      
 
 3-D Mesh Generation
 ^^^^^^^^^^^^^^^^^^^
@@ -2151,7 +2041,7 @@ C
 
 .. _in-3:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -2194,7 +2084,8 @@ C
 Elevation Instructions
 ^^^^^^^^^^^^^^^^^^^^^^
 
-[sec:irregular_elev_instructions] These instructions are used to define
+
+.. _sec:irregular_elev_instructions: These instructions are used to define
 3-D mesh base elevations and new layer top elevations.
 
 --------------
@@ -2204,20 +2095,17 @@ Elevation constant
 
 | 
 
--.3in
+
 
 #. **elev** Elevation value [L].
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Elevation constant
-                                       
 
 --------------
 
@@ -2226,23 +2114,20 @@ Elevation from raster file
 
 | 
 
--.3in
+
 
 #. | **rasterfile** Name of the raster file containing the base
      elevation values. This is a string variable. The file should be
      formatted as outlined in Appendix :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Elevation from raster file
-                                               
 
 --------------
 
@@ -2252,7 +2137,7 @@ Input instructions ! Elevation from raster file
 
 | 
 | ``Scope .grok``
-| -.3in
+
 
 #. **filename** Filename of GoCAD tsurf file, up to 120 characters. Note
    that the length units in this file must match the model’s length
@@ -2272,7 +2157,7 @@ Elevation from bilinear function in xy
 
 | 
 
--.3in
+
 
 #. **xfrom, xto, yfrom, yto** :math:`x`-range [L] and :math:`y`-range
    [L].
@@ -2293,9 +2178,6 @@ For nodes falling within the given :math:`x`- and :math:`y`-range, the
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Elevation from bilinear function in xy
-                                                           
-
 --------------
 
 Elevation from sine function in xy
@@ -2303,7 +2185,7 @@ Elevation from sine function in xy
 
 | 
 
--.3in
+
 
 #. **xfrom, xto, yfrom, yto** :math:`x`-range [L] and :math:`y`-range
    [L].
@@ -2338,9 +2220,6 @@ where:
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Elevation from sine function in xy
-                                                       
-
 The number of cycles of the sine wave can be a fraction and the sine
 function rises from a value of **zz0** at (**xfrom, yfrom**) as
 :math:`x`- and :math:`y`-values increase. Where the peaks coincide, the
@@ -2362,9 +2241,6 @@ As above but uses the cosine function instead of the sine function.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Elevation from cosine function in xy
-                                                         
-
 --------------
 
 Elevation from xz pairs
@@ -2372,7 +2248,7 @@ Elevation from xz pairs
 
 | 
 
--.3in
+
 
 #. **xval(i), zval(i)...end** List of :math:`xz`-pairs [L].
 
@@ -2389,9 +2265,6 @@ of the node is used to determine its position in the list, and a
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Elevation from xz pairs
-                                            
-
 --------------
 
 Elevation from file
@@ -2399,22 +2272,19 @@ Elevation from file
 
 | 
 
--.3in
+
 
 #. **ascii_elevation_filename** Name of the ASCII text file containing
    the elevation [L] values. The file should contain one elevation value
    per line for each node in the surface mesh.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Elevation from file
-                                        
 
 Axisymmetric Flow
 ~~~~~~~~~~~~~~~~~
@@ -2441,13 +2311,14 @@ pumping/injection well at the origin :math:`(x = 0)`.
 Manipulating the 3-D Grid
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[sec:manipulate]
+
+.. _sec:manipulate:
 
 --------------
 
 .. _in-4:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -2463,7 +2334,7 @@ a positive angle produces a counterclockwise rotation.
 
 .. _in-5:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -2482,7 +2353,7 @@ Adapt grid to fractures
 
 | 
 
--.3in
+
 
 #. **adapt_g2f_mode** An integer value indicating how the grid is
    adapted to inclined fractures.
@@ -2507,9 +2378,6 @@ The default value is 1.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Adapt grid to fractures
-''''''''''''''''''''''''''''''''''''''''''''
 
 Ending Grid Generation
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -2647,9 +2515,6 @@ instructions.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Clear chosen segments
-''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose segments all
@@ -2666,9 +2531,6 @@ assign a property to all segments in the grid.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose segments all
-''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose segments line
@@ -2676,7 +2538,7 @@ Choose segments line
 
 | 
 
--.3in
+
 
 #. **x1, y1, z1** :math:`xyz`-coordinates [L] of the first end point of
    the line.
@@ -2695,9 +2557,6 @@ between the two nodes.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose segments line
-'''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose segments polyline
@@ -2705,7 +2564,7 @@ Choose segments polyline
 
 | 
 
--.3in
+
 
 #. **npts** The number of points defining the polyline, which should be
    entered in order from one end of the polyline to the other.
@@ -2725,14 +2584,11 @@ nodes.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose segments polyline
-'''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 .. _in-6:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -2760,7 +2616,7 @@ Choose segments am node list
 
 | 
 
--.3in
+
 
 #. **npts** The number of points defining the polyline, which should be
    entered in order from one end of the polyline to the other.
@@ -2777,9 +2633,6 @@ instruction is intended to help to build horizontal wells/drains.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose segments am node list
-'''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose segments xy between sheets
@@ -2787,7 +2640,7 @@ Choose segments xy between sheets
 
 | 
 
--.3in
+
 
 #. **x1, y1** :math:`xy`-coordinates [L] to define a vertical segment.
 
@@ -2802,13 +2655,11 @@ This instruction is intended to help to build vertical wells/drains.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose segments xy between sheets
-''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 Selecting Faces
 ~~~~~~~~~~~~~~~
 
-[sec:cfc]
+
+.. _sec:cfc:
 
 --------------
 
@@ -2827,9 +2678,6 @@ blocks and five faces for 6-node prisms) are defined for the mesh.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Allow internal faces
-'''''''''''''''''''''''''''''''''''''''''
 
 The following instructions are used to alter the set of chosen faces:
 
@@ -2850,9 +2698,6 @@ instructions.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Clear chosen faces
-'''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces all
@@ -2869,9 +2714,6 @@ assign a property to all faces in the grid. Rarely used.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces all
-'''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces x plane
@@ -2879,7 +2721,7 @@ Choose faces x plane
 
 | 
 
--.3in
+
 
 #. **x1** :math:`x`-coordinate [L] of the plane.
 
@@ -2896,9 +2738,6 @@ domain.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces x plane
-'''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces y plane
@@ -2913,9 +2752,6 @@ As above but for the :math:`y`-plane.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Choose faces y plane
-'''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -2932,9 +2768,6 @@ As above but for the :math:`z`-plane.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces z plane
-'''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 .. _section-2:
@@ -2943,7 +2776,7 @@ Input instructions ! Choose faces z plane
 
 | 
 | ``Scope .grok``
-| -.3in
+
 
 #. **x1, y1, z1** :math:`xyz`-coordinates [L] of a point on the disk.
 
@@ -2968,7 +2801,7 @@ Choose faces 3pt plane
 
 | 
 
--.3in
+
 
 #. **x1, y1, z1** :math:`xyz`-coordinates [L] of the first point.
 
@@ -2989,9 +2822,6 @@ of sloping fractures.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces 3pt plane
-'''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces 3pt plane bounded
@@ -2999,7 +2829,7 @@ Choose faces 3pt plane bounded
 
 | 
 
--.3in
+
 
 #. **x1, y1, z1** :math:`xyz`-coordinates [L] of the first point.
 
@@ -3025,9 +2855,6 @@ chosen.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces 3pt plane bounded
-'''''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces block
@@ -3035,7 +2862,7 @@ Choose faces block
 
 | 
 
--.3in
+
 
 #. **x1, x2** :math:`x`-range [L] of the block.
 
@@ -3054,9 +2881,6 @@ plane, line or point respectively.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces block
-'''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces block by layer
@@ -3064,7 +2888,7 @@ Choose faces block by layer
 
 | 
 
--.3in
+
 
 #. **x1, x2** :math:`x`-range [L] of the block.
 
@@ -3097,9 +2921,6 @@ point respectively.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces block by layer
-''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces sheet
@@ -3107,7 +2928,7 @@ Choose faces sheet
 
 | 
 
--.3in
+
 
 #. **nsheet_bot,nsheet_top** Bottom and top sheet numbers.
 
@@ -3119,9 +2940,6 @@ oriented perpendicular to the sheet will be chosen.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Choose faces sheet
-'''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -3138,9 +2956,6 @@ All faces in the top sheet of the domain will be chosen.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces top
-'''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces top block
@@ -3148,7 +2963,7 @@ Choose faces top block
 
 | 
 
--.3in
+
 
 #. **x1, x2** :math:`x`-range [L] of the block.
 
@@ -3167,9 +2982,6 @@ block will collapse to a plane, line or point respectively.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces top block
-'''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces top from raster
@@ -3177,7 +2989,7 @@ Choose faces top from raster
 
 | 
 
--.3in
+
 
 #. **filename** File path to raster file.
 
@@ -3193,9 +3005,6 @@ range are chosen. Selects all raster values that lie between **n1** and
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces top from raster
-'''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces bottom
@@ -3210,9 +3019,6 @@ All faces in the bottom sheet of the domain will be chosen.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Choose faces bottom
-''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -3232,9 +3038,6 @@ parallel to the :math:`xz`-coordinate plane and have small
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces front
-'''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces back
@@ -3252,9 +3055,6 @@ parallel to the :math:`xz`-coordinate plane and have large
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Choose faces back
-''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -3274,9 +3074,6 @@ faces are parallel to the :math:`yz`-coordinate plane and have small
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces left
-''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces right
@@ -3295,9 +3092,6 @@ faces are parallel to the :math:`yz`-coordinate plane and have large
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces right
-'''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces top am
@@ -3305,7 +3099,7 @@ Choose faces top am
 
 | 
 
--.3in
+
 
 #. **filename** Name of the AlgoMesh chosen elements file
    *am_prefix*\ ``.echos.``\ *description*.
@@ -3319,9 +3113,6 @@ not oriented perpendicular to the sheet are chosen.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces top am
-''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces top am common
@@ -3329,7 +3120,7 @@ Choose faces top am common
 
 | 
 
--.3in
+
 
 #. **filename1** Name of the AlgoMesh chosen elements file
    *am_prefix*\ ``.echos.``\ *description1*.
@@ -3346,9 +3137,6 @@ are not oriented perpendicular to the sheet are chosen.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces top am common
-'''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces top am exclude
@@ -3356,7 +3144,7 @@ Choose faces top am exclude
 
 | 
 
--.3in
+
 
 #. **filename1** Name of the AlgoMesh chosen elements file
    *am_prefix*\ ``.echos.``\ *description1*.
@@ -3374,9 +3162,6 @@ perpendicular to the sheet are chosen.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces top am exclude
-''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces top for chosen elements
@@ -3393,9 +3178,6 @@ belong to is chosen.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces top for chosen elements
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces am
@@ -3403,7 +3185,7 @@ Choose faces am
 
 | 
 
--.3in
+
 
 #. **filename** Name of the AlgoMesh chosen elements file
    *am_prefix*\ ``.echos.``\ *description*.
@@ -3420,9 +3202,6 @@ are chosen.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces am
-''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces vertical from am nodes
@@ -3430,7 +3209,7 @@ Choose faces vertical from am nodes
 
 | 
 
--.3in
+
 
 #. **filename** Name of the AlgoMesh chosen nodes file
    *am_prefix*\ ``.nchos.``\ *description*.
@@ -3453,14 +3232,11 @@ nodes are chosen.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces vertical from am nodes
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 .. _in-7:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -3489,7 +3265,7 @@ Choose horizontal faces on layer
 
 | 
 
--.3in
+
 
 #. **nlayer** Element layer number.
 
@@ -3509,9 +3285,6 @@ layer of nodes is irregular.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose horizontal faces on layer
-'''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces stairway
@@ -3519,7 +3292,7 @@ Choose faces stairway
 
 | 
 
--.3in
+
 
 #. **x1, y1, z1** :math:`xyz`-coordinates [L] of the first point.
 
@@ -3540,9 +3313,6 @@ have to travel from node to node.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces stairway
-''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose fracture faces block
@@ -3550,7 +3320,7 @@ Choose fracture faces block
 
 | 
 
--.3in
+
 
 #. **x1, x2** :math:`x`-range [L] of the block.
 
@@ -3570,14 +3340,11 @@ respectively.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose fracture faces block
-''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 .. _in-8:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -3594,7 +3361,7 @@ Note that in order to select a triangular face simply set
 
 .. _in-9:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -3623,9 +3390,6 @@ As above except the face will be cleared (i.e., not chosen).
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Clear chosen faces by nodes
-''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces horizontal circle
@@ -3633,7 +3397,7 @@ Choose faces horizontal circle
 
 | 
 
--.3in
+
 
 #. **x_mid, y_mid, z_mid** :math:`xy`-coordinates [L] of the centre of
    the circle and elevation of the circle.
@@ -3653,9 +3417,6 @@ ground-plan.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose faces horizontal circle
-'''''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Write chosen faces
@@ -3663,7 +3424,7 @@ Write chosen faces
 
 | 
 
--.3in
+
 
 #. **filename** Name of the file to which the chosen face information
    will be written.
@@ -3680,9 +3441,6 @@ following instruction.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Write chosen faces
-'''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Write chosen faces and host element numbers
@@ -3690,7 +3448,7 @@ Write chosen faces and host element numbers
 
 | 
 
--.3in
+
 
 #. **filename** Name of the file to which the chosen face and host
    element information will be written.
@@ -3705,9 +3463,6 @@ zero, the face is on the outside of the 3-D domain.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Write chosen faces and host element numbers
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Read chosen faces
@@ -3715,7 +3470,7 @@ Read chosen faces
 
 | 
 
--.3in
+
 
 #. **filename** Name of the file from which the chosen face information
    will be read.
@@ -3732,9 +3487,6 @@ time.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Read chosen faces
-''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -3791,9 +3543,6 @@ unselected as well.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Clear chosen inclined faces
-''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Choose faces 3pt inclined plane
@@ -3801,7 +3550,7 @@ Choose faces 3pt inclined plane
 
 | 
 
--.3in
+
 
 #. **nplane** Plane ID number, as defined above.
 
@@ -3837,9 +3586,6 @@ ignored.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Choose faces 3pt inclined plane
-''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Simulation Control Options
 --------------------------
@@ -3878,9 +3624,6 @@ solution.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Transient flow
-'''''''''''''''''''''''''''''''''''
-
 --------------
 
 Unsaturated
@@ -3896,9 +3639,6 @@ Causes **HydroGeoSphere** to perform a variably-saturated flow solution.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Unsaturated
-''''''''''''''''''''''''''''''''
-
 --------------
 
 Do transport
@@ -3913,9 +3653,6 @@ Causes **HydroGeoSphere** to perform a transport solution.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Do transport
-'''''''''''''''''''''''''''''''''
 
 If surface loading with hydromechanical coupling is required, you must
 issue the following instruction:
@@ -3935,9 +3672,6 @@ hydromechanical coupling.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Surface loading
-''''''''''''''''''''''''''''''''''''
 
 | The following instructions are used to define the behaviour of the
   Travel Time Probability Package described in Section :ref:  
@@ -4044,9 +3778,6 @@ command only works for a single conservative species.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Backward-in-time
-'''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Evaluate capture zone
@@ -4063,9 +3794,6 @@ works for a single conservative species.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Evaluate capture zone
-''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Species attribution
@@ -4081,9 +3809,6 @@ multi-species transport).
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Species attribution
-''''''''''''''''''''''''''''''''''''''''
 
 These instructions are of general interest:
 
@@ -4111,9 +3836,6 @@ when one wants to have the triangular mesh (which is defined in the
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Y vertical
-'''''''''''''''''''''''''''''''
-
 --------------
 
 Data check only
@@ -4135,9 +3857,6 @@ doing the simulation.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Data check only
-''''''''''''''''''''''''''''''''''''
-
 --------------
 
 .. _t-2:
@@ -4153,7 +3872,7 @@ T
 
 --------------
 
-Defined transient flow -.3in
+
 
 #. **filename** File path to a porous media domain head input file, for
    example, *prefix*\ ``o.head_pm.``\ ``0001``, at most 256 characters.
@@ -4166,8 +3885,8 @@ files *prefix*\ ``o.head_pm.0001``, …, *prefix*\ ``o.head_pm.0009`` and
 would like to run again to produce some additional output. Instead of
 having to rerun the full simulation, which may be costly, you can copy
 the head output files to a folder under your simulation folder, e.g.,
-`heads\  <heads\ >`__, and then rerun your simulation by defining the
-flow field from the head files in `heads\  <heads\ >`__ at each output
+:math:`\mbox{heads\ }`, and then rerun your simulation by defining the
+flow field from the head files in :math:`\mbox{heads\ }` at each output
 time. Note that initial head values are supplied by your initial
 conditions.
 
@@ -4207,7 +3926,7 @@ There are a number of things to keep in mind when using this command:
 -  Not all output that is possible with a full simulation may be
    available.
 
--.3in
+
 
 Finite-Difference Options
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -4228,9 +3947,6 @@ of the default finite element method.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Finite difference mode
-                                           
-
 The following instructions affect the transport simulation in a general
 way when finite difference method is being used.
 
@@ -4250,9 +3966,6 @@ ignored.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Compute fd cross terms
-                                           
 
 --------------
 
@@ -4303,7 +4016,7 @@ Level of fill
 
 | 
 
--.3in
+
 
 #. **level** Level of fill.
 
@@ -4316,9 +4029,6 @@ value is not used.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Level of fill
-                                  
 
 --------------
 
@@ -4336,9 +4046,6 @@ using level-based or drop tolerance preconditioning.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Red black reduction
-                                        
-
 --------------
 
 Drop tolerance preconditioning
@@ -4355,9 +4062,6 @@ elements based on how small they are. The default threshold is 0.1.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Drop tolerance preconditioning
-                                                   
-
 --------------
 
 Drop tolerance threshold
@@ -4365,7 +4069,7 @@ Drop tolerance threshold
 
 | 
 
--.3in
+
 
 #. **thres** Drop tolerance threshold.
 
@@ -4376,9 +4080,6 @@ Assign a new drop tolerance threshold.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Drop tolerance threshold
-                                             
 
 Once the preconditioning phase is complete, the matrix can be solved
 using several acceleration techniques. The following command can be used
@@ -4391,7 +4092,7 @@ Solver acceleration technique
 
 | 
 
--.3in
+
 
 #. **iaccel** Type of acceleration to use.
 
@@ -4405,9 +4106,6 @@ for symmetric matrices only), 1 (OrthoMin), 2 (CGS), 3 (CGSTAB-P) or 4
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Solver acceleration technique
-                                                  
 
 --------------
 
@@ -4424,13 +4122,11 @@ Tells the solver not to use matrix scaling preconditioning.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! No matrix scaling
-                                      
-
 Timestep Control
 ~~~~~~~~~~~~~~~~
 
-[sec:tstep] Before discussing the available instructions for controlling
+
+.. _sec:tstep: Before discussing the available instructions for controlling
 the behaviour of a transient solution, some background information is
 required. The pre-processor **grok** generates an array of target times
 that are derived from the following sources:
@@ -4458,7 +4154,7 @@ Initial time
 
 | 
 
--.3in
+
 
 #. **tinit** Initial time [T].
 
@@ -4472,9 +4168,6 @@ times used to an earlier run.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Initial time
-'''''''''''''''''''''''''''''''''
-
 --------------
 
 Initial timestep
@@ -4482,7 +4175,7 @@ Initial timestep
 
 | 
 
--.3in
+
 
 #. **val** Initial timestep size [T].
 
@@ -4495,9 +4188,6 @@ time units.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Initial timestep
-'''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Maximum timestep
@@ -4505,7 +4195,7 @@ Maximum timestep
 
 | 
 
--.3in
+
 
 #. **val** Maximum timestep size [T].
 
@@ -4518,14 +4208,11 @@ Assigns a new value for the maximum timestep size, which defaults to
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Maximum timestep
-'''''''''''''''''''''''''''''''''''''
-
 --------------
 
 .. _in-10:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -4557,7 +4244,7 @@ Minimum timestep
 
 | 
 
--.3in
+
 
 #. **val** Minimum timestep size [T].
 
@@ -4572,9 +4259,6 @@ value as a result of the adaptive timestepping procedure,
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Minimum timestep
-'''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Target times
@@ -4582,7 +4266,7 @@ Target times
 
 | 
 
--.3in
+
 
 #. **target_time(i)...end** Target times [T] list.
 
@@ -4594,9 +4278,6 @@ Listed times are added to the current set of target times.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Target times
-'''''''''''''''''''''''''''''''''
-
 --------------
 
 Generate target times
@@ -4604,7 +4285,7 @@ Generate target times
 
 | 
 
--.3in
+
 
 #. **tstart** Start time [T].
 
@@ -4627,9 +4308,6 @@ maximum size of **dtmax**.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Generate target times
-''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Output times
@@ -4637,7 +4315,7 @@ Output times
 
 | 
 
--.3in
+
 
 #. **output_time(i)...end** Output time [T] list.
 
@@ -4651,9 +4329,6 @@ automatically become part of the target time list.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Output times
-'''''''''''''''''''''''''''''''''
-
 --------------
 
 Auto save on
@@ -4661,7 +4336,7 @@ Auto save on
 
 | 
 
--.3in
+
 
 #. **asv_interval** Time interval in seconds for auto-saving restart
    files.
@@ -4678,13 +4353,11 @@ recorded/updated in *prefix*\ ``o.head.asv`` and
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Auto save on
-'''''''''''''''''''''''''''''''''
-
 Adaptive Timesteps
 ^^^^^^^^^^^^^^^^^^
 
-| [sec:adaptive_timestep] If required, **HydroGeoSphere** can modify
+| 
+.. _sec:adaptive_timestep: If required, **HydroGeoSphere** can modify
   timestep values as the solution proceeds, based on the transient
   behaviour of the system (see Equation :ref:  
 | ). The following instructions can be used to activate this feature and
@@ -4699,21 +4372,18 @@ Head control
 
 | 
 
--.3in
+
 
 #. **dhead_allowed** Maximum allowed absolute change in nodal head [L]
    during any time step.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Head control
-                                 
 
 --------------
 
@@ -4722,21 +4392,18 @@ Water depth control
 
 | 
 
--.3in
+
 
 #. **ddepth_allowed** Maximum allowed absolute change in nodal surface
    water depth [L] during any time step.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Water depth control
-                                        
 
 --------------
 
@@ -4745,21 +4412,18 @@ Saturation control
 
 | 
 
--.3in
+
 
 #. **dsat_allowed** Maximum allowed absolute change in nodal saturation
    [-] during any time step.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Saturation control
-                                       
 
 --------------
 
@@ -4768,21 +4432,18 @@ Newton iteration control
 
 | 
 
--.3in
+
 
 #. **nnri_allowed** Maximum allowed number of NewtonRaphson iterations
    during any time step.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Newton iteration control
-                                             
 
 --------------
 
@@ -4791,21 +4452,18 @@ DDF Picard iteration control
 
 | 
 
--.3in
+
 
 #. **npicard_allowed** Maximum allowed number of density-flow Picard
    iterations during any time step.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! DDF Picard iteration control
-                                                 
 
 --------------
 
@@ -4814,21 +4472,18 @@ Concentration control
 
 | 
 
--.3in
+
 
 #. **dconc_allowed** Maximum allowed absolute change in nodal
    concentration [M L:math:`^{-3}`] during any time step.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Concentration control
-                                          
 
 --------------
 
@@ -4837,23 +4492,20 @@ Concentration control, multi-species
 
 | 
 
--.3in
+
 
 #. **dconc_allowed(i)** Maximum allowed absolute change in nodal
    concentration [M L:math:`^{-3}`] for the :math:`i`\ th species during
    any time step. This command needs to be repeated, once per species,
    each on a separate line.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Concentration control, multi-species
-                                                         
 
 --------------
 
@@ -4862,21 +4514,18 @@ Mass change control
 
 | 
 
--.3in
+
 
 #. **dmass_change_allowed** Maximum allowed absolute change in mass [M]
    during any time step.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Mass change control
-                                        
 
 --------------
 
@@ -4885,21 +4534,18 @@ Mass error control
 
 | 
 
--.3in
+
 
 #. **dmass_error_allowed** Maximum allowed absolute mass error [M]
    during any time step.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Mass error control
-                                       
 
 | The following instructions are used to generate a timestep multiplier
   according to Equation :ref:  
@@ -4915,7 +4561,7 @@ Maximum timestep multiplier
 
 | 
 
--.3in
+
 
 #. **val** Maximum timestep multiplier [-].
 
@@ -4928,9 +4574,6 @@ to :math:`2`.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Maximum timestep multiplier
-                                                
-
 --------------
 
 Minimum timestep multiplier
@@ -4938,7 +4581,7 @@ Minimum timestep multiplier
 
 | 
 
--.3in
+
 
 #. **val** Minimum timestep multiplier [-].
 
@@ -4951,13 +4594,11 @@ to :math:`0.5`.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Minimum timestep multiplier
-                                                
-
 Variably-Saturated Flow
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-[sec:variably_saturated_flow]
+
+.. _sec:variably_saturated_flow:
 
 By default, **HydroGeoSphere** uses the upstream weighting scheme
 (weighted harmonic mean) for relative permeability, with an upstream
@@ -4971,7 +4612,7 @@ Upstream weighting factor
 
 | 
 
--.3in
+
 
 #. **upwfactor** Upstream weighting factor [-].
 
@@ -4984,9 +4625,6 @@ Assigns a new value for the upstream weighting factor, which defaults to
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Upstream weighting factor
-''''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -5003,9 +4641,6 @@ mean) instead of upstream weighting.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Central weighting
-''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -5032,22 +4667,19 @@ Upper limit
 
 | 
 
--.3in
+
 
 #. | **switch_t** Upper limit [-] of the variable substitution approach,
      :math:`tol_f` in Equation :ref:  
    | . The default value is :math:`0.99`.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Upper limit
-''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -5056,22 +4688,19 @@ Lower limit
 
 | 
 
--.3in
+
 
 #. | **switch_f** Lower limit [-] of the variable substitution approach,
      :math:`tol_b` in Equation :ref:  
    | . The default value is :math:`0.89`.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Lower limit
-''''''''''''''''''''''''''''''''
 
 Newton Iteration Parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -5088,7 +4717,7 @@ Newton maximum iterations
 
 | 
 
--.3in
+
 
 #. **maxnewt** Maximum number of Newton iterations.
 
@@ -5103,9 +4732,6 @@ attempted.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Newton maximum iterations
-                                              
-
 --------------
 
 Newton minimum iterations
@@ -5113,7 +4739,7 @@ Newton minimum iterations
 
 | 
 
--.3in
+
 
 #. **minnewt** Minimum number of Newton iterations.
 
@@ -5127,9 +4753,6 @@ after it has performed the minimum number of iterations.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Newton minimum iterations
-                                              
-
 --------------
 
 Jacobian epsilon
@@ -5137,7 +4760,7 @@ Jacobian epsilon
 
 | 
 
--.3in
+
 
 #. **epsilon** Jacobian epsilon [L].
 
@@ -5153,9 +4776,6 @@ head in the domain is recommended.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Jacobian epsilon
-                                     
-
 --------------
 
 Newton absolute convergence criteria
@@ -5163,7 +4783,7 @@ Newton absolute convergence criteria
 
 | 
 
--.3in
+
 
 #. **delnewt** Newton absolute convergence tolerance [L].
 
@@ -5178,9 +4798,6 @@ the domain for one Newton iteration is less than this value.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Newton absolute convergence criteria
-                                                         
-
 --------------
 
 Newton residual convergence criteria
@@ -5188,7 +4805,7 @@ Newton residual convergence criteria
 
 | 
 
--.3in
+
 
 #. **resnewt** Newton residual convergence tolerance
    [L:math:`^3` T:math:`^{-1}`].
@@ -5204,9 +4821,6 @@ one Newton iteration is less than this value.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Newton residual convergence criteria
-                                                         
-
 --------------
 
 Minimum relaxation factor for convergence
@@ -5214,7 +4828,7 @@ Minimum relaxation factor for convergence
 
 | 
 
--.3in
+
 
 #. **minrelfac_convergence** Minimum relaxation factor [-] to declare
    convergence.
@@ -5230,9 +4844,6 @@ larger than this minimum value.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Minimum relaxation factor for convergence
-                                                              
-
 --------------
 
 Newton maximum update for head
@@ -5240,7 +4851,7 @@ Newton maximum update for head
 
 | 
 
--.3in
+
 
 #. **NR_dhtol** Newton maximum update for head [L].
 
@@ -5268,9 +4879,6 @@ converge, it is recommended to set this value smaller.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Newton maximum update for head
-                                                   
-
 --------------
 
 Newton maximum update for depth
@@ -5278,7 +4886,7 @@ Newton maximum update for depth
 
 | 
 
--.3in
+
 
 #. **NR_ddtol** Newton maximum update for depth [L].
 
@@ -5293,14 +4901,11 @@ depth.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Newton maximum update for depth
-                                                    
-
 --------------
 
 .. _in-11:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -5322,7 +4927,7 @@ Newton maximum residual increase
 
 | 
 
--.3in
+
 
 #. **NR_resnorm_fac** Newton maximum residual increase [-].
 
@@ -5336,9 +4941,6 @@ restarted with a smaller timestep.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Newton maximum residual increase
-                                                     
 
 --------------
 
@@ -5357,9 +4959,6 @@ can cause oscillatory behavior during Newton iterations
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Remove negative coefficients
-                                                 
 
 --------------
 
@@ -5383,7 +4982,7 @@ T
 
 .. _in-12:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -5409,7 +5008,7 @@ Underrelaxation factor
 
 | 
 
--.3in
+
 
 #. **under_rel** Underrelaxation factor [-].
 
@@ -5422,9 +5021,6 @@ underrelaxation) to 1 (no underrelaxation).
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Underrelaxation factor
-                                           
 
 --------------
 
@@ -5468,9 +5064,6 @@ largest difference between head values for two successive iterations,
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Compute underrelaxation factor
-                                                   
-
 --------------
 
 Compute underrelaxation factor limit
@@ -5478,7 +5071,7 @@ Compute underrelaxation factor limit
 
 | 
 
--.3in
+
 
 #. **dellim** Maximum computed underrelaxation factor [-].
 
@@ -5492,9 +5085,6 @@ recommended.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Compute underrelaxation factor limit
-                                                         
-
 --------------
 
 Minimum relaxation factor allowed
@@ -5502,7 +5092,7 @@ Minimum relaxation factor allowed
 
 | 
 
--.3in
+
 
 #. **min_relfac_allowed** Minimum omputed underrelaxation factor [-].
 
@@ -5517,9 +5107,6 @@ restarted.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Minimum relaxation factor allowed
-                                                      
 
 --------------
 
@@ -5537,9 +5124,6 @@ listing file about the performance of the Newton iteration process.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Newton information
-                                       
-
 Discrete Fracture Flow
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -5552,7 +5136,7 @@ Also by default, **HydroGeoSphere** uses the common node approach to
 define the discrete fracture flow domain. If the dual-node approach is
 required, you must issue the following instruction:
 
-.5inDual nodes for fracture flow
+Dual nodes for fracture flow
 
 Surface Flow
 ~~~~~~~~~~~~
@@ -5579,9 +5163,6 @@ used.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Dual nodes for surface flow
-''''''''''''''''''''''''''''''''''''''''''''''''
-
 Transport
 ~~~~~~~~~
 
@@ -5592,7 +5173,7 @@ Transport time weighting
 
 | 
 
--.3in
+
 
 #. **twc** Time-weighting factor [-] for the transport solution.
 
@@ -5608,9 +5189,6 @@ numerical smearing than central time-weighting.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Transport time weighting
-'''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Peclet number
@@ -5618,7 +5196,7 @@ Peclet number
 
 | 
 
--.3in
+
 
 #. **pectol** Peclet number [-].
 
@@ -5642,9 +5220,6 @@ generation of warning messages.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Peclet number
-''''''''''''''''''''''''''''''''''
-
 --------------
 
 .. _t-4:
@@ -5667,7 +5242,7 @@ Courant number
 
 | 
 
--.3in
+
 
 #. **courtol** Courant number [-].
 
@@ -5691,14 +5266,11 @@ generation of warning messages.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Courant number
-'''''''''''''''''''''''''''''''''''
-
 --------------
 
 .. _in-13:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -5728,7 +5300,7 @@ Transport solver detail
 
 | 
 
--.3in
+
 
 #. **isolv_infoc** Transport solver detail level.
 
@@ -5743,9 +5315,6 @@ have values of 0 (no information) or 1 (full information).
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Transport solver detail
-''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Transport solver maximum iterations
@@ -5753,7 +5322,7 @@ Transport solver maximum iterations
 
 | 
 
--.3in
+
 
 #. **maxtit** Maximum number of transport solver iterations.
 
@@ -5766,9 +5335,6 @@ iterations, which defaults to 2000.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Transport solver maximum iterations
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Upstream weighting of velocities
@@ -5776,7 +5342,7 @@ Upstream weighting of velocities
 
 | 
 
--.3in
+
 
 #. **almax, btmax, gammax** Upstream weighting factors [-] in the
    :math:`x`-, :math:`y`-, and :math:`z`-directions, respectively.
@@ -5792,9 +5358,6 @@ applied.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Upstream weighting of velocities
-'''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -5813,10 +5376,7 @@ Flux limiter for transport
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Flux limiter for transport
-'''''''''''''''''''''''''''''''''''''''''''''''
 
-Iteration parameters flux limiter -.3in
 
 #. **maxiter_flim, resmax_flim, delmax_flim** Maximum number of
    iterations, absolute maximum residual convergence tolerance
@@ -5855,22 +5415,19 @@ Detection threshold concentration
 
 | 
 
--.3in
+
 
 #. **detection_threshold_conc** Detection threshold concentration
    [M L:math:`^{-3}`]. This instruction sets the value that is used to
    control the behaviour of the next two instructions.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Detection threshold concentration
-''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -5889,9 +5446,6 @@ Causes **HydroGeoSphere** to tag observation well output with the string
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Flag observation nodes if exceed detection threshold concentration
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Stop run if flux output nodes exceed detection threshold concentration
@@ -5909,9 +5463,6 @@ above.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Stop run if flux output nodes exceed detection threshold concentration
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 Density-Dependent Flow Solution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -5922,7 +5473,7 @@ the solution of the weakly nonlinear density-dependent flow problem.
 
 .. _in-14:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -6030,7 +5581,7 @@ linear interpolation. An example file is provided below.
        40  0.25
        50  0.1
 
--.3in
+
 
 --------------
 
@@ -6059,9 +5610,6 @@ until it encounters an End instruction.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Do heat transfer...End
-'''''''''''''''''''''''''''''''''''''''''''
-
 The available instructions are:
 
 --------------
@@ -6071,7 +5619,7 @@ Thermal conductivity of air
 
 | 
 
--.3in
+
 
 #. **k\_air** Thermal conductivity [W m:math:`^{-1}` K:math:`^{-1}`] of
    the air phase.
@@ -6084,9 +5632,6 @@ Assigns a uniform value to the thermal conductivity of air.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Thermal conductivity of air
-''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Specific heat capacity of air
@@ -6094,7 +5639,7 @@ Specific heat capacity of air
 
 | 
 
--.3in
+
 
 #. **c\_air** Specific heat capacity [J kg:math:`^{-1}` K:math:`^{-1}`]
    of the air phase.
@@ -6107,9 +5652,6 @@ Assigns a uniform value to the specific heat capacity of air.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Specific heat capacity of air
-''''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Density of air
@@ -6117,7 +5659,7 @@ Density of air
 
 | 
 
--.3in
+
 
 #. **rho\_air** Density [kg m:math:`^{-3}`] of the air phase.
 
@@ -6129,9 +5671,6 @@ Assigns a uniform value to the density of air.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Density of air
-'''''''''''''''''''''''''''''''''''
-
 --------------
 
 Thermal conductivity of water
@@ -6139,7 +5678,7 @@ Thermal conductivity of water
 
 | 
 
--.3in
+
 
 #. **k_l** Thermal conductivity [W m:math:`^{-1}` K:math:`^{-1}`] of the
    liquid phase.
@@ -6155,9 +5694,6 @@ the water temperature, which is the default setting.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Thermal conductivity of water
-''''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Specific heat capacity of water
@@ -6165,7 +5701,7 @@ Specific heat capacity of water
 
 | 
 
--.3in
+
 
 #. **c_l** Specific heat capacity [J kg:math:`^{-1}` K:math:`^{-1}`] of
    the liquid phase.
@@ -6180,9 +5716,6 @@ the water temperature, which is the default setting.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Specific heat capacity of water
-''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -6200,9 +5733,6 @@ mechanical heat dispersion.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Mechanical heat dispersion
-'''''''''''''''''''''''''''''''''''''''''''''''
-
 The following instruction can be used to define initial temperatures for
 the problem:
 
@@ -6213,7 +5743,7 @@ Initial temperature profile
 
 | 
 
--.3in
+
 
 #. **temp_top** Temperature [ °C] at the top of the domain.
 
@@ -6228,9 +5758,6 @@ initial temperature.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Initial temperature profile
-''''''''''''''''''''''''''''''''''''''''''''''''
-
 The following instructions can be used to define the heat source
 boundary condition:
 
@@ -6238,7 +5765,7 @@ boundary condition:
 
 .. _in-15:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -6271,7 +5798,7 @@ species the input format is
            ton2 toff2 prate21 prate22
            ton3 toff3 prate31 prate32
 
--.3in
+
 
 --------------
 
@@ -6282,7 +5809,7 @@ Exponential zero order source
 
 | 
 
--.3in
+
 
 #. **heat_q_zero** Heat production [M L:math:`^{-1}` T:math:`^{-3}`] at
    time :math:`t = 0`.
@@ -6298,9 +5825,6 @@ zero-order heat source boundary conditions.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Exponential zero order source
-''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Inactive Elements
 ~~~~~~~~~~~~~~~~~
@@ -6328,9 +5852,6 @@ All chosen elements will become inactive.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Make element inactive
-''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Make zone inactive
@@ -6346,9 +5867,6 @@ All elements in the current set of chosen zones will become inactive.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Make zone inactive
-'''''''''''''''''''''''''''''''''''''''
-
 For a 2-D slice made of 4-node rectangular elements, the following
 instruction can be used to make elements inactive:
 
@@ -6359,7 +5877,7 @@ Make element inactive using shapefile
 
 | 
 
--.3in
+
 
 #. **arcview_prefix** Prefix of the ArcView shapefile.
 
@@ -6378,16 +5896,13 @@ Make element inactive using shapefile
    inactive. Otherwise, elements located inside the area will become
    inactive.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Make element inactive using shapefile
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -6396,7 +5911,7 @@ Write inactive elements to file
 
 | 
 
--.3in
+
 
 #. **inactive_file** Name of the file to which the inactive element
    information will be written.
@@ -6413,9 +5928,6 @@ following instruction.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Write inactive elements to file
-''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Read inactive elements from file
@@ -6423,7 +5935,7 @@ Read inactive elements from file
 
 | 
 
--.3in
+
 
 #. **inactive_file** Name of the file from which the inactive element
    information will be read.
@@ -6436,9 +5948,6 @@ different sets of inactive elements are read.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Read inactive elements from file
-'''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Restarting a Simulation
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -6480,7 +5989,7 @@ to ``F`` for false.
 You can control the frequency at which restart data is generated via the
 following **grok** command.
 
-Restart file save interval -.3in
+
 
 #. **restart_interval** Time interval in seconds for saving restart
    information.
@@ -6527,13 +6036,14 @@ Subsurface Flow
 Surface Flow
 ~~~~~~~~~~~~
 
-[sec:init_cond_surface_flow]
+
+.. _sec:init_cond_surface_flow:
 
 --------------
 
 .. _in-16:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -6549,7 +6059,7 @@ value.
 
 .. _in-17:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -6586,7 +6096,7 @@ are included.
 
 .. _in-18:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -6604,7 +6114,7 @@ are included.
 
 .. _in-19:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -6630,7 +6140,7 @@ are included.
        c_22
        c_32
 
--.3in
+
 
 --------------
 
@@ -6638,7 +6148,7 @@ are included.
 
 .. _in-20:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -6661,7 +6171,7 @@ are included.
 
 .. _in-21:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -6688,7 +6198,7 @@ are included.
 
 .. _in-22:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -6724,7 +6234,7 @@ F
 
 .. _in-23:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -6745,7 +6255,7 @@ concentration value is assigned.
 
 .. _in-24:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -6768,7 +6278,7 @@ initial conditions.
 
 .. _in-25:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -6784,7 +6294,7 @@ Porous media nodes are assigned the immobile zone initial concentration
 
 .. _in-26:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -6804,7 +6314,7 @@ active domain. Each line may contain one or more values.
 
 .. _in-27:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -6904,7 +6414,7 @@ D
      end
    	
 
--.3in
+
 
 --------------
 
@@ -6931,7 +6441,7 @@ temperature profile are composed of the following subcommands:
 
 .. _in-28:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -6949,7 +6459,7 @@ applied until the end of the simulation.
 
 .. _in-29:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -6958,7 +6468,7 @@ applied until the end of the simulation.
    Default value of :math:`2\times 10^{-7}` [m:math:`^2`
    s\ :math:`^{-1}`].
 
--.3in
+
 
 --------------
 
@@ -6966,14 +6476,14 @@ applied until the end of the simulation.
 
 .. _in-30:
 
--.3in 
+ 
 ^^^^^^
 
 | 
 
 #. **background_temp** Background temperature [ °C].
 
--.3in
+
 
 --------------
 
@@ -6981,7 +6491,7 @@ applied until the end of the simulation.
 
 .. _in-31:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -6998,7 +6508,7 @@ equal to the temperature at the maximum depth.
 
 .. _in-32:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -7022,7 +6532,7 @@ where :math:`n = 2^k n_0` for :math:`k = 0,1,2,\ldots`.
 
 .. _in-33:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -7040,7 +6550,7 @@ message to the screen and the *prefix*\ ``o.lst`` file.
 
 .. _in-34:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -7065,7 +6575,7 @@ being simulated, then an appropriate memory length would be 12 hours.
 
 .. _in-35:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -7087,7 +6597,8 @@ temperature of the endpoint nearest to :math:`z`.
 Solute Definition
 ^^^^^^^^^^^^^^^^^
 
-| [sec:solute-definition] These instructions can be used to add a new
+| 
+.. _sec:solute-definition: These instructions can be used to add a new
   solute (i.e., species) to the system. **HydroGeoSphere** is able to
   handle more than one solute per simulation, and straight and branching
   decay chains are also supported. An example of a straight decay chain
@@ -7130,7 +6641,7 @@ The available instructions are:
 
 .. _in-36:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -7149,7 +6660,7 @@ Free-solution diffusion coefficient
 
 | 
 
--.3in
+
 
 #. **diffrac** Free-solution diffusion coefficient
    [L:math:`^2` T:math:`^{-1}`].
@@ -7165,9 +6676,6 @@ Free-solution diffusion coefficient
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Free-solution diffusion coefficient
-                                                        
-
 --------------
 
 Parents
@@ -7175,7 +6683,7 @@ Parents
 
 | 
 
--.3in
+
 
 #. **npa** Number of parent species for the current species.
 
@@ -7193,9 +6701,6 @@ current species).
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Parents
-                            
-
 The following parameters affect porous media solute properties:
 
 --------------
@@ -7205,7 +6710,7 @@ Decay constant
 
 | 
 
--.3in
+
 
 #. **clambda** First-order decay constant [T:math:`^{-1}`].
 
@@ -7220,9 +6725,6 @@ Decay constant
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Decay constant
-                                   
-
 --------------
 
 Zoned decay constant
@@ -7230,7 +6732,7 @@ Zoned decay constant
 
 | 
 
--.3in
+
 
 #. **clambda(j), j=1,nzones** First-order decay constant
    [T:math:`^{-1}`] for each porous media zone **j**.
@@ -7246,14 +6748,11 @@ Zoned decay constant
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Zoned decay constant
-                                         
-
 --------------
 
 .. _in-37:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -7285,7 +6784,7 @@ Input instructions ! Zoned decay constant
 
 .. _in-38:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -7316,7 +6815,7 @@ Input instructions ! Zoned decay constant
 
 .. _in-39:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -7353,7 +6852,7 @@ Input instructions ! Zoned decay constant
 
 .. _in-40:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -7394,7 +6893,7 @@ Distribution coefficient
 
 | 
 
--.3in
+
 
 #. **dkd** Distribution coefficient [M:math:`^{-1}` L:math:`^3`].
 
@@ -7409,9 +6908,6 @@ Distribution coefficient
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Distribution coefficient
-                                             
-
 --------------
 
 Zoned distribution coefficient
@@ -7419,7 +6915,7 @@ Zoned distribution coefficient
 
 | 
 
--.3in
+
 
 #. **dkd(j), j=1,nzones** Distribution coefficient
    [M:math:`^{-1}` L:math:`^3`] for each porous media zone **j**.
@@ -7435,14 +6931,11 @@ Zoned distribution coefficient
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Zoned distribution coefficient
-                                                   
-
 --------------
 
 .. _in-41:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -7478,7 +6971,7 @@ Input instructions ! Zoned distribution coefficient
 
 .. _in-42:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -7513,7 +7006,7 @@ Input instructions ! Zoned distribution coefficient
 
 .. _in-43:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -7537,7 +7030,7 @@ Dual decay constant
 
 | 
 
--.3in
+
 
 #. **clambda** First-order decay constant [T:math:`^{-1}`].
 
@@ -7552,9 +7045,6 @@ Dual decay constant
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Dual decay constant
-                                        
-
 --------------
 
 Zoned dual decay constant
@@ -7562,7 +7052,7 @@ Zoned dual decay constant
 
 | 
 
--.3in
+
 
 #. **clambda(j), j=1,nzones** First-order decay constant
    [T:math:`^{-1}`] for each dual continua zone **j**.
@@ -7577,14 +7067,11 @@ Zoned dual decay constant
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Zoned dual decay constant
-                                              
-
 --------------
 
 .. _in-44:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -7616,7 +7103,7 @@ Input instructions ! Zoned dual decay constant
 
 .. _in-45:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -7647,7 +7134,7 @@ Input instructions ! Zoned dual decay constant
 
 .. _in-46:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -7684,7 +7171,7 @@ Input instructions ! Zoned dual decay constant
 
 .. _in-47:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -7725,7 +7212,7 @@ Dual distribution coefficient
 
 | 
 
--.3in
+
 
 #. **dkd** Distribution coefficient [M:math:`^{-1}` L:math:`^3`].
 
@@ -7740,9 +7227,6 @@ Dual distribution coefficient
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Dual distribution coefficient
-                                                  
-
 --------------
 
 Zoned dual distribution coefficient
@@ -7750,7 +7234,7 @@ Zoned dual distribution coefficient
 
 | 
 
--.3in
+
 
 #. **dkd(j), j=1,nzones** Distribution coefficient
    [M:math:`^{-1}` L:math:`^3`] for each dual continua zone **j**.
@@ -7766,14 +7250,11 @@ Zoned dual distribution coefficient
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Zoned dual distribution coefficient
-                                                        
-
 --------------
 
 .. _in-48:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -7810,7 +7291,7 @@ Input instructions ! Zoned dual distribution coefficient
 
 .. _in-49:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -7850,7 +7331,7 @@ Fracture decay constant
 
 | 
 
--.3in
+
 
 #. **clambda_f** First-order decay constant [T:math:`^{-1}`].
 
@@ -7865,9 +7346,6 @@ Fracture decay constant
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Fracture decay constant
-                                            
-
 --------------
 
 Zoned fracture decay constant
@@ -7875,7 +7353,7 @@ Zoned fracture decay constant
 
 | 
 
--.3in
+
 
 #. **clambda_f(j), j=1,nzones** First-order decay constant
    [T:math:`^{-1}`] for each discrete fracture zone **j**.
@@ -7891,9 +7369,6 @@ Zoned fracture decay constant
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Zoned fracture decay constant
-                                                  
-
 --------------
 
 Fracture retardation factor
@@ -7901,7 +7376,7 @@ Fracture retardation factor
 
 | 
 
--.3in
+
 
 #. **rfrac** Fracture retardation factor [-].
 
@@ -7916,9 +7391,6 @@ Fracture retardation factor
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Fracture retardation factor
-                                                
-
 --------------
 
 Zoned fracture retardation factor
@@ -7926,7 +7398,7 @@ Zoned fracture retardation factor
 
 | 
 
--.3in
+
 
 #. **rfrac(j), j=1,nzones** Retardation factor [-] for each discrete
    fracture zone **j**.
@@ -7942,9 +7414,6 @@ Zoned fracture retardation factor
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Zoned fracture retardation factor
-                                                      
-
 The following parameters affect the overland domain solute properties:
 
 --------------
@@ -7954,7 +7423,7 @@ Overland decay constant
 
 | 
 
--.3in
+
 
 #. **clambda_o** First-order decay constant [T:math:`^{-1}`].
 
@@ -7969,9 +7438,6 @@ Overland decay constant
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Overland decay constant
-                                            
-
 --------------
 
 Zoned overland decay constant
@@ -7979,7 +7445,7 @@ Zoned overland decay constant
 
 | 
 
--.3in
+
 
 #. **clambda_o(j), j=1,nzones** First-order decay constant
    [T:math:`^{-1}`] for each overland flow zone **j**.
@@ -7995,9 +7461,6 @@ Zoned overland decay constant
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Zoned overland decay constant
-                                                  
-
 --------------
 
 Overland retardation factor
@@ -8005,7 +7468,7 @@ Overland retardation factor
 
 | 
 
--.3in
+
 
 #. **rolf** Overland flow retardation factor [-].
 
@@ -8020,9 +7483,6 @@ Overland retardation factor
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Overland retardation factor
-                                                
-
 --------------
 
 Zoned overland retardation factor
@@ -8030,7 +7490,7 @@ Zoned overland retardation factor
 
 | 
 
--.3in
+
 
 #. **rfrac(j), j=1,nzones** Retardation factor [-] for each overland
    flow zone **j**.
@@ -8045,9 +7505,6 @@ Zoned overland retardation factor
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Zoned overland retardation factor
-                                                      
 
 The following instructions can be used to identify certain species. This
 is especially important to calculate fluid density and viscosity (for
@@ -8070,15 +7527,15 @@ T
 The following instructions can be used likewise to identify other
 species:
 
-| .5inPotassium species
-| .5inCalcium species
-| .5inMagnesium species
-| .5inChloride species
-| .5inSulphate species
-| .5inHydrogencarbonate species
-| .5inCarbonate species
-| .5inSalt mass fraction
-| .5inTemperature species
+Potassium species
+Calcium species
+Magnesium species
+Chloride species
+Sulphate species
+Hydrogencarbonate species
+Carbonate species
+Salt mass fraction
+Temperature species
 
 By default, no species impacts fluid density or viscosity. This default
 can be changed with the following instruction:
@@ -8100,7 +7557,7 @@ W
 
 .. _in-50:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -8229,9 +7686,6 @@ zero age/life expectancy condition.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Find zero age zones
-                                        
-
 --------------
 
 Zero travel time
@@ -8246,9 +7700,6 @@ Assigns a zero travel time condition for the chosen nodes.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Zero travel time
-                                     
 
 .. _heat-transfer-1:
 
@@ -8279,11 +7730,6 @@ until it encounters an End instruction.
 
 :math:`\bullet \bullet \bullet`
 
-.. _input-instructions-do-heat-transfer...end-1:
-
-Input instructions ! Do heat transfer...End
-                                           
-
 The available instructions are:
 
 --------------
@@ -8295,7 +7741,7 @@ Thermal conductivity of air
 
 | 
 
--.3in
+
 
 #. **k\_air** Thermal conductivity [W m:math:`^{-1}` K:math:`^{-1}`] of
    the air phase.
@@ -8308,11 +7754,6 @@ Assigns a uniform value to the thermal conductivity of air.
 
 :math:`\bullet \bullet \bullet`
 
-.. _input-instructions-thermal-conductivity-of-air-1:
-
-Input instructions ! Thermal conductivity of air
-                                                
-
 --------------
 
 .. _specific-heat-capacity-of-air-1:
@@ -8322,7 +7763,7 @@ Specific heat capacity of air
 
 | 
 
--.3in
+
 
 #. **c\_air** Specific heat capacity [J kg:math:`^{-1}` K:math:`^{-1}`]
    of the air phase.
@@ -8335,11 +7776,6 @@ Assigns a uniform value to the specific heat capacity of air.
 
 :math:`\bullet \bullet \bullet`
 
-.. _input-instructions-specific-heat-capacity-of-air-1:
-
-Input instructions ! Specific heat capacity of air
-                                                  
-
 --------------
 
 .. _density-of-air-1:
@@ -8349,7 +7785,7 @@ Density of air
 
 | 
 
--.3in
+
 
 #. **rho\_air** Density [kg m:math:`^{-3}`] of the air phase.
 
@@ -8361,11 +7797,6 @@ Assigns a uniform value to the density of air.
 
 :math:`\bullet \bullet \bullet`
 
-.. _input-instructions-density-of-air-1:
-
-Input instructions ! Density of air
-                                   
-
 --------------
 
 .. _thermal-conductivity-of-water-1:
@@ -8375,7 +7806,7 @@ Thermal conductivity of water
 
 | 
 
--.3in
+
 
 #. **k_l** Thermal conductivity [W m:math:`^{-1}` K:math:`^{-1}`] of the
    liquid phase.
@@ -8391,11 +7822,6 @@ the water temperature, which is the default setting.
 
 :math:`\bullet \bullet \bullet`
 
-.. _input-instructions-thermal-conductivity-of-water-1:
-
-Input instructions ! Thermal conductivity of water
-                                                  
-
 --------------
 
 .. _specific-heat-capacity-of-water-1:
@@ -8405,7 +7831,7 @@ Specific heat capacity of water
 
 | 
 
--.3in
+
 
 #. **c_l** Specific heat capacity [J kg:math:`^{-1}` K:math:`^{-1}`] of
    the liquid phase.
@@ -8420,11 +7846,6 @@ the water temperature, which is the default setting.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-.. _input-instructions-specific-heat-capacity-of-water-1:
-
-Input instructions ! Specific heat capacity of water
-                                                    
 
 --------------
 
@@ -8444,11 +7865,6 @@ mechanical heat dispersion.
 
 :math:`\bullet \bullet \bullet`
 
-.. _input-instructions-mechanical-heat-dispersion-1:
-
-Input instructions ! Mechanical heat dispersion
-                                               
-
 The following instruction can be used to define initial temperatures for
 the problem:
 
@@ -8461,7 +7877,7 @@ Initial temperature profile
 
 | 
 
--.3in
+
 
 #. **temp_top** Temperature [ °C] at the top of the domain.
 
@@ -8476,11 +7892,6 @@ initial temperature.
 
 :math:`\bullet \bullet \bullet`
 
-.. _input-instructions-initial-temperature-profile-1:
-
-Input instructions ! Initial temperature profile
-                                                
-
 The following instructions can be used to define the heat source
 boundary condition:
 
@@ -8488,7 +7899,7 @@ boundary condition:
 
 .. _in-51:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -8521,7 +7932,7 @@ species the input format is
            ton2 toff2 prate21 prate22
            ton3 toff3 prate31 prate32
 
--.3in
+
 
 --------------
 
@@ -8534,7 +7945,7 @@ Exponential zero order source
 
 | 
 
--.3in
+
 
 #. **heat_q_zero** Heat production [M L:math:`^{-1}` T:math:`^{-3}`] at
    time :math:`t = 0`.
@@ -8551,15 +7962,11 @@ zero-order heat source boundary conditions.
 
 :math:`\bullet \bullet \bullet`
 
-.. _input-instructions-exponential-zero-order-source-1:
-
-Input instructions ! Exponential zero order source
-                                                  
-
 Auxiliary Features
 ^^^^^^^^^^^^^^^^^^
 
-[sec:aux_features] This section contains auxiliary transport related
+
+.. _sec:aux_features: This section contains auxiliary transport related
 commands that do not belong to any of the previous sections.
 
 --------------
@@ -8570,7 +7977,7 @@ commands that do not belong to any of the previous sections.
 
 | 
 | ``Scope .grok``
-| -.3in
+
 
 #. **nzones, nspecies** Number of zones and species, respectively.
 
@@ -8592,7 +7999,7 @@ commands that do not belong to any of the previous sections.
 
 | 
 | ``Scope .grok``
-| [.mprops] -.3in
+
 
 #. **diff_coeff(i), i=1,nspecies** Effective diffusion coefficient
    [L:math:`^2` T:math:`^{-1}`] for each species.
@@ -8608,7 +8015,8 @@ commands that do not belong to any of the previous sections.
 Boundary Conditions
 -------------------
 
-[sec:bndy_cond]
+
+.. _sec:bndy_cond:
 
 .. _general-2:
 
@@ -8687,7 +8095,7 @@ following instruction.
 
 .. _in-52:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -8723,9 +8131,6 @@ Creates a node set from the selected nodes.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Create node set
-''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Create face set
@@ -8741,9 +8146,6 @@ Creates a face set from the selected nodes.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Create face set
-''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Create segment set
@@ -8758,9 +8160,6 @@ Creates a segment set from the selected nodes.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Create segment set
-'''''''''''''''''''''''''''''''''''''''
 
 Additionally if you already have selected faces you can use:
 
@@ -8780,9 +8179,6 @@ condition assignments.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Create face set from chosen faces
-''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 .. _sec:io_type:
 
 Type
@@ -8798,7 +8194,7 @@ Type
 
 | 
 
--.3in
+
 
 #. **bc_type** The type of boundary condition to be applied.
 
@@ -8810,9 +8206,6 @@ detail.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Type
-'''''''''''''''''''''''''
 
 Specified Head
 ^^^^^^^^^^^^^^
@@ -8846,9 +8239,6 @@ ground surface.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Head
-                         
 
 For example:
 
@@ -8891,9 +8281,6 @@ been issued, in which case the :math:`y`-coordinate is used instead.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Head equals elevation
-                                          
 
 For example:
 
@@ -8946,9 +8333,6 @@ condition where head is set equal to the initial head at the node.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Head equals initial
-                                        
 
 For example:
 
@@ -9020,7 +8404,7 @@ the nodes contained in the face set ``top``.
            end
        end
 
--.3in
+
 
 --------------
 
@@ -9041,9 +8425,6 @@ the chosen face when projected onto the :math:`xy`-plane.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Rain
-                         
 
 --------------
 
@@ -9082,7 +8463,7 @@ entries in the file must be the same as the number of nodes in the set.
            0.1
        end
 
--.3in
+
 
 --------------
 
@@ -9103,7 +8484,7 @@ Nodal flux reduction by pressure head
 
 | 
 
--.3in
+
 
 #. **min_pressure_head** Minimum pressure head threshold :math:`h_{min}`
    [L].
@@ -9134,9 +8515,6 @@ where :math:`\alpha = (h - h_{min})/(h_{max} - h_{min})`.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Nodal flux reduction by pressure head
-                                                          
-
 The old instructions Specified volumetric flowrate and Specified
 volumetric flowrate, head constrained are no longer used, as they are
 covered by the boundary condition type Flux nodal. If you want to force
@@ -9147,7 +8525,7 @@ can do so with the following instruction.
 
 .. _in-53:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -9214,7 +8592,7 @@ via linear interpolation and is applied to all nodes in the node set
            end
        end
 
--.3in
+
 
 --------------
 
@@ -9222,7 +8600,7 @@ via linear interpolation and is applied to all nodes in the node set
 
 .. _in-54:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -9256,7 +8634,7 @@ where :math:`\psi` is the pressure head.
 
 .. _in-55:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -9277,7 +8655,7 @@ will be used.
 
 .. _in-56:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -9367,11 +8745,11 @@ boundary condition to a set of surface nodes.
          end
    	
 
--.3in
+
 
 --------------
 
-Flux nodal outlet rate threshold -.3in
+
 
 #. **threshold** Injection rate threshold [L:math:`^3` T:math:`^{-1}`]
    that limits the water flux at the inlet nodes.
@@ -9447,7 +8825,7 @@ table described below.
 
 .. _in-57:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -9484,7 +8862,7 @@ type Irrigation on demand.
 
 .. _in-58:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -9505,7 +8883,8 @@ command Irrigation parameters.
 Fluid Transfer
 ^^^^^^^^^^^^^^
 
-[sec:fluid_trans] This is also known as a third-type, or Cauchy boundary
+
+.. _sec:fluid_trans: This is also known as a third-type, or Cauchy boundary
 condition and consists of a head value at a distance and a hydraulic
 conductivity representing the intermediate material. The direction of
 fluid flow, either in, or out, of the boundary condition, is determined
@@ -9539,7 +8918,8 @@ material external to the boundary condition.
 Free Drainage
 ^^^^^^^^^^^^^
 
-[sec:io_free_drain]
+
+.. _sec:io_free_drain:
 
 | Assigns a free drainage boundary condition, as described in
   Section :ref:  
@@ -9566,9 +8946,6 @@ Sets the input type to be a free drainage boundary condition.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Free drainage
-                                  
 
 For example:
 
@@ -9653,9 +9030,6 @@ subsurface evaporation and transpiration in the porous media domain.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Potential evapotranspiration
-                                                 
-
 For example:
 
 ::
@@ -9679,7 +9053,8 @@ all nodes contained in the face set ``top``.
 River Flux
 ^^^^^^^^^^
 
-[sec:io_simple_river]
+
+.. _sec:io_simple_river:
 
 | Assigns a river flux boundary condition, as described in
   Section :ref:  
@@ -9706,9 +9081,6 @@ Sets the input type to be a river flux drainage boundary condition.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Simple river
-                                 
 
 For example:
 
@@ -9755,7 +9127,8 @@ conductance and head value, and one line for each node in the set.
 Drain Flux
 ^^^^^^^^^^
 
-[sec:io_simple_drain]
+
+.. _sec:io_simple_drain:
 
 | Assigns a drain flux boundary condition, as described in
   Section :ref:  
@@ -9783,9 +9156,6 @@ Sets the input type to be a drain flux drainage boundary condition.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Simple drain
-                                 
 
 For example:
 
@@ -9833,7 +9203,8 @@ conductance and head value, and one line for each node in the set.
 Makeup Water
 ^^^^^^^^^^^^
 
-[sec:io_makeup_water] The boundary condition Makeup water is similar to
+
+.. _sec:io_makeup_water: The boundary condition Makeup water is similar to
 Simple drain in that its behavior is controlled by the difference
 between the pressure head at a specified set of nodes and the specified
 head value. These nodes typically belong the surface domain. The
@@ -9903,7 +9274,7 @@ Specified stress variation
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable specified stress
    function.
@@ -9925,14 +9296,11 @@ Specified stress variation
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Specified stress variation
-                                               
-
 --------------
 
 .. _in-59:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -9995,7 +9363,7 @@ Elemental stress field from files
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels defining the time-variable external
    stress field.
@@ -10016,9 +9384,6 @@ freshwater head.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Elemental stress field from files
-                                                      
-
 .. _sec:io_surface_flow:
 
 Surface Flow 
@@ -10027,7 +9392,8 @@ Surface Flow
 Snowmelt
 ^^^^^^^^
 
-[sec:io_snowmelt]
+
+.. _sec:io_snowmelt:
 
 You can assign a snowmelt boundary condition to faces in the specified
 set. These faces should be part of the overland flow domain and are
@@ -10053,9 +9419,6 @@ Sets the input type to be a snowmelt boundary condition.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Snowmelt
-                             
 
 For example:
 
@@ -10110,7 +9473,7 @@ Snowmelt constants
 
 | 
 
--.3in
+
 
 #. **snow_rho** Snow density [M L:math:`^{-3}`].
 
@@ -10134,9 +9497,6 @@ depth.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Snowmelt constants
-                                       
-
 .. _sec:io_node_and_face_sets:
 
 Node and Face Sets
@@ -10153,21 +9513,18 @@ Node set
 
 | 
 
--.3in
+
 
 #. **bc_set_name** Name of the node set to apply the boundary condition
    to.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Node set
-'''''''''''''''''''''''''''''
 
 To define the group of faces use:
 
@@ -10178,21 +9535,18 @@ Face set
 
 | 
 
--.3in
+
 
 #. **bc_set_name** Name of the face set to apply the boundary condition
    to.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Face set
-'''''''''''''''''''''''''''''
 
 .. _sec:io_time-varying_inputs:
 
@@ -10209,7 +9563,7 @@ Time value table
 
 | 
 
--.3in
+
 
 #. **bc_time(i), bc_val(i)...end** Time [T] and boundary condition value
    list.
@@ -10224,9 +9578,6 @@ applied until the end of the simulation.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Time value table
-'''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Time raster table
@@ -10234,7 +9585,7 @@ Time raster table
 
 | 
 
--.3in
+
 
 #. **bc_time(i), bc_raster(i)...end** Time [T] and raster filename list.
 
@@ -10251,14 +9602,11 @@ for the boundary condition at that point.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Time raster table
-''''''''''''''''''''''''''''''''''''''
-
 The following instructions use the same input data structure except they
 are applied to :math:`xz`- or :math:`yz`-coordinates:
 
-| .5inTime raster xz table
-| .5inTime raster yz table
+Time raster xz table
+Time raster yz table
 
 --------------
 
@@ -10267,7 +9615,7 @@ Time file table
 
 | 
 
--.3in
+
 
 #. **bc_time(i), bc_file(i)...end** Time [T] and filename list.
 
@@ -10286,9 +9634,6 @@ file must be the number of data values in the file.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Time file table
-''''''''''''''''''''''''''''''''''''
 
 This instruction can be used in conjunction with other instructions to
 create files of nodal values and then read them in to define boundary
@@ -10341,7 +9686,7 @@ message.
 
 .. _in-60:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -10400,9 +9745,6 @@ in a smoother application of the time-varying function.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Interpolate
-                                
-
 Scaling Factor
 ^^^^^^^^^^^^^^
 
@@ -10416,7 +9758,7 @@ table, Time file table, and Time raster table inputs.
 
 .. _in-61:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -10454,7 +9796,7 @@ a flux of :math:`10^{-5}` would be applied to the boundary condition.
          end
    	
 
--.3in
+
 
 --------------
 
@@ -10498,11 +9840,11 @@ Nodata value
 
 | 
 
--.3in
+
 
 #. **nodata_value** The value that indicates there is no data.
 
--.3in
+
 
 --------------
 
@@ -10510,14 +9852,11 @@ Nodata value
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Nodata value
-                                 
-
 The following instructions may be used to change the NODATA values for
 rasters and files:
 
-| .5inNodata raster
-| .5inNodata file
+Nodata raster
+Nodata file
 
 Tecplot Output
 ~~~~~~~~~~~~~~
@@ -10544,7 +9883,8 @@ T
 Transport
 ~~~~~~~~~
 
-[sec:bndy_cond_transport] There are three basic options available for
+
+.. _sec:bndy_cond_transport: There are three basic options available for
 assigning boundary conditions to the transport solution. These are to
 specify either first-type (concentration), second-type (mass flux,
 concentration gradient), or third-type (Cauchy) at a node. Although
@@ -10585,7 +9925,7 @@ by subsequent specified concentration instructions.
 
 .. _in-62:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -10621,7 +9961,7 @@ species the input format is
    		  ton3 toff3 bcval31 bcval32
    		
 
--.3in
+
 
 --------------
 
@@ -10629,7 +9969,7 @@ species the input format is
 
 .. _in-63:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -10704,7 +10044,7 @@ from each face
 
 .. _in-64:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -10745,7 +10085,7 @@ species the input format is
    		  ton3 toff3 bcval31 bcval32
    		
 
--.3in
+
 
 --------------
 
@@ -10765,9 +10105,6 @@ function.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Interpolate mass flux
-                                          
 
 Specified Third-Type Concentration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -10791,7 +10128,7 @@ faces requires a contribution from each face.
 
 .. _in-65:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -10841,7 +10178,7 @@ the input format is
    		  ton3 toff3 bcval31 bcval32
    		
 
--.3in
+
 
 --------------
 
@@ -10849,7 +10186,7 @@ the input format is
 
 .. _in-66:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -10930,7 +10267,7 @@ to element.
 
 .. _in-67:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -11007,7 +10344,7 @@ face.
 
 .. _in-68:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -11032,7 +10369,7 @@ Specified temperature flux
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable, specified
    temperature flux function.
@@ -11058,9 +10395,6 @@ system, as a function of fluid volume and temperature.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Specified temperature flux
-                                               
-
 | To define the atmospheric inputs discussed in Section :ref:  
 | , and summarized in Equation :ref:  
 | , **HydroGeoSphere** requires the following set of instructions:
@@ -11081,9 +10415,6 @@ until it encounters an End instruction.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Atmosphere...End
-                                     
-
 --------------
 
 Incoming shortwave radiation
@@ -11091,7 +10422,7 @@ Incoming shortwave radiation
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable, incoming shortwave
    radiation function.
@@ -11102,16 +10433,13 @@ Incoming shortwave radiation
    | ). Default value is :math:`1.10 \times 10^2` J m\ :math:`^{-2}`
      s\ :math:`^{-1}`.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Incoming shortwave radiation
-                                                 
 
 --------------
 
@@ -11120,7 +10448,7 @@ Sinusoidal incoming shortwave radiation
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable, sinusoidal incoming
    shortwave radiation function.
@@ -11130,16 +10458,13 @@ Sinusoidal incoming shortwave radiation
      shortwave radiation, :math:`K^\downarrow` in Equation :ref:  
    | ), amplitude [M T:math:`^{-3}`], phase, and period [T].
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Sinusoidal incoming shortwave radiation
-                                                            
 
 --------------
 
@@ -11148,7 +10473,7 @@ Cloud cover
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable, cloud cover
    function.
@@ -11157,16 +10482,13 @@ Cloud cover
      [-] (:math:`C_c` in Equation :ref:  
    | ). Default value is 0.5.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Cloud cover
-                                
 
 --------------
 
@@ -11175,7 +10497,7 @@ Incoming longwave radiation
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable, incoming longwave
    radiation function.
@@ -11186,16 +10508,13 @@ Incoming longwave radiation
    | ). Default value is :math:`3.0 \times 10^2` J m\ :math:`^{-2}`
      s\ :math:`^{-1}`.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Incoming longwave radiation
-                                                
 
 --------------
 
@@ -11204,7 +10523,7 @@ Temperature of air
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable, air temperature
    function.
@@ -11213,16 +10532,13 @@ Temperature of air
      temperature [ °C] (:math:`T_a` in Equation :ref:  
    | ). Default value is 15  °C.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Temperature of air
-                                       
 
 --------------
 
@@ -11231,7 +10547,7 @@ Sinusoidal temperature of air
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable, sinusoidal air
    temperature function.
@@ -11241,16 +10557,13 @@ Sinusoidal temperature of air
      :math:`T_a` in Equation :ref:  
    | ), amplitude [ °C], phase [-], and period [T].
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Sinusoidal temperature of air
-                                                  
 
 | These instructions are used to define the sensible heat flux
   :math:`Q_h` in Equation :ref:  
@@ -11266,7 +10579,7 @@ Density of air
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable, air density
    function.
@@ -11275,18 +10588,13 @@ Density of air
      [M L:math:`^{-3}`] (:math:`\rho_a` in Equation :ref:  
    | ). Default value is 1.225 kg m\ :math:`^{-3}`.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-.. _input-instructions-density-of-air-2:
-
-Input instructions ! Density of air
-                                   
 
 --------------
 
@@ -11295,7 +10603,7 @@ Specific heat of air
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable, air specific heat
    function.
@@ -11306,16 +10614,13 @@ Specific heat of air
    | ). Default value is :math:`7.17 \times 10^2` J kg\ :math:`^{-1}`
      K\ :math:`^{-1}`.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Specific heat of air
-                                         
 
 --------------
 
@@ -11324,7 +10629,7 @@ Wind speed
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable, wind speed
    function.
@@ -11333,16 +10638,13 @@ Wind speed
      [L T:math:`^{-1}`] (:math:`V_a` in Equation :ref:  
    | ). Default value is 1.0 m s\ :math:`^{-1}`.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Wind speed
-                               
 
 --------------
 
@@ -11351,7 +10653,7 @@ Sinusoidal wind speed
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable, sinusoidal wind
    speed function.
@@ -11361,16 +10663,13 @@ Sinusoidal wind speed
      speed, :math:`V_a` in Equation :ref:  
    | ), amplitude [L T:math:`^{-1}`], phase, and period [T].
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Sinusoidal wind speed
-                                          
 
 --------------
 
@@ -11379,7 +10678,7 @@ Drag coefficient
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable, drag coefficient
    function.
@@ -11388,16 +10687,13 @@ Drag coefficient
      coefficient [-] (:math:`c_D` in Equation :ref:  
    | ). Default value is :math:`2.0 \times 10^{-3}`.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Drag coefficient
-                                     
 
 --------------
 
@@ -11406,7 +10702,7 @@ Latent heat of vapourization
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable, latent heat of
    vapourization function.
@@ -11416,16 +10712,13 @@ Latent heat of vapourization
      Equation :ref:  
    | ). Default value is :math:`2.258 \times 10^6` J kg\ :math:`^{-1}`.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Latent heat of vapourization
-                                                 
 
 --------------
 
@@ -11434,7 +10727,7 @@ Specific humidity of air
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable, air specific
    humidity function.
@@ -11444,16 +10737,13 @@ Specific humidity of air
      Equation :ref:  
    | ). Default value is 0.01062.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Specific humidity of air
-                                             
 
 --------------
 
@@ -11462,7 +10752,7 @@ Soil-Water suction at surface
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable, soil-water suction
    at surface function.
@@ -11471,16 +10761,13 @@ Soil-Water suction at surface
      suction at surface [L] (:math:`\psi_g` in Equation :ref:  
    | ). Default value is 0.138 m.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Soil-Water suction at surface
-                                                  
 
 --------------
 
@@ -11489,7 +10776,7 @@ Saturation vapour pressure
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable, saturation vapour
    pressure function.
@@ -11499,16 +10786,13 @@ Saturation vapour pressure
      (:math:`e_{sat}[T_g]` in Equation :ref:  
    | ). Default value is :math:`1.704 \times 10^3` Pa.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Saturation vapour pressure
-                                               
 
 --------------
 
@@ -11517,7 +10801,7 @@ Relative humidity
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable, relative humidity
    function.
@@ -11525,16 +10809,13 @@ Relative humidity
 #. **ton_val(i), value(i), i=1,npanel** Time on [T] and relative
    humidity [-]. Default value is 0.75.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Relative humidity
-                                      
 
 --------------
 
@@ -11543,7 +10824,7 @@ Pressure of air
 
 | 
 
--.3in
+
 
 #. **npanel** Number of panels in the time-variable, air pressure
    function.
@@ -11552,16 +10833,13 @@ Pressure of air
      [M L:math:`^{-1}` T:math:`^{-2}`] (:math:`p_a` in Equation :ref:  
    | ). Default value is :math:`1.013 \times 10^5` Pa.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Pressure of air
-                                    
 
 Immiscible Phase Dissolution Source
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -11575,7 +10853,7 @@ following instruction can be used to define the source:
 
 .. _in-69:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -11624,7 +10902,7 @@ decay.
 
 .. _in-70:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -11657,7 +10935,7 @@ species the input format is
        ton2 toff2 prate21 prate22
        ton3 toff3 prate31 prate32
 
--.3in
+
 
 --------------
 
@@ -11665,7 +10943,7 @@ species the input format is
 
 .. _in-71:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -11715,7 +10993,7 @@ panels and two species the input format is
        ton3 toff3 prate31 prate32 pcoeff31 pcoeff32
    	
 
--.3in
+
 
 --------------
 
@@ -11723,7 +11001,7 @@ panels and two species the input format is
 
 .. _in-72:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -11776,7 +11054,8 @@ Materials and Material Properties
 General
 ~~~~~~~
 
-[sec:modify_material] Currently, the following eight domains can be
+
+.. _sec:modify_material: Currently, the following eight domains can be
 defined in **HydroGeoSphere**:
 
 #. Porous media
@@ -11831,7 +11110,7 @@ Use domain type
 
 | 
 
--.3in
+
 
 #. **zone_type** Can be one of the strings: “porous media”, “dual”,
    “fracture”, “surface”, “channel”, “well”, “tile”, or “et”.
@@ -11845,9 +11124,6 @@ additional instructions should be applied.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Use domain type
-''''''''''''''''''''''''''''''''''''
-
 Models with many zones may write a large amount of output to the
 ``.eco`` file causing it to balloon in size, potentially slowing down
 **grok** execution due to excessive I/O operations. The following
@@ -11857,7 +11133,7 @@ command is designed to address this problem.
 
 .. _in-73:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -11898,7 +11174,7 @@ New zone
 
 | 
 
--.3in
+
 
 #. **num_zone** Zone number.
 
@@ -11913,9 +11189,6 @@ properties for that media type will be assigned.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! New zone
-                             
 
 The following set of instructions, inserted in the
 *prefix*\ ``.grok`` file would create a new fracture zone.
@@ -11948,9 +11221,6 @@ Assign all elements to zone number zero.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Assign zone zero
-                                     
-
 This instruction was added for the case where we are using multiple
 surfaces to choose elements and assign them unique zone numbers. If we
 first assign all elements to zone zero, we can then find elements that
@@ -11959,14 +11229,15 @@ were not chosen by any surface and are still assigned to zone zero.
 Saving and Retrieving Element Zone Numbers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-[sec:el_zone_number_io] The following commands can be used to store or
+
+.. _sec:el_zone_number_io: The following commands can be used to store or
 retrieve porous media or surface flow domain element zone numbers.
 
 --------------
 
 .. _in-74:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -11984,7 +11255,7 @@ element number followed by the assigned zone number.
 
 .. _in-75:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -12007,7 +11278,7 @@ the zone number 3, then the file would contain:
    	    8  3
    	
 
--.3in
+
 
 --------------
 
@@ -12015,7 +11286,7 @@ the zone number 3, then the file would contain:
 
 .. _in-76:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -12033,7 +11304,7 @@ the raster cell that contains the centroid of that element.
 
 .. _in-77:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -12078,7 +11349,7 @@ triangular prism or hexahedral block meshes.
           :      :     :  :
           :      :     :  :
 
--.3in
+
 
 --------------
 
@@ -12086,7 +11357,7 @@ triangular prism or hexahedral block meshes.
 
 .. _in-78:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -12104,7 +11375,7 @@ the raster cell that contains the 2-D centroid of that element.
 
 .. _in-79:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -12143,7 +11414,7 @@ Zones from arcview ascii grid
 
 | 
 
--.3in
+
 
 #. **filename** Name of the ArcView ASCII grid file.
 
@@ -12174,14 +11445,11 @@ ArcView file will be numbered from 8 to 11.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Zones from arcview ascii grid
-                                                  
-
 --------------
 
 .. _in-80:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -12236,7 +11504,8 @@ ArcView file will be numbered from 8 to 11.
 Selecting Zones
 ^^^^^^^^^^^^^^^
 
-[sec:czn] These instructions can be used to alter the set of chosen
+
+.. _sec:czn: These instructions can be used to alter the set of chosen
 zones for the current zone type (i.e. porous media, dual, fracture or
 surface.)
 
@@ -12257,9 +11526,6 @@ previously issued instructions.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Clear chosen zones
-                                       
-
 --------------
 
 Choose zones all
@@ -12276,9 +11542,6 @@ all zones in the grid.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose zones all
-                                     
-
 --------------
 
 Choose zone number
@@ -12286,7 +11549,7 @@ Choose zone number
 
 | 
 
--.3in
+
 
 #. **num_zone** Zone number.
 
@@ -12298,13 +11561,11 @@ Selects the zone numbered **num_zone**.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Choose zone number
-                                       
-
 Modifying Zoned Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-[sec:modify_named_material] There are a number of instructions which can
+
+.. _sec:modify_named_material: There are a number of instructions which can
 be used to modify the property values associated with a zone or group of
 zones. Before these instructions are issued, it is necessary to select
 the appropriate type of media and then choose the zones which you want
@@ -12352,7 +11613,7 @@ instruction:
 
 .. _in-81:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -12413,7 +11674,8 @@ required.
 
            end material
 
-[fig:mprop_pm_cd]
+
+.. _fig:mprop_pm_cd:
 
 To make use of the material properties file, you would issue the
 following instruction:
@@ -12425,7 +11687,7 @@ Read properties
 
 | 
 
--.3in
+
 
 #. **mat_name** Name of the material.
 
@@ -12438,9 +11700,6 @@ instruction.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Read properties
-                                    
 
 So for example, the following set of instructions could be inserted in
 the *prefix*\ ``.grok`` file:
@@ -12494,7 +11753,8 @@ zones.
            Mass transfer coefficient    0.00000
               100  elements of     100  have been assigned properties
 
-[fig:pm_cd_sample_output]
+
+.. _fig:pm_cd_sample_output:
 
 In this example, because flow is saturated, no variably-saturated porous
 media flow properties need to be defined in the material properties
@@ -12510,7 +11770,8 @@ Saturated Subsurface Flow
 Porous Medium
 ^^^^^^^^^^^^^
 
-| [sec:sat_mprops] **HydroGeoSphere** is designed to perform the flow
+| 
+.. _sec:sat_mprops: **HydroGeoSphere** is designed to perform the flow
   simulation in saturated mode unless instructed otherwise, and unless
   you modify the default values, all zones (and elements) in the domain
   will be assigned the default porous media properties which are listed
@@ -12549,7 +11810,8 @@ Porous Medium
        read properties
            {mat_name}
 
-[tab:saturated_porous_media_defaults]
+
+.. _tab:saturated_porous_media_defaults:
 
 .. table:: Default values for porous media saturated flow properties.
 
@@ -12596,7 +11858,7 @@ K isotropic
 | 
 
 | ``Scope .grok``
-| [.mprops]-.3in
+
 
 #. **Kval** Hydraulic conductivity [L T:math:`^{-1}`].
 
@@ -12609,9 +11871,6 @@ Assign an isotropic hydraulic conductivity (i.e.,
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! K isotropic
-                                
-
 --------------
 
 K anisotropic
@@ -12620,7 +11879,7 @@ K anisotropic
 | 
 
 | ``Scope .grok``
-| [.mprops]-.3in
+
 
 #. **Kxx, Kyy, Kzz** Hydraulic conductivities [L T:math:`^{-1}`] in the
    :math:`x`-, :math:`y`-, and :math:`z`-directions, respectively.
@@ -12633,9 +11892,6 @@ Assigns anisotropic hydraulic conductivities.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! K anisotropic
-                                  
-
 --------------
 
 .. _section-6:
@@ -12644,7 +11900,7 @@ Input instructions ! K anisotropic
 
 | 
 | ``Scope .grok``
-| [.mprops] -.3in
+
 
 #. **Kval, Kratio** Hydraulic conductivity [L T:math:`^{-1}`] in the
    :math:`x`- and :math:`y`-directions and a ratio to compute the
@@ -12664,7 +11920,7 @@ K tensor
 | 
 
 | ``Scope .grok``
-| [.mprops]-.3in
+
 
 #. **Kxx, Kyy, Kzz** Main-diagonal terms of the hydraulic conductivity
    tensor: :math:`K_{xx}, K_{yy}, K_{zz}` [L T:math:`^{-1}`].
@@ -12682,9 +11938,6 @@ finite element mode and so this switch will automatically be set.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! K tensor
-                             
-
 --------------
 
 Specific storage
@@ -12693,22 +11946,19 @@ Specific storage
 | 
 
 | ``Scope .grok``
-| [.mprops]-.3in
+
 
 #. | **val** Specific storage [L:math:`^{-1}`], :math:`S_s` in
      Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Specific storage
-                                     
 
 --------------
 
@@ -12718,22 +11968,19 @@ Porosity
 | 
 
 | ``Scope .grok``
-| [.mprops]-.3in
+
 
 #. | **val** Porosity [L:math:`^3` L:math:`^{-3}`], :math:`\theta_s` in
      Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Porosity
-                             
 
 --------------
 
@@ -12743,21 +11990,18 @@ Poisson ratio
 | 
 
 | ``Scope .grok``
-| [.mprops]-.3in
+
 
 #. | **val** Poisson’s Ratio [-], :math:`\nu^*` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Poisson ratio
-                                  
 
 --------------
 
@@ -12767,21 +12011,18 @@ Loading efficiency
 | 
 
 | ``Scope .grok``
-| [.mprops]-.3in
+
 
 #. | **val** Loading efficiency [-], :math:`\zeta^*` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Loading efficiency
-                                       
 
 --------------
 
@@ -12806,9 +12047,6 @@ Compute loading efficiency
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Compute loading efficiency
-                                               
-
 --------------
 
 Solids compressibility
@@ -12817,22 +12055,19 @@ Solids compressibility
 | 
 
 | ``Scope .grok``
-| [.mprops]-.3in
+
 
 #. | **val** Solids compressibility [L T:math:`^2` M:math:`^{-1}`],
      :math:`K_s` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Solids compressibility
-                                           
 
 --------------
 
@@ -12842,7 +12077,7 @@ Element K isotropic
 | 
 
 | ``Scope .grok``
-| -.3in
+
 
 #. **Kval** Hydraulic conductivity [L T:math:`^{-1}`].
 
@@ -12855,9 +12090,6 @@ Chosen elements are assigned isotropic hydraulic conductivities (i.e.,
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Element K isotropic
-                                        
-
 --------------
 
 Element K anisotropic
@@ -12866,7 +12098,7 @@ Element K anisotropic
 | 
 
 | ``Scope .grok``
-| -.3in
+
 
 #. **Kxx, Kyy, Kzz** Hydraulic conductivities [L T:math:`^{-1}`] in the
    :math:`x`-, :math:`y`-, and :math:`z`-directions, respectively.
@@ -12879,9 +12111,6 @@ Chosen elements are assigned anisotropic hydraulic conductivities.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Element K anisotropic
-                                          
-
 --------------
 
 .. _section-7:
@@ -12890,7 +12119,7 @@ Input instructions ! Element K anisotropic
 
 | 
 | ``Scope .grok``
-| -.3in
+
 
 #. **input_k_filename** Name of the file which contains the variable K
    [L T:math:`^{-1}`] data.
@@ -12936,7 +12165,7 @@ element-variable values, which are written to the file
 
 | 
 | ``Scope .grok``
-| -.3in
+
 
 #. **filename** Name of the binary file that contains the hydraulic
    conductivity values.
@@ -12987,7 +12216,7 @@ Map isotropic K from raster
 | 
 
 | ``Scope .grok``
-| -.3in
+
 
 #. | **rasterfile** Name of the raster file containing the hydraulic
      conductivity [L T:math:`^{-1}`] values. This is a string variable.
@@ -13004,9 +12233,6 @@ will be interpolated from the raster file data.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Map isotropic K from raster
-                                                
-
 --------------
 
 Map anisotropic K from raster
@@ -13015,7 +12241,7 @@ Map anisotropic K from raster
 | 
 
 | ``Scope .grok``
-| -.3in
+
 
 #. | **rasterfile_x** Name of the raster file containing the
      :math:`x`-component (i.e., :math:`K_{xx}`) hydraulic conductivities
@@ -13039,9 +12265,6 @@ anisotropic hydraulic conductivity (i.e. :math:`K_{xx}, K_{yy}`, and
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Map anisotropic K from raster
-                                                  
-
 --------------
 
 Map porosity from raster
@@ -13050,7 +12273,7 @@ Map porosity from raster
 | 
 
 | ``Scope .grok``
-| -.3in
+
 
 #. | **rasterfile** Name of the raster file containing the porosity [-]
      values. This is a string variable. The file should be formatted as
@@ -13066,9 +12289,6 @@ porosity will be interpolated from the raster file data.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Map porosity from raster
-                                             
-
 --------------
 
 Read elemental porosity from file
@@ -13077,7 +12297,7 @@ Read elemental porosity from file
 | 
 
 | ``Scope .grok``
-| -.3in
+
 
 #. **input_por_filename** Name of the file which contains the variable
    porosity [-] data.
@@ -13099,9 +12319,6 @@ element-variable values, which are written to the file
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Read elemental porosity from file
-                                                      
-
 --------------
 
 .. _section-9:
@@ -13110,7 +12327,7 @@ Input instructions ! Read elemental porosity from file
 
 | 
 | ``Scope .grok``
-| -.3in
+
 
 #. **filename** Name of the binary file that contains the porosity [-]
    values.
@@ -13144,7 +12361,7 @@ Read elemental specific storage from file
 | 
 
 | ``Scope .grok``
-| -.3in
+
 
 #. **input_stor_filename** Name of the file which contains the variable
    specific storage data.
@@ -13168,9 +12385,6 @@ element-variable values, which are written to the file
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Read elemental specific storage from file
-                                                              
-
 --------------
 
 .. _section-10:
@@ -13179,7 +12393,7 @@ Input instructions ! Read elemental specific storage from file
 
 | 
 | ``Scope .grok``
-| -.3in
+
 
 #. **filename** Name of the binary file that contains the specific
    storage values.
@@ -13214,7 +12428,7 @@ Map tortuosity from raster
 | 
 
 | ``Scope .grok``
-| -.3in
+
 
 #. | **rasterfile** Name of the raster file containing the tortuosity
      [-] values. The file should be formatted as outlined in
@@ -13230,9 +12444,6 @@ tortuosity will be interpolated from the raster file data.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Map tortuosity from raster
-                                               
-
 --------------
 
 Read elemental tortuosity from file
@@ -13241,7 +12452,7 @@ Read elemental tortuosity from file
 | 
 
 | ``Scope .grok``
-| -.3in
+
 
 #. **input_tort_filename** Name of the file which contains the variable
    tortuosity data.
@@ -13263,9 +12474,6 @@ element-variable values, which are written to the file
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Read elemental tortuosity from file
-                                                        
-
 --------------
 
 .. _section-11:
@@ -13274,7 +12482,7 @@ Input instructions ! Read elemental tortuosity from file
 
 | 
 | ``Scope .grok``
-| -.3in
+
 
 #. **filename** Name of the binary file that contains the tortuosity
    values.
@@ -13308,7 +12516,7 @@ endianness is handled automatically when reading the file.
 
 | 
 | ``Scope .grok``
-| -.3in
+
 
 #. **filename** Name of the file in which to write the hydraulic
    conductivity [L T:math:`^{-1}`] information, at most 80 characters.
@@ -13340,7 +12548,7 @@ Write element K at z
 | 
 
 | ``Scope .grok``
-| -.3in
+
 
 #. **zfix** :math:`z`-coordinate [L] for choosing which element to
    write.
@@ -13360,9 +12568,6 @@ the file.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Write element K at z
-                                         
 
 --------------
 
@@ -13384,9 +12589,6 @@ Get average K
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Get average K
-                                  
-
 --------------
 
 AECL properties
@@ -13395,7 +12597,7 @@ AECL properties
 | 
 
 | ``Scope .grok``
-| -.3in
+
 
 #. **aecl_nd_file** Name of the file which contains the nodal
    coordinates for the AECL Motif mesh.
@@ -13415,9 +12617,6 @@ appropriate material properties should be assigned.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! AECL properties
-                                    
-
 --------------
 
 Random K field from FGEN
@@ -13426,7 +12625,7 @@ Random K field from FGEN
 | 
 
 | ``Scope .grok``
-| -.3in
+
 
 #. **fgenfile** Name of file which contains the random hydraulic
    conductivity information generated by FGEN.
@@ -13479,9 +12678,6 @@ from the four neighbouring grid values, but independent of the
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Random K field from FGEN
-                                             
-
 --------------
 
 Random KD field from FGEN
@@ -13490,7 +12686,7 @@ Random KD field from FGEN
 | 
 
 | ``Scope .grok``
-| -.3in
+
 
 #. **fgenfile** Name of file which contains the random distribution
    coefficient information generated by FGEN.
@@ -13514,9 +12710,6 @@ FGEN.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Random KD field from FGEN
-                                              
-
 --------------
 
 Soil Frost K
@@ -13525,7 +12718,7 @@ Soil Frost K
 | 
 
 | ``Scope .grok``
-| -.3in
+
 
 #. **npanel** Number of panels.
 
@@ -13541,9 +12734,6 @@ Modifies K values for chosen elements.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Soil Frost K
-                                 
-
 --------------
 
 Soil Frost K by ratio
@@ -13552,7 +12742,7 @@ Soil Frost K by ratio
 | 
 
 | ``Scope .grok``
-| -.3in
+
 
 #. **npanel** Number of panels.
 
@@ -13569,9 +12759,6 @@ Applies the ratio for chosen elements.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Soil Frost K by ratio
-                                          
-
 --------------
 
 Time dependent K for chosen elements
@@ -13580,7 +12767,7 @@ Time dependent K for chosen elements
 | 
 
 | ``Scope .grok``
-| -.3in
+
 
 #. **npanel** Number of panels.
 
@@ -13618,9 +12805,6 @@ will be honoured.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Time dependent K for chosen elements
-                                                         
-
 --------------
 
 Time dependent variable K for chosen elements
@@ -13629,7 +12813,7 @@ Time dependent variable K for chosen elements
 | 
 
 | ``Scope .grok``
-| -.3in
+
 
 #. **npanel** Number of panels.
 
@@ -13671,9 +12855,6 @@ honoured.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Time dependent variable K for chosen elements
-                                                                  
-
 --------------
 
 .. _section-13:
@@ -13682,7 +12863,7 @@ Input instructions ! Time dependent variable K for chosen elements
 
 | 
 | ``Scope .grok``
-| -.3in
+
 
 #. **imp_fac** The impedance factor [-].
 
@@ -13736,7 +12917,7 @@ factor will have a multiplicative effect.
 
 | 
 | ``Scope .grok``
-| -.3in
+
 
 #. **impedance** The impedance factor :math:`(> 0)` [-].
 
@@ -13792,7 +12973,7 @@ factor will have a multiplicative effect.
 
 .. _in-82:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -13832,7 +13013,7 @@ C
 
 .. _in-83:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -13851,7 +13032,7 @@ Permafrost formation from file.
 
 .. _in-84:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -13870,7 +13051,7 @@ Otherwise, **grok** will terminate with an error message.
 
 .. _in-85:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -13896,7 +13077,8 @@ Dual Continuum
 Wells
 ^^^^^
 
-| [sec:wells] Well domains, can be set up using the following
+| 
+.. _sec:wells: Well domains, can be set up using the following
   instructions, as outlined in Section :ref:  
 | and in Equation :ref:  
 | . The variable **radius** corresponds to :math:`r_s`, while the
@@ -13908,7 +13090,8 @@ Wells
 | , can be and are recommend to be modified to fit the model
   application.
 
-[tab:saturated_well_defaults]
+
+.. _tab:saturated_well_defaults:
 
 .. table:: Default values for well properties.
 
@@ -14002,7 +13185,8 @@ Wells
 
            end
 
-[tab:saturated_well_wprops_example]
+
+.. _tab:saturated_well_wprops_example:
 
 --------------
 
@@ -14012,7 +13196,7 @@ Radius
 | 
 
 | ``Scope:`` ``.grok`` ``.wprops``
-| -.3in
+
 
 #. **WellScreenRadius** Well Screen Radius [L].
 
@@ -14024,9 +13208,6 @@ The radius of the screen interval of the well.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Radius
-                           
-
 --------------
 
 Infilled
@@ -14035,7 +13216,7 @@ Infilled
 | 
 
 | ``Scope:`` ``.grok`` ``.wprops``
-| -.3in
+
 
 #. **WellPropsInfilled** Infilled well material name from porous medium
    ``.mprops`` file.
@@ -14049,9 +13230,6 @@ Infilled
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Infilled
-                             
 
 --------------
 
@@ -14070,9 +13248,6 @@ Hagen Poiseuille
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Hagen Poiseuille
-                                     
-
 --------------
 
 Hazen Williams
@@ -14089,9 +13264,6 @@ Hazen Williams
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Hazen Williams
-                                   
 
 --------------
 
@@ -14110,9 +13282,6 @@ Manning
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Manning
-                            
-
 --------------
 
 Friction
@@ -14121,20 +13290,17 @@ Friction
 | 
 
 | ``Scope:`` ``.grok`` ``.wprops``
-| -.3in
+
 
 #. **well_friction** Manning’s friction [L:math:`^{-1/3}` T] for wells.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Friction
-                             
 
 --------------
 
@@ -14144,21 +13310,18 @@ Hazen Williams coefficient
 | 
 
 | ``Scope:`` ``.grok`` ``.wprops``
-| -.3in
+
 
 #. **well_hw_coeffient** HazenWilliams coefficient
    [L:math:`^{0.37}` T:math:`^{-1}`] for wells.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Hazen Williams coefficient
-                                               
 
 --------------
 
@@ -14176,9 +13339,6 @@ Saturated wells
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Saturated wells
-                                    
-
 --------------
 
 Dual nodes for wells
@@ -14195,9 +13355,6 @@ Dual nodes for wells
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Dual nodes for wells
-                                         
-
 --------------
 
 Coupling conductivity
@@ -14206,7 +13363,7 @@ Coupling conductivity
 | 
 
 | ``Scope:`` ``.grok`` ``.wprops``
-| -.3in
+
 
 #. **WellPropsCplCond** Coupling conductivity [L T:math:`^{-1}`] for
    wells.
@@ -14220,9 +13377,6 @@ for wells.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Coupling conductivity
-                                          
-
 --------------
 
 Coupling length
@@ -14231,7 +13385,7 @@ Coupling length
 | 
 
 | ``Scope:`` ``.grok`` ``.wprops``
-| -.3in
+
 
 #. **WellPropsCplLngth** Coupling length [L] for wells.
 
@@ -14244,16 +13398,14 @@ wells.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Coupling length
-                                    
-
 Tile Drains
 ^^^^^^^^^^^
 
 Channel Flow
 ^^^^^^^^^^^^
 
-[sec:channels]
+
+.. _sec:channels:
 
 | Channel domains, can be set up using the following instructions, as
   outlined in Section :ref:  
@@ -14264,7 +13416,8 @@ Channel Flow
 | , can be and are recommend to be modified to fit the model
   application.
 
-[tab:channel_property_defaults]
+
+.. _tab:channel_property_defaults:
 
 .. table:: Default values for channel properties.
 
@@ -14411,7 +13564,8 @@ Channel Flow
 
            end
 
-[tab:cprops_example]
+
+.. _tab:cprops_example:
 
 --------------
 
@@ -14430,9 +13584,6 @@ Dual nodes for channel flow
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Dual nodes for channel flow
-                                                
-
 --------------
 
 Type rectangle
@@ -14441,7 +13592,7 @@ Type rectangle
 | 
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| -.3in
+
 
 #. **ChanWidth** Channel width [L].
 
@@ -14453,9 +13604,6 @@ The width of the rectangular channel.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Type rectangle
-                                   
-
 --------------
 
 Type trapezoid
@@ -14464,7 +13612,7 @@ Type trapezoid
 | 
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| -.3in
+
 
 #. **ChanWidth** Channel width [L].
 
@@ -14479,9 +13627,6 @@ bank from the vertical line.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Type trapezoid
-                                   
-
 --------------
 
 Type circle
@@ -14490,7 +13635,7 @@ Type circle
 | 
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| -.3in
+
 
 #. **ChanRadius** Channel radius [L].
 
@@ -14502,9 +13647,6 @@ The radius of the circular channel.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Type circle
-                                
-
 --------------
 
 Type general
@@ -14513,7 +13655,7 @@ Type general
 | 
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| -.3in
+
 
 #. **ntab** Number of water depth values in the table.
 
@@ -14530,9 +13672,6 @@ perimeter, and top width for given water depth values.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Type general
-                                 
-
 --------------
 
 .. _friction-1:
@@ -14543,7 +13682,7 @@ Friction
 | 
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| -.3in
+
 
 #. **ChanFrictn** Manning friction [L:math:`^{-1/3}` T] for the channel.
 
@@ -14555,11 +13694,6 @@ Manning friction coefficient for the zone chosen.
 
 :math:`\bullet \bullet \bullet`
 
-.. _input-instructions-friction-1:
-
-Input instructions ! Friction
-                             
-
 --------------
 
 Rill storage height
@@ -14568,7 +13702,7 @@ Rill storage height
 | 
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| -.3in
+
 
 #. **ChanRillStor** Channel rill storage height [L].
 
@@ -14580,9 +13714,6 @@ A minimum water depth required for flow.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Rill storage height
-                                        
-
 --------------
 
 Obstruction storage height
@@ -14591,7 +13722,7 @@ Obstruction storage height
 | 
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| -.3in
+
 
 #. **ChanOnstructStor** Channel obstruction storage height [L].
 
@@ -14603,9 +13734,6 @@ Obstruction storage height.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Obstruction storage height
-                                               
-
 --------------
 
 Streambed thickness
@@ -14614,7 +13742,7 @@ Streambed thickness
 | 
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| -.3in
+
 
 #. **ChanStrmBedThick** Thickness of streambed [L].
 
@@ -14627,9 +13755,6 @@ subsurface.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Streambed thickness
-                                        
-
 --------------
 
 Streambed conductivity
@@ -14638,7 +13763,7 @@ Streambed conductivity
 | 
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| -.3in
+
 
 #. **ChanStrmBedK** Hydraulic conductivity [L T:math:`^{-1}`] of
    streambed.
@@ -14652,9 +13777,6 @@ coupling conductance between channel and subsurface.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Streambed conductivity
-                                           
-
 --------------
 
 Bank height
@@ -14663,7 +13785,7 @@ Bank height
 | 
 
 | ``Scope:`` ``.grok`` ``.cprops``
-| -.3in
+
 
 #. **ChanBankHeight** Height of river bank [L].
 
@@ -14676,9 +13798,6 @@ overland flow domains.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Bank height
-                                
-
 Cutoff Walls
 ^^^^^^^^^^^^
 
@@ -14689,7 +13808,7 @@ which could occur, for example, in a funnel-and-gate system.
 
 .. _in-86:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -14753,9 +13872,6 @@ Fractran properties
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Fractran properties
-                                        
-
 .. _sec:vsat_props:
 
 Variably-Saturated Subsurface Flow
@@ -14787,7 +13903,8 @@ Variably-Saturated Subsurface Flow
 Porous Medium
 ^^^^^^^^^^^^^
 
-[sec:vsat_pm_props] By default, all porous media zones (and elements) in
+
+.. _sec:vsat_pm_props: By default, all porous media zones (and elements) in
 the domain will use a constitutive relationship based on the pseudo-soil
 relation, as developed by :raw-latex:`\citet{huyakorn94}`. Essentially,
 in the pseudo soil relationship, the medium is assigned a nodal
@@ -14801,7 +13918,8 @@ vertically under saturated hydraulic conductivity conditions.
 | . Unless you modify them, the default values given in Table :ref:  
 | will be used to define the functional relationships.
 
-[tab:pm_unsat_function_default]
+
+.. _tab:pm_unsat_function_default:
 
 .. table:: Default values for functions defining the porous media
 constitutive relationships, for the Van Genuchten and BrooksCorey
@@ -14855,16 +13973,14 @@ Relative permeability xy
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Relative permeability xy
-                                             
 
-[tab:pm_unsat_table_default]
+.. _tab:pm_unsat_table_default:
 
 | cd1.3 &
 | :math:`-10.0` & 0.053
 | 0.0 & 1.0
 
-.1in
+
 
 | d1.3d1.3 &
 | 0.053 & 0.053
@@ -14875,7 +13991,8 @@ Input instructions ! Relative permeability xy
 Discrete Fractures
 ^^^^^^^^^^^^^^^^^^
 
-[sec:vsat_frac_props] By default, all discrete fracture zones (and
+
+.. _sec:vsat_frac_props: By default, all discrete fracture zones (and
 elements) in the domain will use a constitutive relationship based on
 the pseudo-soil relation, as developed by
 :raw-latex:`\citet{huyakorn94}`. Essentially, in the pseudo soil
@@ -14890,7 +14007,8 @@ its maximum value, regardless of the state of fracture saturation.
 | . Unless you modify them, the default values given in Table :ref:  
 | will be used to define the functional relationships.
 
-[tab:frac_unsat_function_default]
+
+.. _tab:frac_unsat_function_default:
 
 .. table:: Default values for functions defining the discrete fracture
 constitutive relationships, for the Van Genuchten and BrooksCorey
@@ -14917,13 +14035,14 @@ models.
   listed in Table :ref:  
 | will be used to define the tabular relationships.
 
-[tab:frac_unsat_table_default]
+
+.. _tab:frac_unsat_table_default:
 
 | cd1.3 &
 | :math:`-10.0` & 0.053
 | 0.0 & 1.0
 
-.1in
+
 
 | d1.3d1.3 &
 | 0.053 & 0.053
@@ -14967,16 +14086,14 @@ discrete fractured media.
    0.0                       1.0
    ========================= ============================
 
-[tab:unsat_pca_table_default]
+
+.. _tab:unsat_pca_table_default:
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Effective area tables...End
-                                                
 
 These instructions are available for modifying the default
 pressure-effective area relationship:
@@ -14989,7 +14106,7 @@ Pressure-effective area
 | 
 
 | ``Scope:`` ``.grok`` ``.fprops``
-| -.3in
+
 
 #. **pressure(i), effective_area(i)...end** Pressure [L] and effective
    area [L:math:`^2`].
@@ -15008,9 +14125,6 @@ the table size.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Pressure-effective area
-                                            
 
 --------------
 
@@ -15032,15 +14146,13 @@ Effective area Wang-Narasimhan functions
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Effective area Wang-Narasimhan functions
-                                                             
-
 .. _dual-continuum-1:
 
 Dual Continuum
 ^^^^^^^^^^^^^^
 
-[sec:vsat_dual_props] Dual continua zones (and elements) in the domain
+
+.. _sec:vsat_dual_props: Dual continua zones (and elements) in the domain
 will use a constitutive relationship based on the pseudo-soil relation,
 as developed by :raw-latex:`\citet{huyakorn94}`. Essentially, in the
 pseudo soil relationship, the medium is assigned a nodal saturation of 1
@@ -15085,12 +14197,8 @@ Relative permeability xy
 
 :math:`\bullet \bullet \bullet`
 
-.. _input-instructions-relative-permeability-xy-1:
 
-Input instructions ! Relative permeability xy
-                                             
-
-[tab:dual_unsat_function_default]
+.. _tab:dual_unsat_function_default:
 
 .. table:: Default values for functions defining the dual continua
 constitutive relationships, for the Van Genuchten and BrooksCorey
@@ -15110,13 +14218,14 @@ models.
    ============================================= =====================
    ================
 
-[tab:dual_unsat_table_default]
+
+.. _tab:dual_unsat_table_default:
 
 | cd3.1 &
 | :math:`-10.0` & 0.053
 | 0.0 & 1.0
 
-.1in
+
 
 | d1.3d1.3 &
 | 0.053 & 0.053
@@ -15126,10 +14235,10 @@ When simulating a system with porous and dual continua, the constitutive
 relationships of the interface between the two continua must also be
 defined. The following instructions provide this functionality:
 
-| .5inInterface unsaturated tables
-| .5inInterface unsaturated van genuchten functions
-| .5inInterface unsaturated brooks-corey functions
-| .5inInterface relative permeability xy
+Interface unsaturated tables
+Interface unsaturated van genuchten functions
+Interface unsaturated brooks-corey functions
+Interface relative permeability xy
 
 Input is identical to the generic forms of the commands discussed in the
 following sections, except that the scope is restricted to ``.dprops``.
@@ -15141,7 +14250,8 @@ beginning with the functional relationships.
 Functional Constitutive Relationships
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| [sec:vsat_functions_props] The instructions described here can be used
+| 
+.. _sec:vsat_functions_props: The instructions described here can be used
   to modify the default variably-saturated properties for a porous
   medium, discrete fracture or dual continuum. Before issuing them it is
   necessary to choose which type of medium they should be applied to, as
@@ -15173,9 +14283,6 @@ Unsaturated brooks-corey functions...End
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Unsaturated brooks-corey functions...End
-                                                             
-
 --------------
 
 Unsaturated van genuchten functions...End
@@ -15194,9 +14301,6 @@ Unsaturated van genuchten functions...End
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Unsaturated van genuchten functions...End
-                                                              
 
 | The previous two instructions are used to choose between the
   BrooksCorey of Van Genuchten approaches for defining the functions. In
@@ -15222,20 +14326,17 @@ Residual saturation
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-| -.3in
+
 
 #. **val** Residual water saturation :math:`S_{wr}` [-].
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Residual saturation
-                                        
 
 --------------
 
@@ -15245,7 +14346,7 @@ Alpha
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-| -.3in
+
 
 #. **val** Power index alpha :math:`\alpha` [L:math:`^{-1}`].
 
@@ -15259,9 +14360,6 @@ prompted to enter an air-entry pressure instead and **grok** will stop.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Alpha
-                          
-
 --------------
 
 Beta
@@ -15270,7 +14368,7 @@ Beta
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-| -.3in
+
 
 #. **val** Power index beta :math:`\beta` [-].
 
@@ -15291,9 +14389,6 @@ Beta
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Beta
-                         
-
 --------------
 
 Pore connectivity
@@ -15302,7 +14397,7 @@ Pore connectivity
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-| -.3in
+
 
 #. **val** Pore connectivity :math:`l_p` [-].
 
@@ -15322,9 +14417,6 @@ recommended in this case is 2.0.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Pore connectivity
-                                      
-
 --------------
 
 Air entry pressure
@@ -15333,7 +14425,7 @@ Air entry pressure
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-| -.3in
+
 
 #. **val** Air entry pressure [L].
 
@@ -15349,9 +14441,6 @@ Air entry pressure
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Air entry pressure
-                                       
-
 --------------
 
 Exponent
@@ -15360,7 +14449,7 @@ Exponent
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-| -.3in
+
 
 #. | **val** Exponent [-] in Equation :ref:  
    | , which is used to compute :math:`k_r` in the BrooksCorey function.
@@ -15378,9 +14467,6 @@ stop.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Exponent
-                             
-
 --------------
 
 Minimum relative permeability
@@ -15389,7 +14475,7 @@ Minimum relative permeability
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-| -.3in
+
 
 #. **val** Minimum relative permeability [-].
 
@@ -15405,9 +14491,6 @@ solution.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Minimum relative permeability
-                                                  
-
 The following instructions can be used to generate pressure-saturation
 and saturation-relative permeability tables using the Van Genuchten or
 BrooksCorey parameters defined for the medium. In addition to the
@@ -15422,22 +14505,19 @@ Table smoothness factor
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| -.3in
+
 
 #. **val** Smoothness factor [-]. Smaller values cause more points to be
    generated for a smoother, more accurate table. The default value is
    :math:`10^{-3}`.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Table smoothness factor
-                                            
 
 --------------
 
@@ -15447,21 +14527,18 @@ Table minimum pressure
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| -.3in
+
 
 #. **val** Minimum pressure [L] value in the pressure-saturation table.
    The default value is :math:`-1000` m.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Table minimum pressure
-                                           
 
 --------------
 
@@ -15471,21 +14548,18 @@ Table maximum s-k slope
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| -.3in
+
 
 #. **val** Maximum slope [-] of the saturation-relative permeability
    curve when nearing full saturation. The default value is 100.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Table maximum s-k slope
-                                            
 
 --------------
 
@@ -15510,9 +14584,6 @@ Generate tables from unsaturated functions
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Generate tables from unsaturated functions
-                                                               
 
 For example, if the following Van Genuchten function parameters were
 defined in the ``.mprops`` file:
@@ -15587,7 +14658,8 @@ instructions needed for incorporating the tabular data in the
    Example of using functional parameters to generate tabular
    constitutive relationships.
 
-[fig:tab_from_func]
+
+.. _fig:tab_from_func:
 
 If desired, the ``.mprops`` file can be modified to use the tabular
 relationships. It is recommended that the Van Genuchten parameters that
@@ -15633,7 +14705,8 @@ tabular relationships.
 Tabular Constitutive Relationships
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| [sec:vsat_tables_props] The instructions described here can be used to
+| 
+.. _sec:vsat_tables_props: The instructions described here can be used to
   modify the default variably-saturated properties for a porous medium,
   discrete fracture or dual continuum. Before issuing them it is
   necessary to choose which type of medium they should be applied to, as
@@ -15676,9 +14749,6 @@ both horizontal and vertical flow.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Unsaturated tables
-                                       
-
 The following instructions can be used to modify the default tables
 which define the constitutive relationships:
 
@@ -15690,7 +14760,7 @@ Pressure-saturation
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-| -.3in
+
 
 #. **pressure(i), saturation(i)...end** Pressure :math:`\psi` [L] and
    saturation :math:`S` [-].
@@ -15707,9 +14777,6 @@ automatically to determine the table size.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Pressure-saturation
-                                        
-
 --------------
 
 Saturation-relative k
@@ -15718,7 +14785,7 @@ Saturation-relative k
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-| -.3in
+
 
 #. **saturation(i), rel_perm(i)...end** Saturation :math:`S` [-] and
    relative permeability :math:`k_{rw}` [-].
@@ -15735,20 +14802,19 @@ size.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Saturation-relative k
-                                          
-
 .. _surface-flow-2:
 
 Surface Flow
 ~~~~~~~~~~~~
 
-| [sec:overland_mprops] Unless you modify the default values, all zones
+| 
+.. _sec:overland_mprops: Unless you modify the default values, all zones
   (and elements) in the surface flow domain will be assigned the default
   properties listed in Table :ref:  
 | .
 
-[tab:overland_default]
+
+.. _tab:overland_default:
 
 .. table:: Default properties for surface flow.
 
@@ -15781,22 +14847,19 @@ X friction
 | 
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| -.3in
+
 
 #. | **val** Friction factor [L:math:`^{-1/3}` T] in the
      :math:`x`-direction, :math:`n_x` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! X friction
-'''''''''''''''''''''''''''''''
 
 --------------
 
@@ -15806,22 +14869,19 @@ Y friction
 | 
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| -.3in
+
 
 #. | **val** Friction factor [L:math:`^{-1/3}` T] in the
      :math:`y`-direction, :math:`n_y` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Y friction
-'''''''''''''''''''''''''''''''
 
 --------------
 
@@ -15831,7 +14891,7 @@ Time varying friction...End
 | 
 
 | ``Scope:`` ``.oprops``
-| -.3in
+
 
 #. **time(i), nmann(i)...end** Time [T] and Manning roughness
    coefficient [L:math:`^{-1/3}` T].
@@ -15845,9 +14905,6 @@ Reads a table of time vs Manning roughness coefficient
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Time varying friction...End
-''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 .. _section-15:
@@ -15857,7 +14914,7 @@ Input instructions ! Time varying friction...End
 | 
 | ``Scope .grok``
 | [.oprops]
-| -.3in
+
 
 #. **interpolate** Logical value (T/F), which if true, causes scale
    factors to be interpolated from the time-value table.
@@ -15881,7 +14938,7 @@ overprinted on an annual cycle of freeze-thaw.
 
 | 
 | ``Scope .grok``
-| -.3in
+
 
 #. **scale** Friction scale factor [-]. Must be a strictly positive real
    value.
@@ -15928,23 +14985,18 @@ Rill storage height
 | 
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| -.3in
+
 
 #. | **val** Rill storage height [L], :math:`H_d` in Section :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-.. _input-instructions-rill-storage-height-1:
-
-Input instructions ! Rill storage height
-''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -15956,24 +15008,19 @@ Obstruction storage height
 | 
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| -.3in
+
 
 #. | **val** Obstruction storage height [L], :math:`H_o` in
      Section :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-.. _input-instructions-obstruction-storage-height-1:
-
-Input instructions ! Obstruction storage height
-'''''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -15985,23 +15032,18 @@ Coupling length
 | 
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| -.3in
+
 
 #. | **val** Coupling length [L], :math:`l_{exch}` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-.. _input-instructions-coupling-length-1:
-
-Input instructions ! Coupling length
-''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -16011,22 +15053,19 @@ Maximum flow depth
 | 
 
 | ``Scope:`` ``.grok``
-| -.3in
+
 
 #. | **val** Maximum flow depth [L], in Equations :ref:  
    | and :ref:  
    | , the maximum of :math:`d_o`.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Maximum flow depth
-'''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -16036,22 +15075,19 @@ Minimum elemental energy slope
 | 
 
 | ``Scope:`` ``.grok``
-| -.3in
+
 
 #. | **val** Minimum elemental energy slope [-], in Equations :ref:  
    | and :ref:  
    | , the minimum of :math:`\partial h_o/\partial s`.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Minimum elemental energy slope
-'''''''''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -16061,7 +15097,7 @@ Input instructions ! Minimum elemental energy slope
 
 | 
 | ``Scope .grok``
-| -.3in
+
 
 #. **raster_filename** Filename of raster file containing the surface
    elevation [L] values.
@@ -16079,7 +15115,7 @@ visualization.
 --------------
 
 | Read elemental rill storage from file ``Scope .grok``
-| -.3in
+
 
 #. **filename** Name of file containing the rill storage values.
 
@@ -16099,7 +15135,8 @@ storage values are written to the Tecplot ASCII file
 Evapotranspiration
 ~~~~~~~~~~~~~~~~~~
 
-| [sec:et_materials] **NOTE:** Equations describing evapotranspiration
+| 
+.. _sec:et_materials: **NOTE:** Equations describing evapotranspiration
   in Section :ref:  
 | of the Theory Manual are based on water content. However,
   **grok** uses saturation as input. The input required in this section
@@ -16112,7 +15149,8 @@ Evapotranspiration
   Table :ref:  
 | , which are representative of a grass cover.
 
-[tab:et_default]
+
+.. _tab:et_default:
 
 .. table:: Default properties for interception and evapotranspiration.
 
@@ -16160,7 +15198,7 @@ will only affect the named material of which it is a part.
 
 | 
 | ``Scope .grok``
-| -.3in
+
 
 #. **time(i), filename(i)...end** Time [T] and raster filename list.
 
@@ -16209,22 +15247,19 @@ Canopy storage parameter
 | 
 
 | ``Scope:`` ``.etprops``
-| -.3in
+
 
 #. | **cint_et** Canopy storage parameter [L], :math:`c_{int}` in
      Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Canopy storage parameter
-'''''''''''''''''''''''''''''''''''''''''''''
 
 Note that canopy evaporation is assumed to be zero when the leaf area
 index is less than :math:`10^{-8}`.
@@ -16237,7 +15272,7 @@ index is less than :math:`10^{-8}`.
 
 | 
 | ``Scope .grok``
-| -.3in
+
 
 #. **time_interval** The canopy evaporation time interval [T]
    (non-negative real value). The default value is zero.
@@ -16271,22 +15306,19 @@ Initial interception storage
 | 
 
 | ``Scope:`` ``.etprops``
-| -.3in
+
 
 #. | **init_sint_et** Initial canopy interception storage value [L],
      :math:`S^0_{int}` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Initial interception storage
-'''''''''''''''''''''''''''''''''''''''''''''''''
 
 The following instruction can be used to modify the default value (one
 for all time) of the leaf area index (LAI):
@@ -16299,7 +15331,7 @@ LAI tables...End
 | 
 
 | ``Scope:`` ``.etprops``
-| -.3in
+
 
 #. **time(i), lai(i)...end** Time [T] and leaf area index [-].
 
@@ -16319,9 +15351,6 @@ list are counted automatically to determine the table size.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! LAI tables...End
-'''''''''''''''''''''''''''''''''''''
-
 --------------
 
 .. _section-20:
@@ -16330,7 +15359,7 @@ Input instructions ! LAI tables...End
 
 | 
 | ``Scope .grok``
-| -.3in
+
 
 #. **time(i), filename(i)...end** Time [T] and raster filename list.
 
@@ -16355,7 +15384,7 @@ Transpiration fitting parameters
 | 
 
 | ``Scope:`` ``.etprops``
-| -.3in
+
 
 #. | **C_1** Coefficient :math:`C_1` [-] in Equation :ref:  
    | .
@@ -16368,16 +15397,13 @@ Transpiration fitting parameters
      ramping function whereas higher values would give higher order
      ramping functions.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Transpiration fitting parameters
-'''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -16387,7 +15413,7 @@ Transpiration limiting saturations
 | 
 
 | ``Scope:`` ``.etprops``
-| -.3in
+
 
 #. | **thwp_et** Saturation [-] at wilting point, equal to
      :math:`\theta_{wp}/\theta_s`, with :math:`\theta_{wp}` used in
@@ -16409,16 +15435,13 @@ Transpiration limiting saturations
      Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Transpiration limiting saturations
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -16428,7 +15451,7 @@ Transpiration limiting pressure head
 | 
 
 | ``Scope:`` ``.etprops``
-| -.3in
+
 
 #. **Hwp_et** Pressure head [L] at wilting point,
    :math:`\psi_{wp}=\psi(\theta_{wp})`.
@@ -16451,9 +15474,6 @@ saturations.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Transpiration limiting pressure head
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Evaporation limiting saturations
@@ -16462,7 +15482,7 @@ Evaporation limiting saturations
 | 
 
 | ``Scope:`` ``.etprops``
-| -.3in
+
 
 #. | **the2_et** Saturation [-] below which evaporation is zero, equal
      to :math:`\theta_{e2}/\theta_s`, with :math:`\theta_{e2}` used in
@@ -16474,16 +15494,13 @@ Evaporation limiting saturations
      used in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Evaporation limiting saturations
-'''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -16493,7 +15510,7 @@ Evaporation limiting pressure head
 | 
 
 | ``Scope:`` ``.etprops``
-| -.3in
+
 
 #. **He2_et** Pressure head [L] below which evaporation is zero,
    :math:`\psi_{e2}=\psi(\theta_{e2})`.
@@ -16509,10 +15526,8 @@ This is an alternative to the command Evaporation limiting saturations.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Evaporation limiting pressure head
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-[tab:lai_table]
+.. _tab:lai_table:
 
 | lc d2.2 & &
 | & &
@@ -16543,7 +15558,7 @@ Input instructions ! Evaporation limiting pressure head
 
 | 
 | ``Scope .etprops``
-| -.3in
+
 
 #. **max_root_depth** Maximum root depth :math:`(L_r)` [L].
 
@@ -16562,9 +15577,9 @@ Specifies a fixed maximum root depth.
   root length density is defined by the linear polynomial function. The
   following commands may be used to select one of the other functions:
 
-| .5inRdf constant function
-| .5inRdf quadratic decay function
-| .5inRdf cubic decay function
+Rdf constant function
+Rdf quadratic decay function
+Rdf cubic decay function
 
 The following command may be used to specify the root length density via
 a table.
@@ -16577,7 +15592,7 @@ a table.
 
 | 
 | ``Scope .etprops``
-| -.3in
+
 
 #. **depth(i), density(i)...end** Relative depth [-] and root length
    density [L L:math:`^{-3}`] table.
@@ -16596,7 +15611,8 @@ maximum depth values in the table are assigned a density value of zero.
 
    Normalized root depth functions.
 
-[fig:depth_function]
+
+.. _fig:depth_function:
 
 Root growth can be defined by a table using the command:
 
@@ -16608,7 +15624,7 @@ Root growth can be defined by a table using the command:
 
 | 
 | ``Scope .etprops``
-| -.3in
+
 
 #. **time(i), root_depth(i)...end** Time [T] and root depth [L] table.
 
@@ -16640,20 +15656,17 @@ Root growth period
 | 
 
 | ``Scope .etprops``
-| -.3in
+
 
 #. **Rg_period** Period for vegetation growth [T], typically one year.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Root growth period
-'''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -16663,20 +15676,17 @@ Growth beginning time
 | 
 
 | ``Scope .etprops``
-| -.3in
+
 
 #. **Rg_begin** Start time of root growth [T].
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Growth beginning time
-''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -16686,20 +15696,17 @@ Harvest time
 | 
 
 | ``Scope .etprops``
-| -.3in
+
 
 #. **Rg_harvest** Crop harvest time [T].
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Harvest time
-'''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -16709,20 +15716,17 @@ Initial root depth
 | 
 
 | ``Scope .etprops``
-| -.3in
+
 
 #. **Rg_initdepth** Initial crop root depth [L].
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Initial root depth
-'''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -16732,20 +15736,17 @@ Maximum root depth
 | 
 
 | ``Scope .etprops``
-| -.3in
+
 
 #. **Rg_maxdepth** Maximum crop root depth [L].
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Maximum root depth
-'''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -16755,21 +15756,18 @@ Verhulst-Pearl growth, time-depth
 | 
 
 | ``Scope .etprops``
-| -.3in
+
 
 #. **Rg_vptime, Rg_vpdepth** Time [T] and crop root depth [L] data that
    is used to derive a VerhulstPearl growth function.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Verhulst-Pearl growth, time-depth
-''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -16787,9 +15785,6 @@ Verhulst-Pearl growth, 50% max depth
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Verhulst-Pearl growth, 50% max depth
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 The following is an example of defining root growth via a logistic
 growth function.
@@ -16825,7 +15820,7 @@ Evaporation depth
 | 
 
 | ``Scope:`` ``.etprops``
-| -.3in
+
 
 #. **evap_depth** Evaporation depth [L].
 
@@ -16838,15 +15833,12 @@ the root zone depth described above.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Evaporation depth
-''''''''''''''''''''''''''''''''''''''
-
 By default, the linear form of the evaporation function is used. The
 following instructions are available for using the other forms:
 
-| .5inEdf constant function
-| .5inEdf quadratic decay function
-| .5inEdf cubic decay function
+Edf constant function
+Edf quadratic decay function
+Edf cubic decay function
 
 --------------
 
@@ -16867,9 +15859,6 @@ Potential evaporation using transpiration
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Potential evaporation using transpiration
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 .. _section-25:
@@ -16878,7 +15867,7 @@ Input instructions ! Potential evaporation using transpiration
 
 | 
 | ``Scope .grok``
-| -.3in
+
 
 #. **x1, y1** :math:`xy`-coordinates [L] of the point.
 
@@ -17000,12 +15989,14 @@ Transport
 Porous Medium
 ^^^^^^^^^^^^^
 
-| [sec:transport_mprops] By default, all porous media zones (and
+| 
+.. _sec:transport_mprops: By default, all porous media zones (and
   elements) in the domain will be assigned default porous media
   transport properties which are listed in Table :ref:  
 | .
 
-[tab:transport_porous_media_defaults]
+
+.. _tab:transport_porous_media_defaults:
 
 | ld4.2l & &
 | Longitudinal dispersivity :math:`\alpha_l` & 1.0 & m
@@ -17051,22 +16042,19 @@ Longitudinal dispersivity
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| -.3in
+
 
 #. | **val** Longitudinal dispersivity [L], :math:`\alpha_l` in
      Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Longitudinal dispersivity
-                                              
 
 --------------
 
@@ -17076,22 +16064,19 @@ Transverse dispersivity
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| -.3in
+
 
 #. | **val** Horizontal component of the transverse dispersivity [L],
      :math:`\alpha_t` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Transverse dispersivity
-                                            
 
 --------------
 
@@ -17101,22 +16086,19 @@ Vertical transverse dispersivity
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| -.3in
+
 
 #. | **val** Vertical component of the transverse dispersivity [L],
      :math:`\alpha_t` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Vertical transverse dispersivity
-                                                     
 
 --------------
 
@@ -17126,21 +16108,18 @@ Tortuosity
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| -.3in
+
 
 #. | **val** Tortuosity [-], :math:`\tau` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Tortuosity
-                               
 
 --------------
 
@@ -17150,7 +16129,7 @@ Input instructions ! Tortuosity
 
 | 
 | ``Scope .grok``
-| [.mprops] -.3in
+
 
 #. **diff_coeff(i), i=1,nspecies** Effective diffusion coefficient
    [L:math:`^2` T:math:`^{-1}`] for each species.
@@ -17167,7 +16146,7 @@ Anisotropic tortuosity ratio
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| -.3in
+
 
 #. **y_tortratio** Tortuosity ratio [-] in the :math:`y`-direction.
    Default value is 1.
@@ -17188,9 +16167,6 @@ directional values.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Anisotropic tortuosity ratio
-                                                 
-
 --------------
 
 Bulk density
@@ -17199,22 +16175,19 @@ Bulk density
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| -.3in
+
 
 #. **val** Bulk density of dry soil [M L:math:`^{-3}`]. If necessary,
    the bulk density of a solid is calculated as
    :math:`\rho_s = \rho_b / (1 - \theta_s)`.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Bulk density
-                                 
 
 By default, the porous medium acts as a single-porosity medium (i.e. the
 immobile zone is inactive) because the porosity and mass transfer
@@ -17230,7 +16203,7 @@ Immobile zone porosity
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| -.3in
+
 
 #. | **val** Immobile zone porosity [-],
      :math:`\theta_\textrm{\scriptsize{Imm}}` in Equations :ref:  
@@ -17238,16 +16211,13 @@ Immobile zone porosity
    | and :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Immobile zone porosity
-                                           
 
 --------------
 
@@ -17257,22 +16227,19 @@ Immobile zone mass transfer coefficient
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| -.3in
+
 
 #. | **val** Immobile zone mass transfer coefficient [T:math:`^{-1}`],
      :math:`\alpha_\textrm{\scriptsize{Imm}}` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Immobile zone mass transfer coefficient
-                                                            
 
 --------------
 
@@ -17295,9 +16262,6 @@ Isotope fractionation data...End
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Isotope fractionation data...End
-                                                     
-
 The following three instructions can be used to change these values:
 
 --------------
@@ -17308,22 +16272,19 @@ Reverse rate
 | 
 
 | ``Scope: .mprops``
-| -.3in
+
 
 #. | **val** Reverse fractionation rate [L:math:`^{-1}`], :math:`k_r` in
      Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Reverse rate
-                                 
 
 --------------
 
@@ -17333,22 +16294,19 @@ Fractionation factor
 | 
 
 | ``Scope: .mprops``
-| -.3in
+
 
 #. | **val** Fractionation factor [-], :math:`\alpha_r` in
      Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Fractionation factor
-                                         
 
 --------------
 
@@ -17358,22 +16316,19 @@ Rock-water mass ratio
 | 
 
 | ``Scope: .mprops``
-| -.3in
+
 
 #. | **val** Isotopic rock-water mass ratio [-], :math:`x_r` in
      Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Rock-water mass ratio
-                                          
 
 The next instructions can be used to change the thermal properties of
 the porous medium:
@@ -17386,23 +16341,20 @@ Thermal conductivity of solid
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| -.3in
+
 
 #. **val** Temperature invariant thermal conductivity of the solids
    [M L T:math:`^{-3}` K:math:`^{-1}`]. The bulk thermal conductivity is
    computed internally from the volume fractions of the solid and liquid
    phases.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Thermal conductivity of solid
-                                                  
 
 --------------
 
@@ -17412,7 +16364,7 @@ Temperature-dependent thermal conductivity of solid
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| -.3in
+
 
 #. **k_s1** Thermal conductivity [M L T:math:`^{-3}` K:math:`^{-1}`] at
    temperature **t_s1**.
@@ -17435,9 +16387,6 @@ conductivity and temperature is defined by the pair of values
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Temperature-dependent thermal conductivity of solid
-                                                                        
-
 --------------
 
 Geometric bulk thermal conductivity relation
@@ -17458,9 +16407,6 @@ Geometric bulk thermal conductivity relation
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Geometric bulk thermal conductivity relation
-                                                                 
-
 --------------
 
 Nonlinear bulk thermal conductivity relation
@@ -17469,7 +16415,7 @@ Nonlinear bulk thermal conductivity relation
 | 
 
 | ``Scope: .mprops``
-| -.3in
+
 
 #. **k\_sat** Thermal conductivity of the saturated porous medium
    [M L T:math:`^{-3}` K:math:`^{-1}`].
@@ -17491,9 +16437,6 @@ Nonlinear bulk thermal conductivity relation
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Nonlinear bulk thermal conductivity relation
-                                                                 
-
 --------------
 
 Specific heat capacity of solid
@@ -17502,21 +16445,18 @@ Specific heat capacity of solid
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| -.3in
+
 
 #. **val** Specific heat capacity of the solid phase
    [L:math:`^2` T:math:`^{-2}` K:math:`^{-1}`].
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Specific heat capacity of solid
-                                                    
 
 Note that the density of the solid phase of the porous medium is now
 computed automatically from the bulk density and porosity.
@@ -17526,12 +16466,14 @@ computed automatically from the bulk density and porosity.
 Discrete Fractures
 ^^^^^^^^^^^^^^^^^^
 
-| [sec:transport_fprops] By default, all fracture zones (and elements)
+| 
+.. _sec:transport_fprops: By default, all fracture zones (and elements)
   in the domain will be assigned default transport properties which are
   listed in Table :ref:  
 | .
 
-[tab:transport_fracture_defaults]
+
+.. _tab:transport_fracture_defaults:
 
 .. table:: Default values for discrete fracture transport properties.
 
@@ -17561,24 +16503,19 @@ Longitudinal dispersivity
 | 
 
 | ``Scope:`` ``.grok`` ``.fprops``
-| -.3in
+
 
 #. | **val** Longitudinal dispersivity [L], similar to :math:`\alpha_l`
      in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-.. _input-instructions-longitudinal-dispersivity-1:
-
-Input instructions ! Longitudinal dispersivity
-                                              
 
 --------------
 
@@ -17590,24 +16527,19 @@ Transverse dispersivity
 | 
 
 | ``Scope:`` ``.grok`` ``.fprops``
-| -.3in
+
 
 #. | **val** Transverse dispersivity [L], similar to :math:`\alpha_t` in
      Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-.. _input-instructions-transverse-dispersivity-1:
-
-Input instructions ! Transverse dispersivity
-                                            
 
 --------------
 
@@ -17617,12 +16549,12 @@ Coupling dispersivity
 | 
 
 | ``Scope:`` ``.grok`` ``.fprops``
-| -.3in
+
 
 #. **val** Dispersivity value [L] to be applied during exchange between
    the discrete fracture and subsurface domains. Default value is 0.0.
 
--.3in
+
 
 --------------
 
@@ -17630,20 +16562,19 @@ Coupling dispersivity
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Coupling dispersivity
-                                          
-
 .. _dual-continuum-2:
 
 Dual Continuum
 ^^^^^^^^^^^^^^
 
-| [sec:transport_dprops] By default, all dual continua zones (and
+| 
+.. _sec:transport_dprops: By default, all dual continua zones (and
   elements) in the domain will be assigned default transport properties
   which are listed in Table :ref:  
 | .
 
-[tab:transport_dual_continuua_defaults]
+
+.. _tab:transport_dual_continuua_defaults:
 
 | ld4.1l Parameter & & Unit
 | Longitudinal dispersivity :math:`\alpha_{ld}` & 1.0 & m
@@ -17675,24 +16606,19 @@ Longitudinal dispersivity
 | 
 
 | ``Scope:`` ``.grok`` ``.dprops``
-| -.3in
+
 
 #. | **val** Longitudinal dispersivity [L], :math:`\alpha_{ld}` in
      Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-.. _input-instructions-longitudinal-dispersivity-2:
-
-Input instructions ! Longitudinal dispersivity
-                                              
 
 --------------
 
@@ -17704,24 +16630,19 @@ Transverse dispersivity
 | 
 
 | ``Scope:`` ``.grok`` ``.dprops``
-| -.3in
+
 
 #. | **val** Horizontal component of the transverse dispersivity [L],
      :math:`\alpha_{td}` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-.. _input-instructions-transverse-dispersivity-2:
-
-Input instructions ! Transverse dispersivity
-                                            
 
 --------------
 
@@ -17733,24 +16654,19 @@ Vertical transverse dispersivity
 | 
 
 | ``Scope:`` ``.grok`` ``.dprops``
-| -.3in
+
 
 #. | **val** Vertical component of the transverse dispersivity [L],
      :math:`\alpha_{td}` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-.. _input-instructions-vertical-transverse-dispersivity-1:
-
-Input instructions ! Vertical transverse dispersivity
-                                                     
 
 --------------
 
@@ -17762,23 +16678,18 @@ Tortuosity
 | 
 
 | ``Scope:`` ``.grok`` ``.dprops``
-| -.3in
+
 
 #. | **val** Tortuosity [-], :math:`\tau_d` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-.. _input-instructions-tortuosity-1:
-
-Input instructions ! Tortuosity
-                               
 
 --------------
 
@@ -17790,7 +16701,7 @@ Anisotropic tortuosity ratio
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops``
-| -.3in
+
 
 #. **y_tortratio** Tortuosity ratio [-] in the :math:`y`-direction.
    Default value is 1.
@@ -17811,11 +16722,6 @@ directional values.
 
 :math:`\bullet \bullet \bullet`
 
-.. _input-instructions-anisotropic-tortuosity-ratio-1:
-
-Input instructions ! Anisotropic tortuosity ratio
-                                                 
-
 --------------
 
 .. _bulk-density-1:
@@ -17826,24 +16732,19 @@ Bulk density
 | 
 
 | ``Scope:`` ``.grok`` ``.dprops``
-| -.3in
+
 
 #. | **val** Bulk density [M L:math:`^{-3}`], :math:`\rho_{bd}` in
      Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-.. _input-instructions-bulk-density-1:
-
-Input instructions ! Bulk density
-                                 
 
 --------------
 
@@ -17853,14 +16754,14 @@ First-order mass exchange
 | 
 
 | ``Scope: .dprops``
-| -.3in
+
 
 #. | **val** First-order mass transfer coefficient [L:math:`^{-1}`],
      :math:`\alpha_s` in Equations :ref:  
    | and :ref:  
    | .
 
--.3in
+
 
 --------------
 
@@ -17868,18 +16769,17 @@ First-order mass exchange
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! First-order mass exchange
-                                              
-
 Surface Runoff
 ^^^^^^^^^^^^^^
 
-| [sec:transport_oprops] By default, all surface flow zones (and
+| 
+.. _sec:transport_oprops: By default, all surface flow zones (and
   elements) in the domain will be assigned default transport properties
   which are listed in Table :ref:  
 | .
 
-[tab:transport_surface_defaults]
+
+.. _tab:transport_surface_defaults:
 
 .. table:: Default values for surface flow transport properties.
 
@@ -17910,24 +16810,19 @@ Longitudinal dispersivity
 | 
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| -.3in
+
 
 #. | **val** Longitudinal dispersivity [L], :math:`\alpha_{lo}`.
      Analogous to :math:`\alpha_{l}` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-.. _input-instructions-longitudinal-dispersivity-3:
-
-Input instructions ! Longitudinal dispersivity
-                                              
 
 --------------
 
@@ -17939,24 +16834,19 @@ Transverse dispersivity
 | 
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| -.3in
+
 
 #. | **val** Horizontal component of the transverse dispersivity [L],
      :math:`\alpha_t`. Analogous to :math:`\alpha_t` in Equation :ref:  
    | .
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-.. _input-instructions-transverse-dispersivity-3:
-
-Input instructions ! Transverse dispersivity
-                                            
 
 --------------
 
@@ -17968,23 +16858,18 @@ Coupling dispersivity
 | 
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| -.3in
+
 
 #. **val** Dispersivity value [L] to be applied during exchange between
    the overland flow and subsurface domains. Default value is 0.0.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-.. _input-instructions-coupling-dispersivity-1:
-
-Input instructions ! Coupling dispersivity
-                                          
 
 --------------
 
@@ -17994,22 +16879,19 @@ Dry albedo
 | 
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| -.3in
+
 
 #. | **Value** Dry albedo [-] for soil type, :math:`\alpha_{dry}` in
      Equation :ref:  
    | . Default value is 0.35.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Dry albedo
-                               
 
 --------------
 
@@ -18019,22 +16901,19 @@ Saturated albedo
 | 
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| -.3in
+
 
 #. | **Value** Saturated albedo [-] for soil type, :math:`\alpha_{sat}`
      in Equation :ref:  
    | . Default value is 0.18.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Saturated albedo
-                                     
 
 --------------
 
@@ -18044,23 +16923,20 @@ Heat coupling length
 | 
 
 | ``Scope:`` ``.grok`` ``.oprops``
-| -.3in
+
 
 #. | **Value** Heat coupling length [L]. The depth of the
      surface/subsurface exchange zone used to compute :math:`\alpha_o`
      in Equation :ref:  
    | . Default value is :math:`10^{-4}` m.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Heat coupling length
-                                         
 
 Winter Processes
 ----------------
@@ -18131,7 +17007,7 @@ D
    	  end
    	
 
--.3in
+
 
 --------------
 
@@ -18142,7 +17018,7 @@ following subcommands:
 
 .. _in-87:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -18161,7 +17037,7 @@ in conjunction with the command Surface temperature from raster.
 
 .. _in-88:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -18182,7 +17058,7 @@ temperature.
 
 .. _in-89:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -18191,7 +17067,7 @@ temperature.
    Default value of :math:`2\times 10^{-7}`
    [m:math:`^2` s:math:`^{-1}`].
 
--.3in
+
 
 --------------
 
@@ -18199,14 +17075,14 @@ temperature.
 
 .. _in-90:
 
--.3in 
+ 
 ^^^^^^
 
 | 
 
 #. **background_temp** Background temperature [ °C].
 
--.3in
+
 
 --------------
 
@@ -18214,14 +17090,14 @@ temperature.
 
 .. _in-91:
 
--.3in 
+ 
 ^^^^^^
 
 | 
 
 #. **melting_temp** Melting temperature [ °C].
 
--.3in
+
 
 --------------
 
@@ -18229,14 +17105,14 @@ temperature.
 
 .. _in-92:
 
--.3in 
+ 
 ^^^^^^
 
 | 
 
 #. **freezing_temp** Freezing temperature [ °C].
 
--.3in
+
 
 --------------
 
@@ -18244,14 +17120,14 @@ temperature.
 
 .. _in-93:
 
--.3in 
+ 
 ^^^^^^
 
 | 
 
 #. **freezing_depth** Maximum freezing depth [L].
 
--.3in
+
 
 --------------
 
@@ -18259,7 +17135,7 @@ temperature.
 
 .. _in-94:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -18283,7 +17159,7 @@ where :math:`n = 2^k n_0` for :math:`k = 0,1,2,\ldots`.
 
 .. _in-95:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -18301,7 +17177,7 @@ to the screen and the *prefix*\ ``o.lst`` file.
 
 .. _in-96:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -18357,7 +17233,7 @@ T
 
 .. _in-97:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -18481,7 +17357,7 @@ detailed information for each particle to the ASCII file
 for debugging purposes and should be used with a small number of
 particles to keep the log file from ballooning in size.
 
-Initial particle location from file -.3in
+
 
 #. **filename** Filename of the initial particle location file, at most
    300 characters.
@@ -18507,7 +17383,7 @@ follows:
 Note that if a particle’s initial location is outside the model domain,
 then its initial location is set to the centroid of the nearest element.
 
-Initial particle location by layer from file -.3in
+
 
 #. **filename** Filename of the initial particle location file, at most
    300 characters.
@@ -18539,7 +17415,7 @@ follows:
 Note that if a particle’s initial location is outside the model domain,
 then its initial location is set to the centroid of the nearest element.
 
-Output times for particle locations -.3in
+
 
 #. **time(i)...end** Output time [T] list.
 
@@ -18547,7 +17423,7 @@ Specifies the output times at which particle locations are recorded. A
 particle trace path consists of the particle locations at each of the
 output times.
 
-Maximum trace time -.3in
+
 
 #. **max_time** Maximum trace time [T].
 
@@ -18555,7 +17431,7 @@ Specifies the maximum time at which particle traces are updated. For
 each particle, tracing effectively stops after this time. By default the
 maximum trace time is effectively unlimited.
 
-Maximum trace count -.3in
+
 
 #. **max_count** Maximum trace count.
 
@@ -18564,7 +17440,7 @@ value can be used to control the amount of memory consumed by particle
 tracing. For each particle, tracing effectively stops once this count is
 reached. By default the maximum trace count is set to 10 000.
 
-Maximum trace output -.3in
+
 
 #. **max_output** Maximum number of particles to output.
 
@@ -18577,7 +17453,7 @@ determined by the line number of its initial location within the initial
 location input file. By default the maximum trace output is set to
 10 000.
 
-Maximum particle reflection count -.3in
+
 
 #. **max_reflect** Maximum number of particle relfections per trace
    step.
@@ -18595,7 +17471,8 @@ to 100.
 Output
 ------
 
-| [sec:output_general] During execution, **grok** and
+| 
+.. _sec:output_general: During execution, **grok** and
   **HydroGeoSphere** create many output files, for which a complete list
   with brief descriptions can be found in Appendix :ref:  
 | . Here, we will discuss in more detail the output which is of most
@@ -18652,27 +17529,27 @@ suitable for outputting times greater than 999,999 or less than 0.00001.
 If you prefer to use scientific notation, you can choose it using the
 instruction:
 
-.5inTime output scientific format
+Time output scientific format
 
 The other option is to use the Fortran G format descriptor (i.e. general
 format) in which a mix of fixed and scientific format is used depending
 on the magnitude of the output. If you prefer this notation, you can
 choose it using the instruction:
 
-.5inTime output general format
+Time output general format
 
 | Since these instructions can be used in the ``debug.control`` file
   (see Appendix :ref:  
 | ), it might sometimes be useful to switch back to fixed format. To do
   so, use the instruction:
 
-.5inTime output fixed format
+Time output fixed format
 
 Similarly, mass balance output can be controlled by the instructions:
 
-| .5inMass balance output scientific format
-| .5inMass balance output general format
-| .5inMass balance output fixed format
+Mass balance output scientific format
+Mass balance output general format
+Mass balance output fixed format
 
 For simulations with a large number of output times, the default 4-digit
 output time number may not be able to index all output times. In that
@@ -18683,7 +17560,7 @@ in the output time number.
 
 .. _in-98:
 
--.3in 
+ 
 ~~~~~~
 
 | 
@@ -18703,7 +17580,8 @@ times.
 Grid
 ~~~~
 
-[sec:grid_output] The following instructions can be useful in checking
+
+.. _sec:grid_output: The following instructions can be useful in checking
 the results of the grid generation section.
 
 --------------
@@ -18721,10 +17599,8 @@ Causes node coordinates to be written to the *prefix*\ ``o.eco`` file.
 
 :math:`\bullet \bullet \bullet`
 
-.. _sec:grid_output_general:
 
-Input instructions ! Echo coordinates
-'''''''''''''''''''''''''''''''''''''
+.. _sec:grid_output_general:
 
 --------------
 
@@ -18740,9 +17616,6 @@ Causes element incidences to be written to the *prefix*\ ``o.eco`` file.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Echo incidences
-''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -18760,9 +17633,6 @@ Causes fracture element incidences to be written to the
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Echo fracture incidences
-'''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 List surface flow nodes
@@ -18778,9 +17648,6 @@ Causes the list of surface flow nodes to be written to the
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! List surface flow nodes
-''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -18804,9 +17671,6 @@ Write faces and segments
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Write faces and segments
-'''''''''''''''''''''''''''''''''''''''''''''
-
 GMS
 ^^^
 
@@ -18820,21 +17684,18 @@ Mesh to gms
 
 | 
 
--.3in
+
 
 #. **gmsfile** Name of the file to which the 3-D mesh information
    (blocks or prisms) will be written in GMS-readable format.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Mesh to gms
-                                
 
 --------------
 
@@ -18843,21 +17704,18 @@ Input instructions ! Mesh to gms
 
 | 
 
--.3in
+
 
 #. **gmsfile** Name of the file to which the 2-D mesh information
    (quadrilaterals or triangles) will be written in GMS-readable format.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! 2D mesh to gms
-                                   
 
 --------------
 
@@ -18866,23 +17724,20 @@ Rectangles to triangles
 
 | 
 
--.3in
+
 
 #. **gmsfile** Name of the file to which the 2-D triangular mesh
    information will be written in GMS-readable 2-D mesh file format.
    Each rectangle in the 2-D mesh is split into two triangles. Nodal
    coordinates are written first followed by element node lists.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Rectangles to triangles
-                                            
 
 The following instructions should be placed near the end of the
 *prefix*\ ``.grok``  file after any instructions which are used to
@@ -18895,22 +17750,19 @@ Wells to gms
 
 | 
 
--.3in
+
 
 #. **gmsfile** Name of the file to which the 1-D line information (wells
    and/or tile drains) will be written in GMS-readable borehole file
    format.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Wells to gms
-                                 
 
 --------------
 
@@ -18919,22 +17771,19 @@ Fractures to gms
 
 | 
 
--.3in
+
 
 #. **gmsfile** Name of the file to which the 2-D fracture element
    information which will be written in GMS-readable 2-D mesh file
    format.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Fractures to gms
-                                     
 
 Tecplot
 ^^^^^^^
@@ -18949,21 +17798,18 @@ Mesh to tecplot
 
 | 
 
--.3in
+
 
 #. **tecfile** The name of the file to which the 3-D mesh information
    (blocks or prisms) will be written in Tecplot readable format.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Mesh to tecplot
-                                    
 
 --------------
 
@@ -18972,21 +17818,18 @@ Wells to tecplot
 
 | 
 
--.3in
+
 
 #. **tec_wells_file** Name of the file to which the 1-D well element
    information will be written in Tecplot LINE3D geometry format.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Wells to tecplot
-                                     
 
 --------------
 
@@ -18995,22 +17838,19 @@ Tiles to tecplot
 
 | 
 
--.3in
+
 
 #. **tec_tiles_file** Name of the file to which the 1-D tile drain
    element information will be written in Tecplot LINE3D geometry
    format.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Tiles to tecplot
-                                     
 
 --------------
 
@@ -19019,7 +17859,7 @@ K to tecplot
 
 | 
 
--.3in
+
 
 #. **tecfile** Name of the file to which the elemental hydraulic
    conductivity information will be written in Tecplot readable format.
@@ -19036,9 +17876,6 @@ cell-based variables.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! K to tecplot
-                                 
-
 --------------
 
 Porosity to tecplot
@@ -19046,21 +17883,18 @@ Porosity to tecplot
 
 | 
 
--.3in
+
 
 #. **tecfile** The name of the file to which the porosity information
    (blocks or prisms) will be written in Tecplot readable format.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Porosity to tecplot
-                                        
 
 --------------
 
@@ -19069,21 +17903,18 @@ Tortuosity to tecplot
 
 | 
 
--.3in
+
 
 #. **tecfile** The name of the file to which the tortuosity information
    (blocks or prisms) will be written in Tecplot readable format.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Tortuosity to tecplot
-                                          
 
 --------------
 
@@ -19093,12 +17924,12 @@ Input instructions ! Tortuosity to tecplot
 
 | 
 | ``Scope .grok .etprops``
-| -.3in
+
 
 #. **tecfile** The name of the file to which the ET zones information
    (blocks or prisms) will be written in Tecplot readable format.
 
--.3in
+
 
 --------------
 
@@ -19123,9 +17954,6 @@ as to the binary output files.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Echo to output
-'''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -19166,7 +17994,7 @@ Flux output nodes
 
 | 
 
--.3in
+
 
 #. **new_noutfc** Number of new output nodes desired.
 
@@ -19192,9 +18020,6 @@ time at a node.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Flux output nodes
-''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Flux output nodes from chosen
@@ -19210,9 +18035,6 @@ all currently chosen nodes are flagged as flux output nodes.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Flux output nodes from chosen
-''''''''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -19231,9 +18053,6 @@ requires identical input. However, it creates a binary file called
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Binary flux output nodes
-'''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Binary flux output nodes from chosen
@@ -19249,9 +18068,6 @@ except that all currently chosen nodes are flagged as flux output nodes.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Binary flux output nodes from chosen
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -19271,11 +18087,6 @@ all currently chosen nodes are flagged as flux output nodes.
 
 :math:`\bullet \bullet \bullet`
 
-.. _input-instructions-flux-output-nodes-from-chosen-1:
-
-Input instructions ! Flux output nodes from chosen
-''''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Output saltwater head
@@ -19294,9 +18105,6 @@ heads to be written instead.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Output saltwater head
-''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -19346,14 +18154,11 @@ with units [L:math:`^3` T:math:`^{-1}`].
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Report exchange for olf zones
-''''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 .. _in-99:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -19390,9 +18195,6 @@ medium and overland flow zones in
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Compute water volume by zone
-'''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Output ET details
@@ -19410,14 +18212,11 @@ evapotranspiration boundary condition and writes it to the file named
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Output ET details
-''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 .. _in-100:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -19443,7 +18242,7 @@ or when using the command Y vertical.
 
 .. _in-101:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -19495,7 +18294,7 @@ Make observation point
 
 | 
 
--.3in
+
 
 #. **well_name** Descriptive name for the well, up to 40 characters.
 
@@ -19515,14 +18314,11 @@ flux, node coordinates and node number.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Make observation point
-                                           
-
 --------------
 
 .. _in-102:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -19548,7 +18344,7 @@ Make node observation point
 
 | 
 
--.3in
+
 
 #. **well_name** Descriptive name for the well, up to 40 characters.
 
@@ -19566,9 +18362,6 @@ coordinates, and node number.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Make node observation point
-                                                
-
 --------------
 
 Make observation well
@@ -19576,7 +18369,7 @@ Make observation well
 
 | 
 
--.3in
+
 
 #. **well_name** Descriptive name for the well, up to 40 characters.
 
@@ -19604,9 +18397,6 @@ head or specified flux nodes.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Make observation well
-                                          
-
 --------------
 
 Make observation well from xy
@@ -19614,7 +18404,7 @@ Make observation well from xy
 
 | 
 
--.3in
+
 
 #. **well_name** Descriptive name for the well, up to 40 characters.
 
@@ -19630,9 +18420,6 @@ from :math:`x`- and :math:`y`-coordinates between two sheet numbers.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Make observation well from xy
-                                                  
 
 Fluid Mass Balance
 ^^^^^^^^^^^^^^^^^^
@@ -19666,7 +18453,8 @@ Fluid Mass Balance
      Infiltration                     0.0003219343
      Exfiltration                     0.0000000000
 
-[fig:fluid_balance_pm_cd]
+
+.. _fig:fluid_balance_pm_cd:
 
 This detailed fluid balance information is also written to a Tecplot
 formatted ASCII output file named
@@ -19696,7 +18484,7 @@ can be changed via the following command.
 
 .. _in-103:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -19855,7 +18643,8 @@ These include, but are not limited to:
 Fluid Volume
 ^^^^^^^^^^^^
 
-[sec:fluid_volume_tracking]
+
+.. _sec:fluid_volume_tracking:
 
 The following commands can be used to output information about the
 volume of water stored within a region of the surface and subsurface
@@ -19865,7 +18654,7 @@ flow domains.
 
 .. _in-104:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -19897,7 +18686,7 @@ Variable         Units         Description
 
 .. _in-105:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -19949,7 +18738,8 @@ T
 Fluid Flux Entering Volume
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-[sec:slice_flux_flow]
+
+.. _sec:slice_flux_flow:
 
 | These commands can be used to compute the fluid flux between a set of
   contributing nodes and a set of active nodes. Output fluxes are
@@ -19960,7 +18750,7 @@ Fluid Flux Entering Volume
 
 .. _in-106:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -20008,7 +18798,7 @@ this:
 
 .. _in-107:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -20043,7 +18833,7 @@ T
 
 .. _in-108:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -20085,7 +18875,7 @@ nodes in the surface domain.
 
 .. _in-109:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -20122,7 +18912,8 @@ are present only if the model defines a channel flow domain.
 Polygon Tracking
 ^^^^^^^^^^^^^^^^
 
-[sec:polygon_tracking]
+
+.. _sec:polygon_tracking:
 
 The following commands can be used to output water balance information
 over a region in the surface flow domain contained within a polygon.
@@ -20131,7 +18922,7 @@ over a region in the surface flow domain contained within a polygon.
 
 .. _in-110:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -20191,7 +18982,7 @@ important to keep in mind that polygons must not overlap.
 
 .. _in-111:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -20222,7 +19013,7 @@ elements within each element layer of the porous media and surface flow
 domains, here, fluxes are computed over nodal control volumes within
 each node sheet of the respective domains.
 
-Nodal fluid mass balance from shp file -.3in
+
 
 #. **filename** Name of the ArcView shapefile without the file
    extension.
@@ -20286,7 +19077,7 @@ This command may be issued multiple times to track water balance
 information for any number of polygons. When used more than once it is
 important to keep in mind that polygons must not share any elements.
 
-Nodal fluid mass balance from xy list -.3in
+
 
 #. **x(i), y(i)...end** :math:`xy`-coordinates [L] of polygon vertices.
 
@@ -20315,7 +19106,7 @@ Flux output nodes
 
 | 
 
--.3in
+
 
 #. **new_noutfc** Number of new output nodes desired.
 
@@ -20339,11 +19130,6 @@ concentration or flux versus time for a given species at a node.
 
 :math:`\bullet \bullet \bullet`
 
-.. _input-instructions-flux-output-nodes-1:
-
-Input instructions ! Flux output nodes
-''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 .. _flux-output-nodes-from-chosen-2:
@@ -20362,11 +19148,6 @@ all currently chosen nodes are flagged as flux output nodes.
 
 :math:`\bullet \bullet \bullet`
 
-.. _input-instructions-flux-output-nodes-from-chosen-2:
-
-Input instructions ! Flux output nodes from chosen
-''''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Plot concentration penetration depth
@@ -20374,7 +19155,7 @@ Plot concentration penetration depth
 
 | 
 
--.3in
+
 
 #. **threshold_conc** Threshold concentration [M L:math:`^{-3}`].
 
@@ -20390,9 +19171,6 @@ into the aquifer versus time is of interest.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Input instructions ! Plot concentration penetration depth
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 --------------
 
@@ -20412,9 +19190,6 @@ containing the maximum fracture velocity versus time data.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Plot maximum velocity
-''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 Compute statistical properties of plume
@@ -20433,14 +19208,11 @@ fourth order moments). Output is written to the file
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Compute statistical properties of plume
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 --------------
 
 .. _in-112:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -20490,7 +19262,7 @@ Make observation point
 
 | 
 
--.3in
+
 
 #. **well_name** Descriptive name for the well, up to 40 characters.
 
@@ -20510,11 +19282,6 @@ coordinates, and node number.
 
 :math:`\bullet \bullet \bullet`
 
-.. _input-instructions-make-observation-point-1:
-
-Input instructions ! Make observation point
-                                           
-
 --------------
 
 .. _make-observation-well-1:
@@ -20524,7 +19291,7 @@ Make observation well
 
 | 
 
--.3in
+
 
 #. **well_name** Descriptive name for the well, up to 40 characters.
 
@@ -20548,11 +19315,6 @@ concentration if dual-porosity), nodal coordinates, and node number.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-.. _input-instructions-make-observation-well-1:
-
-Input instructions ! Make observation well
-                                          
 
 Solute Mass Balance
 ^^^^^^^^^^^^^^^^^^^
@@ -20595,7 +19357,8 @@ Solute Mass Balance
       Relative: (NET1-NET2)/(abs(NET1)+abs(NET2))/2.0                  0.0000000015
    **********************************************************************************
 
-[fig:mass_balance_pm_cd]
+
+.. _fig:mass_balance_pm_cd:
 
 --------------
 
@@ -20662,7 +19425,8 @@ given species.
 Mass Flux Entering Volume
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-[sec:slice_flux_transport]
+
+.. _sec:slice_flux_transport:
 
 | These commands can be used to compute the mass flux between a set of
   contributing nodes and a set of active nodes. Output fluxes are
@@ -20673,7 +19437,7 @@ Mass Flux Entering Volume
 
 .. _in-113:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -20710,7 +19474,7 @@ this:
 
 .. _in-114:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -20745,7 +19509,7 @@ T
 
 .. _in-115:
 
--.3in 
+ 
 ''''''
 
 | 
@@ -20798,9 +19562,6 @@ Output travel time statistics
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Output travel time statistics
-                                                  
-
 --------------
 
 Integrate production zone
@@ -20808,7 +19569,7 @@ Integrate production zone
 
 | 
 
--.3in
+
 
 #. **filename** Name of the file that contains the list of elements that
    contain a mass source function and the tabulated functions. It is
@@ -20869,13 +19630,11 @@ elements where :math:`m^*(\emph{\textbf{x}},t) \neq 0`.
 
 :math:`\bullet \bullet \bullet`
 
-Input instructions ! Integrate production zone
-                                              
-
 Post Simulation Output
 ~~~~~~~~~~~~~~~~~~~~~~
 
-[sec:post_sim_out] The commands in this section are executed following
+
+.. _sec:post_sim_out: The commands in this section are executed following
 the completion of a simulation and cause **HydroGeoSphere** to report
 additional outputs that may be useful for model calibration. For
 example, the command Compute post simulation average instructs
@@ -20886,7 +19645,7 @@ variable over a specified time interval.
 
 .. _in-116:
 
--.3in 
+ 
 ^^^^^^
 
 | 
@@ -21546,7 +20305,8 @@ using the instruction No runtime debug.
        ! maximum timestep multiplier
        !             2.00000
 
-[tab:debug_control]
+
+.. _tab:debug_control:
 
 Lines beginning with the comment character (!) are ignored. When first
 generated, the only uncommented line is the first one, ``debug off``,
@@ -21571,7 +20331,8 @@ desired.
         pause timestep
        ...etc...
 
-[tab:debug_control_2]
+
+.. _tab:debug_control_2:
 
 then **HydroGeoSphere** would pause at the end of the next timestep.
 
@@ -21601,9 +20362,6 @@ this line should be commented out.
 
 :math:`\bullet \bullet \bullet`
 
-Debug control file instructions ! Debug off
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 --------------
 
 Pause timestep
@@ -21625,9 +20383,6 @@ Write output files, from producing too much output.
 
 :math:`\bullet \bullet \bullet`
 
-Debug control file instructions ! Pause timestep
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 --------------
 
 Pause at time
@@ -21635,7 +20390,7 @@ Pause at time
 
 | 
 
--.3in
+
 
 #. **time** Simulation time [T].
 
@@ -21646,9 +20401,6 @@ Proceed until the given simulation time is reached and then pause.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Debug control file instructions ! Pause at time
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 --------------
 
@@ -21665,9 +20417,6 @@ Pause at the beginning of the next Newton iteration.
 
 :math:`\bullet \bullet \bullet`
 
-Debug control file instructions ! Pause newton loop
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 --------------
 
 Pause flow convergence loop
@@ -21682,9 +20431,6 @@ Pause at the beginning of the next flow solver iteration.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Debug control file instructions ! Pause flow convergence loop
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 --------------
 
@@ -21705,9 +20451,6 @@ timestep.
 
 :math:`\bullet \bullet \bullet`
 
-Debug control file instructions ! Write output files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 --------------
 
 Watch node list
@@ -21715,7 +20458,7 @@ Watch node list
 
 | 
 
--.3in
+
 
 #. **node(i)...end** Node number list.
 
@@ -21727,17 +20470,14 @@ A list of node numbers for which you want detailed output.
 
 :math:`\bullet \bullet \bullet`
 
-Debug control file instructions ! Watch node list
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 For each watch node, the following instructions write detailed output to
 the ``hs.dbg`` file:
 
-| .5inWrite flow matrices
-| .5inWrite transport matrices
-| .5inWrite overland flow
-| .5inWrite fracture (dual node) flow
-| .5inWrite evapotranspiration
+Write flow matrices
+Write transport matrices
+Write overland flow
+Write fracture (dual node) flow
+Write evapotranspiration
 
 Detailed output usually consists of the coefficient matrix and
 right-hand side vector for the watch node.
@@ -21770,9 +20510,6 @@ timestep is written to the *prefix*\ ``o.lst`` file.
 
 :math:`\bullet \bullet \bullet`
 
-Debug control file instructions ! Write delval node info
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 --------------
 
 Write resval node info
@@ -21791,9 +20528,6 @@ is written to the *prefix*\ ``o.lst`` file.
 
 :math:`\bullet \bullet \bullet`
 
-Debug control file instructions ! Write resval node info
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 --------------
 
 Write seepage face output to .lst file
@@ -21810,9 +20544,6 @@ at each active seepage node are written to the *prefix*\ ``o.lst`` file.
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Debug control file instructions ! Write seepage face output to .lst file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 --------------
 
@@ -21837,9 +20568,6 @@ compared from run to run.
 
 :math:`\bullet \bullet \bullet`
 
-Debug control file instructions ! Time progress
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 --------------
 
 Write krw file
@@ -21847,7 +20575,7 @@ Write krw file
 
 | 
 
--.3in
+
 
 #. **filename** Name of the file to write the hydraulic conductivity
    values, at most 80 characters.
@@ -21863,9 +20591,6 @@ simulation using the instruction Read elemental k from file.
 
 :math:`\bullet \bullet \bullet`
 
-Debug control file instructions ! Write krw file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 --------------
 
 Time format
@@ -21873,7 +20598,7 @@ Time format
 
 | 
 
--.3in
+
 
 #. **type** Integer value indicating the type of format to use when
    writing time values to output files. Acceptable values are:
@@ -21882,16 +20607,13 @@ Time format
    | 2 Scientific.
    | 3 General.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Debug control file instructions ! Time format
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 --------------
 
@@ -21900,7 +20622,7 @@ Mass balance format
 
 | 
 
--.3in
+
 
 #. **type** Integer value indicating the type of format to use when
    writing mass balance output to file. Acceptable values are:
@@ -21909,16 +20631,13 @@ Mass balance format
    | 2 Scientific.
    | 3 General.
 
--.3in
+
 
 --------------
 
 | 
 
 :math:`\bullet \bullet \bullet`
-
-Debug control file instructions ! Mass balance format
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 --------------
 
@@ -21927,7 +20646,7 @@ Nodal flow check
 
 | 
 
--.3in
+
 
 #. **flow_check** Logical value (T/F), which if true, turns on the nodal
    flow check feature. Otherwise, it turns it off.
@@ -21941,9 +20660,6 @@ turned off.
 
 :math:`\bullet \bullet \bullet`
 
-Debug control file instructions ! Nodal flow check
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 --------------
 
 Force timestep
@@ -21951,7 +20667,7 @@ Force timestep
 
 | 
 
--.3in
+
 
 #. **delta_t** Timestep [T].
 
@@ -21963,9 +20679,6 @@ Sets all subsequent timesteps to **delta_t**.
 
 :math:`\bullet \bullet \bullet`
 
-Debug control file instructions ! Force timestep
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 The following commands are identical to those used in the ``.grok``
 input file and will just be listed here. They are used to modify
 parameter values while **HydroGeoSphere** is running. Note that if you
@@ -21974,35 +20687,35 @@ value even if you disable run-time debugging (i.e., uncomment
 instruction Debug off) or comment out the instruction that was used to
 change the value.
 
-| .5inFlow solver convergence criteria
-| .5inFlow solver detail
-| .5inFlow maximum iterations
-| .5inTransport solver convergence criteria
-| .5inTransport solver detail
-| .5inTransport solver maximum iterations
-| .5inNewton maximum iterations
-| .5inNewton absolute convergence criteria
-| .5inNewton residual convergence criteria
-| .5inCompute underrelaxation factor
-| .5inNodal flow check tolerance
-| .5inNewton maximum update for head
-| .5inNewton maximum update for depth
-| .5inNewton absolute maximum residual
-| .5inNewton maximum residual increase
-| .5inMaximum timestep
-| .5inMinimum timestep multiplier
-| .5inMaximum timestep multiplier
+Flow solver convergence criteria
+Flow solver detail
+Flow maximum iterations
+Transport solver convergence criteria
+Transport solver detail
+Transport solver maximum iterations
+Newton maximum iterations
+Newton absolute convergence criteria
+Newton residual convergence criteria
+Compute underrelaxation factor
+Nodal flow check tolerance
+Newton maximum update for head
+Newton maximum update for depth
+Newton absolute maximum residual
+Newton maximum residual increase
+Maximum timestep
+Minimum timestep multiplier
+Maximum timestep multiplier
 
 The following commands can be used to set the values of the various
 targets used in the adaptive timestepping procedure.
 
-| .5inHead change target
-| .5inSaturation change target
-| .5inWater depth change target
-| .5inNewton target
-| .5inConcentration change target
-| .5inMass change target
-| .5inMass error target
+Head change target
+Saturation change target
+Water depth change target
+Newton target
+Concentration change target
+Mass change target
+Mass error target
 
 .. _app:runtime_output:
 
@@ -22045,7 +20758,8 @@ run-time output.
 
    Run-time timestep output for the Abdul verification problem.
 
-[fig:runtime_out]
+
+.. _fig:runtime_out:
 
 Simulation Progress
 -------------------
@@ -22183,13 +20897,13 @@ contain all of the data files necessary to run the simulations. In the
 case of the **HydroGeoSphere** verification problems, the
 ``verification`` directory nested under the
 **HydroGeoSphere** installation directory
-(`C:\Program_Files\HydroGeoSphere\verification <C:\Program_Files\HydroGeoSphere\verification>`__
-on Windows) contains one or more subdirectories for each verification
-problem. A partial list of its contents are shown here:
+(:math:`\mbox{C:\Program_Files\HydroGeoSphere/verification}` on Windows)
+contains one or more subdirectories for each verification problem. A
+partial list of its contents are shown here:
 
 ::
 
-       Directory of C:\Program_Files\HydroGeoSphere\verification
+       Directory of C:\Program_Files\HydroGeoSphere/verification
 
        2021-03-31  02:36 PM    <DIR>          .
        2021-03-31  02:36 PM    <DIR>          ..
@@ -22240,20 +20954,19 @@ The file can contain comments, which begin with an exclamation point
 
 The instructions:
 
-| .5inGrok executable path and name
-| .5inHydrogeosphere executable path and name
-| .5inHsplot executable path and name
+Grok executable path and name
+Hydrogeosphere executable path and name
+Hsplot executable path and name
 
 point to the locations of the program executable files. If the path to
 an executable is not provided via one of these commands, then the
 default location for that executable is used. In Windows, executables
 are found by searching the default search path, which should contain the
-installation directory
-`C:\Program_Files\HydroGeoSphere <C:\Program_Files\HydroGeoSphere>`__
+installation directory :math:`\mbox{C:\Program_Files\HydroGeoSphere}`
 following a typical program installation. Problem data are to be found
 in subdirectories of the directory where the ``.hsbatch`` file is
 located, in this case
-`C:\Program_Files\HydroGeoSphere\verification <C:\Program_Files\HydroGeoSphere\verification>`__.
+:math:`\mbox{C:\Program_Files\HydroGeoSphere/verification}`.
 
 The instruction Batch directory list is followed by a list of
 subdirectories, one per line, that contain the problem data to be run in
@@ -22265,8 +20978,7 @@ containing the problem prefix, in each problem directory.
 
 To run **HSBATCH** for this example, open a command prompt, change
 directories to
-`C:\Program_Files\HydroGeoSphere\verification <C:\Program_Files\HydroGeoSphere\verification>`__,
-and type:
+:math:`\mbox{C:\Program_Files\HydroGeoSphere/verification}`, and type:
 
 ::
 
@@ -22304,7 +21016,7 @@ to handle these types of situations:
 
        ! First run a verification problem
        change directory
-       C:\Program_Files\HydroGeoSphere\verification
+       C:\Program_Files\HydroGeoSphere/verification
 
        batch directory list
        pm_cd
@@ -22380,9 +21092,6 @@ Causes **HSPLOT** to generate Tecplot formatted output.
 
 :math:`\bullet \bullet \bullet`
 
-Plot control file instructions ! Tecplot mode
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 --------------
 
 Paraview mode
@@ -22398,16 +21107,13 @@ Causes **HSPLOT** to generate Paraview formatted output.
 
 :math:`\bullet \bullet \bullet`
 
-Plot control file instructions ! Paraview mode
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 The following command can be used to truncate the range of output times.
 
 --------------
 
 .. _in-117:
 
--.3in 
+ 
 ~~~~~~
 
 | 
@@ -22445,7 +21151,7 @@ B
 
 .. _in-118:
 
--.3in 
+ 
 ~~~~~~
 
 | 
@@ -22524,12 +21230,12 @@ C
 
 Similar commands exist for the other domains:
 
-| .5inWrite dual domain file
-| .5inWrite frac domain file
-| .5inWrite olf domain file
-| .5inWrite well domain file
-| .5inWrite chan domain file
-| .5inWrite tile domain file
+Write dual domain file
+Write frac domain file
+Write olf domain file
+Write well domain file
+Write chan domain file
+Write tile domain file
 
 In general, each command produces an output file named
 *prefix*\ ``o.``\ *domain*\ ``.dat``, where *domain* is the
@@ -22538,34 +21244,34 @@ commands prevent/allow **HSPLOT** from writing the named variables to
 the output file. For example, in the case of the porous media domain the
 following instructions are available:
 
-| .5inNo pm heads
-| .5inNo pm environment head
-| .5inNo pm saturations
-| .5inNo pm ice saturation
-| .5inNo pm freezing-thawing temperature
-| .5inNo pm linear velocities (vx, vy, vz)
-| .5inYes pm flux (qx, qy, qz)
-| .5inNo pm tvk (kx, ky, kz)
-| .5inNo pm concentrations
-| .5inNo pm hmc fractions
-| .5inNo pm immobile/isotope fractionation concentrations
-| .5inNo pm peclet number
-| .5inNo pm diffusion peclet number
-| .5inNo pm element k
-| .5inNo pm element porosity
-| .5inNo pm element storativity
-| .5inNo pm element tortuosity
-| .5inNo pm element fraction of compressible interbeds
-| .5inNo pm permafrost
-| .5inNo pm soil frost
-| .5inNo pm compaction
-| .5inNo pm delta z
-| .5inNo pm redox capacity
-| .5inNo pm et3d
-| .5inNo pm rain and snowmelt package
-| .5inNo pm depth to water table
-| .5inTruncate pm domain
-| .5inTruncate pm domain by layer
+No pm heads
+No pm environment head
+No pm saturations
+No pm ice saturation
+No pm freezing-thawing temperature
+No pm linear velocities (vx, vy, vz)
+Yes pm flux (qx, qy, qz)
+No pm tvk (kx, ky, kz)
+No pm concentrations
+No pm hmc fractions
+No pm immobile/isotope fractionation concentrations
+No pm peclet number
+No pm diffusion peclet number
+No pm element k
+No pm element porosity
+No pm element storativity
+No pm element tortuosity
+No pm element fraction of compressible interbeds
+No pm permafrost
+No pm soil frost
+No pm compaction
+No pm delta z
+No pm redox capacity
+No pm et3d
+No pm rain and snowmelt package
+No pm depth to water table
+Truncate pm domain
+Truncate pm domain by layer
 
 Some of these instructions are available for other domains by swapping
 “pm” in the command name for the appropriate domain name. In general,
@@ -22584,7 +21290,7 @@ additional inputs as described below.
 
 .. _in-119:
 
--.3in 
+ 
 ~~~~~~
 
 | 
@@ -22622,7 +21328,7 @@ its full extent.
 
 .. _in-120:
 
--.3in 
+ 
 ~~~~~~
 
 | 
@@ -22662,82 +21368,82 @@ the following subsections.
 Dual Continua Output
 ~~~~~~~~~~~~~~~~~~~~
 
-| .5inNo dual heads
-| .5inNo dual saturations
-| .5inNo dual linear velocities (vx, vy, vz)
-| .5inNo dual concentrations
-| .5inNo dual immobile/isotope fractionation concentrations
-| .5inNo dual element k
-| .5inNo dual permafrost
-| .5inNo dual/pm exchange flux
-| .5inNo dual/pm solute exchange
-| .5inTruncate dual domain
-| .5inTruncate dual domain by layer
+No dual heads
+No dual saturations
+No dual linear velocities (vx, vy, vz)
+No dual concentrations
+No dual immobile/isotope fractionation concentrations
+No dual element k
+No dual permafrost
+No dual/pm exchange flux
+No dual/pm solute exchange
+Truncate dual domain
+Truncate dual domain by layer
 
 Discrete Fracture Domain Output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| .5inNo frac heads
-| .5inNo frac saturations
-| .5inNo frac linear velocities (vx, vy, vz)
-| .5inNo frac concentrations
-| .5inNo frac immobile/isotope fractionation concentrations
-| .5inNo frac aperture
-| .5inNo frac/pm exchange flux
-| .5inNo frac/pm solute exchange
-| .5inTruncate frac domain
-| .5inTruncate frac domain by layer
+No frac heads
+No frac saturations
+No frac linear velocities (vx, vy, vz)
+No frac concentrations
+No frac immobile/isotope fractionation concentrations
+No frac aperture
+No frac/pm exchange flux
+No frac/pm solute exchange
+Truncate frac domain
+Truncate frac domain by layer
 
 Surface Flow Domain Output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| .5inNo olf heads
-| .5inNo olf linear velocities (vx, vy, vz)
-| .5inNo olf friction (nx, ny)
-| .5inNo olf concentrations
-| .5inNo olf immobile/isotope fractionation concentrations
-| .5inNo olf/pm exchange flux
-| .5inNo olf/pm solute exchange
-| .5inNo olf et
-| .5inYes olf local probability
-| .5inTruncate olf domain
-| .5inTruncate olf domain by layer
+No olf heads
+No olf linear velocities (vx, vy, vz)
+No olf friction (nx, ny)
+No olf concentrations
+No olf immobile/isotope fractionation concentrations
+No olf/pm exchange flux
+No olf/pm solute exchange
+No olf et
+Yes olf local probability
+Truncate olf domain
+Truncate olf domain by layer
 
 Tile Flow Domain Output
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-| .5inNo tile heads
-| .5inNo tile linear velocities (vx, vy, vz)
-| .5inNo tile concentrations
-| .5inNo tile immobile/isotope fractionation concentrations
-| .5inNo tile/pm exchange flux
-| .5inNo tile/pm solute exchange
-| .5inTruncate tile domain
-| .5inTruncate tile domain by layer
+No tile heads
+No tile linear velocities (vx, vy, vz)
+No tile concentrations
+No tile immobile/isotope fractionation concentrations
+No tile/pm exchange flux
+No tile/pm solute exchange
+Truncate tile domain
+Truncate tile domain by layer
 
 Channel Flow Domain Output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| .5inNo chan heads
-| .5inNo chan linear velocities (vx, vy, vz)
-| .5inNo chan concentrations
-| .5inNo chan immobile/isotope fractionation concentrations
-| .5inNo chan/pm exchange flux
-| .5inNo chan/pm solute exchange
-| .5inTruncate chan domain
-| .5inTruncate chan domain by layer
+No chan heads
+No chan linear velocities (vx, vy, vz)
+No chan concentrations
+No chan immobile/isotope fractionation concentrations
+No chan/pm exchange flux
+No chan/pm solute exchange
+Truncate chan domain
+Truncate chan domain by layer
 
 Well Flow Domain Output
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-| .5inNo well heads
-| .5inNo well linear velocities (vx, vy, vz)
-| .5inNo well concentrations
-| .5inNo well immobile/isotope fractionation concentrations
-| .5inNo well/pm exchange flux
-| .5inNo well/pm solute exchange
-| .5inTruncate well domain
-| .5inTruncate well domain by layer
+No well heads
+No well linear velocities (vx, vy, vz)
+No well concentrations
+No well immobile/isotope fractionation concentrations
+No well/pm exchange flux
+No well/pm solute exchange
+Truncate well domain
+Truncate well domain by layer
 
 General Output Control
 ----------------------
@@ -22750,7 +21456,7 @@ should be issued at most once within the plot control file.
 
 .. _in-121:
 
--.3in 
+ 
 ~~~~~~
 
 | 
@@ -22876,7 +21582,7 @@ C
 
 .. _in-122:
 
--.3in 
+ 
 ~~~~~~
 
 | 
@@ -22907,7 +21613,7 @@ Note that this command requires a surface flow domain to be present.
 
 .. _in-123:
 
--.3in 
+ 
 ~~~~~~
 
 | 
@@ -22933,7 +21639,7 @@ include elements that share a node with an element that contains
 
 .. _in-124:
 
--.3in 
+ 
 ~~~~~~
 
 | 
@@ -22987,7 +21693,8 @@ the card. Some cards can use multiple lines.
 Two-Dimensional Meshes (Slices)
 -------------------------------
 
-[app:2dmesh]
+
+.. _app:2dmesh:
 
 The instructions Read gms 2d grid and 2D mesh to gms read and write 2-D
 mesh data in GMS format, respectively. The portion of the 2-D mesh file
@@ -23055,7 +21762,8 @@ The card types used in the 2-D mesh file are as follows.
 ASCII Scalar Data Set Files
 ---------------------------
 
-[sec:ab_fmt] The instruction Zone by layer can read a nodal data set in
+
+.. _sec:ab_fmt: The instruction Zone by layer can read a nodal data set in
 order to define a variable surface (usually an elevation for the
 :math:`z`-coordinate) for the base of the 3-D grid or the top of a
 layer. This file should be written in GMS ASCII format.
