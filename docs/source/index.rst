@@ -48,7 +48,7 @@ Windows
 
 By default, HGS is installed in the directory:
 
-:math:`\mbox{C:\Program_Files\HydroGeoSphere}`
+``C:\Program_Files\HydroGeoSphere``
 
 The installation folder contains the key executable files (``grok.exe``,
 ``phgs.exe``, ``hsplot.exe``, ``hsbatch.exe``) required for simulation
@@ -72,7 +72,7 @@ Linux
 
 In Linux, HGS is installed under the current folder in the directory:
 
-:math:`\mbox{HydroGeoSphere-RevNum-Linux}`
+``HydroGeoSphere-RevNum-Linux``
 
 where “RevNum” is the revision number of the installation. The
 installation folder contains the key binary files (``grok``, ``hgs``,
@@ -240,14 +240,14 @@ Running a Model
 We conclude this chapter by describing the steps to run the Abdul model
 problem, the model files for which can be found in
 
-:math:`\mbox{C:\Program_Files\HydroGeoSphere\verification\abdul}`
+``C:\Program_Files\HydroGeoSphere``
 
 For additional details on this problem the user is referred to the
 verification manual ``hydrosphere_verif.pdf``. The steps to run this
 model problem are as follows.
 
 #. Copy ``grok.exe``, ``phgs.exe``, and ``hsplot.exe`` to
-   :math:`\mbox{C:\Program_Files\HydroGeoSphere\verification\abdul}`.
+   ``C:\Program_Files\HydroGeoSphere``.
 
 #. Run ``grok.exe``.
 
@@ -261,10 +261,10 @@ model problem are as follows.
 Note that Windows users who receive a DLL error when running one of the
 executable files should copy the DLL files from the installation folder
 to the current simulation folder. Alternatively, Windows users can add
-the directory :math:`\mbox{C:\Program_Files\HydroGeoSphere}` to their
-system path. Updating the system path makes it possible to run a model
-from any folder without copying any HGS executable files or DLL files to
-that folder and is the preferred method of operation.
+the directory ``C:\Program_Files\HydroGeoSphere`` to their system path.
+Updating the system path makes it possible to run a model from any
+folder without copying any HGS executable files or DLL files to that
+folder and is the preferred method of operation.
 
 .. _chap:io_instructions:
 
@@ -701,10 +701,10 @@ also ignored. For example, the following commands are equivalent:
 
 ::
 
-       set variable $path=C:\my_file_path    ! inline comment
-       set variable   $path =C:\my_file_path
-       set variable $path=   C:\my_file_path
-       set variable   $path  =  C:\my_file_path
+       set variable $path=C:\my\_file\_path    ! inline comment
+       set variable   $path =C:\my\_file\_path
+       set variable $path=   C:\my\_file\_path
+       set variable   $path  =  C:\my\_file\_path
 
 Each command defines the variable ``$path`` to have the value
 ``C:\char‘ my_file_path``. If you wish to retain leading whitespace in
@@ -713,7 +713,7 @@ the variable value, then you can do so by enclosing it in double quotes
 
 ::
 
-       set variable $path="   C:\my_file_path"
+       set variable $path="   C:\my\_file\_path"
 
 assigns to the variable ``$path`` the value
 ``   C:\textbackslash my_file_path``. Note that the enclosing double
@@ -3885,10 +3885,9 @@ files *prefix*\ ``o.head_pm.0001``, …, *prefix*\ ``o.head_pm.0009`` and
 would like to run again to produce some additional output. Instead of
 having to rerun the full simulation, which may be costly, you can copy
 the head output files to a folder under your simulation folder, e.g.,
-:math:`\mbox{heads\ }`, and then rerun your simulation by defining the
-flow field from the head files in :math:`\mbox{heads\ }` at each output
-time. Note that initial head values are supplied by your initial
-conditions.
+``heads ``, and then rerun your simulation by defining the flow field
+from the head files in ``heads `` at each output time. Note that initial
+head values are supplied by your initial conditions.
 
 There are a number of things to keep in mind when using this command:
 
@@ -20897,13 +20896,13 @@ contain all of the data files necessary to run the simulations. In the
 case of the **HydroGeoSphere** verification problems, the
 ``verification`` directory nested under the
 **HydroGeoSphere** installation directory
-(:math:`\mbox{C:\Program_Files\HydroGeoSphere/verification}` on Windows)
-contains one or more subdirectories for each verification problem. A
-partial list of its contents are shown here:
+(``C:\Program_Files\HydroGeoSphere/verification`` on Windows) contains
+one or more subdirectories for each verification problem. A partial list
+of its contents are shown here:
 
 ::
 
-       Directory of C:\Program_Files\HydroGeoSphere/verification
+       Directory of C:\Program\_Files/HydroGeoSphere/verification
 
        2021-03-31  02:36 PM    <DIR>          .
        2021-03-31  02:36 PM    <DIR>          ..
@@ -20962,11 +20961,10 @@ point to the locations of the program executable files. If the path to
 an executable is not provided via one of these commands, then the
 default location for that executable is used. In Windows, executables
 are found by searching the default search path, which should contain the
-installation directory :math:`\mbox{C:\Program_Files\HydroGeoSphere}`
-following a typical program installation. Problem data are to be found
-in subdirectories of the directory where the ``.hsbatch`` file is
-located, in this case
-:math:`\mbox{C:\Program_Files\HydroGeoSphere/verification}`.
+installation directory ``C:\Program_Files\HydroGeoSphere`` following a
+typical program installation. Problem data are to be found in
+subdirectories of the directory where the ``.hsbatch`` file is located,
+in this case ``C:\Program_Files\HydroGeoSphere/verification``.
 
 The instruction Batch directory list is followed by a list of
 subdirectories, one per line, that contain the problem data to be run in
@@ -20977,8 +20975,8 @@ create a file called ``batch.pfx`` that consists of a single line
 containing the problem prefix, in each problem directory.
 
 To run **HSBATCH** for this example, open a command prompt, change
-directories to
-:math:`\mbox{C:\Program_Files\HydroGeoSphere/verification}`, and type:
+directories to ``C:\Program_Files\HydroGeoSphere/verification``, and
+type:
 
 ::
 
@@ -21006,17 +21004,17 @@ to handle these types of situations:
        ! paths must be relative to the location of the .hsbatch file.
 
        grok executable path and name
-       C:\Program_Files\HydroGeoSphere\grok.exe
+       C:\Program\_Files/HydroGeoSphere\grok.exe
 
        hydrogeosphere executable path and name
-       C:\Program_Files\HydroGeoSphere\phgs.exe
+       C:\Program\_Files/HydroGeoSphere\phgs.exe
    		
        hsplot executable path and name
-       C:\Program_Files\HydroGeoSphere\hsplot.exe
+       C:\Program\_Files/HydroGeoSphere\hsplot.exe
 
        ! First run a verification problem
        change directory
-       C:\Program_Files\HydroGeoSphere/verification
+       C:\Program\_Files/HydroGeoSphere/verification
 
        batch directory list
        pm_cd
@@ -21024,7 +21022,7 @@ to handle these types of situations:
 
        ! Now run an illustrative problem
        change directory
-       C:\Program_Files\HydroGeoSphere\illustration
+       C:\Program\_Files/HydroGeoSphere\illustration
 
        batch directory list
        reactive_iron_barrier_in_fractures
