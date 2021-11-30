@@ -357,16 +357,12 @@ Example instruction text
 
 | 
 
-
-
 #. **xlen, nbx** Domain length [L] and number of blocks in the
    :math:`x`-direction.
 
 #. **xi(i), i=1,nx** Nodal :math:`x`-coordinates [L].
 
 #. **inode(i)...end** Node numbers.
-
-
 
 --------------
 
@@ -888,13 +884,9 @@ Gravitational acceleration
 
 | 
 
-
-
 #. | **grav** Gravitational acceleration constant [L T:math:`^{-2}`],
      :math:`g` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -909,13 +901,9 @@ Reference fluid density
 
 | 
 
-
-
 #. | **rho** Fluid density [M L:math:`^{-3}`], :math:`\rho` in
      Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -930,13 +918,9 @@ Reference fluid viscosity
 
 | 
 
-
-
 #. | **visc** Fluid viscosity [M L:math:`^{-1}` T:math:`^{-1}`],
      :math:`\mu` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -951,13 +935,9 @@ Fluid compressibility
 
 | 
 
-
-
 #. | **wcomp** Fluid compressibility [M:math:`^{-1}` L T\ :math:`^2`],
      :math:`\alpha_w` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -988,13 +968,9 @@ Fluid surface tension
 
 | 
 
-
-
 #. | **tensn** Fluid surface tension [M T:math:`^{-2}`], :math:`\chi` in
      Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -1142,8 +1118,6 @@ Generate uniform blocks
 
 | 
 
-
-
 #. **xlen, nbx, (x0)** Domain length [L] and number of blocks in the
    :math:`x`-direction, the optional origin in the :math:`x`-direction
    [L] (zero by default).
@@ -1193,8 +1167,6 @@ Generate variable blocks
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **nx** Number of nodes in the :math:`x`-direction.
 
@@ -1287,8 +1259,6 @@ Grade x
 ^^^^^^^
 
 | 
-
-
 
 #. **x1, x2, dxstart, xfac, dxmax** Starting :math:`x`-coordinate [L],
    ending :math:`x`-coordinate [L], starting element size, element size
@@ -1390,8 +1360,6 @@ Rfgen driver
 
 | 
 
-
-
 #. **rfgfile** Name of the file that contains the random fracture grid
    and fracture generation information.
 
@@ -1409,8 +1377,6 @@ Grid information
 ^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **x1, x2** :math:`x`-range [L] of the domain.
 
@@ -1482,8 +1448,6 @@ Fracture information
 
 | 
 
-
-
 #. **seed** Seed for the random number generator. If this number is
    changed, a new random number sequence is produced, which in turn
    causes new realizations of fracture location, length and aperture to
@@ -1521,8 +1485,6 @@ Fracture location distribution x-axis
 
 | 
 
-
-
 #. **type** An integer value indicating the probability distribution
    used to generate the variable fracture locations in the
    :math:`x`-direction. Acceptable values are:
@@ -1548,24 +1510,24 @@ The following instructions use the same input data structure as Fracture
 location distribution x-axis except they are applied to the :math:`y`-
 and :math:`z`-directions:
 
-Fracture location distribution y-axis
-Fracture location distribution z-axis
+| Fracture location distribution y-axis
+| Fracture location distribution z-axis
 
 The following instructions use the same input data structure as Fracture
 location distribution x-axis to generate fracture lengths in the three
 principal directions:
 
-Fracture length distribution x-axis
-Fracture length distribution y-axis
-Fracture length distribution z-axis
+| Fracture length distribution x-axis
+| Fracture length distribution y-axis
+| Fracture length distribution z-axis
 
 The following instructions use the same input data structure as Fracture
 location distribution x-axis to generate fracture apertures in the three
 principal orientations:
 
-XY fracture aperture distribution
-XZ fracture aperture distribution
-YZ fracture aperture distribution
+| XY fracture aperture distribution
+| XZ fracture aperture distribution
+| YZ fracture aperture distribution
 
 Note that when generating fracture apertures from the normal
 distribution, random samples are truncated to the interval
@@ -1582,12 +1544,8 @@ Vertical fracture from top
 
 | 
 
-
-
 #. **vertical_frac_top** Logical value (T/F), which if true, ensures
    that all vertical fractures start from the top of the domain.
-
-
 
 --------------
 
@@ -1601,8 +1559,6 @@ Zone fractures how
 ^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **zone_rfgen_fracs** Controls how fracture zone numbers are assigned.
    Acceptable values are:
@@ -1666,8 +1622,6 @@ Generate uniform rectangles
 
 | 
 
-
-
 #. **xlen, nbx, (x0)** Domain length [L] and number of rectangles in the
    :math:`x`-direction, the optional origin in the :math:`x`-direction
    [L] (zero by default).
@@ -1690,9 +1644,9 @@ except that we drop the :math:`z`-axis parameters.
 --------------
 
  
-''''''
 
 | 
+
 
 #. **nx** Number of nodes in the :math:`x`-direction.
 
@@ -1728,11 +1682,12 @@ T
 
 --------------
 
+.. _section-1:
+
  
 
 | 
 | ``Scope .grok``
-
 
 #. **xlen, nbx, (x0)** Domain length [L] and number of rectangles in the
    :math:`x`-direction, the optional origin in the :math:`x`-direction
@@ -1751,12 +1706,12 @@ except that we drop the :math:`z`-dependence.
 
 --------------
 
-.. _in-1:
+.. _section-2:
 
  
-''''''
 
 | 
+
 
 #. **gmsfile** Filename of the 2-D GMS formatted mesh.
 
@@ -1769,12 +1724,12 @@ except that we drop the :math:`z`-dependence.
 
 --------------
 
-.. _in-2:
+.. _section-3:
 
  
-''''''
 
 | 
+
 
 #. **ah2_mesh** Filename of the 2-D ``.ah2`` mesh exported from
    AlgoMesh.
@@ -1808,8 +1763,6 @@ Reduce 2d grid, boundary file
 
 | 
 
-
-
 #. **polygon_file** Filename of a text file that defines a polygon by
    the :math:`x`- and :math:`y`-coordinates of its vertices, one vertex
    per line of the file. Note that the number of lines in this file must
@@ -1836,6 +1789,7 @@ Read fractran 2d grid
 | 
 
 
+.. _sec:fractran_slice:
 
 #. **prefix** Prefix of the FRACTRAN files which contain the node
    coordinates, element incidences and element zone numbers for the 2-D
@@ -1860,8 +1814,6 @@ Remove rectangles with shapefile
 ''''''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **arcview_prefix** Prefix of the ArcView shapefile.
 
@@ -1913,8 +1865,6 @@ Raster to scl
 
 | 
 
-
-
 #. **arcview_filename** Name of the ArcView ASCII file.
 
 #. **bandwidth** Cell bandwidth used for averaging.
@@ -1936,8 +1886,6 @@ Raster to nprop
 
 | 
 
-
-
 #. **arcview_filename** Name of the ArcView ASCII file.
 
 #. **bandwidth** Cell bandwidth used for averaging.
@@ -1958,8 +1906,6 @@ Raster to element
 '''''''''''''''''
 
 | 
-
-
 
 #. **arcview_filename** Name of the ArcView ASCII file.
 
@@ -2039,12 +1985,12 @@ C
 
 --------------
 
-.. _in-3:
+.. _section-4:
 
  
-''''''
 
 | 
+
 
 #. **min_thick** Minimum thickness [L].
 
@@ -2095,11 +2041,7 @@ Elevation constant
 
 | 
 
-
-
 #. **elev** Elevation value [L].
-
-
 
 --------------
 
@@ -2114,14 +2056,10 @@ Elevation from raster file
 
 | 
 
-
-
 #. | **rasterfile** Name of the raster file containing the base
      elevation values. This is a string variable. The file should be
      formatted as outlined in Appendix :ref:  
    | .
-
-
 
 --------------
 
@@ -2131,13 +2069,12 @@ Elevation from raster file
 
 --------------
 
-.. _section-1:
+.. _section-5:
 
  
 
 | 
 | ``Scope .grok``
-
 
 #. **filename** Filename of GoCAD tsurf file, up to 120 characters. Note
    that the length units in this file must match the model’s length
@@ -2156,8 +2093,6 @@ Elevation from bilinear function in xy
 ''''''''''''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **xfrom, xto, yfrom, yto** :math:`x`-range [L] and :math:`y`-range
    [L].
@@ -2184,8 +2119,6 @@ Elevation from sine function in xy
 ''''''''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **xfrom, xto, yfrom, yto** :math:`x`-range [L] and :math:`y`-range
    [L].
@@ -2248,8 +2181,6 @@ Elevation from xz pairs
 
 | 
 
-
-
 #. **xval(i), zval(i)...end** List of :math:`xz`-pairs [L].
 
 Listed :math:`xz`-coordinate pairs are read until an End instruction is
@@ -2272,13 +2203,9 @@ Elevation from file
 
 | 
 
-
-
 #. **ascii_elevation_filename** Name of the ASCII text file containing
    the elevation [L] values. The file should contain one elevation value
    per line for each node in the surface mesh.
-
-
 
 --------------
 
@@ -2316,12 +2243,12 @@ Manipulating the 3-D Grid
 
 --------------
 
-.. _in-4:
+.. _section-6:
 
  
-^^^^^^
 
 | 
+
 
 #. **angle** Angle [deg] to rotate grid.
 
@@ -2332,12 +2259,12 @@ a positive angle produces a counterclockwise rotation.
 
 --------------
 
-.. _in-5:
+.. _section-7:
 
  
-^^^^^^
 
 | 
+
 
 #. **angle** Angle [deg] to rotate grid.
 
@@ -2352,8 +2279,6 @@ Adapt grid to fractures
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **adapt_g2f_mode** An integer value indicating how the grid is
    adapted to inclined fractures.
@@ -2538,8 +2463,6 @@ Choose segments line
 
 | 
 
-
-
 #. **x1, y1, z1** :math:`xyz`-coordinates [L] of the first end point of
    the line.
 
@@ -2564,8 +2487,6 @@ Choose segments polyline
 
 | 
 
-
-
 #. **npts** The number of points defining the polyline, which should be
    entered in order from one end of the polyline to the other.
 
@@ -2586,12 +2507,12 @@ nodes.
 
 --------------
 
-.. _in-6:
+.. _section-8:
 
  
-^^^^^^
 
 | 
+
 
 #. **nsheet** The sheet number.
 
@@ -2616,8 +2537,6 @@ Choose segments am node list
 
 | 
 
-
-
 #. **npts** The number of points defining the polyline, which should be
    entered in order from one end of the polyline to the other.
 
@@ -2639,8 +2558,6 @@ Choose segments xy between sheets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **x1, y1** :math:`xy`-coordinates [L] to define a vertical segment.
 
@@ -2721,8 +2638,6 @@ Choose faces x plane
 
 | 
 
-
-
 #. **x1** :math:`x`-coordinate [L] of the plane.
 
 #. **ptol** Distance [L] from the plane.
@@ -2770,13 +2685,12 @@ As above but for the :math:`z`-plane.
 
 --------------
 
-.. _section-2:
+.. _section-9:
 
  
 
 | 
 | ``Scope .grok``
-
 
 #. **x1, y1, z1** :math:`xyz`-coordinates [L] of a point on the disk.
 
@@ -2800,8 +2714,6 @@ Choose faces 3pt plane
 ^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **x1, y1, z1** :math:`xyz`-coordinates [L] of the first point.
 
@@ -2828,8 +2740,6 @@ Choose faces 3pt plane bounded
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **x1, y1, z1** :math:`xyz`-coordinates [L] of the first point.
 
@@ -2862,8 +2772,6 @@ Choose faces block
 
 | 
 
-
-
 #. **x1, x2** :math:`x`-range [L] of the block.
 
 #. **y1, y2** :math:`y`-range [L] of the block.
@@ -2887,8 +2795,6 @@ Choose faces block by layer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **x1, x2** :math:`x`-range [L] of the block.
 
@@ -2928,8 +2834,6 @@ Choose faces sheet
 
 | 
 
-
-
 #. **nsheet_bot,nsheet_top** Bottom and top sheet numbers.
 
 Faces which are between the two specified sheets (inclusive) and are not
@@ -2963,8 +2867,6 @@ Choose faces top block
 
 | 
 
-
-
 #. **x1, x2** :math:`x`-range [L] of the block.
 
 #. **y1, y2** :math:`y`-range [L] of the block.
@@ -2988,8 +2890,6 @@ Choose faces top from raster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **filename** File path to raster file.
 
@@ -3099,8 +2999,6 @@ Choose faces top am
 
 | 
 
-
-
 #. **filename** Name of the AlgoMesh chosen elements file
    *am_prefix*\ ``.echos.``\ *description*.
 
@@ -3119,8 +3017,6 @@ Choose faces top am common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **filename1** Name of the AlgoMesh chosen elements file
    *am_prefix*\ ``.echos.``\ *description1*.
@@ -3143,8 +3039,6 @@ Choose faces top am exclude
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **filename1** Name of the AlgoMesh chosen elements file
    *am_prefix*\ ``.echos.``\ *description1*.
@@ -3185,8 +3079,6 @@ Choose faces am
 
 | 
 
-
-
 #. **filename** Name of the AlgoMesh chosen elements file
    *am_prefix*\ ``.echos.``\ *description*.
 
@@ -3208,8 +3100,6 @@ Choose faces vertical from am nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **filename** Name of the AlgoMesh chosen nodes file
    *am_prefix*\ ``.nchos.``\ *description*.
@@ -3234,12 +3124,12 @@ nodes are chosen.
 
 --------------
 
-.. _in-7:
+.. _section-10:
 
  
-^^^^^^
 
 | 
+
 
 #. **isheet1, isheet2** Bottom and top sheet numbers (inclusive),
    respectively.
@@ -3265,8 +3155,6 @@ Choose horizontal faces on layer
 
 | 
 
-
-
 #. **nlayer** Element layer number.
 
 #. **x1, x2** The :math:`x`-range [L] of the block.
@@ -3291,8 +3179,6 @@ Choose faces stairway
 ^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **x1, y1, z1** :math:`xyz`-coordinates [L] of the first point.
 
@@ -3320,8 +3206,6 @@ Choose fracture faces block
 
 | 
 
-
-
 #. **x1, x2** :math:`x`-range [L] of the block.
 
 #. **y1, y2** :math:`y`-range [L] of the block.
@@ -3342,12 +3226,12 @@ respectively.
 
 --------------
 
-.. _in-8:
+.. _section-11:
 
  
-^^^^^^
 
 | 
+
 
 #. **n1, n2, n3, n4** Node numbers of the face to be chosen.
 
@@ -3359,12 +3243,12 @@ Note that in order to select a triangular face simply set
 
 --------------
 
-.. _in-9:
+.. _section-12:
 
  
-^^^^^^
 
 | 
+
 
 #. **n1(i), n2(i), n3(i), n4(i)...end** Node numbers for each face to be
    chosen.
@@ -3397,8 +3281,6 @@ Choose faces horizontal circle
 
 | 
 
-
-
 #. **x_mid, y_mid, z_mid** :math:`xy`-coordinates [L] of the centre of
    the circle and elevation of the circle.
 
@@ -3424,8 +3306,6 @@ Write chosen faces
 
 | 
 
-
-
 #. **filename** Name of the file to which the chosen face information
    will be written.
 
@@ -3448,8 +3328,6 @@ Write chosen faces and host element numbers
 
 | 
 
-
-
 #. **filename** Name of the file to which the chosen face and host
    element information will be written.
 
@@ -3470,8 +3348,6 @@ Read chosen faces
 
 | 
 
-
-
 #. **filename** Name of the file from which the chosen face information
    will be read.
 
@@ -3490,7 +3366,7 @@ time.
 
 --------------
 
-.. _section-3:
+.. _section-13:
 
 ‘ 
 ^^
@@ -3549,8 +3425,6 @@ Choose faces 3pt inclined plane
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **nplane** Plane ID number, as defined above.
 
@@ -3872,7 +3746,7 @@ T
 
 --------------
 
-
+Defined transient flow
 
 #. **filename** File path to a porous media domain head input file, for
    example, *prefix*\ ``o.head_pm.``\ ``0001``, at most 256 characters.
@@ -3924,8 +3798,6 @@ There are a number of things to keep in mind when using this command:
 
 -  Not all output that is possible with a full simulation may be
    available.
-
-
 
 Finite-Difference Options
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -4015,8 +3887,6 @@ Level of fill
 
 | 
 
-
-
 #. **level** Level of fill.
 
 Assigns the level of fill to be preserved in level-based factorization,
@@ -4068,8 +3938,6 @@ Drop tolerance threshold
 
 | 
 
-
-
 #. **thres** Drop tolerance threshold.
 
 Assign a new drop tolerance threshold.
@@ -4090,8 +3958,6 @@ Solver acceleration technique
 '''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **iaccel** Type of acceleration to use.
 
@@ -4153,8 +4019,6 @@ Initial time
 
 | 
 
-
-
 #. **tinit** Initial time [T].
 
 Assigns a new value for the initial time, which defaults to zero. This
@@ -4174,8 +4038,6 @@ Initial timestep
 
 | 
 
-
-
 #. **val** Initial timestep size [T].
 
 Assigns a new value for the initial timestep, which defaults to 0.01
@@ -4194,8 +4056,6 @@ Maximum timestep
 
 | 
 
-
-
 #. **val** Maximum timestep size [T].
 
 Assigns a new value for the maximum timestep size, which defaults to
@@ -4209,12 +4069,12 @@ Assigns a new value for the maximum timestep size, which defaults to
 
 --------------
 
-.. _in-10:
+.. _section-14:
 
  
-^^^^^^
 
 | 
+
 
 #. **time(i), max_timestep(i)...end** Simulation time [T] and maximum
    timestep size [T] list.
@@ -4243,8 +4103,6 @@ Minimum timestep
 
 | 
 
-
-
 #. **val** Minimum timestep size [T].
 
 Assigns a new value for the minimum timestep size, which defaults to
@@ -4265,8 +4123,6 @@ Target times
 
 | 
 
-
-
 #. **target_time(i)...end** Target times [T] list.
 
 Listed times are added to the current set of target times.
@@ -4283,8 +4139,6 @@ Generate target times
 ^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **tstart** Start time [T].
 
@@ -4314,8 +4168,6 @@ Output times
 
 | 
 
-
-
 #. **output_time(i)...end** Output time [T] list.
 
 Listed times are added to the current set of output times (i.e. times
@@ -4334,8 +4186,6 @@ Auto save on
 ^^^^^^^^^^^^
 
 | 
-
-
 
 #. **asv_interval** Time interval in seconds for auto-saving restart
    files.
@@ -4371,12 +4221,8 @@ Head control
 
 | 
 
-
-
 #. **dhead_allowed** Maximum allowed absolute change in nodal head [L]
    during any time step.
-
-
 
 --------------
 
@@ -4391,12 +4237,8 @@ Water depth control
 
 | 
 
-
-
 #. **ddepth_allowed** Maximum allowed absolute change in nodal surface
    water depth [L] during any time step.
-
-
 
 --------------
 
@@ -4411,12 +4253,8 @@ Saturation control
 
 | 
 
-
-
 #. **dsat_allowed** Maximum allowed absolute change in nodal saturation
    [-] during any time step.
-
-
 
 --------------
 
@@ -4431,12 +4269,8 @@ Newton iteration control
 
 | 
 
-
-
 #. **nnri_allowed** Maximum allowed number of NewtonRaphson iterations
    during any time step.
-
-
 
 --------------
 
@@ -4451,12 +4285,8 @@ DDF Picard iteration control
 
 | 
 
-
-
 #. **npicard_allowed** Maximum allowed number of density-flow Picard
    iterations during any time step.
-
-
 
 --------------
 
@@ -4471,12 +4301,8 @@ Concentration control
 
 | 
 
-
-
 #. **dconc_allowed** Maximum allowed absolute change in nodal
    concentration [M L:math:`^{-3}`] during any time step.
-
-
 
 --------------
 
@@ -4491,14 +4317,10 @@ Concentration control, multi-species
 
 | 
 
-
-
 #. **dconc_allowed(i)** Maximum allowed absolute change in nodal
    concentration [M L:math:`^{-3}`] for the :math:`i`\ th species during
    any time step. This command needs to be repeated, once per species,
    each on a separate line.
-
-
 
 --------------
 
@@ -4513,12 +4335,8 @@ Mass change control
 
 | 
 
-
-
 #. **dmass_change_allowed** Maximum allowed absolute change in mass [M]
    during any time step.
-
-
 
 --------------
 
@@ -4533,12 +4351,8 @@ Mass error control
 
 | 
 
-
-
 #. **dmass_error_allowed** Maximum allowed absolute mass error [M]
    during any time step.
-
-
 
 --------------
 
@@ -4560,8 +4374,6 @@ Maximum timestep multiplier
 
 | 
 
-
-
 #. **val** Maximum timestep multiplier [-].
 
 Assigns a new value for the maximum timestep multiplier, which defaults
@@ -4579,8 +4391,6 @@ Minimum timestep multiplier
 '''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **val** Minimum timestep multiplier [-].
 
@@ -4610,8 +4420,6 @@ Upstream weighting factor
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **upwfactor** Upstream weighting factor [-].
 
@@ -4666,13 +4474,9 @@ Upper limit
 
 | 
 
-
-
 #. | **switch_t** Upper limit [-] of the variable substitution approach,
      :math:`tol_f` in Equation :ref:  
    | . The default value is :math:`0.99`.
-
-
 
 --------------
 
@@ -4687,13 +4491,9 @@ Lower limit
 
 | 
 
-
-
 #. | **switch_f** Lower limit [-] of the variable substitution approach,
      :math:`tol_b` in Equation :ref:  
    | . The default value is :math:`0.89`.
-
-
 
 --------------
 
@@ -4716,8 +4516,6 @@ Newton maximum iterations
 
 | 
 
-
-
 #. **maxnewt** Maximum number of Newton iterations.
 
 Assigns a new value for the maximum number of Newton iterations, which
@@ -4738,8 +4536,6 @@ Newton minimum iterations
 
 | 
 
-
-
 #. **minnewt** Minimum number of Newton iterations.
 
 Assigns a new value for the minimum number of Newton iterations, which
@@ -4758,8 +4554,6 @@ Jacobian epsilon
 ''''''''''''''''
 
 | 
-
-
 
 #. **epsilon** Jacobian epsilon [L].
 
@@ -4782,8 +4576,6 @@ Newton absolute convergence criteria
 
 | 
 
-
-
 #. **delnewt** Newton absolute convergence tolerance [L].
 
 Assigns a new value for the Newton absolute convergence tolerance, which
@@ -4803,8 +4595,6 @@ Newton residual convergence criteria
 ''''''''''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **resnewt** Newton residual convergence tolerance
    [L:math:`^3` T:math:`^{-1}`].
@@ -4827,8 +4617,6 @@ Minimum relaxation factor for convergence
 
 | 
 
-
-
 #. **minrelfac_convergence** Minimum relaxation factor [-] to declare
    convergence.
 
@@ -4849,8 +4637,6 @@ Newton maximum update for head
 ''''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **NR_dhtol** Newton maximum update for head [L].
 
@@ -4885,8 +4671,6 @@ Newton maximum update for depth
 
 | 
 
-
-
 #. **NR_ddtol** Newton maximum update for depth [L].
 
 Assigns a new value for the Newton maximum update for water depth, which
@@ -4902,12 +4686,12 @@ depth.
 
 --------------
 
-.. _in-11:
+.. _section-15:
 
  
-''''''
 
 | 
+
 
 #. **NR_max_resnorm** Newton absolute maximum residual value
    [L:math:`^3` T:math:`^{-1}`].
@@ -4925,8 +4709,6 @@ Newton maximum residual increase
 ''''''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **NR_resnorm_fac** Newton maximum residual increase [-].
 
@@ -4979,12 +4761,12 @@ T
 
 --------------
 
-.. _in-12:
+.. _section-16:
 
  
-''''''
 
 | 
+
 
 #. **n_flow_check_tol** Nodal flow check tolerance [-].
 
@@ -5006,8 +4788,6 @@ Underrelaxation factor
 ''''''''''''''''''''''
 
 | 
-
-
 
 #. **under_rel** Underrelaxation factor [-].
 
@@ -5070,8 +4850,6 @@ Compute underrelaxation factor limit
 
 | 
 
-
-
 #. **dellim** Maximum computed underrelaxation factor [-].
 
 Assigns a new upper limit on the computed underrelaxation factor, which
@@ -5090,8 +4868,6 @@ Minimum relaxation factor allowed
 '''''''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **min_relfac_allowed** Minimum omputed underrelaxation factor [-].
 
@@ -5172,8 +4948,6 @@ Transport time weighting
 
 | 
 
-
-
 #. **twc** Time-weighting factor [-] for the transport solution.
 
 Assigns a new value for the time-weighting factor for the transport
@@ -5194,8 +4968,6 @@ Peclet number
 ^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **pectol** Peclet number [-].
 
@@ -5241,8 +5013,6 @@ Courant number
 
 | 
 
-
-
 #. **courtol** Courant number [-].
 
 Assigns a new value for the Courant number, which defaults to
@@ -5267,12 +5037,12 @@ generation of warning messages.
 
 --------------
 
-.. _in-13:
+.. _section-17:
 
  
-^^^^^^
 
 | 
+
 
 #. **restolc** Transport solver convergence tolerance
    [M L:math:`^{-3}` T:math:`^{-1}`].
@@ -5299,8 +5069,6 @@ Transport solver detail
 
 | 
 
-
-
 #. **isolv_infoc** Transport solver detail level.
 
 Assigns a new value for the transport solver detail level, which
@@ -5321,8 +5089,6 @@ Transport solver maximum iterations
 
 | 
 
-
-
 #. **maxtit** Maximum number of transport solver iterations.
 
 Assigns a new value for the maximum number of transport solver
@@ -5340,8 +5106,6 @@ Upstream weighting of velocities
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **almax, btmax, gammax** Upstream weighting factors [-] in the
    :math:`x`-, :math:`y`-, and :math:`z`-directions, respectively.
@@ -5375,7 +5139,7 @@ Flux limiter for transport
 
 :math:`\bullet \bullet \bullet`
 
-
+Iteration parameters flux limiter
 
 #. **maxiter_flim, resmax_flim, delmax_flim** Maximum number of
    iterations, absolute maximum residual convergence tolerance
@@ -5414,13 +5178,9 @@ Detection threshold concentration
 
 | 
 
-
-
 #. **detection_threshold_conc** Detection threshold concentration
    [M L:math:`^{-3}`]. This instruction sets the value that is used to
    control the behaviour of the next two instructions.
-
-
 
 --------------
 
@@ -5470,12 +5230,12 @@ the solution of the weakly nonlinear density-dependent flow problem.
 
 --------------
 
-.. _in-14:
+.. _section-18:
 
  
-^^^^^^
 
 | 
+
 
 #. **head_tol** Convergence tolerance [L] for the maximum absolute
    difference in head for the Picard iteration. Default value of
@@ -5580,8 +5340,6 @@ linear interpolation. An example file is provided below.
        40  0.25
        50  0.1
 
-
-
 --------------
 
 Heat Transfer
@@ -5618,8 +5376,6 @@ Thermal conductivity of air
 
 | 
 
-
-
 #. **k_air** Thermal conductivity [W m:math:`^{-1}` K:math:`^{-1}`] of
    the air phase.
 
@@ -5637,8 +5393,6 @@ Specific heat capacity of air
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **c_air** Specific heat capacity [J kg:math:`^{-1}` K:math:`^{-1}`]
    of the air phase.
@@ -5658,8 +5412,6 @@ Density of air
 
 | 
 
-
-
 #. **rho_air** Density [kg m:math:`^{-3}`] of the air phase.
 
 Assigns a uniform value to the density of air.
@@ -5676,8 +5428,6 @@ Thermal conductivity of water
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **k_l** Thermal conductivity [W m:math:`^{-1}` K:math:`^{-1}`] of the
    liquid phase.
@@ -5699,8 +5449,6 @@ Specific heat capacity of water
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **c_l** Specific heat capacity [J kg:math:`^{-1}` K:math:`^{-1}`] of
    the liquid phase.
@@ -5742,8 +5490,6 @@ Initial temperature profile
 
 | 
 
-
-
 #. **temp_top** Temperature [ °C] at the top of the domain.
 
 #. **temp_grad** Prevailing geothermal gradient [L:math:`^{-1}` K].
@@ -5762,12 +5508,12 @@ boundary condition:
 
 --------------
 
-.. _in-15:
+.. _section-19:
 
  
-^^^^^^
 
 | 
+
 
 #. **npanel** Number of panels in the time-variable, zero-order source
    function.
@@ -5797,8 +5543,6 @@ species the input format is
            ton2 toff2 prate21 prate22
            ton3 toff3 prate31 prate32
 
-
-
 --------------
 
 --------------
@@ -5807,8 +5551,6 @@ Exponential zero order source
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **heat_q_zero** Heat production [M L:math:`^{-1}` T:math:`^{-3}`] at
    time :math:`t = 0`.
@@ -5876,8 +5618,6 @@ Make element inactive using shapefile
 
 | 
 
-
-
 #. **arcview_prefix** Prefix of the ArcView shapefile.
 
 #. | **unproject_file** Logical value (T/F), which if true, causes
@@ -5895,8 +5635,6 @@ Make element inactive using shapefile
    inactive. Otherwise, elements located inside the area will become
    inactive.
 
-
-
 --------------
 
 | 
@@ -5909,8 +5647,6 @@ Write inactive elements to file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **inactive_file** Name of the file to which the inactive element
    information will be written.
@@ -5933,8 +5669,6 @@ Read inactive elements from file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **inactive_file** Name of the file from which the inactive element
    information will be read.
@@ -5988,7 +5722,7 @@ to ``F`` for false.
 You can control the frequency at which restart data is generated via the
 following **grok** command.
 
-
+Restart file save interval
 
 #. **restart_interval** Time interval in seconds for saving restart
    information.
@@ -6040,12 +5774,12 @@ Surface Flow
 
 --------------
 
-.. _in-16:
+.. _section-20:
 
  
-^^^^^^
 
 | 
+
 
 #. **depth** Initial water depth [L].
 
@@ -6056,12 +5790,12 @@ value.
 
 --------------
 
-.. _in-17:
+.. _section-21:
 
  
-^^^^^^
 
 | 
+
 
 #. **filename** Name of the ASCII-formatted nodal properties file
    *prefix*\ ``.ascii_nprop.``\ *description* that contains the initial
@@ -6093,12 +5827,12 @@ are included.
 
 --------------
 
-.. _in-18:
+.. _section-22:
 
  
-^^^^^^
 
 | 
+
 
 #. **conc(i), i=1,nspeciesmob** Initial concentration [M L:math:`^{-3}`]
    for each solute.
@@ -6111,12 +5845,12 @@ are included.
 
 --------------
 
-.. _in-19:
+.. _section-23:
 
  
-^^^^^^
 
 | 
+
 
 #. **filename** Name of the file that contains the initial concentration
    [M L:math:`^{-3}`] data.
@@ -6139,18 +5873,16 @@ are included.
        c_22
        c_32
 
-
-
 --------------
 
 --------------
 
-.. _in-20:
+.. _section-24:
 
  
-^^^^^^
 
 | 
+
 
 #. **filename(i), i=1,nspeciesmob** Name of the file that contains the
    initial concentration [M L:math:`^{-3}`] data for each solute.
@@ -6168,12 +5900,12 @@ are included.
 
 --------------
 
-.. _in-21:
+.. _section-25:
 
  
-^^^^^^
 
 | 
+
 
 #. **max_dist** Maximum search distance [L].
 
@@ -6195,12 +5927,12 @@ are included.
 
 --------------
 
-.. _in-22:
+.. _section-26:
 
  
-^^^^^^
 
 | 
+
 
 #. **z1, conc1(i), i=1,nspeciesmob** First elevation [L] and
    concentration [M L:math:`^{-3}`] for each solute.
@@ -6231,12 +5963,12 @@ F
 
 --------------
 
-.. _in-23:
+.. _section-27:
 
  
-^^^^^^
 
 | 
+
 
 #. **izone(i), czone(i)...end** Zone number and initial concentration
    [M L:math:`^{-3}`].
@@ -6252,12 +5984,12 @@ concentration value is assigned.
 
 --------------
 
-.. _in-24:
+.. _section-28:
 
  
-^^^^^^
 
 | 
+
 
 #. **filename** Name of the file that contains the initial immobile zone
    concentration [M L:math:`^{-3}`] data.
@@ -6275,12 +6007,12 @@ initial conditions.
 
 --------------
 
-.. _in-25:
+.. _section-29:
 
  
-^^^^^^
 
 | 
+
 
 #. **conc** Initial concentration [M L:math:`^{-3}`].
 
@@ -6291,12 +6023,12 @@ Porous media nodes are assigned the immobile zone initial concentration
 
 --------------
 
-.. _in-26:
+.. _section-30:
 
  
-^^^^^^
 
 | 
+
 
 #. **filename** Name of the file that contains the initial immobile zone
    concentration [M L:math:`^{-3}`] data.
@@ -6311,12 +6043,12 @@ active domain. Each line may contain one or more values.
 
 --------------
 
-.. _in-27:
+.. _section-31:
 
  
-^^^^^^
 
 | 
+
 
 #. **filename** Name of the file that contains the concentration
    [M L:math:`^{-3}`] results computed in a previous transport solution.
@@ -6413,8 +6145,6 @@ D
      end
    	
 
-
-
 --------------
 
 --------------
@@ -6438,12 +6168,12 @@ temperature profile are composed of the following subcommands:
 
 --------------
 
-.. _in-28:
+.. _section-32:
 
  
-^^^^^^
 
 | 
+
 
 #. **time(i), temp(i)...end** Time [T] and surface temperature [ °C]
    value list.
@@ -6456,44 +6186,40 @@ applied until the end of the simulation.
 
 --------------
 
-.. _in-29:
+.. _section-33:
 
  
-^^^^^^
 
 | 
+
 
 #. **thermal_diff** Thermal diffusivity [L:math:`^2` T:math:`^{-1}`].
    Default value of :math:`2\times 10^{-7}` [m:math:`^2`
    s\ :math:`^{-1}`].
 
-
-
 --------------
 
 --------------
 
-.. _in-30:
+.. _section-34:
 
  
-^^^^^^
 
 | 
+
 
 #. **background_temp** Background temperature [ °C].
 
-
-
 --------------
 
 --------------
 
-.. _in-31:
+.. _section-35:
 
  
-^^^^^^
 
 | 
+
 
 #. **max_depth** Maximum depth [L] for which the temperature profile is
    defined.
@@ -6505,12 +6231,12 @@ equal to the temperature at the maximum depth.
 
 --------------
 
-.. _in-32:
+.. _section-36:
 
  
-^^^^^^
 
 | 
+
 
 #. **tol** Convergence tolerance [T:math:`^{-1/2}`  °C]. Default value
    of 0.01 [s:math:`^{-1/2}`  °C].
@@ -6529,12 +6255,12 @@ where :math:`n = 2^k n_0` for :math:`k = 0,1,2,\ldots`.
 
 --------------
 
-.. _in-33:
+.. _section-37:
 
  
-^^^^^^
 
 | 
+
 
 #. **maxits** Maximum number of iterations for integration convergence.
    Default value of 20.
@@ -6547,12 +6273,12 @@ message to the screen and the *prefix*\ ``o.lst`` file.
 
 --------------
 
-.. _in-34:
+.. _section-38:
 
  
-^^^^^^
 
 | 
+
 
 #. | **memory_length** Memory length for convolution integral [T].
      Default value of
@@ -6572,12 +6298,12 @@ being simulated, then an appropriate memory length would be 12 hours.
 
 --------------
 
-.. _in-35:
+.. _section-39:
 
  
-^^^^^^
 
 | 
+
 
 #. **num** Number of values in depth-dependent temperature profile.
    Default value of 500.
@@ -6638,12 +6364,12 @@ The available instructions are:
 
 --------------
 
-.. _in-36:
+.. _section-40:
 
  
-''''''
 
 | 
+
 
 #. **spname** Solute name.
 
@@ -6658,8 +6384,6 @@ Free-solution diffusion coefficient
 '''''''''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **diffrac** Free-solution diffusion coefficient
    [L:math:`^2` T:math:`^{-1}`].
@@ -6681,8 +6405,6 @@ Parents
 '''''''
 
 | 
-
-
 
 #. **npa** Number of parent species for the current species.
 
@@ -6709,8 +6431,6 @@ Decay constant
 
 | 
 
-
-
 #. **clambda** First-order decay constant [T:math:`^{-1}`].
 
 | Assigns a uniform value for the solute first-order decay constant,
@@ -6731,8 +6451,6 @@ Zoned decay constant
 
 | 
 
-
-
 #. **clambda(j), j=1,nzones** First-order decay constant
    [T:math:`^{-1}`] for each porous media zone **j**.
 
@@ -6749,12 +6467,12 @@ Zoned decay constant
 
 --------------
 
-.. _in-37:
+.. _section-41:
 
  
-''''''
 
 | 
+
 
 #. **coeff** Nonlinear decay coefficient :math:`\alpha`
    [T:math:`^{-1}`].
@@ -6781,12 +6499,12 @@ Zoned decay constant
 
 --------------
 
-.. _in-38:
+.. _section-42:
 
  
-''''''
 
 | 
+
 
 #. **coeff(j), rsat(j), shape(j), j=1,nzones** Nonlinear decay
    coefficient :math:`\alpha_j` [T:math:`^{-1}`], reference saturation
@@ -6812,12 +6530,12 @@ Zoned decay constant
 
 --------------
 
-.. _in-39:
+.. _section-43:
 
  
-''''''
 
 | 
+
 
 #. **ref_coeff** Decay coefficient at reference temperature
    :math:`\alpha` [T:math:`^{-1}`].
@@ -6849,12 +6567,12 @@ Zoned decay constant
 
 --------------
 
-.. _in-40:
+.. _section-44:
 
  
-''''''
 
 | 
+
 
 #. **ref_coeff(j), j=1,nzones** Decay coefficient at reference
    temperature :math:`\alpha_j` [T:math:`^{-1}`] for each porous medium
@@ -6892,8 +6610,6 @@ Distribution coefficient
 
 | 
 
-
-
 #. **dkd** Distribution coefficient [M:math:`^{-1}` L:math:`^3`].
 
 | Assigns a uniform value for the solute distribution coefficient,
@@ -6914,8 +6630,6 @@ Zoned distribution coefficient
 
 | 
 
-
-
 #. **dkd(j), j=1,nzones** Distribution coefficient
    [M:math:`^{-1}` L:math:`^3`] for each porous media zone **j**.
 
@@ -6932,12 +6646,12 @@ Zoned distribution coefficient
 
 --------------
 
-.. _in-41:
+.. _section-45:
 
  
-''''''
 
 | 
+
 
 #. **coeff** Freundlich adsorption capacity :math:`K_F`
    [M:math:`^{-1}` L:math:`^3`].
@@ -6968,12 +6682,12 @@ Zoned distribution coefficient
 
 --------------
 
-.. _in-42:
+.. _section-46:
 
  
-''''''
 
 | 
+
 
 #. **coeff(j), rconc(j), expon(j), j=1,nzones** Freundlich adsorption
    capacity :math:`K_{F\!,j}` [M:math:`^{-1}` L:math:`^3`], reference
@@ -7003,12 +6717,12 @@ Zoned distribution coefficient
 
 --------------
 
-.. _in-43:
+.. _section-47:
 
  
-''''''
 
 | 
+
 
 #. **partition_constant** The fraction of solute in the transpiration
    stream relative to the full stream (value between 0 and 1) in the
@@ -7028,8 +6742,6 @@ Dual decay constant
 '''''''''''''''''''
 
 | 
-
-
 
 #. **clambda** First-order decay constant [T:math:`^{-1}`].
 
@@ -7051,8 +6763,6 @@ Zoned dual decay constant
 
 | 
 
-
-
 #. **clambda(j), j=1,nzones** First-order decay constant
    [T:math:`^{-1}`] for each dual continua zone **j**.
 
@@ -7068,12 +6778,12 @@ Zoned dual decay constant
 
 --------------
 
-.. _in-44:
+.. _section-48:
 
  
-''''''
 
 | 
+
 
 #. **coeff** Nonlinear decay coefficient :math:`\alpha`
    [T:math:`^{-1}`].
@@ -7100,12 +6810,12 @@ Zoned dual decay constant
 
 --------------
 
-.. _in-45:
+.. _section-49:
 
  
-''''''
 
 | 
+
 
 #. **coeff(j), shape(j), j=1,nzones** Nonlinear decay coefficient
    :math:`\alpha_j` [T:math:`^{-1}`], reference saturation
@@ -7131,12 +6841,12 @@ Zoned dual decay constant
 
 --------------
 
-.. _in-46:
+.. _section-50:
 
  
-''''''
 
 | 
+
 
 #. **ref_coeff** Decay coefficient at reference temperature
    :math:`\alpha` [T:math:`^{-1}`].
@@ -7168,12 +6878,12 @@ Zoned dual decay constant
 
 --------------
 
-.. _in-47:
+.. _section-51:
 
  
-''''''
 
 | 
+
 
 #. **ref_coeff(j), j=1,nzones** Decay coefficient at reference
    temperature :math:`\alpha_j` [T:math:`^{-1}`] for each dual continua
@@ -7211,8 +6921,6 @@ Dual distribution coefficient
 
 | 
 
-
-
 #. **dkd** Distribution coefficient [M:math:`^{-1}` L:math:`^3`].
 
 | Assigns a uniform value for the solute distribution coefficient,
@@ -7233,8 +6941,6 @@ Zoned dual distribution coefficient
 
 | 
 
-
-
 #. **dkd(j), j=1,nzones** Distribution coefficient
    [M:math:`^{-1}` L:math:`^3`] for each dual continua zone **j**.
 
@@ -7251,12 +6957,12 @@ Zoned dual distribution coefficient
 
 --------------
 
-.. _in-48:
+.. _section-52:
 
  
-''''''
 
 | 
+
 
 #. **coeff** Freundlich adsorption capacity :math:`K_F`
    [M:math:`^{-1}` L:math:`^3`].
@@ -7288,12 +6994,12 @@ Zoned dual distribution coefficient
 
 --------------
 
-.. _in-49:
+.. _section-53:
 
  
-''''''
 
 | 
+
 
 #. **coeff(j), rconc(j), expon(j), j=1,nzones** Freundlich adsorption
    capacity :math:`K_{F\!,j}` [M:math:`^{-1}` L:math:`^3`], reference
@@ -7330,8 +7036,6 @@ Fracture decay constant
 
 | 
 
-
-
 #. **clambda_f** First-order decay constant [T:math:`^{-1}`].
 
 | Assigns a uniform value for the solute first-order decay constant,
@@ -7351,8 +7055,6 @@ Zoned fracture decay constant
 '''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **clambda_f(j), j=1,nzones** First-order decay constant
    [T:math:`^{-1}`] for each discrete fracture zone **j**.
@@ -7375,8 +7077,6 @@ Fracture retardation factor
 
 | 
 
-
-
 #. **rfrac** Fracture retardation factor [-].
 
 | Assigns a uniform value for the fracture retardation factor,
@@ -7396,8 +7096,6 @@ Zoned fracture retardation factor
 '''''''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **rfrac(j), j=1,nzones** Retardation factor [-] for each discrete
    fracture zone **j**.
@@ -7422,8 +7120,6 @@ Overland decay constant
 
 | 
 
-
-
 #. **clambda_o** First-order decay constant [T:math:`^{-1}`].
 
 | Assigns a uniform value for the solute first-order decay constant,
@@ -7443,8 +7139,6 @@ Zoned overland decay constant
 '''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **clambda_o(j), j=1,nzones** First-order decay constant
    [T:math:`^{-1}`] for each overland flow zone **j**.
@@ -7467,8 +7161,6 @@ Overland retardation factor
 
 | 
 
-
-
 #. **rolf** Overland flow retardation factor [-].
 
 | Assigns a uniform value for the overland retardation factor,
@@ -7488,8 +7180,6 @@ Zoned overland retardation factor
 '''''''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **rfrac(j), j=1,nzones** Retardation factor [-] for each overland
    flow zone **j**.
@@ -7526,15 +7216,15 @@ T
 The following instructions can be used likewise to identify other
 species:
 
-Potassium species
-Calcium species
-Magnesium species
-Chloride species
-Sulphate species
-Hydrogencarbonate species
-Carbonate species
-Salt mass fraction
-Temperature species
+| Potassium species
+| Calcium species
+| Magnesium species
+| Chloride species
+| Sulphate species
+| Hydrogencarbonate species
+| Carbonate species
+| Salt mass fraction
+| Temperature species
 
 By default, no species impacts fluid density or viscosity. This default
 can be changed with the following instruction:
@@ -7554,12 +7244,12 @@ W
 
 --------------
 
-.. _in-50:
+.. _section-54:
 
  
-''''''
 
 | 
+
 
 #. **cmax** The maximum relative concentration, corresponding to the
    fluid with maximum density. This instruction proved to be especially
@@ -7740,8 +7430,6 @@ Thermal conductivity of air
 
 | 
 
-
-
 #. **k_air** Thermal conductivity [W m:math:`^{-1}` K:math:`^{-1}`] of
    the air phase.
 
@@ -7761,8 +7449,6 @@ Specific heat capacity of air
 '''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **c_air** Specific heat capacity [J kg:math:`^{-1}` K:math:`^{-1}`]
    of the air phase.
@@ -7784,8 +7470,6 @@ Density of air
 
 | 
 
-
-
 #. **rho_air** Density [kg m:math:`^{-3}`] of the air phase.
 
 Assigns a uniform value to the density of air.
@@ -7804,8 +7488,6 @@ Thermal conductivity of water
 '''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **k_l** Thermal conductivity [W m:math:`^{-1}` K:math:`^{-1}`] of the
    liquid phase.
@@ -7829,8 +7511,6 @@ Specific heat capacity of water
 '''''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **c_l** Specific heat capacity [J kg:math:`^{-1}` K:math:`^{-1}`] of
    the liquid phase.
@@ -7876,8 +7556,6 @@ Initial temperature profile
 
 | 
 
-
-
 #. **temp_top** Temperature [ °C] at the top of the domain.
 
 #. **temp_grad** Prevailing geothermal gradient [L:math:`^{-1}` K].
@@ -7896,12 +7574,12 @@ boundary condition:
 
 --------------
 
-.. _in-51:
+.. _section-55:
 
  
-''''''
 
 | 
+
 
 #. **npanel** Number of panels in the time-variable, zero-order source
    function.
@@ -7931,8 +7609,6 @@ species the input format is
            ton2 toff2 prate21 prate22
            ton3 toff3 prate31 prate32
 
-
-
 --------------
 
 --------------
@@ -7943,8 +7619,6 @@ Exponential zero order source
 '''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **heat_q_zero** Heat production [M L:math:`^{-1}` T:math:`^{-3}`] at
    time :math:`t = 0`.
@@ -7970,13 +7644,12 @@ commands that do not belong to any of the previous sections.
 
 --------------
 
-.. _section-4:
+.. _section-56:
 
  
 
 | 
 | ``Scope .grok``
-
 
 #. **nzones, nspecies** Number of zones and species, respectively.
 
@@ -7992,13 +7665,13 @@ commands that do not belong to any of the previous sections.
 
 --------------
 
-.. _section-5:
+.. _section-57:
 
  
 
 | 
 | ``Scope .grok``
-
+| [.mprops]
 
 #. **diff_coeff(i), i=1,nspecies** Effective diffusion coefficient
    [L:math:`^2` T:math:`^{-1}`] for each species.
@@ -8092,12 +7765,12 @@ following instruction.
 
 --------------
 
-.. _in-52:
+.. _section-58:
 
  
-^^^^^^
 
 | 
+
 
 #. **bc_name** Name of boundary condition, at most 40 characters.
 
@@ -8192,8 +7865,6 @@ Type
 ^^^^
 
 | 
-
-
 
 #. **bc_type** The type of boundary condition to be applied.
 
@@ -8403,8 +8074,6 @@ the nodes contained in the face set ``top``.
            end
        end
 
-
-
 --------------
 
 --------------
@@ -8462,8 +8131,6 @@ entries in the file must be the same as the number of nodes in the set.
            0.1
        end
 
-
-
 --------------
 
 | These fluxes can be interpolated (see Interpolate) or turned on and
@@ -8482,8 +8149,6 @@ Nodal flux reduction by pressure head
 '''''''''''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **min_pressure_head** Minimum pressure head threshold :math:`h_{min}`
    [L].
@@ -8522,12 +8187,12 @@ can do so with the following instruction.
 
 --------------
 
-.. _in-53:
+.. _section-59:
 
  
-''''''
 
 | 
+
 
 #. **inflow_min, inflow_max** Minimum and maximum constraining head
    values [L] for positive nodal flux.
@@ -8591,18 +8256,16 @@ via linear interpolation and is applied to all nodes in the node set
            end
        end
 
-
-
 --------------
 
 --------------
 
-.. _in-54:
+.. _section-60:
 
  
-''''''
 
 | 
+
 
 #. **coeff** Power rating curve coefficient
    [L:math:`^{3-\alpha}` T:math:`^{-1}`] :math:`C`, where :math:`\alpha`
@@ -8631,12 +8294,12 @@ where :math:`\psi` is the pressure head.
 
 --------------
 
-.. _in-55:
+.. _section-61:
 
  
-''''''
 
 | 
+
 
 #. **depth(i), flux(i),...end** Depth [L] and specified volumetric flux
    [L:math:`^3` T:math:`^{-1}`] table.
@@ -8652,12 +8315,12 @@ will be used.
 
 --------------
 
-.. _in-56:
+.. _section-62:
 
  
-''''''
 
 | 
+
 
 #. **elevation(i), flux(i),...end** Elevation [L] and specified
    volumetric flux [L:math:`^3` T:math:`^{-1}`] table.
@@ -8744,11 +8407,9 @@ boundary condition to a set of surface nodes.
          end
    	
 
-
-
 --------------
 
-
+Flux nodal outlet rate threshold
 
 #. **threshold** Injection rate threshold [L:math:`^3` T:math:`^{-1}`]
    that limits the water flux at the inlet nodes.
@@ -8822,12 +8483,12 @@ table described below.
 
 --------------
 
-.. _in-57:
+.. _section-63:
 
  
-''''''
 
 | 
+
 
 #. **obs_pt_name** Name of the observation point at which pressure head
    is evaluated to trigger an irrigation event.
@@ -8859,12 +8520,12 @@ type Irrigation on demand.
 
 --------------
 
-.. _in-58:
+.. _section-64:
 
  
-''''''
 
 | 
+
 
 #. **pressure(i), height(i),...end** Pressure head [L] and irrigation
    water height [L] table.
@@ -9273,8 +8934,6 @@ Specified stress variation
 
 | 
 
-
-
 #. **npanel** Number of panels in the time-variable specified stress
    function.
 
@@ -9297,12 +8956,12 @@ Specified stress variation
 
 --------------
 
-.. _in-59:
+.. _section-65:
 
  
-''''''
 
 | 
+
 
 #. **filename** Name of the file that contains the list of nodes to
    which specified stress variation will be assigned.
@@ -9361,8 +9020,6 @@ Elemental stress field from files
 '''''''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **npanel** Number of panels defining the time-variable external
    stress field.
@@ -9472,8 +9129,6 @@ Snowmelt constants
 
 | 
 
-
-
 #. **snow_rho** Snow density [M L:math:`^{-3}`].
 
 #. **snow_melt** Snow melting constant
@@ -9512,12 +9167,8 @@ Node set
 
 | 
 
-
-
 #. **bc_set_name** Name of the node set to apply the boundary condition
    to.
-
-
 
 --------------
 
@@ -9534,12 +9185,8 @@ Face set
 
 | 
 
-
-
 #. **bc_set_name** Name of the face set to apply the boundary condition
    to.
-
-
 
 --------------
 
@@ -9562,8 +9209,6 @@ Time value table
 
 | 
 
-
-
 #. **bc_time(i), bc_val(i)...end** Time [T] and boundary condition value
    list.
 
@@ -9584,8 +9229,6 @@ Time raster table
 
 | 
 
-
-
 #. **bc_time(i), bc_raster(i)...end** Time [T] and raster filename list.
 
 At time **bc_time(i)** the raster file **bc_raster(i)** is applied and
@@ -9604,8 +9247,8 @@ for the boundary condition at that point.
 The following instructions use the same input data structure except they
 are applied to :math:`xz`- or :math:`yz`-coordinates:
 
-Time raster xz table
-Time raster yz table
+| Time raster xz table
+| Time raster yz table
 
 --------------
 
@@ -9613,8 +9256,6 @@ Time file table
 ^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **bc_time(i), bc_file(i)...end** Time [T] and filename list.
 
@@ -9683,12 +9324,12 @@ message.
 
 --------------
 
-.. _in-60:
+.. _section-66:
 
  
-^^^^^^
 
 | 
+
 
 #. **filename** Name of the local to regional sheet mapping file.
 
@@ -9755,12 +9396,12 @@ table, Time file table, and Time raster table inputs.
 
 --------------
 
-.. _in-61:
+.. _section-67:
 
  
-''''''
 
 | 
+
 
 #. **factor** Scaling factor [-].
 
@@ -9794,8 +9435,6 @@ a flux of :math:`10^{-5}` would be applied to the boundary condition.
              2.0
          end
    	
-
-
 
 --------------
 
@@ -9839,11 +9478,7 @@ Nodata value
 
 | 
 
-
-
 #. **nodata_value** The value that indicates there is no data.
-
-
 
 --------------
 
@@ -9854,8 +9489,8 @@ Nodata value
 The following instructions may be used to change the NODATA values for
 rasters and files:
 
-Nodata raster
-Nodata file
+| Nodata raster
+| Nodata file
 
 Tecplot Output
 ~~~~~~~~~~~~~~
@@ -9922,12 +9557,12 @@ by subsequent specified concentration instructions.
 
 --------------
 
-.. _in-62:
+.. _section-68:
 
  
-''''''
 
 | 
+
 
 #. **npanel** Number of panels in the time-variable concentration
    function.
@@ -9960,18 +9595,16 @@ species the input format is
    		  ton3 toff3 bcval31 bcval32
    		
 
-
-
 --------------
 
 --------------
 
-.. _in-63:
+.. _section-69:
 
  
-''''''
 
 | 
+
 
 #. **filename** Name of the file that contains the time-varying
    concentration information.
@@ -10041,12 +9674,12 @@ from each face
 
 --------------
 
-.. _in-64:
+.. _section-70:
 
  
-''''''
 
 | 
+
 
 #. **npanel** Number of panels in the time-variable mass flux function.
 
@@ -10083,8 +9716,6 @@ species the input format is
    		  ton2 toff2 bcval21 bcval22
    		  ton3 toff3 bcval31 bcval32
    		
-
-
 
 --------------
 
@@ -10125,12 +9756,12 @@ faces requires a contribution from each face.
 
 --------------
 
-.. _in-65:
+.. _section-71:
 
  
-''''''
 
 | 
+
 
 #. **calcflux** Logical value (T/F) that determines how fluid fluxes are
    handled for this third-type boundary condition. If false, then read
@@ -10177,18 +9808,16 @@ the input format is
    		  ton3 toff3 bcval31 bcval32
    		
 
-
-
 --------------
 
 --------------
 
-.. _in-66:
+.. _section-72:
 
  
-''''''
 
 | 
+
 
 #. **filename** Name of the file that contains the time-varying
    third-type concentration information.
@@ -10264,12 +9893,12 @@ to element.
 
 --------------
 
-.. _in-67:
+.. _section-73:
 
  
-''''''
 
 | 
+
 
 #. **filename** Name of the file that contains the time-varying
    third-type concentration information.
@@ -10341,12 +9970,12 @@ face.
 
 --------------
 
-.. _in-68:
+.. _section-74:
 
  
-''''''
 
 | 
+
 
 #. **npanel** Number of panels in the time-variable fluid flux function.
 
@@ -10367,8 +9996,6 @@ Specified temperature flux
 ''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **npanel** Number of panels in the time-variable, specified
    temperature flux function.
@@ -10421,8 +10048,6 @@ Incoming shortwave radiation
 
 | 
 
-
-
 #. **npanel** Number of panels in the time-variable, incoming shortwave
    radiation function.
 
@@ -10431,8 +10056,6 @@ Incoming shortwave radiation
      Equation :ref:  
    | ). Default value is :math:`1.10 \times 10^2` J m\ :math:`^{-2}`
      s\ :math:`^{-1}`.
-
-
 
 --------------
 
@@ -10447,8 +10070,6 @@ Sinusoidal incoming shortwave radiation
 
 | 
 
-
-
 #. **npanel** Number of panels in the time-variable, sinusoidal incoming
    shortwave radiation function.
 
@@ -10456,8 +10077,6 @@ Sinusoidal incoming shortwave radiation
      Time on [T], vertical shift [M T:math:`^{-3}`] (mid-point incoming
      shortwave radiation, :math:`K^\downarrow` in Equation :ref:  
    | ), amplitude [M T:math:`^{-3}`], phase, and period [T].
-
-
 
 --------------
 
@@ -10472,16 +10091,12 @@ Cloud cover
 
 | 
 
-
-
 #. **npanel** Number of panels in the time-variable, cloud cover
    function.
 
 #. | **ton_val(i), value(i), i=1,npanel** Time on [T] and cloud cover
      [-] (:math:`C_c` in Equation :ref:  
    | ). Default value is 0.5.
-
-
 
 --------------
 
@@ -10496,8 +10111,6 @@ Incoming longwave radiation
 
 | 
 
-
-
 #. **npanel** Number of panels in the time-variable, incoming longwave
    radiation function.
 
@@ -10506,8 +10119,6 @@ Incoming longwave radiation
      Equation :ref:  
    | ). Default value is :math:`3.0 \times 10^2` J m\ :math:`^{-2}`
      s\ :math:`^{-1}`.
-
-
 
 --------------
 
@@ -10522,16 +10133,12 @@ Temperature of air
 
 | 
 
-
-
 #. **npanel** Number of panels in the time-variable, air temperature
    function.
 
 #. | **ton_val(i), value(i), i=1,npanel** Time on [T] and air
      temperature [ °C] (:math:`T_a` in Equation :ref:  
    | ). Default value is 15  °C.
-
-
 
 --------------
 
@@ -10546,8 +10153,6 @@ Sinusoidal temperature of air
 
 | 
 
-
-
 #. **npanel** Number of panels in the time-variable, sinusoidal air
    temperature function.
 
@@ -10555,8 +10160,6 @@ Sinusoidal temperature of air
      Time on [T], vertical shift [ °C] (mid-point temperature,
      :math:`T_a` in Equation :ref:  
    | ), amplitude [ °C], phase [-], and period [T].
-
-
 
 --------------
 
@@ -10578,16 +10181,12 @@ Density of air
 
 | 
 
-
-
 #. **npanel** Number of panels in the time-variable, air density
    function.
 
 #. | **ton_val(i), value(i), i=1,npanel** Time on [T] and density of air
      [M L:math:`^{-3}`] (:math:`\rho_a` in Equation :ref:  
    | ). Default value is 1.225 kg m\ :math:`^{-3}`.
-
-
 
 --------------
 
@@ -10602,8 +10201,6 @@ Specific heat of air
 
 | 
 
-
-
 #. **npanel** Number of panels in the time-variable, air specific heat
    function.
 
@@ -10612,8 +10209,6 @@ Specific heat of air
      Equation :ref:  
    | ). Default value is :math:`7.17 \times 10^2` J kg\ :math:`^{-1}`
      K\ :math:`^{-1}`.
-
-
 
 --------------
 
@@ -10628,16 +10223,12 @@ Wind speed
 
 | 
 
-
-
 #. **npanel** Number of panels in the time-variable, wind speed
    function.
 
 #. | **ton_val(i), value(i), i=1,npanel** Time on [T] and wind speed
      [L T:math:`^{-1}`] (:math:`V_a` in Equation :ref:  
    | ). Default value is 1.0 m s\ :math:`^{-1}`.
-
-
 
 --------------
 
@@ -10652,8 +10243,6 @@ Sinusoidal wind speed
 
 | 
 
-
-
 #. **npanel** Number of panels in the time-variable, sinusoidal wind
    speed function.
 
@@ -10661,8 +10250,6 @@ Sinusoidal wind speed
      Time on [T], vertical shift [L T:math:`^{-1}`] (mid-point wind
      speed, :math:`V_a` in Equation :ref:  
    | ), amplitude [L T:math:`^{-1}`], phase, and period [T].
-
-
 
 --------------
 
@@ -10677,16 +10264,12 @@ Drag coefficient
 
 | 
 
-
-
 #. **npanel** Number of panels in the time-variable, drag coefficient
    function.
 
 #. | **ton_val(i), value(i), i=1,npanel** Time on [T] and drag
      coefficient [-] (:math:`c_D` in Equation :ref:  
    | ). Default value is :math:`2.0 \times 10^{-3}`.
-
-
 
 --------------
 
@@ -10701,8 +10284,6 @@ Latent heat of vapourization
 
 | 
 
-
-
 #. **npanel** Number of panels in the time-variable, latent heat of
    vapourization function.
 
@@ -10710,8 +10291,6 @@ Latent heat of vapourization
      vapourization [L:math:`^2` T:math:`^{-2}`] (:math:`L_V` in
      Equation :ref:  
    | ). Default value is :math:`2.258 \times 10^6` J kg\ :math:`^{-1}`.
-
-
 
 --------------
 
@@ -10726,8 +10305,6 @@ Specific humidity of air
 
 | 
 
-
-
 #. **npanel** Number of panels in the time-variable, air specific
    humidity function.
 
@@ -10735,8 +10312,6 @@ Specific humidity of air
      humidity of air [M M:math:`^{-1}`] (:math:`SH_a` in
      Equation :ref:  
    | ). Default value is 0.01062.
-
-
 
 --------------
 
@@ -10751,16 +10326,12 @@ Soil-Water suction at surface
 
 | 
 
-
-
 #. **npanel** Number of panels in the time-variable, soil-water suction
    at surface function.
 
 #. | **ton_val(i), value(i), i=1,npanel** Time on [T] and soil-water
      suction at surface [L] (:math:`\psi_g` in Equation :ref:  
    | ). Default value is 0.138 m.
-
-
 
 --------------
 
@@ -10775,8 +10346,6 @@ Saturation vapour pressure
 
 | 
 
-
-
 #. **npanel** Number of panels in the time-variable, saturation vapour
    pressure function.
 
@@ -10784,8 +10353,6 @@ Saturation vapour pressure
      vapour pressure [M L:math:`^{-1}` T:math:`^{-2}`]
      (:math:`e_{sat}[T_g]` in Equation :ref:  
    | ). Default value is :math:`1.704 \times 10^3` Pa.
-
-
 
 --------------
 
@@ -10800,15 +10367,11 @@ Relative humidity
 
 | 
 
-
-
 #. **npanel** Number of panels in the time-variable, relative humidity
    function.
 
 #. **ton_val(i), value(i), i=1,npanel** Time on [T] and relative
    humidity [-]. Default value is 0.75.
-
-
 
 --------------
 
@@ -10823,16 +10386,12 @@ Pressure of air
 
 | 
 
-
-
 #. **npanel** Number of panels in the time-variable, air pressure
    function.
 
 #. | **ton_val(i), value(i), i=1,npanel** Time on [T] and air pressure
      [M L:math:`^{-1}` T:math:`^{-2}`] (:math:`p_a` in Equation :ref:  
    | ). Default value is :math:`1.013 \times 10^5` Pa.
-
-
 
 --------------
 
@@ -10850,12 +10409,12 @@ following instruction can be used to define the source:
 
 --------------
 
-.. _in-69:
+.. _section-75:
 
  
-''''''
 
 | 
+
 
 #. **diss_mass(i), i=1,nspeciesmob** Mass of dissolvable immiscible
    phase per unit volume of porous medium [M L:math:`^{-3}`] for each
@@ -10899,12 +10458,12 @@ decay.
 
 --------------
 
-.. _in-70:
+.. _section-76:
 
  
-''''''
 
 | 
+
 
 #. **npanel** Number of panels in the time-variable, zero-order source
    function.
@@ -10934,18 +10493,16 @@ species the input format is
        ton2 toff2 prate21 prate22
        ton3 toff3 prate31 prate32
 
-
-
 --------------
 
 --------------
 
-.. _in-71:
+.. _section-77:
 
  
-''''''
 
 | 
+
 
 #. **npanel** Number of time panels.
 
@@ -10992,18 +10549,16 @@ panels and two species the input format is
        ton3 toff3 prate31 prate32 pcoeff31 pcoeff32
    	
 
-
-
 --------------
 
 --------------
 
-.. _in-72:
+.. _section-78:
 
  
-''''''
 
 | 
+
 
 #. **threshold(i), i=1,nspeciesmob** Water saturation threshold [-].
 
@@ -11109,8 +10664,6 @@ Use domain type
 
 | 
 
-
-
 #. **zone_type** Can be one of the strings: “porous media”, “dual”,
    “fracture”, “surface”, “channel”, “well”, “tile”, or “et”.
 
@@ -11130,12 +10683,12 @@ command is designed to address this problem.
 
 --------------
 
-.. _in-73:
+.. _section-79:
 
  
-^^^^^^
 
 | 
+
 
 #. **max_zone** The maximum zone number to output.
 
@@ -11172,8 +10725,6 @@ New zone
 ''''''''
 
 | 
-
-
 
 #. **num_zone** Zone number.
 
@@ -11234,12 +10785,12 @@ retrieve porous media or surface flow domain element zone numbers.
 
 --------------
 
-.. _in-74:
+.. _section-80:
 
  
-''''''
 
 | 
+
 
 #. **zone_file** Name of the file to which element zone numbers will be
    written.
@@ -11252,12 +10803,12 @@ element number followed by the assigned zone number.
 
 --------------
 
-.. _in-75:
+.. _section-81:
 
  
-''''''
 
 | 
+
 
 #. **zone_file** Name of the file from which zone information will be
    read.
@@ -11277,18 +10828,16 @@ the zone number 3, then the file would contain:
    	    8  3
    	
 
-
-
 --------------
 
 --------------
 
-.. _in-76:
+.. _section-82:
 
  
-''''''
 
 | 
+
 
 #. **zone_raster** Name of raster file containing integers representing
    zones. Note: zone numbers should be sequential starting from 1.
@@ -11301,12 +10850,12 @@ the raster cell that contains the centroid of that element.
 
 --------------
 
-.. _in-77:
+.. _section-83:
 
  
-''''''
 
 | 
+
 
 #. **filename** Filename of voxet file (exported to ASCII format), up to
    256 characters. Note that the length units in this file must match
@@ -11348,18 +10897,16 @@ triangular prism or hexahedral block meshes.
           :      :     :  :
           :      :     :  :
 
-
-
 --------------
 
 --------------
 
-.. _in-78:
+.. _section-84:
 
  
-''''''
 
 | 
+
 
 #. **zone_raster** Name of raster file containing integers representing
    zones. Note: zone numbers should be sequential starting from 1.
@@ -11372,12 +10919,12 @@ the raster cell that contains the 2-D centroid of that element.
 
 --------------
 
-.. _in-79:
+.. _section-85:
 
  
-''''''
 
 | 
+
 
 #. **zone_raster** Name of raster file containing integers representing
    zones. Note: zone numbers should be sequential starting from 1.
@@ -11413,8 +10960,6 @@ Zones from arcview ascii grid
 
 | 
 
-
-
 #. **filename** Name of the ArcView ASCII grid file.
 
 #. **nodata_replace** Zone number to assign an element that does not
@@ -11446,12 +10991,12 @@ ArcView file will be numbered from 8 to 11.
 
 --------------
 
-.. _in-80:
+.. _section-86:
 
  
-''''''
 
 | 
+
 
 #. **filename** Name of the ArcView shapefile without the file
    extension.
@@ -11548,8 +11093,6 @@ Choose zone number
 
 | 
 
-
-
 #. **num_zone** Zone number.
 
 Selects the zone numbered **num_zone**.
@@ -11610,12 +11153,12 @@ instruction:
 
 --------------
 
-.. _in-81:
+.. _section-87:
 
  
-''''''
 
 | 
+
 
 #. **props_filename** Name of the material properties file, at most 256
    characters.
@@ -11685,8 +11228,6 @@ Read properties
 '''''''''''''''
 
 | 
-
-
 
 #. **mat_name** Name of the material.
 
@@ -11857,7 +11398,7 @@ K isotropic
 | 
 
 | ``Scope .grok``
-
+| [.mprops]
 
 #. **Kval** Hydraulic conductivity [L T:math:`^{-1}`].
 
@@ -11878,7 +11419,7 @@ K anisotropic
 | 
 
 | ``Scope .grok``
-
+| [.mprops]
 
 #. **Kxx, Kyy, Kzz** Hydraulic conductivities [L T:math:`^{-1}`] in the
    :math:`x`-, :math:`y`-, and :math:`z`-directions, respectively.
@@ -11893,13 +11434,13 @@ Assigns anisotropic hydraulic conductivities.
 
 --------------
 
-.. _section-6:
+.. _section-88:
 
  
 
 | 
 | ``Scope .grok``
-
+| [.mprops]
 
 #. **Kval, Kratio** Hydraulic conductivity [L T:math:`^{-1}`] in the
    :math:`x`- and :math:`y`-directions and a ratio to compute the
@@ -11919,7 +11460,7 @@ K tensor
 | 
 
 | ``Scope .grok``
-
+| [.mprops]
 
 #. **Kxx, Kyy, Kzz** Main-diagonal terms of the hydraulic conductivity
    tensor: :math:`K_{xx}, K_{yy}, K_{zz}` [L T:math:`^{-1}`].
@@ -11945,13 +11486,11 @@ Specific storage
 | 
 
 | ``Scope .grok``
-
+| [.mprops]
 
 #. | **val** Specific storage [L:math:`^{-1}`], :math:`S_s` in
      Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -11967,13 +11506,11 @@ Porosity
 | 
 
 | ``Scope .grok``
-
+| [.mprops]
 
 #. | **val** Porosity [L:math:`^3` L:math:`^{-3}`], :math:`\theta_s` in
      Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -11989,12 +11526,10 @@ Poisson ratio
 | 
 
 | ``Scope .grok``
-
+| [.mprops]
 
 #. | **val** Poisson’s Ratio [-], :math:`\nu^*` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -12010,12 +11545,10 @@ Loading efficiency
 | 
 
 | ``Scope .grok``
-
+| [.mprops]
 
 #. | **val** Loading efficiency [-], :math:`\zeta^*` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -12054,13 +11587,11 @@ Solids compressibility
 | 
 
 | ``Scope .grok``
-
+| [.mprops]
 
 #. | **val** Solids compressibility [L T:math:`^2` M:math:`^{-1}`],
      :math:`K_s` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -12076,7 +11607,6 @@ Element K isotropic
 | 
 
 | ``Scope .grok``
-
 
 #. **Kval** Hydraulic conductivity [L T:math:`^{-1}`].
 
@@ -12098,7 +11628,6 @@ Element K anisotropic
 
 | ``Scope .grok``
 
-
 #. **Kxx, Kyy, Kzz** Hydraulic conductivities [L T:math:`^{-1}`] in the
    :math:`x`-, :math:`y`-, and :math:`z`-directions, respectively.
 
@@ -12112,13 +11641,12 @@ Chosen elements are assigned anisotropic hydraulic conductivities.
 
 --------------
 
-.. _section-7:
+.. _section-89:
 
  
 
 | 
 | ``Scope .grok``
-
 
 #. **input_k_filename** Name of the file which contains the variable K
    [L T:math:`^{-1}`] data.
@@ -12158,13 +11686,12 @@ element-variable values, which are written to the file
 
 --------------
 
-.. _section-8:
+.. _section-90:
 
  
 
 | 
 | ``Scope .grok``
-
 
 #. **filename** Name of the binary file that contains the hydraulic
    conductivity values.
@@ -12216,7 +11743,6 @@ Map isotropic K from raster
 
 | ``Scope .grok``
 
-
 #. | **rasterfile** Name of the raster file containing the hydraulic
      conductivity [L T:math:`^{-1}`] values. This is a string variable.
      The file should be formatted as outlined in Appendix :ref:  
@@ -12240,7 +11766,6 @@ Map anisotropic K from raster
 | 
 
 | ``Scope .grok``
-
 
 #. | **rasterfile_x** Name of the raster file containing the
      :math:`x`-component (i.e., :math:`K_{xx}`) hydraulic conductivities
@@ -12273,7 +11798,6 @@ Map porosity from raster
 
 | ``Scope .grok``
 
-
 #. | **rasterfile** Name of the raster file containing the porosity [-]
      values. This is a string variable. The file should be formatted as
      outlined in Appendix :ref:  
@@ -12297,7 +11821,6 @@ Read elemental porosity from file
 
 | ``Scope .grok``
 
-
 #. **input_por_filename** Name of the file which contains the variable
    porosity [-] data.
 
@@ -12320,13 +11843,12 @@ element-variable values, which are written to the file
 
 --------------
 
-.. _section-9:
+.. _section-91:
 
  
 
 | 
 | ``Scope .grok``
-
 
 #. **filename** Name of the binary file that contains the porosity [-]
    values.
@@ -12361,7 +11883,6 @@ Read elemental specific storage from file
 
 | ``Scope .grok``
 
-
 #. **input_stor_filename** Name of the file which contains the variable
    specific storage data.
 
@@ -12386,13 +11907,12 @@ element-variable values, which are written to the file
 
 --------------
 
-.. _section-10:
+.. _section-92:
 
  
 
 | 
 | ``Scope .grok``
-
 
 #. **filename** Name of the binary file that contains the specific
    storage values.
@@ -12428,7 +11948,6 @@ Map tortuosity from raster
 
 | ``Scope .grok``
 
-
 #. | **rasterfile** Name of the raster file containing the tortuosity
      [-] values. The file should be formatted as outlined in
      Appendix :ref:  
@@ -12452,7 +11971,6 @@ Read elemental tortuosity from file
 
 | ``Scope .grok``
 
-
 #. **input_tort_filename** Name of the file which contains the variable
    tortuosity data.
 
@@ -12475,13 +11993,12 @@ element-variable values, which are written to the file
 
 --------------
 
-.. _section-11:
+.. _section-93:
 
  
 
 | 
 | ``Scope .grok``
-
 
 #. **filename** Name of the binary file that contains the tortuosity
    values.
@@ -12509,13 +12026,12 @@ endianness is handled automatically when reading the file.
 
 --------------
 
-.. _section-12:
+.. _section-94:
 
  
 
 | 
 | ``Scope .grok``
-
 
 #. **filename** Name of the file in which to write the hydraulic
    conductivity [L T:math:`^{-1}`] information, at most 80 characters.
@@ -12547,7 +12063,6 @@ Write element K at z
 | 
 
 | ``Scope .grok``
-
 
 #. **zfix** :math:`z`-coordinate [L] for choosing which element to
    write.
@@ -12597,7 +12112,6 @@ AECL properties
 
 | ``Scope .grok``
 
-
 #. **aecl_nd_file** Name of the file which contains the nodal
    coordinates for the AECL Motif mesh.
 
@@ -12624,7 +12138,6 @@ Random K field from FGEN
 | 
 
 | ``Scope .grok``
-
 
 #. **fgenfile** Name of file which contains the random hydraulic
    conductivity information generated by FGEN.
@@ -12686,7 +12199,6 @@ Random KD field from FGEN
 
 | ``Scope .grok``
 
-
 #. **fgenfile** Name of file which contains the random distribution
    coefficient information generated by FGEN.
 
@@ -12718,7 +12230,6 @@ Soil Frost K
 
 | ``Scope .grok``
 
-
 #. **npanel** Number of panels.
 
 #. **ton_val(i), toff_val(i), Kval(i), i=1,npanel** Time on [T], time
@@ -12741,7 +12252,6 @@ Soil Frost K by ratio
 | 
 
 | ``Scope .grok``
-
 
 #. **npanel** Number of panels.
 
@@ -12766,7 +12276,6 @@ Time dependent K for chosen elements
 | 
 
 | ``Scope .grok``
-
 
 #. **npanel** Number of panels.
 
@@ -12813,7 +12322,6 @@ Time dependent variable K for chosen elements
 
 | ``Scope .grok``
 
-
 #. **npanel** Number of panels.
 
 #. **ton_val(i), k_filename(i), i=1,npanel** Time on [T] and the
@@ -12856,13 +12364,12 @@ honoured.
 
 --------------
 
-.. _section-13:
+.. _section-95:
 
  
 
 | 
 | ``Scope .grok``
-
 
 #. **imp_fac** The impedance factor [-].
 
@@ -12910,13 +12417,12 @@ factor will have a multiplicative effect.
 
 --------------
 
-.. _section-14:
+.. _section-96:
 
  
 
 | 
 | ``Scope .grok``
-
 
 #. **impedance** The impedance factor :math:`(> 0)` [-].
 
@@ -12970,12 +12476,12 @@ factor will have a multiplicative effect.
 
 --------------
 
-.. _in-82:
+.. _section-97:
 
  
-''''''
 
 | 
+
 
 #. **filename** Filename of the ASCII file containing permafrost
    formation locations and times.
@@ -13010,12 +12516,12 @@ C
 
 --------------
 
-.. _in-83:
+.. _section-98:
 
  
-''''''
 
 | 
+
 
 #. **Kxx, Kyy, Kzz** Permafrost hydraulic conductivities
    [L T:math:`^{-1}`] in the :math:`x`-, :math:`y`-, and
@@ -13029,12 +12535,12 @@ Permafrost formation from file.
 
 --------------
 
-.. _in-84:
+.. _section-99:
 
  
-''''''
 
 | 
+
 
 #. **porosity** Permafrost porosity [-].
 
@@ -13048,12 +12554,12 @@ Otherwise, **grok** will terminate with an error message.
 
 --------------
 
-.. _in-85:
+.. _section-100:
 
  
-''''''
 
 | 
+
 
 #. **diff_coeff** Permafrost effective diffusion coefficient
    [L:math:`^2` T:math:`^{-1}`].
@@ -13196,7 +12702,6 @@ Radius
 
 | ``Scope:`` ``.grok`` ``.wprops``
 
-
 #. **WellScreenRadius** Well Screen Radius [L].
 
 The radius of the screen interval of the well.
@@ -13215,7 +12720,6 @@ Infilled
 | 
 
 | ``Scope:`` ``.grok`` ``.wprops``
-
 
 #. **WellPropsInfilled** Infilled well material name from porous medium
    ``.mprops`` file.
@@ -13290,10 +12794,7 @@ Friction
 
 | ``Scope:`` ``.grok`` ``.wprops``
 
-
 #. **well_friction** Manning’s friction [L:math:`^{-1/3}` T] for wells.
-
-
 
 --------------
 
@@ -13310,11 +12811,8 @@ Hazen Williams coefficient
 
 | ``Scope:`` ``.grok`` ``.wprops``
 
-
 #. **well_hw_coeffient** HazenWilliams coefficient
    [L:math:`^{0.37}` T:math:`^{-1}`] for wells.
-
-
 
 --------------
 
@@ -13363,7 +12861,6 @@ Coupling conductivity
 
 | ``Scope:`` ``.grok`` ``.wprops``
 
-
 #. **WellPropsCplCond** Coupling conductivity [L T:math:`^{-1}`] for
    wells.
 
@@ -13384,7 +12881,6 @@ Coupling length
 | 
 
 | ``Scope:`` ``.grok`` ``.wprops``
-
 
 #. **WellPropsCplLngth** Coupling length [L] for wells.
 
@@ -13592,7 +13088,6 @@ Type rectangle
 
 | ``Scope:`` ``.grok`` ``.cprops``
 
-
 #. **ChanWidth** Channel width [L].
 
 The width of the rectangular channel.
@@ -13611,7 +13106,6 @@ Type trapezoid
 | 
 
 | ``Scope:`` ``.grok`` ``.cprops``
-
 
 #. **ChanWidth** Channel width [L].
 
@@ -13635,7 +13129,6 @@ Type circle
 
 | ``Scope:`` ``.grok`` ``.cprops``
 
-
 #. **ChanRadius** Channel radius [L].
 
 The radius of the circular channel.
@@ -13654,7 +13147,6 @@ Type general
 | 
 
 | ``Scope:`` ``.grok`` ``.cprops``
-
 
 #. **ntab** Number of water depth values in the table.
 
@@ -13682,7 +13174,6 @@ Friction
 
 | ``Scope:`` ``.grok`` ``.cprops``
 
-
 #. **ChanFrictn** Manning friction [L:math:`^{-1/3}` T] for the channel.
 
 Manning friction coefficient for the zone chosen.
@@ -13701,7 +13192,6 @@ Rill storage height
 | 
 
 | ``Scope:`` ``.grok`` ``.cprops``
-
 
 #. **ChanRillStor** Channel rill storage height [L].
 
@@ -13722,7 +13212,6 @@ Obstruction storage height
 
 | ``Scope:`` ``.grok`` ``.cprops``
 
-
 #. **ChanOnstructStor** Channel obstruction storage height [L].
 
 Obstruction storage height.
@@ -13741,7 +13230,6 @@ Streambed thickness
 | 
 
 | ``Scope:`` ``.grok`` ``.cprops``
-
 
 #. **ChanStrmBedThick** Thickness of streambed [L].
 
@@ -13762,7 +13250,6 @@ Streambed conductivity
 | 
 
 | ``Scope:`` ``.grok`` ``.cprops``
-
 
 #. **ChanStrmBedK** Hydraulic conductivity [L T:math:`^{-1}`] of
    streambed.
@@ -13785,7 +13272,6 @@ Bank height
 
 | ``Scope:`` ``.grok`` ``.cprops``
 
-
 #. **ChanBankHeight** Height of river bank [L].
 
 River bank height to define the interaction between the channel and
@@ -13805,12 +13291,12 @@ which could occur, for example, in a funnel-and-gate system.
 
 --------------
 
-.. _in-86:
+.. _section-101:
 
  
-''''''
 
 | 
+
 
 #. **nwalls** Number of impermeable cutoff walls to be defined.
 
@@ -13979,8 +13465,6 @@ Relative permeability xy
 | :math:`-10.0` & 0.053
 | 0.0 & 1.0
 
-
-
 | d1.3d1.3 &
 | 0.053 & 0.053
 | 1.0 & 1.0
@@ -14040,8 +13524,6 @@ models.
 | cd1.3 &
 | :math:`-10.0` & 0.053
 | 0.0 & 1.0
-
-
 
 | d1.3d1.3 &
 | 0.053 & 0.053
@@ -14105,7 +13587,6 @@ Pressure-effective area
 | 
 
 | ``Scope:`` ``.grok`` ``.fprops``
-
 
 #. **pressure(i), effective_area(i)...end** Pressure [L] and effective
    area [L:math:`^2`].
@@ -14224,8 +13705,6 @@ models.
 | :math:`-10.0` & 0.053
 | 0.0 & 1.0
 
-
-
 | d1.3d1.3 &
 | 0.053 & 0.053
 | 1.0 & 1.0
@@ -14234,10 +13713,10 @@ When simulating a system with porous and dual continua, the constitutive
 relationships of the interface between the two continua must also be
 defined. The following instructions provide this functionality:
 
-Interface unsaturated tables
-Interface unsaturated van genuchten functions
-Interface unsaturated brooks-corey functions
-Interface relative permeability xy
+| Interface unsaturated tables
+| Interface unsaturated van genuchten functions
+| Interface unsaturated brooks-corey functions
+| Interface relative permeability xy
 
 Input is identical to the generic forms of the commands discussed in the
 following sections, except that the scope is restricted to ``.dprops``.
@@ -14326,10 +13805,7 @@ Residual saturation
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
 
-
 #. **val** Residual water saturation :math:`S_{wr}` [-].
-
-
 
 --------------
 
@@ -14345,7 +13821,6 @@ Alpha
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-
 
 #. **val** Power index alpha :math:`\alpha` [L:math:`^{-1}`].
 
@@ -14367,7 +13842,6 @@ Beta
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-
 
 #. **val** Power index beta :math:`\beta` [-].
 
@@ -14397,7 +13871,6 @@ Pore connectivity
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
 
-
 #. **val** Pore connectivity :math:`l_p` [-].
 
 Note that the default value of pore connectivity of 0.5 is a value
@@ -14425,7 +13898,6 @@ Air entry pressure
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
 
-
 #. **val** Air entry pressure [L].
 
 | For the BrooksCorey function, this value is used to compute
@@ -14448,7 +13920,6 @@ Exponent
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-
 
 #. | **val** Exponent [-] in Equation :ref:  
    | , which is used to compute :math:`k_r` in the BrooksCorey function.
@@ -14474,7 +13945,6 @@ Minimum relative permeability
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-
 
 #. **val** Minimum relative permeability [-].
 
@@ -14505,12 +13975,9 @@ Table smoothness factor
 
 | ``Scope:`` ``.grok`` ``.mprops``
 
-
 #. **val** Smoothness factor [-]. Smaller values cause more points to be
    generated for a smoother, more accurate table. The default value is
    :math:`10^{-3}`.
-
-
 
 --------------
 
@@ -14527,11 +13994,8 @@ Table minimum pressure
 
 | ``Scope:`` ``.grok`` ``.mprops``
 
-
 #. **val** Minimum pressure [L] value in the pressure-saturation table.
    The default value is :math:`-1000` m.
-
-
 
 --------------
 
@@ -14548,11 +14012,8 @@ Table maximum s-k slope
 
 | ``Scope:`` ``.grok`` ``.mprops``
 
-
 #. **val** Maximum slope [-] of the saturation-relative permeability
    curve when nearing full saturation. The default value is 100.
-
-
 
 --------------
 
@@ -14760,7 +14221,6 @@ Pressure-saturation
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
 
-
 #. **pressure(i), saturation(i)...end** Pressure :math:`\psi` [L] and
    saturation :math:`S` [-].
 
@@ -14784,7 +14244,6 @@ Saturation-relative k
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops .fprops .dprops``
-
 
 #. **saturation(i), rel_perm(i)...end** Saturation :math:`S` [-] and
    relative permeability :math:`k_{rw}` [-].
@@ -14847,12 +14306,9 @@ X friction
 
 | ``Scope:`` ``.grok`` ``.oprops``
 
-
 #. | **val** Friction factor [L:math:`^{-1/3}` T] in the
      :math:`x`-direction, :math:`n_x` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -14869,12 +14325,9 @@ Y friction
 
 | ``Scope:`` ``.grok`` ``.oprops``
 
-
 #. | **val** Friction factor [L:math:`^{-1/3}` T] in the
      :math:`y`-direction, :math:`n_y` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -14891,7 +14344,6 @@ Time varying friction...End
 
 | ``Scope:`` ``.oprops``
 
-
 #. **time(i), nmann(i)...end** Time [T] and Manning roughness
    coefficient [L:math:`^{-1/3}` T].
 
@@ -14906,14 +14358,13 @@ Reads a table of time vs Manning roughness coefficient
 
 --------------
 
-.. _section-15:
+.. _section-102:
 
  
 
 | 
 | ``Scope .grok``
 | [.oprops]
-
 
 #. **interpolate** Logical value (T/F), which if true, causes scale
    factors to be interpolated from the time-value table.
@@ -14931,13 +14382,12 @@ overprinted on an annual cycle of freeze-thaw.
 
 --------------
 
-.. _section-16:
+.. _section-103:
 
  
 
 | 
 | ``Scope .grok``
-
 
 #. **scale** Friction scale factor [-]. Must be a strictly positive real
    value.
@@ -14985,11 +14435,8 @@ Rill storage height
 
 | ``Scope:`` ``.grok`` ``.oprops``
 
-
 #. | **val** Rill storage height [L], :math:`H_d` in Section :ref:  
    | .
-
-
 
 --------------
 
@@ -15008,12 +14455,9 @@ Obstruction storage height
 
 | ``Scope:`` ``.grok`` ``.oprops``
 
-
 #. | **val** Obstruction storage height [L], :math:`H_o` in
      Section :ref:  
    | .
-
-
 
 --------------
 
@@ -15032,11 +14476,8 @@ Coupling length
 
 | ``Scope:`` ``.grok`` ``.oprops``
 
-
 #. | **val** Coupling length [L], :math:`l_{exch}` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -15053,12 +14494,9 @@ Maximum flow depth
 
 | ``Scope:`` ``.grok``
 
-
 #. | **val** Maximum flow depth [L], in Equations :ref:  
    | and :ref:  
    | , the maximum of :math:`d_o`.
-
-
 
 --------------
 
@@ -15075,12 +14513,9 @@ Minimum elemental energy slope
 
 | ``Scope:`` ``.grok``
 
-
 #. | **val** Minimum elemental energy slope [-], in Equations :ref:  
    | and :ref:  
    | , the minimum of :math:`\partial h_o/\partial s`.
-
-
 
 --------------
 
@@ -15090,13 +14525,12 @@ Minimum elemental energy slope
 
 --------------
 
-.. _section-17:
+.. _section-104:
 
  
 
 | 
 | ``Scope .grok``
-
 
 #. **raster_filename** Filename of raster file containing the surface
    elevation [L] values.
@@ -15114,7 +14548,6 @@ visualization.
 --------------
 
 | Read elemental rill storage from file ``Scope .grok``
-
 
 #. **filename** Name of file containing the rill storage values.
 
@@ -15191,13 +14624,12 @@ will only affect the named material of which it is a part.
 
 --------------
 
-.. _section-18:
+.. _section-105:
 
  
 
 | 
 | ``Scope .grok``
-
 
 #. **time(i), filename(i)...end** Time [T] and raster filename list.
 
@@ -15247,12 +14679,9 @@ Canopy storage parameter
 
 | ``Scope:`` ``.etprops``
 
-
 #. | **cint_et** Canopy storage parameter [L], :math:`c_{int}` in
      Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -15265,13 +14694,12 @@ index is less than :math:`10^{-8}`.
 
 --------------
 
-.. _section-19:
+.. _section-106:
 
  
 
 | 
 | ``Scope .grok``
-
 
 #. **time_interval** The canopy evaporation time interval [T]
    (non-negative real value). The default value is zero.
@@ -15306,12 +14734,9 @@ Initial interception storage
 
 | ``Scope:`` ``.etprops``
 
-
 #. | **init_sint_et** Initial canopy interception storage value [L],
      :math:`S^0_{int}` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -15330,7 +14755,6 @@ LAI tables...End
 | 
 
 | ``Scope:`` ``.etprops``
-
 
 #. **time(i), lai(i)...end** Time [T] and leaf area index [-].
 
@@ -15352,13 +14776,12 @@ list are counted automatically to determine the table size.
 
 --------------
 
-.. _section-20:
+.. _section-107:
 
  
 
 | 
 | ``Scope .grok``
-
 
 #. **time(i), filename(i)...end** Time [T] and raster filename list.
 
@@ -15384,7 +14807,6 @@ Transpiration fitting parameters
 
 | ``Scope:`` ``.etprops``
 
-
 #. | **C_1** Coefficient :math:`C_1` [-] in Equation :ref:  
    | .
 
@@ -15395,8 +14817,6 @@ Transpiration fitting parameters
    | . By default, this coefficient is set to one, which gives a linear
      ramping function whereas higher values would give higher order
      ramping functions.
-
-
 
 --------------
 
@@ -15412,7 +14832,6 @@ Transpiration limiting saturations
 | 
 
 | ``Scope:`` ``.etprops``
-
 
 #. | **thwp_et** Saturation [-] at wilting point, equal to
      :math:`\theta_{wp}/\theta_s`, with :math:`\theta_{wp}` used in
@@ -15434,8 +14853,6 @@ Transpiration limiting saturations
      Equation :ref:  
    | .
 
-
-
 --------------
 
 | 
@@ -15450,7 +14867,6 @@ Transpiration limiting pressure head
 | 
 
 | ``Scope:`` ``.etprops``
-
 
 #. **Hwp_et** Pressure head [L] at wilting point,
    :math:`\psi_{wp}=\psi(\theta_{wp})`.
@@ -15482,7 +14898,6 @@ Evaporation limiting saturations
 
 | ``Scope:`` ``.etprops``
 
-
 #. | **the2_et** Saturation [-] below which evaporation is zero, equal
      to :math:`\theta_{e2}/\theta_s`, with :math:`\theta_{e2}` used in
      Equation :ref:  
@@ -15492,8 +14907,6 @@ Evaporation limiting saturations
      equal to :math:`\theta_{e1}/\theta_s`, with :math:`\theta_{e1}`
      used in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -15509,7 +14922,6 @@ Evaporation limiting pressure head
 | 
 
 | ``Scope:`` ``.etprops``
-
 
 #. **He2_et** Pressure head [L] below which evaporation is zero,
    :math:`\psi_{e2}=\psi(\theta_{e2})`.
@@ -15551,13 +14963,12 @@ This is an alternative to the command Evaporation limiting saturations.
 
 --------------
 
-.. _section-21:
+.. _section-108:
 
  
 
 | 
 | ``Scope .etprops``
-
 
 #. **max_root_depth** Maximum root depth :math:`(L_r)` [L].
 
@@ -15576,22 +14987,21 @@ Specifies a fixed maximum root depth.
   root length density is defined by the linear polynomial function. The
   following commands may be used to select one of the other functions:
 
-Rdf constant function
-Rdf quadratic decay function
-Rdf cubic decay function
+| Rdf constant function
+| Rdf quadratic decay function
+| Rdf cubic decay function
 
 The following command may be used to specify the root length density via
 a table.
 
 --------------
 
-.. _section-22:
+.. _section-109:
 
  
 
 | 
 | ``Scope .etprops``
-
 
 #. **depth(i), density(i)...end** Relative depth [-] and root length
    density [L L:math:`^{-3}`] table.
@@ -15617,13 +15027,12 @@ Root growth can be defined by a table using the command:
 
 --------------
 
-.. _section-23:
+.. _section-110:
 
  
 
 | 
 | ``Scope .etprops``
-
 
 #. **time(i), root_depth(i)...end** Time [T] and root depth [L] table.
 
@@ -15636,7 +15045,7 @@ following commands:
 
 --------------
 
-.. _section-24:
+.. _section-111:
 
  
 
@@ -15656,10 +15065,7 @@ Root growth period
 
 | ``Scope .etprops``
 
-
 #. **Rg_period** Period for vegetation growth [T], typically one year.
-
-
 
 --------------
 
@@ -15676,10 +15082,7 @@ Growth beginning time
 
 | ``Scope .etprops``
 
-
 #. **Rg_begin** Start time of root growth [T].
-
-
 
 --------------
 
@@ -15696,10 +15099,7 @@ Harvest time
 
 | ``Scope .etprops``
 
-
 #. **Rg_harvest** Crop harvest time [T].
-
-
 
 --------------
 
@@ -15716,10 +15116,7 @@ Initial root depth
 
 | ``Scope .etprops``
 
-
 #. **Rg_initdepth** Initial crop root depth [L].
-
-
 
 --------------
 
@@ -15736,10 +15133,7 @@ Maximum root depth
 
 | ``Scope .etprops``
 
-
 #. **Rg_maxdepth** Maximum crop root depth [L].
-
-
 
 --------------
 
@@ -15756,11 +15150,8 @@ Verhulst-Pearl growth, time-depth
 
 | ``Scope .etprops``
 
-
 #. **Rg_vptime, Rg_vpdepth** Time [T] and crop root depth [L] data that
    is used to derive a VerhulstPearl growth function.
-
-
 
 --------------
 
@@ -15820,7 +15211,6 @@ Evaporation depth
 
 | ``Scope:`` ``.etprops``
 
-
 #. **evap_depth** Evaporation depth [L].
 
 Evaporation as a function of depth is treated in a similar fashion as
@@ -15835,9 +15225,9 @@ the root zone depth described above.
 By default, the linear form of the evaporation function is used. The
 following instructions are available for using the other forms:
 
-Edf constant function
-Edf quadratic decay function
-Edf cubic decay function
+| Edf constant function
+| Edf quadratic decay function
+| Edf cubic decay function
 
 --------------
 
@@ -15860,13 +15250,12 @@ Potential evaporation using transpiration
 
 --------------
 
-.. _section-25:
+.. _section-112:
 
  
 
 | 
 | ``Scope .grok``
-
 
 #. **x1, y1** :math:`xy`-coordinates [L] of the point.
 
@@ -16042,12 +15431,9 @@ Longitudinal dispersivity
 
 | ``Scope:`` ``.grok`` ``.mprops``
 
-
 #. | **val** Longitudinal dispersivity [L], :math:`\alpha_l` in
      Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -16064,12 +15450,9 @@ Transverse dispersivity
 
 | ``Scope:`` ``.grok`` ``.mprops``
 
-
 #. | **val** Horizontal component of the transverse dispersivity [L],
      :math:`\alpha_t` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -16086,12 +15469,9 @@ Vertical transverse dispersivity
 
 | ``Scope:`` ``.grok`` ``.mprops``
 
-
 #. | **val** Vertical component of the transverse dispersivity [L],
      :math:`\alpha_t` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -16108,11 +15488,8 @@ Tortuosity
 
 | ``Scope:`` ``.grok`` ``.mprops``
 
-
 #. | **val** Tortuosity [-], :math:`\tau` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -16122,13 +15499,13 @@ Tortuosity
 
 --------------
 
-.. _section-26:
+.. _section-113:
 
  
 
 | 
 | ``Scope .grok``
-
+| [.mprops]
 
 #. **diff_coeff(i), i=1,nspecies** Effective diffusion coefficient
    [L:math:`^2` T:math:`^{-1}`] for each species.
@@ -16145,7 +15522,6 @@ Anisotropic tortuosity ratio
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops``
-
 
 #. **y_tortratio** Tortuosity ratio [-] in the :math:`y`-direction.
    Default value is 1.
@@ -16175,12 +15551,9 @@ Bulk density
 
 | ``Scope:`` ``.grok`` ``.mprops``
 
-
 #. **val** Bulk density of dry soil [M L:math:`^{-3}`]. If necessary,
    the bulk density of a solid is calculated as
    :math:`\rho_s = \rho_b / (1 - \theta_s)`.
-
-
 
 --------------
 
@@ -16203,14 +15576,11 @@ Immobile zone porosity
 
 | ``Scope:`` ``.grok`` ``.mprops``
 
-
 #. | **val** Immobile zone porosity [-],
      :math:`\theta_\textrm{\scriptsize{Imm}}` in Equations :ref:  
    | , :ref:  
    | and :ref:  
    | .
-
-
 
 --------------
 
@@ -16227,12 +15597,9 @@ Immobile zone mass transfer coefficient
 
 | ``Scope:`` ``.grok`` ``.mprops``
 
-
 #. | **val** Immobile zone mass transfer coefficient [T:math:`^{-1}`],
      :math:`\alpha_\textrm{\scriptsize{Imm}}` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -16272,12 +15639,9 @@ Reverse rate
 
 | ``Scope: .mprops``
 
-
 #. | **val** Reverse fractionation rate [L:math:`^{-1}`], :math:`k_r` in
      Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -16294,12 +15658,9 @@ Fractionation factor
 
 | ``Scope: .mprops``
 
-
 #. | **val** Fractionation factor [-], :math:`\alpha_r` in
      Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -16316,12 +15677,9 @@ Rock-water mass ratio
 
 | ``Scope: .mprops``
 
-
 #. | **val** Isotopic rock-water mass ratio [-], :math:`x_r` in
      Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -16341,13 +15699,10 @@ Thermal conductivity of solid
 
 | ``Scope:`` ``.grok`` ``.mprops``
 
-
 #. **val** Temperature invariant thermal conductivity of the solids
    [M L T:math:`^{-3}` K:math:`^{-1}`]. The bulk thermal conductivity is
    computed internally from the volume fractions of the solid and liquid
    phases.
-
-
 
 --------------
 
@@ -16363,7 +15718,6 @@ Temperature-dependent thermal conductivity of solid
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops``
-
 
 #. **k_s1** Thermal conductivity [M L T:math:`^{-3}` K:math:`^{-1}`] at
    temperature **t_s1**.
@@ -16415,7 +15769,6 @@ Nonlinear bulk thermal conductivity relation
 
 | ``Scope: .mprops``
 
-
 #. **k_sat** Thermal conductivity of the saturated porous medium
    [M L T:math:`^{-3}` K:math:`^{-1}`].
 
@@ -16445,11 +15798,8 @@ Specific heat capacity of solid
 
 | ``Scope:`` ``.grok`` ``.mprops``
 
-
 #. **val** Specific heat capacity of the solid phase
    [L:math:`^2` T:math:`^{-2}` K:math:`^{-1}`].
-
-
 
 --------------
 
@@ -16503,12 +15853,9 @@ Longitudinal dispersivity
 
 | ``Scope:`` ``.grok`` ``.fprops``
 
-
 #. | **val** Longitudinal dispersivity [L], similar to :math:`\alpha_l`
      in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -16527,12 +15874,9 @@ Transverse dispersivity
 
 | ``Scope:`` ``.grok`` ``.fprops``
 
-
 #. | **val** Transverse dispersivity [L], similar to :math:`\alpha_t` in
      Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -16549,11 +15893,8 @@ Coupling dispersivity
 
 | ``Scope:`` ``.grok`` ``.fprops``
 
-
 #. **val** Dispersivity value [L] to be applied during exchange between
    the discrete fracture and subsurface domains. Default value is 0.0.
-
-
 
 --------------
 
@@ -16606,12 +15947,9 @@ Longitudinal dispersivity
 
 | ``Scope:`` ``.grok`` ``.dprops``
 
-
 #. | **val** Longitudinal dispersivity [L], :math:`\alpha_{ld}` in
      Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -16630,12 +15968,9 @@ Transverse dispersivity
 
 | ``Scope:`` ``.grok`` ``.dprops``
 
-
 #. | **val** Horizontal component of the transverse dispersivity [L],
      :math:`\alpha_{td}` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -16654,12 +15989,9 @@ Vertical transverse dispersivity
 
 | ``Scope:`` ``.grok`` ``.dprops``
 
-
 #. | **val** Vertical component of the transverse dispersivity [L],
      :math:`\alpha_{td}` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -16678,11 +16010,8 @@ Tortuosity
 
 | ``Scope:`` ``.grok`` ``.dprops``
 
-
 #. | **val** Tortuosity [-], :math:`\tau_d` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -16700,7 +16029,6 @@ Anisotropic tortuosity ratio
 | 
 
 | ``Scope:`` ``.grok`` ``.mprops``
-
 
 #. **y_tortratio** Tortuosity ratio [-] in the :math:`y`-direction.
    Default value is 1.
@@ -16732,12 +16060,9 @@ Bulk density
 
 | ``Scope:`` ``.grok`` ``.dprops``
 
-
 #. | **val** Bulk density [M L:math:`^{-3}`], :math:`\rho_{bd}` in
      Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -16754,13 +16079,10 @@ First-order mass exchange
 
 | ``Scope: .dprops``
 
-
 #. | **val** First-order mass transfer coefficient [L:math:`^{-1}`],
      :math:`\alpha_s` in Equations :ref:  
    | and :ref:  
    | .
-
-
 
 --------------
 
@@ -16810,12 +16132,9 @@ Longitudinal dispersivity
 
 | ``Scope:`` ``.grok`` ``.oprops``
 
-
 #. | **val** Longitudinal dispersivity [L], :math:`\alpha_{lo}`.
      Analogous to :math:`\alpha_{l}` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -16834,12 +16153,9 @@ Transverse dispersivity
 
 | ``Scope:`` ``.grok`` ``.oprops``
 
-
 #. | **val** Horizontal component of the transverse dispersivity [L],
      :math:`\alpha_t`. Analogous to :math:`\alpha_t` in Equation :ref:  
    | .
-
-
 
 --------------
 
@@ -16858,11 +16174,8 @@ Coupling dispersivity
 
 | ``Scope:`` ``.grok`` ``.oprops``
 
-
 #. **val** Dispersivity value [L] to be applied during exchange between
    the overland flow and subsurface domains. Default value is 0.0.
-
-
 
 --------------
 
@@ -16879,12 +16192,9 @@ Dry albedo
 
 | ``Scope:`` ``.grok`` ``.oprops``
 
-
 #. | **Value** Dry albedo [-] for soil type, :math:`\alpha_{dry}` in
      Equation :ref:  
    | . Default value is 0.35.
-
-
 
 --------------
 
@@ -16901,12 +16211,9 @@ Saturated albedo
 
 | ``Scope:`` ``.grok`` ``.oprops``
 
-
 #. | **Value** Saturated albedo [-] for soil type, :math:`\alpha_{sat}`
      in Equation :ref:  
    | . Default value is 0.18.
-
-
 
 --------------
 
@@ -16923,13 +16230,10 @@ Heat coupling length
 
 | ``Scope:`` ``.grok`` ``.oprops``
 
-
 #. | **Value** Heat coupling length [L]. The depth of the
      surface/subsurface exchange zone used to compute :math:`\alpha_o`
      in Equation :ref:  
    | . Default value is :math:`10^{-4}` m.
-
-
 
 --------------
 
@@ -17006,8 +16310,6 @@ D
    	  end
    	
 
-
-
 --------------
 
 The Pore water freezing-thawing...end command is composed of the
@@ -17015,12 +16317,12 @@ following subcommands:
 
 --------------
 
-.. _in-87:
+.. _section-114:
 
  
-^^^^^^
 
 | 
+
 
 #. **time(i), val(i)...end** Time [T] and surface temperature [ °C]
    value list.
@@ -17034,12 +16336,12 @@ in conjunction with the command Surface temperature from raster.
 
 --------------
 
-.. _in-88:
+.. _section-115:
 
  
-^^^^^^
 
 | 
+
 
 #. **time(i), filename(i)...end** Time [T] and raster filename list.
 
@@ -17055,89 +16357,79 @@ temperature.
 
 --------------
 
-.. _in-89:
+.. _section-116:
 
  
-^^^^^^
 
 | 
+
 
 #. **thermal_diff** Thermal diffusivity [L:math:`^2` T:math:`^{-1}`].
    Default value of :math:`2\times 10^{-7}`
    [m:math:`^2` s:math:`^{-1}`].
 
-
-
 --------------
 
 --------------
 
-.. _in-90:
+.. _section-117:
 
  
-^^^^^^
 
 | 
+
 
 #. **background_temp** Background temperature [ °C].
 
-
-
 --------------
 
 --------------
 
-.. _in-91:
+.. _section-118:
 
  
-^^^^^^
 
 | 
+
 
 #. **melting_temp** Melting temperature [ °C].
 
-
-
 --------------
 
 --------------
 
-.. _in-92:
+.. _section-119:
 
  
-^^^^^^
 
 | 
+
 
 #. **freezing_temp** Freezing temperature [ °C].
 
-
-
 --------------
 
 --------------
 
-.. _in-93:
+.. _section-120:
 
  
-^^^^^^
 
 | 
+
 
 #. **freezing_depth** Maximum freezing depth [L].
 
-
-
 --------------
 
 --------------
 
-.. _in-94:
+.. _section-121:
 
  
-^^^^^^
 
 | 
+
 
 #. **tol** Integration convergence criteria [T:math:`^{-1/2}`  °C].
    Default value of 0.01 [s:math:`^{-1/2}`  °C].
@@ -17156,12 +16448,12 @@ where :math:`n = 2^k n_0` for :math:`k = 0,1,2,\ldots`.
 
 --------------
 
-.. _in-95:
+.. _section-122:
 
  
-^^^^^^
 
 | 
+
 
 #. **maxits** Maximum number of iterations for integration convergence.
    Default value of 20.
@@ -17174,12 +16466,12 @@ to the screen and the *prefix*\ ``o.lst`` file.
 
 --------------
 
-.. _in-96:
+.. _section-123:
 
  
-^^^^^^
 
 | 
+
 
 #. | **memory_length** Memory length for convolution integral [T].
      Default value of
@@ -17230,12 +16522,12 @@ T
 
 --------------
 
-.. _in-97:
+.. _section-124:
 
  
-^^^^^^
 
 | 
+
 
 #. **transfer_coeff** Thermal transfer coefficient
    [T :math:`\SI{}{\celsius}^{-1}`].
@@ -17356,7 +16648,7 @@ detailed information for each particle to the ASCII file
 for debugging purposes and should be used with a small number of
 particles to keep the log file from ballooning in size.
 
-
+Initial particle location from file
 
 #. **filename** Filename of the initial particle location file, at most
    300 characters.
@@ -17382,7 +16674,7 @@ follows:
 Note that if a particle’s initial location is outside the model domain,
 then its initial location is set to the centroid of the nearest element.
 
-
+Initial particle location by layer from file
 
 #. **filename** Filename of the initial particle location file, at most
    300 characters.
@@ -17414,7 +16706,7 @@ follows:
 Note that if a particle’s initial location is outside the model domain,
 then its initial location is set to the centroid of the nearest element.
 
-
+Output times for particle locations
 
 #. **time(i)...end** Output time [T] list.
 
@@ -17422,7 +16714,7 @@ Specifies the output times at which particle locations are recorded. A
 particle trace path consists of the particle locations at each of the
 output times.
 
-
+Maximum trace time
 
 #. **max_time** Maximum trace time [T].
 
@@ -17430,7 +16722,7 @@ Specifies the maximum time at which particle traces are updated. For
 each particle, tracing effectively stops after this time. By default the
 maximum trace time is effectively unlimited.
 
-
+Maximum trace count
 
 #. **max_count** Maximum trace count.
 
@@ -17439,7 +16731,7 @@ value can be used to control the amount of memory consumed by particle
 tracing. For each particle, tracing effectively stops once this count is
 reached. By default the maximum trace count is set to 10 000.
 
-
+Maximum trace output
 
 #. **max_output** Maximum number of particles to output.
 
@@ -17452,7 +16744,7 @@ determined by the line number of its initial location within the initial
 location input file. By default the maximum trace output is set to
 10 000.
 
-
+Maximum particle reflection count
 
 #. **max_reflect** Maximum number of particle relfections per trace
    step.
@@ -17546,9 +16838,9 @@ Time output fixed format
 
 Similarly, mass balance output can be controlled by the instructions:
 
-Mass balance output scientific format
-Mass balance output general format
-Mass balance output fixed format
+| Mass balance output scientific format
+| Mass balance output general format
+| Mass balance output fixed format
 
 For simulations with a large number of output times, the default 4-digit
 output time number may not be able to index all output times. In that
@@ -17557,12 +16849,12 @@ in the output time number.
 
 --------------
 
-.. _in-98:
+.. _section-125:
 
  
-~~~~~~
 
 | 
+
 
 #. **suffix_len** Number of digits in the output file suffix, an integer
    between 4 and 10, inclusive.
@@ -17683,12 +16975,8 @@ Mesh to gms
 
 | 
 
-
-
 #. **gmsfile** Name of the file to which the 3-D mesh information
    (blocks or prisms) will be written in GMS-readable format.
-
-
 
 --------------
 
@@ -17703,12 +16991,8 @@ Mesh to gms
 
 | 
 
-
-
 #. **gmsfile** Name of the file to which the 2-D mesh information
    (quadrilaterals or triangles) will be written in GMS-readable format.
-
-
 
 --------------
 
@@ -17723,14 +17007,10 @@ Rectangles to triangles
 
 | 
 
-
-
 #. **gmsfile** Name of the file to which the 2-D triangular mesh
    information will be written in GMS-readable 2-D mesh file format.
    Each rectangle in the 2-D mesh is split into two triangles. Nodal
    coordinates are written first followed by element node lists.
-
-
 
 --------------
 
@@ -17749,13 +17029,9 @@ Wells to gms
 
 | 
 
-
-
 #. **gmsfile** Name of the file to which the 1-D line information (wells
    and/or tile drains) will be written in GMS-readable borehole file
    format.
-
-
 
 --------------
 
@@ -17770,13 +17046,9 @@ Fractures to gms
 
 | 
 
-
-
 #. **gmsfile** Name of the file to which the 2-D fracture element
    information which will be written in GMS-readable 2-D mesh file
    format.
-
-
 
 --------------
 
@@ -17797,12 +17069,8 @@ Mesh to tecplot
 
 | 
 
-
-
 #. **tecfile** The name of the file to which the 3-D mesh information
    (blocks or prisms) will be written in Tecplot readable format.
-
-
 
 --------------
 
@@ -17817,12 +17085,8 @@ Wells to tecplot
 
 | 
 
-
-
 #. **tec_wells_file** Name of the file to which the 1-D well element
    information will be written in Tecplot LINE3D geometry format.
-
-
 
 --------------
 
@@ -17837,13 +17101,9 @@ Tiles to tecplot
 
 | 
 
-
-
 #. **tec_tiles_file** Name of the file to which the 1-D tile drain
    element information will be written in Tecplot LINE3D geometry
    format.
-
-
 
 --------------
 
@@ -17857,8 +17117,6 @@ K to tecplot
 ''''''''''''
 
 | 
-
-
 
 #. **tecfile** Name of the file to which the elemental hydraulic
    conductivity information will be written in Tecplot readable format.
@@ -17882,12 +17140,8 @@ Porosity to tecplot
 
 | 
 
-
-
 #. **tecfile** The name of the file to which the porosity information
    (blocks or prisms) will be written in Tecplot readable format.
-
-
 
 --------------
 
@@ -17902,12 +17156,8 @@ Tortuosity to tecplot
 
 | 
 
-
-
 #. **tecfile** The name of the file to which the tortuosity information
    (blocks or prisms) will be written in Tecplot readable format.
-
-
 
 --------------
 
@@ -17917,18 +17167,15 @@ Tortuosity to tecplot
 
 --------------
 
-.. _section-27:
+.. _section-126:
 
  
 
 | 
 | ``Scope .grok .etprops``
 
-
 #. **tecfile** The name of the file to which the ET zones information
    (blocks or prisms) will be written in Tecplot readable format.
-
-
 
 --------------
 
@@ -17992,8 +17239,6 @@ Flux output nodes
 ^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **new_noutfc** Number of new output nodes desired.
 
@@ -18155,12 +17400,12 @@ with units [L:math:`^3` T:math:`^{-1}`].
 
 --------------
 
-.. _in-99:
+.. _section-127:
 
  
-^^^^^^
 
 | 
+
 
 #. **label** Descriptive name for the exchange flux, up to 80
    characters.
@@ -18213,12 +17458,12 @@ evapotranspiration boundary condition and writes it to the file named
 
 --------------
 
-.. _in-100:
+.. _section-128:
 
  
-^^^^^^
 
 | 
+
 
 #. **name** Descriptive name, up to 40 characters.
 
@@ -18239,12 +17484,12 @@ or when using the command Y vertical.
 
 --------------
 
-.. _in-101:
+.. _section-129:
 
  
-^^^^^^
 
 | 
+
 
 #. **name** Descriptive name, up to 40 characters.
 
@@ -18293,8 +17538,6 @@ Make observation point
 
 | 
 
-
-
 #. **well_name** Descriptive name for the well, up to 40 characters.
 
 #. **x1, y1, z1** :math:`xyz`-coordinates [L] of the observation point.
@@ -18315,12 +17558,12 @@ flux, node coordinates and node number.
 
 --------------
 
-.. _in-102:
+.. _section-130:
 
  
-''''''
 
 | 
+
 
 #. **well_name** Descriptive name for the well, up to 40 characters.
 
@@ -18342,8 +17585,6 @@ Make node observation point
 '''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **well_name** Descriptive name for the well, up to 40 characters.
 
@@ -18367,8 +17608,6 @@ Make observation well
 '''''''''''''''''''''
 
 | 
-
-
 
 #. **well_name** Descriptive name for the well, up to 40 characters.
 
@@ -18402,8 +17641,6 @@ Make observation well from xy
 '''''''''''''''''''''''''''''
 
 | 
-
-
 
 #. **well_name** Descriptive name for the well, up to 40 characters.
 
@@ -18481,12 +17718,12 @@ can be changed via the following command.
 
 --------------
 
-.. _in-103:
+.. _section-131:
 
  
-''''''
 
 | 
+
 
 #. **number** Maximum number of boundary conditions to report in the
    water balance output file *prefix*\ ``o.water_balance``\ ``.dat``.
@@ -18651,12 +17888,12 @@ flow domains.
 
 --------------
 
-.. _in-104:
+.. _section-132:
 
  
-''''''
 
 | 
+
 
 #. **name** Descriptive name for the volume, up to 40 characters.
 
@@ -18683,12 +17920,12 @@ Variable         Units         Description
 
 --------------
 
-.. _in-105:
+.. _section-133:
 
  
-''''''
 
 | 
+
 
 #. **name** Descriptive name for the volume, up to 40 characters.
 
@@ -18747,12 +17984,12 @@ Fluid Flux Entering Volume
 
 --------------
 
-.. _in-106:
+.. _section-134:
 
  
-''''''
 
 | 
+
 
 #. **vol_name** Descriptive name for the volume, up to 40 characters.
 
@@ -18795,12 +18032,12 @@ this:
 
 --------------
 
-.. _in-107:
+.. _section-135:
 
  
-''''''
 
 | 
+
 
 #. **vol_name** Descriptive name for the volume, up to 40 characters.
 
@@ -18830,12 +18067,12 @@ T
 
 --------------
 
-.. _in-108:
+.. _section-136:
 
  
-''''''
 
 | 
+
 
 #. **vol_name** Descriptive name for the volume, up to 40 characters.
 
@@ -18872,12 +18109,12 @@ nodes in the surface domain.
 
 --------------
 
-.. _in-109:
+.. _section-137:
 
  
-''''''
 
 | 
+
 
 #. **label_hyd** Descriptive name for the hydrograph, up to 80
    characters.
@@ -18919,12 +18156,12 @@ over a region in the surface flow domain contained within a polygon.
 
 --------------
 
-.. _in-110:
+.. _section-138:
 
  
-''''''
 
 | 
+
 
 #. **filename** Name of the ArcView shapefile without the file
    extension.
@@ -18979,12 +18216,12 @@ important to keep in mind that polygons must not overlap.
 
 --------------
 
-.. _in-111:
+.. _section-139:
 
  
-''''''
 
 | 
+
 
 #. **filename** Name of the ArcView shapefile without the file
    extension.
@@ -19012,7 +18249,7 @@ elements within each element layer of the porous media and surface flow
 domains, here, fluxes are computed over nodal control volumes within
 each node sheet of the respective domains.
 
-
+Nodal fluid mass balance from shp file
 
 #. **filename** Name of the ArcView shapefile without the file
    extension.
@@ -19076,7 +18313,7 @@ This command may be issued multiple times to track water balance
 information for any number of polygons. When used more than once it is
 important to keep in mind that polygons must not share any elements.
 
-
+Nodal fluid mass balance from xy list
 
 #. **x(i), y(i)...end** :math:`xy`-coordinates [L] of polygon vertices.
 
@@ -19104,8 +18341,6 @@ Flux output nodes
 ^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **new_noutfc** Number of new output nodes desired.
 
@@ -19153,8 +18388,6 @@ Plot concentration penetration depth
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 
-
-
 
 #. **threshold_conc** Threshold concentration [M L:math:`^{-3}`].
 
@@ -19209,12 +18442,12 @@ fourth order moments). Output is written to the file
 
 --------------
 
-.. _in-112:
+.. _section-140:
 
  
-^^^^^^
 
 | 
+
 
 #. **label** Unique identifier, up to 40 characters.
 
@@ -19261,8 +18494,6 @@ Make observation point
 
 | 
 
-
-
 #. **well_name** Descriptive name for the well, up to 40 characters.
 
 #. **x1, y1, z1** :math:`xyz`-coordinates [L] of the observation point.
@@ -19289,8 +18520,6 @@ Make observation well
 '''''''''''''''''''''
 
 | 
-
-
 
 #. **well_name** Descriptive name for the well, up to 40 characters.
 
@@ -19434,12 +18663,12 @@ Mass Flux Entering Volume
 
 --------------
 
-.. _in-113:
+.. _section-141:
 
  
-''''''
 
 | 
+
 
 #. **vol_name** Descriptive name for the volume, up to 40 characters.
 
@@ -19471,12 +18700,12 @@ this:
 
 --------------
 
-.. _in-114:
+.. _section-142:
 
  
-''''''
 
 | 
+
 
 #. **vol_name** Descriptive name for the volume, up to 40 characters.
 
@@ -19506,12 +18735,12 @@ T
 
 --------------
 
-.. _in-115:
+.. _section-143:
 
  
-''''''
 
 | 
+
 
 #. **vol_name** Descriptive name for the volume, up to 40 characters.
 
@@ -19567,8 +18796,6 @@ Integrate production zone
 '''''''''''''''''''''''''
 
 | 
-
-
 
 #. **filename** Name of the file that contains the list of elements that
    contain a mass source function and the tabulated functions. It is
@@ -19642,12 +18869,12 @@ variable over a specified time interval.
 
 --------------
 
-.. _in-116:
+.. _section-144:
 
  
-^^^^^^
 
 | 
+
 
 #. **id_name** Unique identifier, up to 40 characters.
 
@@ -20389,8 +19616,6 @@ Pause at time
 
 | 
 
-
-
 #. **time** Simulation time [T].
 
 Proceed until the given simulation time is reached and then pause.
@@ -20457,8 +19682,6 @@ Watch node list
 
 | 
 
-
-
 #. **node(i)...end** Node number list.
 
 A list of node numbers for which you want detailed output.
@@ -20472,11 +19695,7 @@ A list of node numbers for which you want detailed output.
 For each watch node, the following instructions write detailed output to
 the ``hs.dbg`` file:
 
-Write flow matrices
-Write transport matrices
-Write overland flow
-Write fracture (dual node) flow
-Write evapotranspiration
+| 
 
 Detailed output usually consists of the coefficient matrix and
 right-hand side vector for the watch node.
@@ -20574,8 +19793,6 @@ Write krw file
 
 | 
 
-
-
 #. **filename** Name of the file to write the hydraulic conductivity
    values, at most 80 characters.
 
@@ -20597,16 +19814,12 @@ Time format
 
 | 
 
-
-
 #. **type** Integer value indicating the type of format to use when
    writing time values to output files. Acceptable values are:
 
    | A ĀA ̄ 1 Fixed.
    | 2 Scientific.
    | 3 General.
-
-
 
 --------------
 
@@ -20621,16 +19834,12 @@ Mass balance format
 
 | 
 
-
-
 #. **type** Integer value indicating the type of format to use when
    writing mass balance output to file. Acceptable values are:
 
    | A ĀA ̄ 1 Fixed.
    | 2 Scientific.
    | 3 General.
-
-
 
 --------------
 
@@ -20644,8 +19853,6 @@ Nodal flow check
 ----------------
 
 | 
-
-
 
 #. **flow_check** Logical value (T/F), which if true, turns on the nodal
    flow check feature. Otherwise, it turns it off.
@@ -20666,8 +19873,6 @@ Force timestep
 
 | 
 
-
-
 #. **delta_t** Timestep [T].
 
 Sets all subsequent timesteps to **delta_t**.
@@ -20686,35 +19891,12 @@ value even if you disable run-time debugging (i.e., uncomment
 instruction Debug off) or comment out the instruction that was used to
 change the value.
 
-Flow solver convergence criteria
-Flow solver detail
-Flow maximum iterations
-Transport solver convergence criteria
-Transport solver detail
-Transport solver maximum iterations
-Newton maximum iterations
-Newton absolute convergence criteria
-Newton residual convergence criteria
-Compute underrelaxation factor
-Nodal flow check tolerance
-Newton maximum update for head
-Newton maximum update for depth
-Newton absolute maximum residual
-Newton maximum residual increase
-Maximum timestep
-Minimum timestep multiplier
-Maximum timestep multiplier
+| 
 
 The following commands can be used to set the values of the various
 targets used in the adaptive timestepping procedure.
 
-Head change target
-Saturation change target
-Water depth change target
-Newton target
-Concentration change target
-Mass change target
-Mass error target
+| 
 
 .. _app:runtime_output:
 
@@ -20953,9 +20135,9 @@ The file can contain comments, which begin with an exclamation point
 
 The instructions:
 
-Grok executable path and name
-Hydrogeosphere executable path and name
-Hsplot executable path and name
+| Grok executable path and name
+| Hydrogeosphere executable path and name
+| Hsplot executable path and name
 
 point to the locations of the program executable files. If the path to
 an executable is not provided via one of these commands, then the
@@ -21109,12 +20291,12 @@ The following command can be used to truncate the range of output times.
 
 --------------
 
-.. _in-117:
+.. _section-145:
 
  
-~~~~~~
 
 | 
+
 
 #. **t1, t2** Time range [T] of the domain.
 
@@ -21147,12 +20329,12 @@ B
 
 --------------
 
-.. _in-118:
+.. _section-146:
 
  
-~~~~~~
 
 | 
+
 
 #. **suffix_len** Number of digits in the output file suffix, an integer
    between 4 and 10, inclusive.
@@ -21228,12 +20410,7 @@ C
 
 Similar commands exist for the other domains:
 
-Write dual domain file
-Write frac domain file
-Write olf domain file
-Write well domain file
-Write chan domain file
-Write tile domain file
+| 
 
 In general, each command produces an output file named
 *prefix*\ ``o.``\ *domain*\ ``.dat``, where *domain* is the
@@ -21242,34 +20419,7 @@ commands prevent/allow **HSPLOT** from writing the named variables to
 the output file. For example, in the case of the porous media domain the
 following instructions are available:
 
-No pm heads
-No pm environment head
-No pm saturations
-No pm ice saturation
-No pm freezing-thawing temperature
-No pm linear velocities (vx, vy, vz)
-Yes pm flux (qx, qy, qz)
-No pm tvk (kx, ky, kz)
-No pm concentrations
-No pm hmc fractions
-No pm immobile/isotope fractionation concentrations
-No pm peclet number
-No pm diffusion peclet number
-No pm element k
-No pm element porosity
-No pm element storativity
-No pm element tortuosity
-No pm element fraction of compressible interbeds
-No pm permafrost
-No pm soil frost
-No pm compaction
-No pm delta z
-No pm redox capacity
-No pm et3d
-No pm rain and snowmelt package
-No pm depth to water table
-Truncate pm domain
-Truncate pm domain by layer
+| 
 
 Some of these instructions are available for other domains by swapping
 “pm” in the command name for the appropriate domain name. In general,
@@ -21286,12 +20436,12 @@ additional inputs as described below.
 
 --------------
 
-.. _in-119:
+.. _section-147:
 
  
-~~~~~~
 
 | 
+
 
 #. **x1, x2** :math:`x`-range [L] of the domain.
 
@@ -21324,12 +20474,12 @@ its full extent.
 
 --------------
 
-.. _in-120:
+.. _section-148:
 
  
-~~~~~~
 
 | 
+
 
 #. **x1, x2** :math:`x`-range [L] of the domain.
 
@@ -21366,82 +20516,32 @@ the following subsections.
 Dual Continua Output
 ~~~~~~~~~~~~~~~~~~~~
 
-No dual heads
-No dual saturations
-No dual linear velocities (vx, vy, vz)
-No dual concentrations
-No dual immobile/isotope fractionation concentrations
-No dual element k
-No dual permafrost
-No dual/pm exchange flux
-No dual/pm solute exchange
-Truncate dual domain
-Truncate dual domain by layer
+| 
 
 Discrete Fracture Domain Output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No frac heads
-No frac saturations
-No frac linear velocities (vx, vy, vz)
-No frac concentrations
-No frac immobile/isotope fractionation concentrations
-No frac aperture
-No frac/pm exchange flux
-No frac/pm solute exchange
-Truncate frac domain
-Truncate frac domain by layer
+| 
 
 Surface Flow Domain Output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No olf heads
-No olf linear velocities (vx, vy, vz)
-No olf friction (nx, ny)
-No olf concentrations
-No olf immobile/isotope fractionation concentrations
-No olf/pm exchange flux
-No olf/pm solute exchange
-No olf et
-Yes olf local probability
-Truncate olf domain
-Truncate olf domain by layer
+| 
 
 Tile Flow Domain Output
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-No tile heads
-No tile linear velocities (vx, vy, vz)
-No tile concentrations
-No tile immobile/isotope fractionation concentrations
-No tile/pm exchange flux
-No tile/pm solute exchange
-Truncate tile domain
-Truncate tile domain by layer
+| 
 
 Channel Flow Domain Output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No chan heads
-No chan linear velocities (vx, vy, vz)
-No chan concentrations
-No chan immobile/isotope fractionation concentrations
-No chan/pm exchange flux
-No chan/pm solute exchange
-Truncate chan domain
-Truncate chan domain by layer
+| 
 
 Well Flow Domain Output
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-No well heads
-No well linear velocities (vx, vy, vz)
-No well concentrations
-No well immobile/isotope fractionation concentrations
-No well/pm exchange flux
-No well/pm solute exchange
-Truncate well domain
-Truncate well domain by layer
+| 
 
 General Output Control
 ----------------------
@@ -21452,12 +20552,12 @@ should be issued at most once within the plot control file.
 
 --------------
 
-.. _in-121:
+.. _section-149:
 
  
-~~~~~~
 
 | 
+
 
 #. **x1, x2** :math:`x`-range [L] of the domain.
 
@@ -21578,12 +20678,12 @@ C
 
 --------------
 
-.. _in-122:
+.. _section-150:
 
  
-~~~~~~
 
 | 
+
 
 #. **x1, x2** :math:`x`-range [L] of the domain.
 
@@ -21609,12 +20709,12 @@ Note that this command requires a surface flow domain to be present.
 
 --------------
 
-.. _in-123:
+.. _section-151:
 
  
-~~~~~~
 
 | 
+
 
 #. **node_num** Number of node to be isolated.
 
@@ -21635,12 +20735,12 @@ include elements that share a node with an element that contains
 
 --------------
 
-.. _in-124:
+.. _section-152:
 
  
-~~~~~~
 
 | 
+
 
 #. **time_offset, time_unit_factor** Time offset [T:math:`_o`] and
    scaling factor [T:math:`_o` T:math:`^{-1}`].
