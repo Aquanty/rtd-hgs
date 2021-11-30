@@ -191,7 +191,7 @@ processor.
               1
 
 To increase the level of parallelization, change the values of
-“\__Number_of_CPU” and “\__Num_Domain_Partitiong” (these values should
+“__Number_of_CPU” and “__Num_Domain_Partitiong” (these values should
 be the same). When setting these values it is important to make sure you
 don’t exceed the number of processors available on your machine. In
 general we recommend that at most you use up to two fewer than the total
@@ -701,10 +701,10 @@ also ignored. For example, the following commands are equivalent:
 
 ::
 
-       set variable $path=C:\my\_file\_path    ! inline comment
-       set variable   $path =C:\my\_file\_path
-       set variable $path=   C:\my\_file\_path
-       set variable   $path  =  C:\my\_file\_path
+       set variable $path=C:\my_file_path    ! inline comment
+       set variable   $path =C:\my_file_path
+       set variable $path=   C:\my_file_path
+       set variable   $path  =  C:\my_file_path
 
 Each command defines the variable ``$path`` to have the value
 ``C:\char‘ my_file_path``. If you wish to retain leading whitespace in
@@ -713,7 +713,7 @@ the variable value, then you can do so by enclosing it in double quotes
 
 ::
 
-       set variable $path="   C:\my\_file\_path"
+       set variable $path="   C:\my_file_path"
 
 assigns to the variable ``$path`` the value
 ``   C:\textbackslash my_file_path``. Note that the enclosing double
@@ -2204,15 +2204,15 @@ For nodes falling within the given :math:`x`- and :math:`y`-range, the
 .. math::
 
    \begin{aligned}
-           z & = & \textbf{zz0} + \textbf{amplitude\_x} (1 + \sin(f(x)))+ \textbf{slope\_x}  (x-\textbf{xfrom})  \\
-                 & &          + \textbf{amplitude\_y} (1 + \sin(f(y)))+ \textbf{slope\_y}  (y-\textbf{yfrom})
+           z & = & \textbf{zz0} + \textbf{amplitude_x} (1 + \sin(f(x)))+ \textbf{slope_x}  (x-\textbf{xfrom})  \\
+                 & &          + \textbf{amplitude_y} (1 + \sin(f(y)))+ \textbf{slope_y}  (y-\textbf{yfrom})
        \end{aligned}
 
 where:
 
-.. math:: f(x) = 2\pi\cdot\textbf{num\_sw\_x}\cdot(x-\textbf{xfrom})/(\textbf{xto}-\textbf{xfrom})
+.. math:: f(x) = 2\pi\cdot\textbf{num_sw_x}\cdot(x-\textbf{xfrom})/(\textbf{xto}-\textbf{xfrom})
 
-.. math:: f(y) = 2\pi\cdot\textbf{num\_sw\_y}\cdot(y-\textbf{yfrom})/(\textbf{yto}-\textbf{yfrom})
+.. math:: f(y) = 2\pi\cdot\textbf{num_sw_y}\cdot(y-\textbf{yfrom})/(\textbf{yto}-\textbf{yfrom})
 
 --------------
 
@@ -2224,7 +2224,7 @@ The number of cycles of the sine wave can be a fraction and the sine
 function rises from a value of **zz0** at (**xfrom, yfrom**) as
 :math:`x`- and :math:`y`-values increase. Where the peaks coincide, the
 maximum elevation is given by
-:math:`\textbf{zz0} + \textbf{amplitude\_x} + \textbf{amplitude\_y}`.
+:math:`\textbf{zz0} + \textbf{amplitude_x} + \textbf{amplitude_y}`.
 
 --------------
 
@@ -4861,7 +4861,7 @@ underrelaxation factor :math:`\omega_r` according to
 .. math::
 
    \begin{aligned}
-           \omega_r &= \frac{\textbf{NR\_dhtol}}{\max(dh_r)} \\[1mm]
+           \omega_r &= \frac{\textbf{NR_dhtol}}{\max(dh_r)} \\[1mm]
            h_r      &= h_{r-1}+\omega_r\cdot dh_r
        \end{aligned}
 
@@ -4992,7 +4992,7 @@ Assigns a new nodal flow check tolerance, which defaults to
 :math:`10^{-2}`. The tolerance is used to constrain a particular measure
 of nodal flow error, :math:`\textrm{flow}_i^{\textrm{error}}`, such that
 
-.. math:: \max_i\textrm{flow}_i^{\textrm{error}} \leq \textbf{n\_flow\_check\_tol}
+.. math:: \max_i\textrm{flow}_i^{\textrm{error}} \leq \textbf{n_flow_check_tol}
 
 where the index :math:`i` ranges over all nodes in the porous media and
 dual continuum domains. The definition of the error term and its
@@ -5620,7 +5620,7 @@ Thermal conductivity of air
 
 
 
-#. **k\_air** Thermal conductivity [W m:math:`^{-1}` K:math:`^{-1}`] of
+#. **k_air** Thermal conductivity [W m:math:`^{-1}` K:math:`^{-1}`] of
    the air phase.
 
 Assigns a uniform value to the thermal conductivity of air.
@@ -5640,7 +5640,7 @@ Specific heat capacity of air
 
 
 
-#. **c\_air** Specific heat capacity [J kg:math:`^{-1}` K:math:`^{-1}`]
+#. **c_air** Specific heat capacity [J kg:math:`^{-1}` K:math:`^{-1}`]
    of the air phase.
 
 Assigns a uniform value to the specific heat capacity of air.
@@ -5660,7 +5660,7 @@ Density of air
 
 
 
-#. **rho\_air** Density [kg m:math:`^{-3}`] of the air phase.
+#. **rho_air** Density [kg m:math:`^{-3}`] of the air phase.
 
 Assigns a uniform value to the density of air.
 
@@ -7742,7 +7742,7 @@ Thermal conductivity of air
 
 
 
-#. **k\_air** Thermal conductivity [W m:math:`^{-1}` K:math:`^{-1}`] of
+#. **k_air** Thermal conductivity [W m:math:`^{-1}` K:math:`^{-1}`] of
    the air phase.
 
 Assigns a uniform value to the thermal conductivity of air.
@@ -7764,7 +7764,7 @@ Specific heat capacity of air
 
 
 
-#. **c\_air** Specific heat capacity [J kg:math:`^{-1}` K:math:`^{-1}`]
+#. **c_air** Specific heat capacity [J kg:math:`^{-1}` K:math:`^{-1}`]
    of the air phase.
 
 Assigns a uniform value to the specific heat capacity of air.
@@ -7786,7 +7786,7 @@ Density of air
 
 
 
-#. **rho\_air** Density [kg m:math:`^{-3}`] of the air phase.
+#. **rho_air** Density [kg m:math:`^{-3}`] of the air phase.
 
 Assigns a uniform value to the density of air.
 
@@ -11142,7 +11142,7 @@ command is designed to address this problem.
 This command causes **grok** to limit the output of some zonal
 information (e.g., material properties) to the ``.eco`` file for all
 domain types. Output is written for all zone numbers between one and at
-most **max_zone**. Setting :math:`\textbf{max\_zone} = 0` will truncate
+most **max_zone**. Setting :math:`\textbf{max_zone} = 0` will truncate
 all output. By default zone output to the ``.eco`` file is unlimited.
 
 --------------
@@ -16378,7 +16378,7 @@ fractions of the solid and liquid phases. It is assumed here that the
 thermal conductivity of the solids decreases at a constant rate of 1%
 per 10 K increase in temperature and the relationship between thermal
 conductivity and temperature is defined by the pair of values
-:math:`(\textbf{k\_s1}, \textbf{t\_s1})`.
+:math:`(\textbf{k_s1}, \textbf{t_s1})`.
 
 --------------
 
@@ -16416,10 +16416,10 @@ Nonlinear bulk thermal conductivity relation
 | ``Scope: .mprops``
 
 
-#. **k\_sat** Thermal conductivity of the saturated porous medium
+#. **k_sat** Thermal conductivity of the saturated porous medium
    [M L T:math:`^{-3}` K:math:`^{-1}`].
 
-#. **k\_dry** Thermal conductivity of the dry porous medium
+#. **k_dry** Thermal conductivity of the dry porous medium
    [M L T:math:`^{-3}` K:math:`^{-1}`].
 
 #. **k_C** Fitting parameter [-].
@@ -17447,7 +17447,7 @@ Specifies the maximum number of particles to record in the particle
 trace and particle location output files. This value can be used to
 control the amount of memory consumed by particle tracing output files.
 Output is recorded only for particles whose IDs belong to the range
-:math:`1,\ldots,\textbf{max\_output}`. Note that a particle’s ID is
+:math:`1,\ldots,\textbf{max_output}`. Note that a particle’s ID is
 determined by the line number of its initial location within the initial
 location input file. By default the maximum trace output is set to
 10 000.
@@ -20896,13 +20896,13 @@ contain all of the data files necessary to run the simulations. In the
 case of the **HydroGeoSphere** verification problems, the
 ``verification`` directory nested under the
 **HydroGeoSphere** installation directory
-(``C:\Program_Files\HydroGeoSphere/verification`` on Windows) contains
+(``C:\Program_Files\HydroGeoSphere\verification`` on Windows) contains
 one or more subdirectories for each verification problem. A partial list
 of its contents are shown here:
 
 ::
 
-       Directory of C:\Program\_Files/HydroGeoSphere/verification
+       Directory of C:\Program_Files\HydroGeoSphere\verification
 
        2021-03-31  02:36 PM    <DIR>          .
        2021-03-31  02:36 PM    <DIR>          ..
@@ -20964,7 +20964,7 @@ are found by searching the default search path, which should contain the
 installation directory ``C:\Program_Files\HydroGeoSphere`` following a
 typical program installation. Problem data are to be found in
 subdirectories of the directory where the ``.hsbatch`` file is located,
-in this case ``C:\Program_Files\HydroGeoSphere/verification``.
+in this case ``C:\Program_Files\HydroGeoSphere\verification``.
 
 The instruction Batch directory list is followed by a list of
 subdirectories, one per line, that contain the problem data to be run in
@@ -20975,7 +20975,7 @@ create a file called ``batch.pfx`` that consists of a single line
 containing the problem prefix, in each problem directory.
 
 To run **HSBATCH** for this example, open a command prompt, change
-directories to ``C:\Program_Files\HydroGeoSphere/verification``, and
+directories to ``C:\Program_Files\HydroGeoSphere\verification``, and
 type:
 
 ::
@@ -21004,17 +21004,17 @@ to handle these types of situations:
        ! paths must be relative to the location of the .hsbatch file.
 
        grok executable path and name
-       C:\Program\_Files/HydroGeoSphere\grok.exe
+       C:\Program_Files\HydroGeoSphere\grok.exe
 
        hydrogeosphere executable path and name
-       C:\Program\_Files/HydroGeoSphere\phgs.exe
+       C:\Program_Files\HydroGeoSphere\phgs.exe
    		
        hsplot executable path and name
-       C:\Program\_Files/HydroGeoSphere\hsplot.exe
+       C:\Program_Files\HydroGeoSphere\hsplot.exe
 
        ! First run a verification problem
        change directory
-       C:\Program\_Files/HydroGeoSphere/verification
+       C:\Program_Files\HydroGeoSphere\verification
 
        batch directory list
        pm_cd
@@ -21022,7 +21022,7 @@ to handle these types of situations:
 
        ! Now run an illustrative problem
        change directory
-       C:\Program\_Files/HydroGeoSphere\illustration
+       C:\Program_Files\HydroGeoSphere\illustration
 
        batch directory list
        reactive_iron_barrier_in_fractures
@@ -21648,7 +21648,7 @@ include elements that share a node with an element that contains
 Causes **HSPLOT** to update the time stamp :math:`t` embedded within
 each output file it processes via the equation
 
-.. math:: t_\textrm{new} = \textbf{time\_offset} + \textbf{time\_unit\_factor}\cdot t
+.. math:: t_\textrm{new} = \textbf{time_offset} + \textbf{time_unit_factor}\cdot t
 
 Note that the time unit T\ :math:`_o` may or may not be the same as T.
 
